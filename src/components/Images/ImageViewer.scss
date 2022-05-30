@@ -1,0 +1,63 @@
+.image-viewer {
+  text-align: center;
+  font-size: 20px;
+  background-color: #1c3148;
+}
+.hero-image {
+  max-width: 30%;
+  height: auto;
+  border-radius: 8%;
+  outline: 3px solid #d04a36;
+  outline-offset: -3px;
+  margin-top: 30px;
+}
+.header {
+  color: #d04a36;
+  font-family: sans-serif;
+  font-size: 9vw;
+  margin-top: 40px;
+}
+
+.sub-header {
+  color: #d04a36;
+  font-family: sans-serif;
+  font-size: 4vw;
+  margin-top: 20px;
+}
+
+div.carousel.carousel-slider {
+  border-radius: 2%;
+  margin: 1% auto;
+}
+body {
+  height: 100%;
+  background-color: #1c3148;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-wrapper {
+    max-width: 100%;
+  }
+}
+.control-dots {
+  position: absolute;
+  z-index: -1;
+}
+
+div.carousel-root {
+  padding-top: 30px;
+}
+.same-size-images{
+    width:  100%;
+    height: auto;
+}
+.react-date-picker {
+  background-color: lightgray;
+  font-family: monospace;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+.react-date-picker__inputGroup{
+  display:inline-block;
+  margin:0 auto;
+}

@@ -1,0 +1,19 @@
+.thumb-sizes {
+  width: 100px;
+  padding: 0;
+  height: auto;
+  border-radius: 8%;
+}
+
+.thumb-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 50px;
+}
+
+.selected {
+  outline: 3px solid #d04a36;
+  outline-offset: -3px;
+}
