@@ -47,9 +47,9 @@ body {
 div.carousel-root {
   padding-top: 30px;
 }
-.same-size-images{
-    width:  100%;
-    height: auto;
+.same-size-images {
+  width: 100%;
+  height: auto;
 }
 .react-date-picker {
   background-color: lightgray;
@@ -57,7 +57,12 @@ div.carousel-root {
   margin-left: 100px;
   margin-top: 10px;
 }
-.react-date-picker__inputGroup{
-  display:inline-block;
-  margin:0 auto;
+.react-date-picker__inputGroup {
+  margin-left: 8px;
+}
+.crop {
+  object-fit: scale-down;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
 }
