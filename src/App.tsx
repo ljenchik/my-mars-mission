@@ -9,7 +9,7 @@ import { Menu } from "./components/Menu/Menu";
 function App() {
   return (
     <>
-      <Menu />
+    <nav><Menu /></nav>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

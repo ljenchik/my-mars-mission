@@ -1,15 +1,47 @@
-.menu {
-  float: right;
+.dropdown-menu {
   background-color: #1c3148;
+}
+.menu-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #1c3148;
   color: #d04a36;
   padding: 7px 5px;
   border: none;
 }
-ul {
-    float: right;
-    color: #1c3148;
-} 
-a {
-    color: #d04a36;
-    margin: 10px;
+.menu-cross-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #262728;
+  color: #d04a36;
+  padding: 7px 5px;
+  border: none;
+}
+
+.menu-list{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #262728;
+  list-style-type: none;
+  z-index: 100;
+  margin-top: 0;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 5%;
+}
+.menu-item {
+  margin: 10px;
+  padding-bottom: 30px;
+}
+.menu-link {
+  color: #d04a36;
+  font-size: larger;
+}
+.menu-icon {
+  padding-right: 20px;
 }
