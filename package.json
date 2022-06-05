@@ -17,6 +17,7 @@
     "react-burger-menu": "^3.0.8",
     "react-date-picker": "^8.4.0",
     "react-dom": "^18.1.0",
+    "react-responsive": "^9.0.0-beta.10",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
