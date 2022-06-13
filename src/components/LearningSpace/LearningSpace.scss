@@ -10,36 +10,29 @@
 .information {
   border-style: double;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   width: 80%;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 2%;
 }
 .question {
   border-style: double;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   width: 80%;
   margin: 20px auto;
   border-radius: 2%;
+  font-size: larger;
 }
-
 .answer {
   border-style: double;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   width: 80%;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 2%;
 }
-.navbutton {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  color: black;
-  border-radius: 5%;
-  background-color: #ddd;
-}
+
 .previous-button {
   float: left;
   margin-left: 20px;
@@ -61,4 +54,15 @@
   bottom: 0;
   right: 0;
   margin-bottom: 20px;
+}
+.question-image {
+  width: 75vw;
+  margin-top: 20px;
+}
+
+.countOut-container {
+  text-align: center;
+  position: fixed;
+    bottom: 25px;
+    padding-left: 140px;
 }

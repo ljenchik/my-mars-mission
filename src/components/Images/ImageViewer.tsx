@@ -29,7 +29,7 @@ export function ImageViewer() {
       .catch((error) => console.log(error));
   }, [selectedDate]);
 
-  if (urls.length === 0) {
+  if (selectedDate !="2021-02-18" && urls.length === 0) {
     return (
       <>
         <div className="image-viewer">
@@ -45,7 +45,7 @@ export function ImageViewer() {
           value={new Date(selectedDate)}
           minDate={new Date("2021-02-18")}
         />
-        <h3 className="sub-header">
+        <h3 className="sub-header" >
           There were no photographs taken on this date. Please choose another
           date
         </h3>

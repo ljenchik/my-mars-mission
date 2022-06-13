@@ -1,5 +1,4 @@
 import {
-  faEarthAmericas,
   faRocket,
   faStar,
   faUserAstronaut,
