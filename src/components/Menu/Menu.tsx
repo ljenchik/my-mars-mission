@@ -29,31 +29,43 @@ export function Menu() {
         >
           <FontAwesomeIcon icon={faXmark} size={"2x"} />
         </button>
+
         <li className="menu-item">
+        <a id="landing-page" href="/" className="menu-link">
         <FontAwesomeIcon icon={faEarthAmericas} size={"2x"} className="menu-icon"/>
+          </a>
           <a id="landing-page" href="/" className="menu-link">
             Landing Page
           </a>
         </li>
 
         <li className="menu-item">
+        <a id="learning-space" href="/learning-space" className="menu-link">
         <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} className="menu-icon"/>
+          </a>
           <a id="learning-space" href="/learning-space" className="menu-link">
             Learning Space
           </a>
         </li>
+
         <li className="menu-item">
+        <a id="mars-holidays" href="/mars-holidays" className="menu-link">
         <FontAwesomeIcon icon={faRocket} size={"2x"} className="menu-icon"/>
+          </a>
           <a id="mars-holidays" href="/mars-holidays" className="menu-link">
             Mars Holidays
           </a>
         </li>
+
         <li className="menu-item">
+        <a id="images" href="/images" className="menu-link">
         <FontAwesomeIcon icon={faStar} size={"2x"} className="menu-icon"/>
+          </a>
           <a id="images" href="/images" className="menu-link">
             Mars Rover Images
           </a>
         </li>
+
       </ul>
     </nav>
   );
