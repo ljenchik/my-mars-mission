@@ -2,6 +2,7 @@
   text-align: center;
   background-color: #1c3148;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
 }
 
 .hero--header {
@@ -11,45 +12,49 @@
 }
 
 .hero--pick-date {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  column-gap: 10px;
-  margin: 20px;
-  justify-content: left;
+  margin: 20px 0px;
+  justify-content: center;
+}
+
+.react-date-picker {
+  background-color: white;
+  font-family: monospace;
 }
 
 .hero--text {
   color:white;
   font-size: 15px;
-  padding-left: 40px;
+  padding-left: 10px;
   font-weight: 300;
+  align-self: center;
+}
+
+.no-images-text {
+  color:white;
+  font-size: 15px;
+  font-weight: 300;
+  padding-top: 20px;
+  justify-content: center;
 }
 
 .hero--date {
-  background-color: white;
+  margin: 10px 20px;
+  justify-content: left;
 }
 
-.hero-image {
-  max-width: 30%;
+.cropped-mars-image {
+  object-fit: scale-down;
+  width: 100%;
   height: auto;
-  border-radius: 8%;
-  outline: 3px solid #d04a36;
-  outline-offset: -3px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 
-
-
-
-div.carousel.carousel-slider {
-  border-radius: 2%;
-  margin: 1% auto;
-}
-
-body {
-  height: 100%;
-  background-color: #1c3148;
+.carousel .thumb {
+  outline: 2px solid white;
+  outline-offset: -2px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -57,30 +62,15 @@ body {
     max-width: 100%;
   }
 }
+
 .control-dots {
   position: absolute;
   z-index: -1;
 }
 
-div.carousel-root {
+.carousel-root {
   padding-top: 30px;
 }
-.same-size-images {
-  width: 100%;
-  height: auto;
-}
-.react-date-picker {
-  background-color: lightgray;
-  font-family: monospace;
-  margin-left: 100px;
-  margin-top: 10px;
-}
-.react-date-picker__inputGroup {
-  margin-left: 8px;
-}
-.crop {
-  object-fit: scale-down;
-  width: 100%;
-  height: auto;
-  margin-top: 50px;
-}
+
+
+

@@ -13,10 +13,15 @@ function shuffleArray(array: any[]) {
   }
 }
 
+//To do: 
+//thumbs frames only wjen clicked; 
+//images start from the first;
+//work on all screens
+
 export function ImageViewer() {
   const [urls, setUrls] = useState<string[]>([]);
-  const [selectedDate, setSelectedDate] = useState("2021-02-18");
-  
+  const [selectedDate, setSelectedDate] = useState<string>("2021-02-18");
+
   useEffect(() => {
     fetch(
       `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?earth_date=${selectedDate}&api_key=IgINDcTiL7hEVwnUDaK28gqY58yA3XIfQZfNhH8l`
@@ -30,45 +35,63 @@ export function ImageViewer() {
       .catch((error) => console.log(error));
   }, [selectedDate]);
 
-
-  if (!urls) {
-    return <div>There are no images taken on this date</div>
-  }
-  else {
+  if (urls.length === 0) {
     return (
       <div className="image-viewer">
         <div className="hero--header">Mars Perseverance Rover Images</div>
         <div className="hero--pick-date">
-          <h3 className="hero--text">Choose a date to see images taken on this day</h3>
-          <DatePicker className="hero--date"
+          <h3 className="hero--text">
+            Choose a date to see images taken on this day
+          </h3>
+          <DatePicker
+            className="hero--date"
             onChange={(val: any) => {
               setSelectedDate(val.toISOString().split("T")[0]);
-            } }
+            }}
             value={new Date(selectedDate)}
-            minDate={new Date("2021-02-18")} />
+            minDate={new Date("2021-02-18")}
+          />
+        </div>
+        <h3 className="no-images-text">
+          <p>There were no photographs taken on this date.</p>
+          <p>Please choose another date</p>
+        </h3>
+        <img
+          className="cropped-mars-image"
+          src="https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png"
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="image-viewer">
+        <div className="hero--header">Mars Perseverance Rover Images</div>
+        <div className="hero--pick-date">
+          <h3 className="hero--text">
+            Choose a date to see images taken on this day
+          </h3>
+          <DatePicker
+            className="hero--date"
+            onChange={(val: any) => {
+              setSelectedDate(val.toISOString().split("T")[0]);
+            }}
+            value={new Date(selectedDate)}
+            minDate={new Date("2021-02-18")}
+          />
         </div>
 
-        {(selectedDate && urls.length === 0) ?
-          <><h3 className="sub-header">
-            There were no photographs taken on this date. Please choose another
-            date
-          </h3><img
-              className="crop"
-              src="https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png" /></>
-          :
-         <>
-          <Carousel>
-          {urls.map((url: any) => {
-            return (
-              <div className="same-size-images">
-                <img src={url.img_src} />
-              </div>
-            );
-          })}
-        </Carousel></>
-
-      }
+        <div>
+          <Carousel infiniteLoop={true}>
+            {urls.map((url: any) => {
+              return (
+                <div>
+                  <img src={url.img_src} />
+                </div>
+              );
+            })}
+          </Carousel>
+        </div>
       </div>
-    )
+    );
   }
 }
