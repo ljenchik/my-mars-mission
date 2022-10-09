@@ -1,12 +1,22 @@
-.learning-page-header {
-  width: 100%;
+.container {
+  margin: 10px;
+  color: white;
 }
+
+.question-image {
+  width: 75vw;
+  margin: 10px;
+}
+
+
+
 .highlight-correct {
   color: green;
 }
 .highlight-incorrect {
   color: red;
 }
+
 .information {
   border-style: double;
   text-align: center;
@@ -14,7 +24,9 @@
   width: 80%;
   margin: 10px auto;
   border-radius: 2%;
+  color: white;
 }
+
 .question {
   border-style: double;
   text-align: center;
@@ -23,7 +35,9 @@
   margin: 20px auto;
   border-radius: 2%;
   font-size: larger;
+  color: white
 }
+
 .answer {
   border-style: double;
   text-align: center;
@@ -31,6 +45,7 @@
   width: 80%;
   margin: 10px auto;
   border-radius: 2%;
+  color: white
 }
 
 .previous-button {
@@ -44,6 +59,7 @@
   left: 0;
   margin-bottom: 20px;
 }
+
 .next-button {
   float: right;
   margin-right: 20px;
@@ -55,14 +71,13 @@
   right: 0;
   margin-bottom: 20px;
 }
-.question-image {
-  width: 75vw;
-  margin-top: 20px;
-}
+
+
 
 .countOut-container {
   text-align: center;
   position: fixed;
-    bottom: 25px;
-    padding-left: 140px;
+  bottom: 25px;
+  padding-left: 140px;
+  color: white
 }

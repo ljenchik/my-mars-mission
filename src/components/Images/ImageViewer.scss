@@ -11,16 +11,12 @@
   margin-top: 40px;
 }
 
-.hero--pick-date {
+.hero--date-text-container {
   display: flex;
   align-items: center;
-  margin: 20px 0px;
   justify-content: center;
-}
-
-.react-date-picker {
-  background-color: white;
-  font-family: monospace;
+  margin-top: 20px;
+  
 }
 
 .hero--text {
@@ -28,10 +24,10 @@
   font-size: 15px;
   padding-left: 10px;
   font-weight: 300;
-  align-self: center;
+  margin-right: 20px;
 }
 
-.no-images-text {
+.hero--no-images-text {
   color:white;
   font-size: 15px;
   font-weight: 300;
@@ -39,12 +35,7 @@
   justify-content: center;
 }
 
-.hero--date {
-  margin: 10px 20px;
-  justify-content: left;
-}
-
-.cropped-mars-image {
+.hero--cropped-mars-image {
   object-fit: scale-down;
   width: 100%;
   height: auto;

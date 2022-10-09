@@ -1,9 +1,11 @@
-import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from "react";
+import { useState } from "react";
 import { Data } from "./Data";
 import "./LearningSpace.scss";
 
 
-function CountOut(props: { index: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; Data: string | any[]; }) {
+function CountOut(props: {
+  Data: any; index: string | number 
+}) {
   return <div>Question {props.index} out of  {props.Data.length} </div>;
 }
 
@@ -15,9 +17,9 @@ export function LearningSpace() {
   });
   const question = Data[questionIndex];
   return (
-    <div>
+    <div className="container">
       <div className="question">
-        <div>{question.title}</div>
+        <h3>{question.title}</h3>
         <img src={question.image} className="question-image" />
       </div>
       <div className="information">{question.information}</div>
