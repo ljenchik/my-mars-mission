@@ -7,6 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 //thumbs frames only wjen clicked;
 //images start from the first;
 //works on all screens
+//first slide without frame
 
 function shuffleArray(array: any[]) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -18,11 +19,12 @@ function shuffleArray(array: any[]) {
 }
 
 export function ImageViewer() {
-  const minDate = "2021-02-18"
+  const minDate = "2021-02-18";
   const [urls, setUrls] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>(minDate);
   const [message, setMessage] = useState<string>("");
-  
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+
   useEffect(() => {
     fetch(
       `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?earth_date=${selectedDate}&api_key=IgINDcTiL7hEVwnUDaK28gqY58yA3XIfQZfNhH8l`
@@ -30,15 +32,16 @@ export function ImageViewer() {
       .then((response) => response.json())
       .then((result) => {
         const photos = result.photos;
-        console.log("photos", photos)
         if (photos.length === 0) {
           setUrls([]);
-          setMessage("There were no photographs taken on this date. Please choose another date")
-        }
-          else {
+          setMessage(
+            "There were no photographs taken on this date. Please choose another date"
+          );
+        } else {
           shuffleArray(photos);
           setUrls(photos.slice(0, 20));
           setMessage("");
+          setCurrentSlide(0);
         }
       })
       .catch((error) => console.log(error));
@@ -59,15 +62,17 @@ export function ImageViewer() {
           <h3 className="hero--text">
             Choose a date to see images taken on this day
           </h3>
-          <input type="date" onChange={handleChange} min={minDate} value={selectedDate} />
+          <input
+            type="date"
+            onChange={handleChange}
+            min={minDate}
+            value={selectedDate}
+          />
         </div>
-        <h3 className="hero--no-images-text">
-          Images are loading ...
-        </h3>
+        <h3 className="hero--no-images-text">Images are loading ...</h3>
       </div>
     );
-  } 
-  else if (message !== "") {
+  } else if (message !== "") {
     return (
       <div className="image-viewer">
         <div className="hero--header">Mars Perseverance Rover Images</div>
@@ -75,11 +80,14 @@ export function ImageViewer() {
           <h3 className="hero--text">
             Choose a date to see images taken on this day
           </h3>
-          <input type="date" onChange={handleChange} min={minDate} value={selectedDate} />
+          <input
+            type="date"
+            onChange={handleChange}
+            min={minDate}
+            value={selectedDate}
+          />
         </div>
-        <h3 className="hero--no-images-text">
-          {message}
-        </h3>
+        <h3 className="hero--no-images-text">{message}</h3>
         <img
           className="hero--cropped-mars-image"
           src="https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png"
@@ -94,9 +102,13 @@ export function ImageViewer() {
           <h3 className="hero--text">
             Choose a date to see images taken on this day
           </h3>
-          <input type="date" onChange={handleChange} value={selectedDate} />
+          <input type="date" min={minDate} onChange={handleChange} value={selectedDate} />
         </div>
-        <Carousel infiniteLoop={true}>
+        <Carousel
+          infiniteLoop={true}
+          selectedItem={currentSlide}
+          onChange={(index) => setCurrentSlide(index)}
+        >
           {urls.map((url: any) => {
             return (
               <div>
