@@ -2,11 +2,10 @@ import { useState } from "react";
 import { Data } from "./Data";
 import "./LearningSpace.scss";
 
-
 function CountOut(props: {
   Data: any; index: string | number 
 }) {
-  return <div>Question {props.index} out of  {props.Data.length} </div>;
+  return <div>Question {props.index} out of {props.Data.length} </div>;
 }
 
 export function LearningSpace() {
@@ -15,28 +14,29 @@ export function LearningSpace() {
     text: "",
     correct: false,
   });
+
+  const [message, setMessage] = useState("");
+
+
   const question = Data[questionIndex];
   return (
-    <div className="container">
+    <div className="main-container">
       <div className="question">
         <h3>{question.title}</h3>
-        <img src={question.image} className="question-image" />
+      <img src={question.image} className="question-image" />
       </div>
+
       <div className="information">{question.information}</div>
       <div className="question">{question.question}</div>
+      <div className="answers-container">
       {question.answers.map((answer) => (
-        <div
+        <button type="submit"
           onClick={() => {
-            if (selectedAnswer === answer) {
-                setSelectedAnswer({
-                  text: "",
-                  correct: false,
-                })
-            }
-            else {
+            if (selectedAnswer !== answer) {
               setSelectedAnswer(answer);
             }
           }}
+
           className={
             selectedAnswer === answer
               ? answer.correct
@@ -46,10 +46,12 @@ export function LearningSpace() {
           }
         >
           {answer.text}
-        </div>
+        </button>
       ))}
-      <div  className="countOut-container">
-        <button
+      </div>
+      <div  className="container">
+        
+        <div><button
           className="previous-button"
           onClick={() => {
             questionIndex > 0
@@ -58,9 +60,11 @@ export function LearningSpace() {
           }}
         >
           Previous
-        </button>
-        <CountOut Data={Data} index={questionIndex + 1}/>
-        <button
+        </button></div>
+
+        <div className="count"><CountOut Data={Data} index={questionIndex + 1}/></div>
+        
+        <div><button
           className="next-button"
           onClick={() => {
             questionIndex < Data.length - 1
@@ -69,8 +73,10 @@ export function LearningSpace() {
           }}
         >
           Next
-        </button>
+        </button></div>
+        
       </div>
+
     </div>
   );
 }
