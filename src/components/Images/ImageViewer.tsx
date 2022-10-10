@@ -4,10 +4,7 @@ import "./ImageViewer.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 //To improve:
-//thumbs frames only wjen clicked;
-//images start from the first;
 //works on all screens
-//first slide without frame
 
 function shuffleArray(array: any[]) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -57,7 +54,7 @@ export function ImageViewer() {
   if (!urls) {
     return (
       <div className="image-viewer">
-        <div className="hero--header">Mars Perseverance Rover Images</div>
+        <h1 className="hero--header">Mars Perseverance Rover Images</h1>
         <div className="hero--date-text-container">
           <h3 className="hero--text">
             Choose a date to see images taken on this day
@@ -108,6 +105,7 @@ export function ImageViewer() {
           infiniteLoop={true}
           selectedItem={currentSlide}
           onChange={(index) => setCurrentSlide(index)}
+          
         >
           {urls.map((url: any) => {
             return (

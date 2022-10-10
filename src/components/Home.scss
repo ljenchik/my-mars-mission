@@ -1,47 +1,50 @@
-.landing-page-image {
-  width: 100%;
-  height: auto;
-}
 .landing-page-header {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 35px;
+  color: #d04a36;
 }
+
+.landing-page-image {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
 .landing-page-header-question {
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 40px;
-  font-size: 27px;
+  margin-bottom: 20px;
+  font-weight: 200;
+  font-size: 30px;
+  color: #d04a36;
 }
+
 .container {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   height: 125px;
   justify-content: center;
   text-align: center;
 }
-.flex1 {
-  flex-grow: 1;
-  text-align: center;
-  border-top: 2px solid rgb(246, 96, 21);
-  border-left: 2px solid rgb(246, 96, 21);
-  margin-top: -2px;
-  margin-left: -2px;
-  padding-top: 20px;
+
+.landing-page-item {
+  align-self: center;
+  border: 1px solid rgb(246, 96, 21);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
 }
-.flex2 {
-  flex-grow: 2;
-  text-align: center;
-  border-top: 2px solid rgb(246, 96, 21);
-  border-bottom: 2px solid rgb(246, 96, 21);
-  border-left: 2px solid rgb(246, 96, 21);
-  margin-top: -2px;
-  margin-left: -2px;
-  padding-top: 20px;
-}
+
 a:link {
   text-decoration: none;
 }
+
 a:hover {
   color:white
 }

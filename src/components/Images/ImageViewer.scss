@@ -1,7 +1,5 @@
 .image-viewer {
   text-align: center;
-  background-color: #1c3148;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px;
 }
 
@@ -44,24 +42,22 @@
 
 
 .carousel .thumb {
-  outline: 2px solid white;
-  outline-offset: -2px;
+  border: 3px solid  #1c3148 !important;
+  border-radius: 5px;
+} 
+
+.carousel .thumb.selected {
+  border: 3px solid white !important;
+  border-radius: 5px;
 }
 
-@media only screen and (max-width: 600px) {
-  .carousel-wrapper {
-    max-width: 100%;
-  }
-}
-
-.control-dots {
-  position: absolute;
-  z-index: -1;
-}
 
 .carousel-root {
   padding-top: 30px;
 }
 
-
-
+@media only screen and (max-width: 600px) {
+  .carousel-wrapper{
+    max-width: 100%;
+  }
+}
