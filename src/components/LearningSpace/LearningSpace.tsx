@@ -22,7 +22,7 @@ export function LearningSpace() {
   return (
     <div className="main-container">
       <div className="question">
-        <h3>{question.title}</h3>
+        <h3 className="question-title">{question.title}</h3>
       <img src={question.image} className="question-image" />
       </div>
 

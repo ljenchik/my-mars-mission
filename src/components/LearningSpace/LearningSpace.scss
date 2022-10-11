@@ -12,15 +12,19 @@
   width: 80%;
   margin: 10px auto;
   border-radius: 5px;
-  font-size: larger;
   color: white
 }
+
+.question-title {
+  font-size: 30px;
+  font-weight: 100;
+}
+
 
 .question-image {
   width: 70vw;
   margin: 10px;
 }
-
 
 
 .information {
@@ -34,7 +38,7 @@
 }
 
 .answer {
-  border: 2px solid  white;
+  border: 2px solid  #d04a36;
   text-align: center;
   padding: 10px;
   margin: 10px auto;

@@ -4,10 +4,11 @@ import { Home } from "./components/Home";
 import { LearningSpace } from "./components/LearningSpace/LearningSpace";
 import { ImageViewer } from "./components/Images/ImageViewer";
 import { MarsHolidays } from "./components/MarsHolidays/MarsHolidays";
-import { Menu } from "./components/Menu/Menu";import MediaQuery from "react-responsive";
-;
+import { Menu } from "./components/Menu/Menu";
+import  { LoginForm }  from "./components/LoginForm/LoginForm";
+import { AccountForm } from "./components/Account/Account";
+//import { TicketForm } from "./components/TicketForm/TicketForm";
 
-<MediaQuery minDeviceWidth={390} />
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
           <Route path="/learning-space" element={<LearningSpace />} />
           <Route path="/images" element={<ImageViewer />} />
           <Route path="/mars-holidays" element={<MarsHolidays />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/account/create" element={<AccountForm />} />
+          {/* <Route path="/ticket" element={<TicketForm />} /> */}
+
         </Routes>
       </Router>
     </>
