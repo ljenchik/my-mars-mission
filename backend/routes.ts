@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { createAccount } from "./repos/accountRepo";
+import { createAccount, getAccountById } from "./repos/accountRepo";
 import bcrypt from "bcrypt";
 
 const router = express.Router();
@@ -17,8 +17,6 @@ router.post("/account/create", async (req: Request, res: Response) => {
     });
   });
 
-  delete requestBody.password;
-
   try {
     const accountId = await createAccount(requestBody);
     return res.json({ success: true, id: accountId, error: "" });
@@ -27,5 +25,20 @@ router.post("/account/create", async (req: Request, res: Response) => {
     return res.send(error);
   }
 });
+
+router.get("/account/:id(\\d+)", async (req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  console.log(id);
+  try {
+    const account = await getAccountById(id);
+    console.log(account)
+    return res.json({success: true, account: account, error: ""});
+  } catch (error) {
+    res.status(500);
+    return res.send(error);
+  }
+});
+
+
 
 export default router;

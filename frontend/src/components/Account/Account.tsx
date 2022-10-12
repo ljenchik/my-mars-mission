@@ -88,94 +88,85 @@ export const AccountForm = () => {
         navigate(`/account/${response.id}`);
       }
     });
-  }
+  };
 
-    return (
-        <Container  className="account-form-container">
-          <h3 className="title">Create account</h3>
-          <div onKeyDown={handleKeyPress}>
-            <div >
-              <label className="input-label">Name</label>
-              <br />
-              <input
-                className="account-input"
-                type="text"
-                placeholder="Enter name"
-                onChange={(event) => handleChangeName(event)}
-                value={account.name}
-              ></input>
-            </div>
-            <br />
-            
-            <div>
-              <label className="input-label">Username</label>
-              <br />
-              <input
-                className="account-input"
-                type="text"
-                placeholder="Enter name"
-                onChange={(event) => handleChangeUsername(event)}
-                value={account.username}
-              ></input>
-            </div>
-            <br />
-
-            
-
-            <div>
-              <label className="input-label">Address</label> 
-              <br />
-              <input
-                className="account-input"
-                type="address"
-                placeholder="Enter address"
-                onChange={(event) => handleChangeAddress(event)}
-                value={account.address}
-              ></input>
-            </div>
-
-            <div>
-              <label className="input-label">Email</label> <br />
-              <input
-                className="account-input"
-                type="email"
-                style={{ width: "75%" }}
-                placeholder="Enter email address"
-                onChange={(event) => handleChangeEmail(event)}
-                value={account.email}
-              ></input>
-            </div>
-            <br />
-            <div>
-              <label className="input-label">Password</label> <br />
-              <input
-                className="account-input"
-                type="email"
-                placeholder="Enter password"
-                onChange={(event) => handleChangePassword(event)}
-                value={account.password}
-              ></input>
-            </div>
-            <br />
-    
-    
-            <div className="d-flex flex-row">
-              <Button
-                className="btn btn-success my-4"
-                disabled={isDisabled}
-                onClick={submit}
-              >
-                Submit
-              </Button>
-              <Button className="mx-2 my-4" onClick={reset}>
-                Reset
-              </Button>
-              <p className="error">
-                {error !== "" ? <p style={{ color: "red" }}>{error}</p> : ""}
-              </p>
-            </div>
+  return (
+    <Container className="account-form-container">
+      <h3 className="title">Create account</h3>
+          
+          <div className="account-box" >
+            <label className="input-label">Name</label>
+            <input
+              className="account-input"
+              type="text"
+              placeholder="Enter name"
+              onChange={(event) => handleChangeName(event)}
+              value={account.name}
+            ></input>
           </div>
-    
-        </Container>
-      );
-    };
+          <div>
+            
+            <label className="input-label">Username</label>
+            <input
+              className="account-input"
+              type="text"
+              placeholder="Enter username"
+              onChange={(event) => handleChangeUsername(event)}
+              value={account.username}
+            ></input>
+          </div>
+
+          <div>
+            <label className="input-label">Address</label>
+            <input
+              className="account-input"
+              type="address"
+              placeholder="Enter address"
+              onChange={(event) => handleChangeAddress(event)}
+              value={account.address}
+            ></input>
+          </div>
+
+          <div>
+            <label className="input-label">Email</label> 
+            <input
+              className="account-input"
+              type="email"
+              placeholder="Enter email address"
+              onChange={(event) => handleChangeEmail(event)}
+              value={account.email}
+            ></input>
+          </div>
+
+          <div>
+            <label className="input-label">Password</label> 
+            <input
+              className="account-input"
+              type="password"
+              placeholder="Enter password"
+              onChange={(event) => handleChangePassword(event)}
+              value={account.password}
+            ></input>
+          </div>
+
+          
+        
+
+        <div className="account-buttons">
+            <Button 
+            className="account-button"
+              onClick={submit}
+            >
+              Submit
+            </Button>
+            <Button 
+            className="account-button"
+            onClick={reset}>
+              Reset
+            </Button>
+          </div>
+
+          </Container>
+          
+  );
+};

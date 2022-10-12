@@ -17,3 +17,15 @@ export async function createAccount(
   
     return id[0].id;
   }
+
+
+  export async function getAccountById(id: number): Promise<Account[]> {
+    return (
+      await knex.raw(
+        "select * from account \
+        where id = " +
+          id
+      )
+    ).rows;
+  }
+  
