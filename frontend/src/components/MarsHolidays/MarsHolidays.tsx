@@ -1,23 +1,28 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AccountForm } from "../Account/AccountForm";
+import { LoginForm } from "../LoginForm/LoginForm";
 import "./MarsHolidays.scss";
 
 export function MarsHolidays() {
-  const [display, setDisplay] = useState(false);
+  const [displayAccountForm, setDisplayAccountForm] = useState(false);
+  const [displayLoginForm, setDisplayLoginForm] = useState(false);
 
   const createAccount = () => {
-    setDisplay(true);
+    setDisplayAccountForm(true);
+  };
+
+  const logIn = () => {
+    setDisplayLoginForm(true);
   };
 
   return (
     <div>
-        <button onClick={createAccount}>Create account</button>
-      <button>Log in</button>
-
-      {display === true ? (
+      {displayAccountForm === true ? (
         <div>
           <div className="ticket-container">
             <h2 className="ticket-title">Would you dare go to Mars?</h2>
+            <h4 className="ticket-subtitle">Create account or Log in to book yor ticket</h4>
             <img
               className="ticket-image-cropped"
               src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
@@ -26,14 +31,32 @@ export function MarsHolidays() {
           </div>
         </div>
       ) : (
+        displayLoginForm === true ? (
+          <div>
+            <div className="ticket-container">
+              <h2 className="ticket-title">Would you dare go to Mars?</h2>
+              <h4 className="ticket-subtitle">Create account or Log in to book yor ticket</h4>
+              <img
+                className="ticket-image-cropped"
+                src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
+              />
+              <LoginForm />
+            </div>
+          </div>
+        ) :
+      (
         <div className="ticket-container">
           <h2 className="ticket-title">Would you dare go to Mars?</h2>
+            <h4 className="ticket-subtitle"> 
+            <Link to='/mars-holidays'><button onClick={createAccount}>Create account</button> </Link> 
+            or  <Link to='/mars-holidays'><button onClick={logIn}>Log in</button> </Link>
+            to book your ticket to Mars </h4>
           <img
             className="ticket-image"
             src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
           />
         </div>
-      )}
+      ))}
     </div>
   );
 }
