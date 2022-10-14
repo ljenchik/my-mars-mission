@@ -106,8 +106,8 @@ export const AccountForm = () => {
               value={account.name}
             ></input>
           </div>
+          
           <div>
-            
             <label className="input-label">Username</label>
             <input
               className="account-input"

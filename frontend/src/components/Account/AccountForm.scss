@@ -1,5 +1,5 @@
 .title {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 100;
     color:  #d04a36;
     justify-content: center;
@@ -7,19 +7,18 @@
 }
 
 .account-form-container {
-    display: block;
     flex-direction: column;
     margin-top: 50px;
     margin-left: 20px;
     width: 100%;
+    display:block;
+    width: 75%;
 }
 
 .account-box {
     align-self: center;
     flex-direction: row;
-    justify-content: flex-start;
 }
-
 
 .account-input {
     width: 70vw;
@@ -30,19 +29,26 @@
 
 .input-label {
     color: white;
-    margin: 10px;
-    float: left
+    margin-left: 10px;
+    float: left;
 }
 
 .account-buttons {
     display: inline;
-    margin-top: 20px;
+    margin-top: 10px;
     float: right;
     padding: 7px;
     margin-right: 10px;
 }
 
 .account-button {
-    padding: 7px;
-    margin-right: 10px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.account-button:hover {
+   opacity: 0.5;
 }

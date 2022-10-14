@@ -6,7 +6,7 @@
 
 .ticket-title {
     text-align: center;
-    margin: 20px;
+    margin: 30px;
     color:  #d04a36;
     font-size: 30px;
     font-weight: 100;
@@ -16,21 +16,53 @@
     text-align: center;
     margin: 20px;
     padding-bottom: 20px;
-    color:  #d04a36;
+    color: #d04a36;
     font-size: 20px;
+    font-weight: 100;
+}
+
+.ticket-button-link {
+    background: #1c3148;
+    color: #d04a36;
+    border: none;
+    font-size: 20px;
+    padding: 0px;
+}
+
+.ticket-button-link:hover {
+    background: #1c3148;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.ticket-button {
+    float: right;
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.ticket-button:hover {
+    opacity: 0.5;
 }
 
 .ticket-image {
     align-self: center;
     width: 100%;
-    height: 60vw;
+    height: 50vw;
     object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .ticket-image-cropped {
     margin-top: 20px;
     align-self: center;
     width: 100%;
-    height: 20vw;
+    height: 30vw;
     object-fit: cover;
+    border-radius: 5px;
 }
