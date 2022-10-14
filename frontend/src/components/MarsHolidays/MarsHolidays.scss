@@ -14,7 +14,15 @@
 .ticket-image {
     align-self: center;
     width: 100%;
-    height: 200px;
+    height: 60vw;
+    object-fit: cover;
+    
+}
+
+.ticket-image-cropped {
+    align-self: center;
+    width: 100%;
+    height: 20vw;
     object-fit: cover;
     
 }

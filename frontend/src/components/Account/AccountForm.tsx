@@ -2,13 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createAccount } from "../../apiClient";
 import { Account } from "../../models";
-import "./Account.scss";
+import "./AccountForm.scss";
 import { Button, Container } from "react-bootstrap";
 
 export const AccountForm = () => {
+
   const [error, setError] = useState("");
   const [isDisabled, setDisabled] = useState(false);
   const navigate = useNavigate();
+  
   const [account, setAccount] = useState<Account>({
     id: null,
     name: "",

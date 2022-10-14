@@ -1,7 +1,16 @@
 import React, { useState } from "react";
+import { createTicket } from "../../apiClient";
+import { useNavigate } from "react-router-dom";
+import { Button, Container } from "react-bootstrap";
+import { Ticket } from "../../models";
 
 export const TicketForm = () => {
-  const [ticket, setTicket] = useState({
+  const [error, setError] = useState("");
+  const [isDisabled, setDisabled] = useState(false);
+  const navigate = useNavigate();
+
+  const [ticket, setTicket] = useState<Ticket>({
+    id: null,
     name: "",
     gender: "",
     dob: "",
@@ -11,60 +20,41 @@ export const TicketForm = () => {
     photo: "",
     flight_date: "",
     rover: "",
-    updated_at: "",
     created_at: "",
   });
 
-  const handleChangeName = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.name = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangeGender = (event: { target: { value: string; }; }) => {
+  const handleChangeGender = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.gender = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangeDob = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeDob = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.dob = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangeAddress = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.address = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangePhone = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.phone = event.target.value;
     setTicket({ ...ticket });
   };
-  const handleChangeEmail = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.email = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangePhoto = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangePhoto = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.photo = event.target.value;
     setTicket({ ...ticket });
-  };
-
-  const handleKeyPress = (event: { keyCode: number }) => {
-    if (event.keyCode === 13) {
-      submit();
-    }
   };
 
   const handleChangeFlightDate = (
@@ -74,15 +64,20 @@ export const TicketForm = () => {
     setTicket({ ...ticket });
   };
 
-  const handleChangeRover = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeRover = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.rover = event.target.value;
     setTicket({ ...ticket });
   };
 
+  const handleKeyPress = (event: { keyCode: number }) => {
+    if (event.keyCode === 13) {
+      submit();
+    }
+  };
+
   const reset = () => {
     setTicket({
+      id: null,
       name: "",
       gender: "",
       dob: "",
@@ -92,13 +87,15 @@ export const TicketForm = () => {
       flight_date: "",
       rover: "",
       photo: "",
-      updated_at: "",
       created_at: "",
     });
+    setError("");
+    setDisabled(false);
   };
 
   const submit = () => {
     const request = {
+      id: null,
       name: "",
       gender: "",
       dob: "",
@@ -108,21 +105,33 @@ export const TicketForm = () => {
       flight_date: "",
       photo: "",
       rover: "",
-      updated_at: "",
       created_at: "",
     };
 
-    // createTicket(request).then((response) =>
-    //       navigate(`/ticket/${response.id}`)
-    // );
-  
-  return (
-    <div>
+    request.name = ticket.name;
+    request.gender = ticket.gender;
+    request.dob = ticket.dob;
+    request.address = ticket.address;
+    request.email = ticket.email;
+    request.flight_date = ticket.flight_date;
+    request.photo = ticket.photo;
+    request.rover = ticket.rover;
+
+    createTicket(request).then((response) => {
+      if (!response.success) {
+        setError(response.error.slice(1, -1));
+      } else {
+        navigate(`/ticket/${response.ticket_id}`);
+      }
+    });
+  }
+
+    return (
+      <Container>
         <div>
           <label>Name</label>
           <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="text"
             style={{ width: "75%" }}
             placeholder="Enter name"
@@ -134,8 +143,15 @@ export const TicketForm = () => {
         <div>
           <label>Gender</label>
           <br />
-          <select
-            className="input-large-large search-query my-2 mb-3"
+
+          <input
+            type="text"
+            style={{ width: "75%" }}
+            onChange={(event) => handleChangeGender(event)}
+            value={ticket.gender}
+          ></input>
+
+          {/* <select
             style={{ width: "75%", height: "30px" }}
             onChange={handleChangeGender}
             value={ticket.gender}
@@ -143,13 +159,12 @@ export const TicketForm = () => {
             <option>Choose gender</option>
             <option>Female</option>
             <option>Male</option>
-          </select>
+          </select> */}
         </div>
 
         <div>
           <label>Date of birth</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="date"
             style={{ width: "75%" }}
             onChange={(event) => handleChangeDob(event)}
@@ -160,7 +175,6 @@ export const TicketForm = () => {
         <div>
           <label>Address</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="address"
             style={{ width: "75%" }}
             placeholder="Enter address"
@@ -172,7 +186,6 @@ export const TicketForm = () => {
         <div>
           <label>Phone</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="tel"
             style={{ width: "75%" }}
             placeholder="+44 xxxx xxxxxx"
@@ -184,7 +197,6 @@ export const TicketForm = () => {
         <div>
           <label>Email</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="email"
             style={{ width: "75%" }}
             placeholder="Enter email address"
@@ -196,7 +208,6 @@ export const TicketForm = () => {
         <div>
           <label>Photo (optional)</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="url"
             placeholder="https://example.com"
             pattern="https://.*"
@@ -209,7 +220,6 @@ export const TicketForm = () => {
         <div>
           <label>Flight date</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="date"
             style={{ width: "75%" }}
             onChange={(event) => handleChangeFlightDate(event)}
@@ -220,7 +230,6 @@ export const TicketForm = () => {
         <div>
           <label>Rover</label> <br />
           <input
-            className="input-large-large search-query my-2 mb-3"
             type="date"
             style={{ width: "75%" }}
             onChange={(event) => handleChangeRover(event)}
@@ -228,19 +237,8 @@ export const TicketForm = () => {
           ></input>
         </div>
 
-        <div className="d-flex flex-row">
-          <button
-            className="btn btn-success my-4"
-            onClick={submit}
-          >
-            Submit
-          </button>
-          <button className="mx-2 my-4" onClick={reset}>
-            Reset
-          </button>
-        </div>
-      
-      </div>
-  );
-  }
-}
+        <button onClick={submit}>Submit</button>
+        <button onClick={reset}>Reset</button>
+      </Container>
+    );
+};
