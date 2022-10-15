@@ -1,5 +1,19 @@
-.login-wrapper {
-    display: flex;
-    flex-direction: column;
+.login-title {
+    margin: 20px;
+    color:  #d04a36;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.login-input {
+    width: 30vw;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.login-button {
     align-items: center;
+    margin: 20px;
+    font-size: 16px;
 }

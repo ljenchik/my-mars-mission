@@ -2,18 +2,18 @@ import "./LoginForm.scss"
 
 export const LoginForm = () => {
   return(
-    <form>
+    <div>
       <label>
-        <p>Username</p>
-        <input type="text" />
+        <h3 className="login-title">Username</h3>
+        <input className="login-input" type="text" />
       </label>
       <label>
-        <p>Password</p>
-        <input type="password" />
+        <h3 className="login-title">Password</h3>
+        <input className="login-input" type="password" />
       </label>
       <div>
-        <button type="submit" >Submit</button>
+        <button className="login-button" type="submit" >Submit</button>
       </div>
-    </form>
+    </div>
   )
 }
