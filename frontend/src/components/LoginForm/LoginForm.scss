@@ -6,14 +6,26 @@
 }
 
 .login-input {
-    width: 30vw;
+    width: 70vw;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
 }
 
 .login-button {
-    align-items: center;
-    margin: 20px;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.login-form-image {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    align-self: center;
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    border-radius: 5px;
 }

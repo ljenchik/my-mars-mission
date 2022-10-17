@@ -8,7 +8,7 @@ import { Menu } from "./components/Menu/Menu";
 import  { LoginForm }  from "./components/LoginForm/LoginForm";
 import { AccountForm } from "./components/Account/AccountForm";
 import { UserProfile } from "./components/UserProfile/UserProfile";
-import { TicketForm } from "./components/TicketForm/TicketForm";
+// import { TicketForm } from "./components/TicketForm/TicketForm";
 
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
           <Route path="/learning-space" element={<LearningSpace />} />
           <Route path="/images" element={<ImageViewer />} />
           <Route path="/mars-holidays" element={<MarsHolidays />} />
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/account/login" element={<LoginForm />} />
+          <Route path="/account/create" element={<AccountForm />} />
           <Route path="/account/:id" element={<UserProfile />} />
         </Routes>
       </Router>

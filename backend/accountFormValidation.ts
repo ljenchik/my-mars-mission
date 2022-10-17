@@ -35,11 +35,11 @@ export function requestValidation(request: Account) {
     return { success: false, error: "Invalid email" };
   }
 
-  if (!emailFormat.test(request.hashed_password)) {
+  if (!request.hashed_password) {
     return { success: false, error: "Invalid password" };
   }
 
-  if (!emailFormat.test(request.salted_password)) {
+  if (!request.salted_password) {
     return { success: false, error: "Invalid password" };
   }
 
