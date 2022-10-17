@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { createAccount, getAccountById } from "./repos/accountRepo";
 import bcrypt from "bcrypt";
+import { requestValidation } from "./accountFormValidation";
 
 const router = express.Router();
 
@@ -16,14 +17,20 @@ router.post("/account/create", async (req: Request, res: Response) => {
       requestBody.hashed_password = hash;
     });
   });
-
-  try {
-    const accountId = await createAccount(requestBody);
-    return res.json({ success: true, id: accountId, error: "" });
-  } catch (error) {
-    res.status(500);
-    return res.send(error);
+  if (requestValidation(requestBody).success) {
+    try {
+    
+      const accountId = await createAccount(requestBody);
+      return res.json({ success: true, id: accountId, error: "" });
+    } catch (error) {
+      res.status(500);
+      return res.send(error);
+    }
   }
+  else {
+    return res.json({ success: false, id: "", error: requestValidation(requestBody).error});
+  }
+  
 });
 
 router.get("/account/:id(\\d+)", async (req: Request, res: Response) => {

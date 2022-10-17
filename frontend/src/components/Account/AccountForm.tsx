@@ -85,7 +85,7 @@ export const AccountForm = () => {
 
     createAccount(request).then((response) => {
       if (!response.success) {
-        setError(response.error.slice(1, -1));
+        setError(response.error);
       } else {
         navigate(`/account/${response.id}`);
       }
@@ -97,20 +97,34 @@ export const AccountForm = () => {
       <h3 className="title">Create account</h3>
           
           <div className="account-box" >
-            <label className="input-label">Name</label>
+            <label className={
+            error.includes('Enter name')
+                ? ("input-label highlight-error")
+                : "input-label"
+          }>Name</label>
             <input
-              className="account-input"
+              className={
+                error.includes('Enter name')
+                    ? ("account-input highlight-box") : "account-input"
+              }
               type="text"
               placeholder="Enter name"
               onChange={(event) => handleChangeName(event)}
               value={account.name}
-            ></input>
+            ></input> 
           </div>
           
           <div>
-            <label className="input-label">Username</label>
+            <label className={
+            error.includes('Enter username')
+                ? ("input-label highlight-error")
+                : "input-label"
+          }>Username</label>
             <input
-              className="account-input"
+              className={
+                error.includes('username')
+                    ? ("account-input highlight-box") : "account-input"
+              }
               type="text"
               placeholder="Enter username"
               onChange={(event) => handleChangeUsername(event)}
@@ -119,9 +133,16 @@ export const AccountForm = () => {
           </div>
 
           <div>
-            <label className="input-label">Address</label>
+            <label className={
+            error.includes('address')
+                ? ("input-label highlight-error")
+                : "input-label"
+          }>Address</label>
             <input
-              className="account-input"
+              className={
+                error.includes('address')
+                    ? ("account-input highlight-box") : "account-input"
+              }
               type="address"
               placeholder="Enter address"
               onChange={(event) => handleChangeAddress(event)}
@@ -130,9 +151,16 @@ export const AccountForm = () => {
           </div>
 
           <div>
-            <label className="input-label">Email</label> 
+            <label className={
+            error.includes('email')
+                ? ("input-label highlight-error")
+                : "input-label"
+          }>Email</label> 
             <input
-              className="account-input"
+              className={
+                error.includes('email')
+                    ? ("account-input highlight-box") : "account-input"
+              }
               type="email"
               placeholder="Enter email address"
               onChange={(event) => handleChangeEmail(event)}
@@ -141,18 +169,22 @@ export const AccountForm = () => {
           </div>
 
           <div>
-            <label className="input-label">Password</label> 
+            <label className={
+            error.includes('password')
+                ? ("input-label highlight-error")
+                : "input-label"
+          }>Password</label> 
             <input
-              className="account-input"
+              className={
+                error.includes('password')
+                    ? ("account-input highlight-box") : "account-input"
+              }
               type="password"
               placeholder="Enter password"
               onChange={(event) => handleChangePassword(event)}
               value={account.password}
             ></input>
           </div>
-
-          
-        
 
         <div className="account-buttons">
             <Button 
