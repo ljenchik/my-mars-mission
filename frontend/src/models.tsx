@@ -1,12 +1,16 @@
 export interface Account {
     id : number | null,
     name: string;
-    address: string;
     email: string;
-    username: string;
     password: string;
     created_at: string;
 }
+
+export interface Login {
+    email: string;
+    password: string;
+}
+
 
 export interface Ticket {
     id : number | null,

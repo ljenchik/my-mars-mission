@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { createAccount } from "../../apiClient";
 import { Account } from "../../models";
 import "./AccountForm.scss";
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export const AccountForm = () => {
   const [error, setError] = useState("");
@@ -13,25 +13,13 @@ export const AccountForm = () => {
   const [account, setAccount] = useState<Account>({
     id: null,
     name: "",
-    address: "",
     email: "",
-    username: "",
     password: "",
     created_at: "",
   });
 
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     account.name = event.target.value;
-    setAccount({ ...account });
-  };
-
-  const handleChangeUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
-    account.username = event.target.value;
-    setAccount({ ...account });
-  };
-
-  const handleChangeAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
-    account.address = event.target.value;
     setAccount({ ...account });
   };
 
@@ -45,19 +33,11 @@ export const AccountForm = () => {
     setAccount({ ...account });
   };
 
-  const handleKeyPress = (event: { keyCode: number }) => {
-    if (event.keyCode === 13) {
-      submit();
-    }
-  };
-
   const reset = () => {
     setAccount({
       id: null,
       name: "",
-      address: "",
       email: "",
-      username: "",
       password: "",
       created_at: "",
     });
@@ -69,16 +49,12 @@ export const AccountForm = () => {
     const request: Account = {
       id: null,
       name: "",
-      address: "",
       email: "",
-      username: "",
       password: "",
       created_at: "",
     };
 
     request.name = account.name;
-    request.username = account.username;
-    request.address = account.address;
     request.email = account.email;
     request.password = account.password;
 
@@ -86,7 +62,7 @@ export const AccountForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
-        navigate(`/account/${response.id}`);
+        navigate(`/account/login`);
       }
     });
   };
@@ -97,12 +73,14 @@ export const AccountForm = () => {
         className="account-form-image"
         src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
       />
+      
       <div>
         <h3 className="account-form-title">Create account</h3>
+        
         <label
           className={
             error.includes("Enter name")
-              ? "account-form-label highlight-error"
+              ? "account-form-label highlight-label"
               : "account-form-label"
           }
         >
@@ -119,53 +97,12 @@ export const AccountForm = () => {
             value={account.name}
           ></input>
         </label>
-
-        <label
-          className={
-            error.includes("Enter username")
-              ? "account-form-label highlight-error"
-              : "account-form-label"
-          }
-        >
-          <h3 className="account-form-label">Username</h3>
-          <input
-            className={
-              error.includes("username")
-                ? "account-form-input highlight-box"
-                : "account-form-input"
-            }
-            type="text"
-            placeholder="Enter username"
-            onChange={(event) => handleChangeUsername(event)}
-            value={account.username}
-          ></input>{" "}
-        </label>
-
-        <label
-          className={
-            error.includes("address")
-              ? "account-form-label highlight-error"
-              : "account-form-label"
-          }
-        >
-          <h3 className="account-form-label">Address</h3>
-        </label>
-        <input
-          className={
-            error.includes("address")
-              ? "account-form-input highlight-box"
-              : "account-form-input"
-          }
-          type="address"
-          placeholder="Enter address"
-          onChange={(event) => handleChangeAddress(event)}
-          value={account.address}
-        ></input>
+        
 
         <label
           className={
             error.includes("email")
-              ? "account-form-label highlight-error"
+              ? "account-form-label highlight-label"
               : "account-form-label"
           }
         >
@@ -186,14 +123,14 @@ export const AccountForm = () => {
         <label
           className={
             error.includes("password")
-              ? "account-form-label highlight-error"
+              ? "account-form-label highlight-label"
               : "account-form-label"
           }
         >
           <h3 className="account-form-label">Password</h3>
           <input
             className={
-              error ? "account-form-input highlight-box" : "account-form-input"
+              error.includes("password") ? "account-form-input highlight-box" : "account-form-input"
             }
             type="password"
             placeholder="Enter password"
@@ -202,7 +139,7 @@ export const AccountForm = () => {
           ></input>{" "}
         </label>
       </div>
-      <div className="account-form-buttons">
+      <div className="account-form-buttons flex">
           <Button className="account-form-button" onClick={submit}>
             Submit
           </Button>
@@ -210,6 +147,11 @@ export const AccountForm = () => {
             Reset
           </Button>
         </div>
+        {
+            error
+              ? <div className='account-form-error'>{error}</div>
+              : ""
+          }
     </div>
   );
 };

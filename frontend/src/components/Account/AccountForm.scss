@@ -41,12 +41,12 @@
    opacity: 0.5;
 }
 
-.highlight-error {
-    color: #d04a36;;
+.highlight-label {
+    color: #d04a36;
 }
 
 .highlight-box  {
-    border-color:#d04a36;;
+    border-color:#d04a36;
 }
 
 .account-form-image {
@@ -57,4 +57,9 @@
     height: 30vw;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.account-form-error {
+   color: #d04a36;
+   margin: 20px 10px;
 }
