@@ -2,7 +2,7 @@ import "./LoginForm.scss"
 import { useNavigate } from "react-router-dom";
 import { Login } from "../../models";
 import { useState } from "react";
-import { login } from "../../apiClient";
+import { getAccountById, login } from "../../apiClient";
 
 export const LoginForm = () => {
   const [user, setUser] = useState<Login>({
@@ -36,6 +36,7 @@ export const LoginForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
+        getAccountById(response.id)
         navigate(`/account/${response.id}`);
       }
     });
@@ -54,9 +55,15 @@ export const LoginForm = () => {
         <h3 className="login-title">Password</h3>
         <input className="login-input" type="password" onChange={handleChangePassword}/>
       </label>
+      
       <div>
         <button className="login-button" type="submit" onClick={submit}>Submit</button>
       </div>
+      {
+            error
+              ? <div className="login-form-error">{error}</div>
+              : ""
+          }
     </div>
   )
 }

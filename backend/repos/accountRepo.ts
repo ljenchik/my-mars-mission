@@ -14,14 +14,12 @@ export async function createAccount(account: Account): Promise<void> {
   return id[0].id;
 }
 
-export async function foundUser(email: string): Promise<Account[]> {
+export async function foundUser(email: string): Promise<any> {
   return (
     await knex.raw("SELECT * FROM account WHERE email=" + "'" + email + "'")
   ).rows;
 }
 
 export async function getAccountById(id: number): Promise<Account[]> {
-  return (await knex.raw("select * from account \
-        where id = " + id))
-    .rows;
+  return (await knex.raw("select * from account where id = " + id)).rows
 }

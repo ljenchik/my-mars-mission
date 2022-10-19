@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getAccountById } from "../../apiClient";
+import {useParams } from "react-router-dom";
+import { getAccountById} from "../../apiClient";
 import { Account } from "../../models";
 import { TicketForm } from "../TicketForm/TicketForm";
 import "./UserProfile.scss";
@@ -9,7 +9,6 @@ export function UserProfile() {
   const [account, setAccount] = useState<Account>();
   const params = useParams();
   const id = params.id;
-
   const [display, setDisplay] = useState(false);
 
   const createTicket = () => {

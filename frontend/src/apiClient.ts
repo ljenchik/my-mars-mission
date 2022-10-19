@@ -41,7 +41,6 @@ export async function createAccount(account: Account) {
 
 export async function login(login: Login) {
   try {
-    console.log(login)
     const response = await fetch(`${baseurl}/account/login`, {
       method: "POST",
       body: JSON.stringify(login),
