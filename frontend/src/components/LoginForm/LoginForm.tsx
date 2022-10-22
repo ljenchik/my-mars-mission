@@ -36,7 +36,7 @@ export const LoginForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
-        getAccountById(response.id)
+        localStorage.setItem("accessToken", response.accessToken)
         navigate(`/account/${response.id}`);
       }
     });

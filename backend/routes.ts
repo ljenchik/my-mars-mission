@@ -14,27 +14,37 @@ function generateAccessToken(account: any) {
 }
 
 // refreshTokens
-let refreshTokens: any = []
+let refreshTokens: any = [];
 function generateRefreshToken(account: any) {
-const refreshToken = jwt.sign(account, process.env.REFRESH_TOKEN_SECRET, {expiresIn: "20m"})
-refreshTokens.push(refreshToken)
-return refreshToken
+  const refreshToken = jwt.sign(account, process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: "20m",
+  });
+  refreshTokens.push(refreshToken);
+  return refreshToken;
 }
 
-function validateToken(req: { headers: { [x: string]: any; }; account: any; }, res: any, next: any) {
+function validateToken(
+  req: { headers: { [x: string]: any }; account: any },
+  res: any,
+  next: any
+) {
   //get token from request header
   const authHeader = req.headers["authorization"];
   const token = authHeader.split(" ")[1];
   //the request header contains the token "Bearer <token>", split the string and use the second value in the split array.
   if (token == null) res.sendStatus(400).send("Token not present");
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err: any, account: any) => {
-    if (err) {
-      res.status(403).send("Token invalid");
-    } else {
-      req.account = account;
-      next(); //proceed to the next action in the calling function
+  jwt.verify(
+    token,
+    process.env.ACCESS_TOKEN_SECRET,
+    (err: any, account: any) => {
+      if (err) {
+        res.status(403).send("Token invalid");
+      } else {
+        req.account = account;
+        next(); //proceed to the next action in the calling function
+      }
     }
-  }); //end of jwt.verify()
+  ); //end of jwt.verify()
 } //end of function
 
 router.post("/account/create", async (req: Request, res: Response) => {
@@ -86,30 +96,34 @@ router.post("/account/login", async (req, res) => {
       success: true,
       message: "Logged In!",
       id: foundAccount[0].id,
-      accessToken: accessToken, 
-      refreshToken: refreshToken
+      accessToken: accessToken,
+      refreshToken: refreshToken,
     });
   } else {
-    res.status(401).send("Password Incorrect!")
+    res.status(401).send("Password Incorrect!");
     return res.json({
       success: false,
       message: "Invalid username or password",
-      id: ""
-   });
+      id: "",
+    });
   }
 });
 
 router.get("/account/:id", validateToken, async (req: any, res: any) => {
-  console.log("Token is valid");
+  const email = req.account.foundAccount;
   const id = parseInt(req.params.id);
   try {
     const data = await getAccountById(id);
+    if (data.length !== 1 || data[0].email != email) {
+      res.status(403);
+      return res.send("Forbidden!");
+    }
+
     return res.json({ success: true, account: data, error: "" });
   } catch (error) {
     res.status(500);
     return res.send(error);
   }
 });
-
 
 export default router;

@@ -55,6 +55,7 @@ export async function login(login: Login) {
           success: true,
           error: data.message,
           id: data.id,
+          accessToken: data.accessToken
         };
       } else {
         return {
@@ -78,7 +79,15 @@ export async function login(login: Login) {
 
 export async function getAccountById(id: number) {
   try {
-    const response = await fetch(`${baseurl}/account/${id}`);
+    const response = await fetch(
+        `${baseurl}/account/${id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "BEARER " + localStorage.getItem('accessToken')
+          },
+        }
+      );
     if (response.ok) {
       const data = await response.json();
       if (data.success) {

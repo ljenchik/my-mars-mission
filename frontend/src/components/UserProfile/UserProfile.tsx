@@ -16,6 +16,7 @@ export function UserProfile() {
   };
 
   useEffect(() => {
+  const accessToken = localStorage.getItem("accessToken");
     getAccountById(Number(id)).then((response) => {
       response.account.created_at = response.account.created_at.split("T")[0];
       if (response.account.updated_at) {
