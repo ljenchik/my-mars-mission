@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {useParams } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 import { getAccountById} from "../../apiClient";
 import { Account } from "../../models";
 import { TicketForm } from "../TicketForm/TicketForm";
@@ -31,10 +31,13 @@ export function UserProfile() {
   } else {
     return (
       <div>
-        <h3 className="greeting">Hello {account.name}!</h3>
-        <button>Update profile</button>
+        <Link to={`/account/${id}/update`}> 
+        <img className="profile-image" src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"/>
+        </Link>
+       
 
-        <button onClick={createTicket}>Book ticket</button>
+        <h4 className="profile-greeting">Hello {account.name}!</h4>
+
         {display === true ? (
           <div>
             <div className="ticket-container">
@@ -53,6 +56,7 @@ export function UserProfile() {
               className="ticket-image"
               src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
             />
+          <button className="profile-button" onClick={createTicket}>Book ticket</button>
           </div>
         )}
       </div>

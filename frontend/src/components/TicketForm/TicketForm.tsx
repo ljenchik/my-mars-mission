@@ -3,6 +3,7 @@ import { createTicket } from "../../apiClient";
 import { useNavigate } from "react-router-dom";
 import { Button, Container } from "react-bootstrap";
 import { Ticket } from "../../models";
+import "./TicketForm.scss";
 
 export const TicketForm = () => {
   const [error, setError] = useState("");
@@ -127,118 +128,109 @@ export const TicketForm = () => {
   }
 
     return (
-      <Container>
-        <div>
-          <label>Name</label>
-          <br />
+      <div>
+    <div>
+          <label>
+            <h3 className="ticket-form-label">Name</h3>
           <input
+          className="ticket-form-input"
             type="text"
-            style={{ width: "75%" }}
             placeholder="Enter name"
             onChange={(event) => handleChangeName(event)}
             value={ticket.name}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Gender</label>
-          <br />
-
-          <input
-            type="text"
-            style={{ width: "75%" }}
-            onChange={(event) => handleChangeGender(event)}
-            value={ticket.gender}
-          ></input>
-
-          {/* <select
-            style={{ width: "75%", height: "30px" }}
-            onChange={handleChangeGender}
+          <label><h3 className="ticket-form-label">Gender</h3>
+          <select
+          className="ticket-form-input"
+            //onChange={handleChangeGender}
             value={ticket.gender}
           >
             <option>Choose gender</option>
             <option>Female</option>
             <option>Male</option>
-          </select> */}
-        </div>
+          </select>
+          </label>
 
-        <div>
-          <label>Date of birth</label> <br />
+          <label>
+                     
+          <h3 className="ticket-form-label">Date of birth</h3>
           <input
+          className="ticket-form-input"
             type="date"
-            style={{ width: "75%" }}
             onChange={(event) => handleChangeDob(event)}
             value={ticket.dob}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Address</label> <br />
+          <label>
+          <h3 className="ticket-form-label">Address</h3>
           <input
+          className="ticket-form-input"
             type="address"
-            style={{ width: "75%" }}
             placeholder="Enter address"
             onChange={(event) => handleChangeAddress(event)}
             value={ticket.address}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Phone</label> <br />
+          <label>
+          <h3 className="ticket-form-label">Phone</h3>
           <input
+          className="ticket-form-input"
             type="tel"
-            style={{ width: "75%" }}
             placeholder="+44 xxxx xxxxxx"
             onChange={(event) => handleChangePhone(event)}
             value={ticket.phone}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Email</label> <br />
+          <label>
+          <h3 className="ticket-form-label">Email</h3>
           <input
+          className="ticket-form-input"
             type="email"
-            style={{ width: "75%" }}
             placeholder="Enter email address"
             onChange={(event) => handleChangeEmail(event)}
             value={ticket.email}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Photo (optional)</label> <br />
+          <label>
+          <h3 className="ticket-form-label">Photo</h3>
           <input
+          className="ticket-form-input"
             type="url"
             placeholder="https://example.com"
             pattern="https://.*"
-            style={{ width: "75%" }}
             onChange={(event) => handleChangePhoto(event)}
             value={ticket.photo}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Flight date</label> <br />
+          <label>
+          <h3 className="ticket-form-label">Flight date</h3>
           <input
+          className="ticket-form-input"
             type="date"
-            style={{ width: "75%" }}
             onChange={(event) => handleChangeFlightDate(event)}
             value={ticket.flight_date}
           ></input>
-        </div>
+          </label>
 
-        <div>
-          <label>Rover</label> <br />
+          <label>
+          <h3 className="ticket-form-label">Rover</h3>
           <input
-            type="date"
-            style={{ width: "75%" }}
+          className="ticket-form-input"
             onChange={(event) => handleChangeRover(event)}
             value={ticket.rover}
           ></input>
+          </label>
         </div>
 
         <button onClick={submit}>Submit</button>
         <button onClick={reset}>Reset</button>
-      </Container>
+      </div>
     );
 };

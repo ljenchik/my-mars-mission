@@ -1,0 +1,175 @@
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
+.landing-page-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+header {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 27px;
+  color: white;
+}
+
+figure {
+  max-width: 75%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+
+.landing-page-image {
+  margin-top: 5rem;
+  width: 70%;
+  align-self: center;
+}
+
+h2 {
+  font-weight: 150;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.landing-page-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.landing-page-item {
+  align-self: center;
+  border: 2px double white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.landing-page-link {
+  text-decoration: none;
+  color: #d04a36;
+}
+
+.landing-page-link:hover {
+  color:white
+}
+
+.landing-page-icon-container {
+  color: whitesmoke;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* || EXTRA SMALL */
+@media screen and (max-width: 576px) {
+  .landing-page-item {
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  figure{
+      margin-top: 1.5rem;
+    }
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+  .landing-page-item {
+    justify-content: center;
+    font-size: larger;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+
+  .landing-page-icon-container {
+    display: none;
+  }
+}
+
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  .landing-page-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+}
+
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+  .landing-page-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+}
+/* || MOBILE DEVICE LANDSCAPE  */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  .landing-page-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: flex-end;
+  }
+
+
+  .landing-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  figure {
+    width: 40%;
+  }
+
+  .landing-page-item {
+    font-size: medium;
+    margin-top: 0;
+  }
+
+  
+}

@@ -1,5 +1,4 @@
 import { Account, Login } from "./models";
-
 const baseurl = process.env["REACT_APP_BACKEND_DOMAIN"];
 
 export async function createAccount(account: Account) {

@@ -97,10 +97,10 @@ router.post("/account/login", async (req, res) => {
       message: "Logged In!",
       id: foundAccount[0].id,
       accessToken: accessToken,
-      refreshToken: refreshToken,
+      refreshToken: refreshToken
     });
   } else {
-    res.status(401).send("Password Incorrect!");
+    //res.status(401).send("Password Incorrect!");
     return res.json({
       success: false,
       message: "Invalid username or password",

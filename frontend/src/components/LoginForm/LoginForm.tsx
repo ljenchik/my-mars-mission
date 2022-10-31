@@ -2,7 +2,7 @@ import "./LoginForm.scss"
 import { useNavigate } from "react-router-dom";
 import { Login } from "../../models";
 import { useState } from "react";
-import { getAccountById, login } from "../../apiClient";
+import { login } from "../../apiClient";
 
 export const LoginForm = () => {
   const [user, setUser] = useState<Login>({
