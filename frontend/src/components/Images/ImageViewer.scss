@@ -1,28 +1,38 @@
 .image-viewer {
   text-align: center;
-  padding: 10px;
 }
 
 .hero--header {
-  color: #d04a36;
-  font-size: 35px;
-  margin-top: 40px;
+  color: white;
+  font-size: 28px;
+  margin: 2rem 0;
+  padding: 1rem;
 }
 
 .hero--date-text-container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  margin-top: 20px;
-  
+  gap: 1rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+input {
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  font-family: sans-serif;
+  font-size: medium;
 }
 
 .hero--text {
   color:white;
-  font-size: 15px;
-  padding-left: 10px;
-  font-weight: 300;
-  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 100;
 }
 
 .hero--no-images-text {
@@ -40,7 +50,6 @@
   margin-top: 50px;
 }
 
-
 .carousel .thumb {
   border: 3px solid  #1c3148 !important;
   border-radius: 5px;
@@ -51,13 +60,64 @@
   border-radius: 5px;
 }
 
-
 .carousel-root {
-  padding-top: 30px;
+  padding-top: 1.5rem;
 }
 
-@media only screen and (max-width: 600px) {
-  .carousel-wrapper{
-    max-width: 100%;
+/* || EXTRA SMALL */
+@media screen and (max-width: 576px) {
+  .hero--text {
+    font-size: medium;
+    text-align: center;
   }
+
+  input {
+    text-align: center;
+    font-size: smaller;
+  }
+
+  .carousel .control-dots {
+    display: none;
+  }
+
 }
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+  .hero--text {
+    font-size: medium;
+    text-align: center;
+  }
+
+  input {
+    text-align: center;
+    font-size: smaller;
+  }
+
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  .carousel .thumbs-wrapper{
+    position: fixed;
+    bottom: 0;
+  }
+ 
+  .carousel .control-dots {
+    display: none;
+  }
+
+  input {
+    text-align: center;
+    font-size: medium;
+    padding: 0.5rem;
+  }
+  .hero--text {
+    font-size: larger;
+    text-align: center;
+  }
+
+  
+}
+
+

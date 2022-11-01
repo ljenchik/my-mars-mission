@@ -54,7 +54,7 @@ export function ImageViewer() {
   if (!urls) {
     return (
       <div className="image-viewer">
-        <h1 className="hero--header">Mars Perseverance Rover Images</h1>
+        <h1 className="hero--header">Perseverance Rover Mars Images</h1>
         <div className="hero--date-text-container">
           <h3 className="hero--text">
             Choose a date to see images taken on this day
@@ -72,7 +72,7 @@ export function ImageViewer() {
   } else if (message !== "") {
     return (
       <div className="image-viewer">
-        <div className="hero--header">Mars Perseverance Rover Images</div>
+        <div className="hero--header">Perseverance Rover Mars Images</div>
         <div className="hero--date-text-container">
           <h3 className="hero--text">
             Choose a date to see images taken on this day
@@ -94,14 +94,14 @@ export function ImageViewer() {
   } else {
     return (
       <div className="image-viewer">
-        <div className="hero--header">Mars Perseverance Rover Images</div>
+        <div className="hero--header"><span className="nowrap">Perseverance Rover</span> <span className="nowrap">Mars Images</span></div>
         <div className="hero--date-text-container">
           <h3 className="hero--text">
-            Choose a date to see images taken on this day
+            Choose a date to see images <span className="nowrap">taken on this day</span>
           </h3>
           <input type="date" min={minDate} onChange={handleChange} value={selectedDate} />
         </div>
-        <Carousel
+        <Carousel className="carousel"
           infiniteLoop={true}
           selectedItem={currentSlide}
           onChange={(index) => setCurrentSlide(index)}

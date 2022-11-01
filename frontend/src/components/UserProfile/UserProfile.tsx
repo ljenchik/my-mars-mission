@@ -46,7 +46,7 @@ export function UserProfile() {
                 className="ticket-image-cropped"
                 src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
               />
-              <TicketForm />
+              <TicketForm />   
             </div>
           </div>
         ) : (
