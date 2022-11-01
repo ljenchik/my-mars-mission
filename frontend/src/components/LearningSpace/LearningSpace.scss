@@ -1,51 +1,67 @@
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
 .main-container {
-  margin: 20px;
-  display: inline;
   display: flex;     
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 .question {
   text-align: center;
-  border: 2px solid #d04a36;
-  padding: 10px;
-  width: 80%;
-  margin: 10px auto;
+  border: 2px double #d04a36;
   border-radius: 5px;
-  color: white
+  color: white;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 .question-title {
   font-size: 30px;
   font-weight: 100;
+  padding: 0.5rem;
 }
-
 
 .question-image {
-  width: 70vw;
-  margin: 10px;
+  width: 70%;
+  border-radius: 5px;
 }
 
-
 .information {
-  border: 2px solid  #d04a36;;
+  border: 2px double  #d04a36;;
   text-align: center;
-  padding: 10px;
-  width: 80%;
-  margin: 10px auto;
+  padding: 1rem;
   border-radius: 5px;
   color: white;
+}
+.answers-container {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .answer {
-  border: 2px solid  #d04a36;
+  border: 2px double  #d04a36;
+  width: 50vw;
   text-align: center;
-  padding: 10px;
-  margin: 10px auto;
+  padding: 0.5rem;
+  margin: 0.5rem auto;
   border-radius: 5px;
   color: white;
-  width: 50%;
-  
+  background-color: #1c3148;
 }
 
 .highlight-correct {
@@ -58,44 +74,32 @@
   border: 2px solid  red;
 }
 
-.answers-container {
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-button.answer {
-  background-color: #1c3148;
-}
-
 .container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: nowrap;
   width: 100%;
-  margin-top: auto;
-  align-self: flex-end;
+  justify-content: space-between;
+  margin: 1rem;
 }
 
 .previous-button {
-  margin-left: 20px;
-  font-size: 20px;
+  font-size: inherit;
+  padding: 0.5rem;
   border-radius: 5px;
   border-style: none;
-  
 }
 
 .next-button {
-  margin-right: 20px;
-  font-size: 20px;
+  font-size: inherit;
   border-radius: 5px;
   border-style: none;
- 
+  padding: 0.5rem;
 }
 
 .count {
-  flex-grow: 4; 
-  font-size: 20px;
+  font-size: inherit;
   color: white;
-  flex-basis: auto;
 }
 
