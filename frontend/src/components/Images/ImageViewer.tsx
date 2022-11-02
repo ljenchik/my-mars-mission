@@ -60,6 +60,7 @@ export function ImageViewer() {
             Choose a date to see images taken on this day
           </h3>
           <input
+            className="hero-input"
             type="date"
             onChange={handleChange}
             min={minDate}
@@ -74,15 +75,21 @@ export function ImageViewer() {
       <div className="image-viewer">
         <div className="hero--header">Perseverance Rover Mars Images</div>
         <div className="hero--date-text-container">
+          <div>
           <h3 className="hero--text">
             Choose a date to see images taken on this day
           </h3>
+          </div>
+          <div>
           <input
+          className="hero-input"
             type="date"
             onChange={handleChange}
             min={minDate}
             value={selectedDate}
           />
+          </div>
+          
         </div>
         <h3 className="hero--no-images-text">{message}</h3>
         <img
@@ -99,7 +106,7 @@ export function ImageViewer() {
           <h3 className="hero--text">
             Choose a date to see images <span className="nowrap">taken on this day</span>
           </h3>
-          <input type="date" min={minDate} onChange={handleChange} value={selectedDate} />
+          <input className="hero-input" type="date" min={minDate} onChange={handleChange} value={selectedDate} />
         </div>
         <Carousel className="carousel"
           infiniteLoop={true}

@@ -1,41 +1,41 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AccountForm } from "../Account/AccountForm";
-import { LoginForm } from "../LoginForm/LoginForm";
 import "./MarsHolidays.scss";
 
 export function MarsHolidays() {
 return (
-    <div className="ticket-container">
-      <h2 className="ticket-title">Would you dare go to Mars?</h2>
-      <h4 className="ticket-subtitle">
+    <div className="mars-holidays-container">
+      <h2 className="mars-holidays-title"><span className="nowrap">Would you dare</span> <span className="nowrap">go to Mars?</span></h2>
+      <h3 className="mars-holidays-subtitle">
         <Link to="/account/create">
-          <button className="ticket-button-link" >
+          <button className="mars-holidays-button-link" >
             Create account
           </button>
         </Link>{" "}
         or{" "}
         <Link to="/account/login">
-          <button className="ticket-button-link" >
+          <button className="mars-holidays-button-link" >
             Log in
           </button>
         </Link>{" "}
-        to book your ticket to Mars
-      </h4>
+        to book <span className="nowrap">your ticket to Mars</span>
+      </h3>
       <img
-        className="ticket-image"
+        className="mars-holidays-image"
         src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
       />
-      <Link to="/account/login">
-        <button className="ticket-button">
-          Log in
-        </button>
-      </Link>
+      <div className="mars-holidays-button-container">
       <Link to="/account/create">
-        <button className="ticket-button">
-          Create account
+        <button className="mars-holidays-button">
+        Create account
         </button>
       </Link>
+      <Link to="/account/login">
+        <button className="mars-holidays-button">
+        Log in
+        </button>
+      </Link>
+      </div>
     </div>
   );
 }

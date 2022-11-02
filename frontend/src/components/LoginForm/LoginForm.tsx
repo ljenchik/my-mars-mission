@@ -34,7 +34,8 @@ export const LoginForm = () => {
     login(request).then((response) => {
       console.log(response)
       if (!response.success) {
-        setError(response.error);
+        setError(response.error.message);
+        console.log(error)
       } else {
         localStorage.setItem("accessToken", response.accessToken)
         navigate(`/account/${response.id}`);
@@ -43,17 +44,18 @@ export const LoginForm = () => {
   };
   
   return(
-    <div>
+    <div className="login-container">
       <img className="login-form-image"
         src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
       />
+      <h2>Log in</h2>
       <label>
-        <h3 className="login-title">Email</h3>
-        <input className="login-input" type="text" onChange={handleChangeEmail} />
+        <h4>Email</h4>
+        <input className="login-input" type="text" placeholder="Enter email" onChange={handleChangeEmail} />
       </label>
       <label>
-        <h3 className="login-title">Password</h3>
-        <input className="login-input" type="password" onChange={handleChangePassword}/>
+        <h4>Password</h4>
+        <input className="login-input" type="password" placeholder="Enter password" onChange={handleChangePassword}/>
       </label>
       
       <div>

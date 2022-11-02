@@ -9,6 +9,7 @@ import { LoginForm } from "./components/LoginForm/LoginForm";
 import { AccountForm } from "./components/Account/AccountForm";
 import { UserProfile } from "./components/UserProfile/UserProfile";
 import { UpdateProfile } from "./components/UpdateForm/UpdateProfile";
+import { TicketForm } from "./components/TicketForm/TicketForm";
 // import { TicketForm } from "./components/TicketForm/TicketForm";
 
 function App() {
@@ -29,6 +30,12 @@ function App() {
             path="/account/:id"
             element={
                 <UserProfile />
+            }
+          />
+          <Route
+            path="/account/:id/ticket"
+            element={
+                <TicketForm />
             }
           />
           <Route path="/account/:id/update" element={<UpdateProfile />} />

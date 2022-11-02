@@ -11,22 +11,22 @@
 
 .hero--date-text-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .nowrap {
   white-space: nowrap;
 }
 
-input {
-  width: 50%;
+.hero-input {
   text-align: center;
   border-radius: 5px;
   border: none;
   font-family: sans-serif;
-  font-size: medium;
+  font-size: inherit;
+  padding: 0.5rem;
 }
 
 .hero--text {
@@ -68,11 +68,9 @@ input {
 @media screen and (max-width: 576px) {
   .hero--text {
     font-size: medium;
-    text-align: center;
   }
 
-  input {
-    text-align: center;
+  .hero-input  {
     font-size: smaller;
   }
 
@@ -89,7 +87,7 @@ input {
     text-align: center;
   }
 
-  input {
+  .hero-input  {
     text-align: center;
     font-size: smaller;
   }
@@ -107,11 +105,12 @@ input {
     display: none;
   }
 
-  input {
+  .hero-input  {
     text-align: center;
     font-size: medium;
     padding: 0.5rem;
   }
+  
   .hero--text {
     font-size: larger;
     text-align: center;

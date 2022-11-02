@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {Link, useParams } from "react-router-dom";
+import {Link, useNavigate, useParams } from "react-router-dom";
 import { getAccountById} from "../../apiClient";
 import { Account } from "../../models";
 import { TicketForm } from "../TicketForm/TicketForm";
@@ -10,9 +10,10 @@ export function UserProfile() {
   const params = useParams();
   const id = params.id;
   const [display, setDisplay] = useState(false);
+  const navigate = useNavigate();
 
   const createTicket = () => {
-    setDisplay(true);
+    navigate(`/account/${id}/ticket`);
   };
 
   useEffect(() => {
@@ -27,39 +28,44 @@ export function UserProfile() {
   }, []);
 
   if (!account) {
-    return (<h3 className="greeting">Data is loading ...</h3>);
+    return (<h3>Data is loading ...</h3>);
   } else {
     return (
-      <div>
+      <section>
         <Link to={`/account/${id}/update`}> 
         <img className="profile-image" src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"/>
         </Link>
-       
-
-        <h4 className="profile-greeting">Hello {account.name}!</h4>
 
         {display === true ? (
           <div>
-            <div className="ticket-container">
-              <h2 className="ticket-title">Would you dare go to Mars?</h2>
-              <img
-                className="ticket-image-cropped"
-                src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
-              />
+             <h2>{account.name}, enter your details</h2>
+            <div className="profile-container">
               <TicketForm />   
             </div>
           </div>
         ) : (
-          <div className="ticket-container">
-            <h2 className="ticket-title">Would you dare go to Mars?</h2>
+          <div className="profile-container">
+             <h2>Hello {account.name}!</h2>
+            <h4>Would you dare <span className="nowrap">go to Mars?</span></h4>
             <img
-              className="ticket-image"
+              className="profile-ticket-image-cropped"
               src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
             />
           <button className="profile-button" onClick={createTicket}>Book ticket</button>
+
+          <img
+              className="profile-ticket-image-cropped"
+              src="https://media.cnn.com/api/v1/images/stellar/prod/220713151211-01-perseverance-rover-scouting-mission.jpg?c=16x9&q=h_720,w_1280,c_fill"
+            />
+          
           </div>
         )}
-      </div>
+          
+      </section>
+
+      
+      
+
     );
   }
 }

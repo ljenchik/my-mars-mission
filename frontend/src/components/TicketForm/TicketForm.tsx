@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import { createTicket } from "../../apiClient";
-import { useNavigate } from "react-router-dom";
-import { Button, Container } from "react-bootstrap";
-import { Ticket } from "../../models";
+import React, { useEffect, useState } from "react";
+import { createTicket, getAccountById } from "../../apiClient";
+import { useNavigate, useParams } from "react-router-dom";
+import { Account, Ticket } from "../../models";
 import "./TicketForm.scss";
 
 export const TicketForm = () => {
   const [error, setError] = useState("");
   const [isDisabled, setDisabled] = useState(false);
   const navigate = useNavigate();
+  const params = useParams();
+  const id = params.id;
+  const [account, setAccount] = useState<Account>();
 
   const [ticket, setTicket] = useState<Ticket>({
     id: null,
@@ -23,6 +25,17 @@ export const TicketForm = () => {
     rover: "",
     created_at: "",
   });
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+      getAccountById(Number(id)).then((response) => {
+        response.account.created_at = response.account.created_at.split("T")[0];
+        if (response.account.updated_at) {
+          response.account.updated_at = response.account.updated_at.split("T")[0];
+        }
+        setAccount(response.account);
+      });
+    }, []);
 
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.name = event.target.value;
@@ -128,10 +141,10 @@ export const TicketForm = () => {
   }
 
     return (
-      <div>
-    <div>
+      <div className="ticket-form-container">
+        <h2>Dear {account?.name}, fill in all required details</h2>
           <label>
-            <h3 className="ticket-form-label">Name</h3>
+            <h4>Name</h4>
           <input
           className="ticket-form-input"
             type="text"
@@ -141,7 +154,7 @@ export const TicketForm = () => {
           ></input>
           </label>
 
-          <label><h3 className="ticket-form-label">Gender</h3>
+          <label><h4>Gender</h4>
           <select
           className="ticket-form-input"
             //onChange={handleChangeGender}
@@ -155,7 +168,7 @@ export const TicketForm = () => {
 
           <label>
                      
-          <h3 className="ticket-form-label">Date of birth</h3>
+          <h4>Date of birth</h4>
           <input
           className="ticket-form-input"
             type="date"
@@ -165,7 +178,7 @@ export const TicketForm = () => {
           </label>
 
           <label>
-          <h3 className="ticket-form-label">Address</h3>
+          <h4>Address</h4>
           <input
           className="ticket-form-input"
             type="address"
@@ -176,7 +189,7 @@ export const TicketForm = () => {
           </label>
 
           <label>
-          <h3 className="ticket-form-label">Phone</h3>
+          <h4>Phone</h4>
           <input
           className="ticket-form-input"
             type="tel"
@@ -187,7 +200,7 @@ export const TicketForm = () => {
           </label>
 
           <label>
-          <h3 className="ticket-form-label">Email</h3>
+          <h4>Email</h4>
           <input
           className="ticket-form-input"
             type="email"
@@ -198,7 +211,7 @@ export const TicketForm = () => {
           </label>
 
           <label>
-          <h3 className="ticket-form-label">Photo</h3>
+          <h4>Photo</h4>
           <input
           className="ticket-form-input"
             type="url"
@@ -210,7 +223,7 @@ export const TicketForm = () => {
           </label>
 
           <label>
-          <h3 className="ticket-form-label">Flight date</h3>
+          <h4>Flight date</h4>
           <input
           className="ticket-form-input"
             type="date"
@@ -220,17 +233,17 @@ export const TicketForm = () => {
           </label>
 
           <label>
-          <h3 className="ticket-form-label">Rover</h3>
+          <h4>Rover</h4>
           <input
           className="ticket-form-input"
             onChange={(event) => handleChangeRover(event)}
             value={ticket.rover}
           ></input>
           </label>
+        <div className="ticket-form-buttons-container">
+         <button className="ticket-form-button" onClick={submit}>Submit</button>
+         <button className="ticket-form-button" onClick={reset}>Reset</button>
         </div>
-
-        <button onClick={submit}>Submit</button>
-        <button onClick={reset}>Reset</button>
       </div>
     );
 };

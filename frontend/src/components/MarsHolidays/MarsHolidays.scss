@@ -1,35 +1,45 @@
-.ticket-container {
+/* || RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* || GENERAL STYLES */
+  html {
+      scroll-behavior: smooth;
+  }
+
+.mars-holidays-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     text-align: center;
-    padding: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1rem;
 }
 
-.ticket-title {
-    text-align: center;
-    margin: 30px;
-    color:  #d04a36;
+.mars-holidays-title {
+    margin: 2rem;
+    color:  white;
     font-size: 30px;
-    font-weight: 100;
 }
 
-.ticket-subtitle {
-    text-align: center;
-    margin: 20px;
-    padding-bottom: 20px;
-    color: #d04a36;
+.mars-holidays-subtitle {
+    margin: 1rem;
+    padding-bottom: 1rem;
+    color: white;
     font-size: 20px;
     font-weight: 100;
 }
 
-.ticket-button-link {
+.mars-holidays-button-link {
     background: #1c3148;
     color: #d04a36;
     border: none;
     font-size: 20px;
-    padding: 0px;
 }
 
-.ticket-button-link:hover {
+.mars-holidays-button-link:hover {
     background: #1c3148;
     color: white;
     border: none;
@@ -37,19 +47,12 @@
     cursor: pointer;
 }
 
-.ticket-button {
-    float: right;
-    padding: 10px;
-    margin: 5px;
-    font-size: 14px;
-    border-radius: 5px;
-}
 
 .ticket-button:hover {
     opacity: 0.5;
 }
 
-.ticket-image {
+.mars-holidays-image {
     align-self: center;
     width: 100%;
     height: 50vw;
@@ -58,11 +61,29 @@
     border-radius: 5px;
 }
 
-.ticket-image-cropped {
+.mars-holidays-image-cropped {
     margin-top: 20px;
     align-self: center;
     width: 100%;
     height: 30vw;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.mars-holidays-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: inherit;
+    border: none;
+    border-radius: 5px;
+    margin: 1rem;
+    gap: 0.8rem;
+}
+
+.mars-holidays-button {
+    font-size: inherit;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-style: none;
 }

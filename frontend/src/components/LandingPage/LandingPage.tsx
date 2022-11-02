@@ -21,10 +21,10 @@ export function LandingPage() {
         />
       </figure>
 
-      <h2>
+      <h4>
         <span className="nowrap">Where would you</span>{" "}
         <span className="nowrap">like to land?</span>
-      </h2>
+      </h4>
 
       <div className="landing-page-container">
         <div className="landing-page-item">

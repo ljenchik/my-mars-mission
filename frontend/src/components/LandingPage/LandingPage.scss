@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /* || RESET */
 * {
   margin: 0;
@@ -17,6 +19,7 @@ html {
   padding: 1rem;
   margin: 1rem;
   gap: 1rem;
+  font-family: "Roboto", serif;
 }
 
 header {
@@ -25,13 +28,14 @@ header {
   top: 0;
   padding: 1rem;
   margin-top: 2rem;
-}
-
-h1 {
-  font-weight: 200;
-  font-size: 27px;
   color: white;
 }
+
+// h1 {
+//   font-weight: 200;
+//   font-size: 27px;
+//   color: white;
+// }
 
 figure {
   max-width: 75%;
@@ -48,7 +52,7 @@ figure {
   align-self: center;
 }
 
-h2 {
+h4 {
   font-weight: 150;
   font-size: 20px;
   color: white;
