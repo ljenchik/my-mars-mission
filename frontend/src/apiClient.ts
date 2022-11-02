@@ -49,16 +49,17 @@ export async function login(login: Login) {
     });
     if (response.ok) {
       const data = await response.json();
+      console.log(data)
       if (data.success) {
         return {
-          success: true,
+          success: data.success,
           error: data.message,
           id: data.id,
           accessToken: data.accessToken
         };
       } else {
         return {
-          success: false,
+          success: data.success,
           error: data.message,
           id: "",
         };
@@ -66,13 +67,13 @@ export async function login(login: Login) {
     } else {
       const error = await response.text();
       return {
-        success: false,
+        succes: false,
         error: error,
         id: "",
       };
     }
   } catch (e) {
-    return { success: false, error: e, id: "" };
+    return { succes: false, error: e, id: "" };
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { DetailedHTMLProps, useEffect, useState } from "react";
 import { createTicket, getAccountById } from "../../apiClient";
 import { useNavigate, useParams } from "react-router-dom";
 import { Account, Ticket } from "../../models";
@@ -11,6 +11,12 @@ export const TicketForm = () => {
   const params = useParams();
   const id = params.id;
   const [account, setAccount] = useState<Account>();
+  var date = new Date();
+  console.log(date)
+
+  var date_1 = new Date(date.setMonth(date.getMonth()+ 6));
+  var date_2 = new Date(date.setMonth(date.getMonth()+ 12));
+  var date_3 = new Date(date.setMonth(date.getMonth()+ 20));
 
   const [ticket, setTicket] = useState<Ticket>({
     id: null,
@@ -28,21 +34,21 @@ export const TicketForm = () => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
-      getAccountById(Number(id)).then((response) => {
-        response.account.created_at = response.account.created_at.split("T")[0];
-        if (response.account.updated_at) {
-          response.account.updated_at = response.account.updated_at.split("T")[0];
-        }
-        setAccount(response.account);
-      });
-    }, []);
+    getAccountById(Number(id)).then((response) => {
+      response.account.created_at = response.account.created_at.split("T")[0];
+      if (response.account.updated_at) {
+        response.account.updated_at = response.account.updated_at.split("T")[0];
+      }
+      setAccount(response.account);
+    });
+  }, []);
 
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.name = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangeGender = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeGender = (event: React.ChangeEvent<HTMLSelectElement>) => {
     ticket.gender = event.target.value;
     setTicket({ ...ticket });
   };
@@ -72,13 +78,13 @@ export const TicketForm = () => {
   };
 
   const handleChangeFlightDate = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     ticket.flight_date = event.target.value;
     setTicket({ ...ticket });
   };
 
-  const handleChangeRover = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeRover = (event: React.ChangeEvent<HTMLSelectElement>) => {
     ticket.rover = event.target.value;
     setTicket({ ...ticket });
   };
@@ -138,112 +144,124 @@ export const TicketForm = () => {
         navigate(`/ticket/${response.ticket_id}`);
       }
     });
-  }
+  };
 
-    return (
-      <div className="ticket-form-container">
-        <h2>Dear {account?.name}, fill in all required details</h2>
-          <label>
-            <h4>Name</h4>
-          <input
+  return (
+    <div className="ticket-form-container">
+      <p className="title">Dear {account?.name}, fill in all required details</p>
+      <label>
+        <p className="ticket-form-label">Name</p>
+        <input
           className="ticket-form-input"
-            type="text"
-            placeholder="Enter name"
-            onChange={(event) => handleChangeName(event)}
-            value={ticket.name}
-          ></input>
-          </label>
+          type="text"
+          placeholder="Enter name"
+          onChange={(event) => handleChangeName(event)}
+          value={ticket.name}
+        ></input>
+      </label>
 
-          <label><h4>Gender</h4>
-          <select
+      <label>
+      <p className="ticket-form-label">Gender</p>
+        <select
           className="ticket-form-input"
-            //onChange={handleChangeGender}
-            value={ticket.gender}
-          >
-            <option>Choose gender</option>
-            <option>Female</option>
-            <option>Male</option>
+          onChange={(event) => handleChangeGender(event)}
+          value={ticket.gender}
+        >
+          <option>Choose gender</option>
+          <option>Female</option>
+          <option>Male</option>
+        </select>
+      </label>
+
+      <label>
+      <p className="ticket-form-label">Date of birth</p>
+        <input
+          className="ticket-form-input"
+          type="date"
+          onChange={(event) => handleChangeDob(event)}
+          value={ticket.dob}
+        ></input>
+      </label>
+
+      <label>
+      <p className="ticket-form-label">Address</p>
+        <input
+          className="ticket-form-input"
+          type="address"
+          placeholder="Enter address"
+          onChange={(event) => handleChangeAddress(event)}
+          value={ticket.address}
+        ></input>
+      </label>
+
+      <label>
+      <p className="ticket-form-label">Phone</p>
+        <input
+          className="ticket-form-input"
+          type="tel"
+          placeholder="+44 xxxx xxxxxx"
+          onChange={(event) => handleChangePhone(event)}
+          value={ticket.phone}
+        ></input>
+      </label>
+
+      <label>
+      <p className="ticket-form-label">Email</p>
+        <input
+          className="ticket-form-input"
+          type="email"
+          placeholder="Enter email address"
+          onChange={(event) => handleChangeEmail(event)}
+          value={ticket.email}
+        ></input>
+      </label>
+
+      <label>
+      <p className="ticket-form-label">Photo</p>
+        <input
+          className="ticket-form-input"
+          type="url"
+          placeholder="https://example.com"
+          pattern="https://.*"
+          onChange={(event) => handleChangePhoto(event)}
+          value={ticket.photo}
+        ></input>
+      </label>
+
+      <label>
+      <p className="ticket-form-label">Flight date</p>
+        <select
+          className="ticket-form-input"
+          onChange={(event) => handleChangeFlightDate(event)}
+          value={ticket.flight_date}
+        >
+          <option>Choose flight date</option>
+          <option>{date_1.toLocaleDateString()}</option>
+          <option>{date_2.toLocaleDateString()}</option>
+          <option>{date_3.toLocaleDateString()}</option>
           </select>
-          </label>
+      </label>
 
-          <label>
-                     
-          <h4>Date of birth</h4>
-          <input
+      <label>
+      <p className="ticket-form-label">Rover</p>
+        <select
           className="ticket-form-input"
-            type="date"
-            onChange={(event) => handleChangeDob(event)}
-            value={ticket.dob}
-          ></input>
-          </label>
-
-          <label>
-          <h4>Address</h4>
-          <input
-          className="ticket-form-input"
-            type="address"
-            placeholder="Enter address"
-            onChange={(event) => handleChangeAddress(event)}
-            value={ticket.address}
-          ></input>
-          </label>
-
-          <label>
-          <h4>Phone</h4>
-          <input
-          className="ticket-form-input"
-            type="tel"
-            placeholder="+44 xxxx xxxxxx"
-            onChange={(event) => handleChangePhone(event)}
-            value={ticket.phone}
-          ></input>
-          </label>
-
-          <label>
-          <h4>Email</h4>
-          <input
-          className="ticket-form-input"
-            type="email"
-            placeholder="Enter email address"
-            onChange={(event) => handleChangeEmail(event)}
-            value={ticket.email}
-          ></input>
-          </label>
-
-          <label>
-          <h4>Photo</h4>
-          <input
-          className="ticket-form-input"
-            type="url"
-            placeholder="https://example.com"
-            pattern="https://.*"
-            onChange={(event) => handleChangePhoto(event)}
-            value={ticket.photo}
-          ></input>
-          </label>
-
-          <label>
-          <h4>Flight date</h4>
-          <input
-          className="ticket-form-input"
-            type="date"
-            onChange={(event) => handleChangeFlightDate(event)}
-            value={ticket.flight_date}
-          ></input>
-          </label>
-
-          <label>
-          <h4>Rover</h4>
-          <input
-          className="ticket-form-input"
-            onChange={(event) => handleChangeRover(event)}
-            value={ticket.rover}
-          ></input>
-          </label>
-        <div className="ticket-form-buttons-container">
-         <button className="ticket-form-button" onClick={submit}>Submit</button>
-         <button className="ticket-form-button" onClick={reset}>Reset</button>
-        </div>
+          onChange={(event) => handleChangeRover(event)}
+          value={ticket.rover}
+        >
+          <option>Choose rover</option>
+          <option>Perceverance</option>
+          <option>Curiocity</option>
+          </select>
+      </label>
+      <div className="ticket-form-buttons-container">
+        <button className="ticket-form-button" onClick={submit}>
+          Submit
+        </button>
+        <button className="ticket-form-button" onClick={reset}>
+          Reset
+        </button>
       </div>
-    );
+    </div>
+  );
 };

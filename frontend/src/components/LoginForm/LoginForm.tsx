@@ -32,7 +32,8 @@ export const LoginForm = () => {
     request.password = user.password;
 
     login(request).then((response) => {
-      console.log(response)
+      console.log(response.error)
+      console.log(typeof response.error)
       if (!response.success) {
         setError(response.error.message);
         console.log(error)
@@ -48,13 +49,13 @@ export const LoginForm = () => {
       <img className="login-form-image"
         src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
       />
-      <h2>Log in</h2>
+      <p className="login-title">Log in</p>
       <label>
-        <h4>Email</h4>
+        <p className="login-subtitle">Email</p>
         <input className="login-input" type="text" placeholder="Enter email" onChange={handleChangeEmail} />
       </label>
       <label>
-        <h4>Password</h4>
+        <p className="login-subtitle">Password</p>
         <input className="login-input" type="password" placeholder="Enter password" onChange={handleChangePassword}/>
       </label>
       

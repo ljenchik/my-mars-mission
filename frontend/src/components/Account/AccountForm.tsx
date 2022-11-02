@@ -75,7 +75,7 @@ export const AccountForm = () => {
       />
       
       <div className="account-container">
-        <h2>Create account</h2>
+        <p className="account-title">Create account</p>
         
         <label
           className={
@@ -84,7 +84,7 @@ export const AccountForm = () => {
               : "h4"
           }
         >
-          <h4>Name</h4>
+          <p className="account-subtitle">Name</p>
           <input
             className={
               error.includes("Enter name")
@@ -106,7 +106,7 @@ export const AccountForm = () => {
               : "h4"
           }
         >
-          <h4 >Email</h4>
+          <p className="account-subtitle">Email</p>
           <input
             className={
               error.includes("email")
@@ -127,7 +127,7 @@ export const AccountForm = () => {
               : "h4"
           }
         >
-          <h4>Password</h4>
+          <p className="account-subtitle">Password</p>
           <input
             className={
               error.includes("password") ? "account-input highlight-box" : "account-input"

@@ -1,23 +1,26 @@
 .ticket-form-container {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     margin: 1rem;
 }
 
-h2 {
-    color:  white;
-    font-size: 20px;
+.title{
+    color: white;
+    font-size: 30px;
     font-weight: 100;
+    margin: 1rem;
 }
 
-h4 {
-    color:  #d04a36;
+.ticket-form-label {
+    color: white;
     font-size: 16px;
     font-weight: 100;
+    margin-left: 1rem;
 }
 
 .ticket-form-input {
-    width: 70vw;
+    width: 60%;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
