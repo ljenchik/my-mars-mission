@@ -13,7 +13,7 @@ export interface Login {
 
 
 export interface Ticket {
-    id : number | null,
+    ticket_id : number | null,
     name: string;
     gender: string;
     dob: string;
@@ -22,7 +22,7 @@ export interface Ticket {
     email: string;
     photo: string;
     flight_date: string;
-    rover: string;
+    owner_id: number | null;
     created_at: string;
 }
     

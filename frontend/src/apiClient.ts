@@ -1,4 +1,4 @@
-import { Account, Login } from "./models";
+import { Account, Login, Ticket } from "./models";
 const baseurl = process.env["REACT_APP_BACKEND_DOMAIN"];
 
 export async function createAccount(account: Account) {
@@ -112,9 +112,9 @@ export async function getAccountById(id: number) {
   }
 }
 
-export async function createTicket(ticket: any) {
+export async function createTicket(ticket: Ticket) {
   try {
-    const response = await fetch(`${baseurl}/ticket/create`, {
+    const response = await fetch(`${baseurl}/account/${ticket.owner_id}/ticket`, {
       method: "POST",
       body: JSON.stringify(ticket),
       headers: {

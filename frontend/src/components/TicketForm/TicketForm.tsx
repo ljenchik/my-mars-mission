@@ -9,7 +9,7 @@ export const TicketForm = () => {
   const [isDisabled, setDisabled] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
-  const id = params.id;
+  const id = Number(params.id);
   const [account, setAccount] = useState<Account>();
   var date = new Date();
   console.log(date)
@@ -19,7 +19,7 @@ export const TicketForm = () => {
   var date_3 = new Date(date.setMonth(date.getMonth()+ 20));
 
   const [ticket, setTicket] = useState<Ticket>({
-    id: null,
+    ticket_id: null,
     name: "",
     gender: "",
     dob: "",
@@ -28,8 +28,8 @@ export const TicketForm = () => {
     email: "",
     photo: "",
     flight_date: "",
-    rover: "",
-    created_at: "",
+    owner_id: id,
+    created_at: ""
   });
 
   useEffect(() => {
@@ -84,10 +84,6 @@ export const TicketForm = () => {
     setTicket({ ...ticket });
   };
 
-  const handleChangeRover = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    ticket.rover = event.target.value;
-    setTicket({ ...ticket });
-  };
 
   const handleKeyPress = (event: { keyCode: number }) => {
     if (event.keyCode === 13) {
@@ -97,7 +93,7 @@ export const TicketForm = () => {
 
   const reset = () => {
     setTicket({
-      id: null,
+      ticket_id: null,
       name: "",
       gender: "",
       dob: "",
@@ -105,8 +101,8 @@ export const TicketForm = () => {
       phone: "",
       email: "",
       flight_date: "",
-      rover: "",
       photo: "",
+      owner_id: id,
       created_at: "",
     });
     setError("");
@@ -115,7 +111,7 @@ export const TicketForm = () => {
 
   const submit = () => {
     const request = {
-      id: null,
+      ticket_id: null,
       name: "",
       gender: "",
       dob: "",
@@ -124,7 +120,7 @@ export const TicketForm = () => {
       email: "",
       flight_date: "",
       photo: "",
-      rover: "",
+      owner_id: id,
       created_at: "",
     };
 
@@ -132,10 +128,10 @@ export const TicketForm = () => {
     request.gender = ticket.gender;
     request.dob = ticket.dob;
     request.address = ticket.address;
+    request.phone = ticket.phone;
     request.email = ticket.email;
     request.flight_date = ticket.flight_date;
     request.photo = ticket.photo;
-    request.rover = ticket.rover;
 
     createTicket(request).then((response) => {
       if (!response.success) {
@@ -242,18 +238,7 @@ export const TicketForm = () => {
           </select>
       </label>
 
-      <label>
-      <p className="ticket-form-label">Rover</p>
-        <select
-          className="ticket-form-input"
-          onChange={(event) => handleChangeRover(event)}
-          value={ticket.rover}
-        >
-          <option>Choose rover</option>
-          <option>Perceverance</option>
-          <option>Curiocity</option>
-          </select>
-      </label>
+     
       <div className="ticket-form-buttons-container">
         <button className="ticket-form-button" onClick={submit}>
           Submit

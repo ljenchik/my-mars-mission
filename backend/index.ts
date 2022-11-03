@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-import routes from './routes';
+import accountRoutes from './routes/accountRoutes';
+import ticketRoutes from './routes/ticketRoutes';
 
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ require("dotenv").config();
  app.use(cors());
  app.use(express.urlencoded({extended: true}));
 
- app.use('/', routes)
+ app.use('/', accountRoutes)
+ app.use('/', ticketRoutes)
 
  app.listen(port, () => console.log(`Listening on port ${port}.`))
