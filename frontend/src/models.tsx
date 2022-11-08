@@ -22,7 +22,7 @@ export interface Ticket {
     email: string;
     photo: string;
     flight_date: string;
-    owner_id: number | null;
+    owner_id: number | null | undefined;
     created_at: string;
 }
     

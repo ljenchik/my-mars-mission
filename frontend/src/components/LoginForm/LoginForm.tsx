@@ -32,11 +32,8 @@ export const LoginForm = () => {
     request.password = user.password;
 
     login(request).then((response) => {
-      console.log(response.error)
-      console.log(typeof response.error)
       if (!response.success) {
         setError(response.error.message);
-        console.log(error)
       } else {
         localStorage.setItem("accessToken", response.accessToken)
         navigate(`/account/${response.id}`);

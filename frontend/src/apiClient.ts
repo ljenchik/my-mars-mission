@@ -49,7 +49,6 @@ export async function login(login: Login) {
     });
     if (response.ok) {
       const data = await response.json();
-      console.log(data)
       if (data.success) {
         return {
           success: data.success,
@@ -119,15 +118,17 @@ export async function createTicket(ticket: Ticket) {
       body: JSON.stringify(ticket),
       headers: {
         "Content-Type": "application/json",
+        "Authorization": "BEARER " + localStorage.getItem('accessToken')
       },
     });
     if (response.ok) {
       const data = await response.json();
+      console.log("data", data)
       if (data.success) {
         return {
           success: true,
           error: "",
-          ticket_id: data.id,
+          ticket_id: data.ticket_id,
         };
       } else {
         return {
@@ -146,5 +147,42 @@ export async function createTicket(ticket: Ticket) {
     }
   } catch (e) {
     return { success: false, ticket_id: null, error: e };
+  }
+}
+
+
+export async function getTicketById(id: number) {
+  try {
+    const response = await fetch(
+        `${baseurl}/ticket/${id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "BEARER " + localStorage.getItem('accessToken')
+          },
+        }
+      );
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        return {
+          success: true,
+          ticket: data.ticket[0],
+          error: data.error,
+        };
+      } else {
+        return {
+          success: false,
+          ticket: {},
+          error: "Error occured when getting ticket details"
+        };
+      }
+    } else {
+      const error = await response.text();
+      return { ticket: {}, success: false, error: error };
+    }
+  } catch (e) {
+    return { ticket: {}, success: false, error: e };
   }
 }

@@ -18,3 +18,8 @@ export async function createTicket(ticket: Ticket): Promise<void> {
 
   return ticket_id[0].ticket_id;
 }
+
+
+export async function getTicketById(id: number): Promise<Ticket[]> {
+  return (await knex.raw("select * from ticket where ticket_id = " + id)).rows
+}

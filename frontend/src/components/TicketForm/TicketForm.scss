@@ -2,21 +2,22 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    margin: 1rem;
+    margin: 1.2rem;
 }
 
 .title{
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 100;
     margin: 1rem;
+    color: #d04a36;
 }
 
 .ticket-form-label {
     color: white;
     font-size: 16px;
     font-weight: 100;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
 
 .ticket-form-input {
@@ -59,5 +60,5 @@
 
 .ticket-form-error {
    color: #d04a36;
-   margin: 20px 10px;
+   margin: 1rem;
 }

@@ -10,7 +10,7 @@ import { AccountForm } from "./components/Account/AccountForm";
 import { UserProfile } from "./components/UserProfile/UserProfile";
 import { UpdateProfile } from "./components/UpdateForm/UpdateProfile";
 import { TicketForm } from "./components/TicketForm/TicketForm";
-import { Ticket } from "./components/Ticket/Ticket";
+import { TicketDisplay } from "./components/Ticket/ticket";
 
 function App() {
   return (
@@ -28,8 +28,7 @@ function App() {
           <Route path="/account/create" element={<AccountForm />} />
           <Route path="/account/:id" element={<UserProfile />} />
           <Route path="/account/:id/ticket" element={<TicketForm />} />
-
-          <Route path="/ticket/:id" element={<Ticket />} />
+          <Route path="/ticket/:id" element={<TicketDisplay />} />
           <Route path="/account/:id/update" element={<UpdateProfile />} />
         </Routes>
       </Router>

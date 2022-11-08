@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createTicket, getAccountById } from "../../apiClient";
 import { useNavigate, useParams } from "react-router-dom";
 import { Account, Ticket } from "../../models";
@@ -12,11 +12,10 @@ export const TicketForm = () => {
   const id = Number(params.id);
   const [account, setAccount] = useState<Account>();
   var date = new Date();
-  console.log(date)
 
-  var date_1 = new Date(date.setMonth(date.getMonth()+ 6));
-  var date_2 = new Date(date.setMonth(date.getMonth()+ 12));
-  var date_3 = new Date(date.setMonth(date.getMonth()+ 20));
+  var date_1 = new Date(date.setMonth(date.getMonth() + 6));
+  var date_2 = new Date(date.setMonth(date.getMonth() + 12));
+  var date_3 = new Date(date.setMonth(date.getMonth() + 20));
 
   const [ticket, setTicket] = useState<Ticket>({
     ticket_id: null,
@@ -29,11 +28,12 @@ export const TicketForm = () => {
     photo: "",
     flight_date: "",
     owner_id: id,
-    created_at: ""
+    created_at: "",
   });
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
+    console.log(accessToken);
     getAccountById(Number(id)).then((response) => {
       response.account.created_at = response.account.created_at.split("T")[0];
       if (response.account.updated_at) {
@@ -84,7 +84,6 @@ export const TicketForm = () => {
     setTicket({ ...ticket });
   };
 
-
   const handleKeyPress = (event: { keyCode: number }) => {
     if (event.keyCode === 13) {
       submit();
@@ -133,9 +132,12 @@ export const TicketForm = () => {
     request.flight_date = ticket.flight_date;
     request.photo = ticket.photo;
 
+    console.log("request", request);
+
     createTicket(request).then((response) => {
+      console.log("ticket_id", response);
       if (!response.success) {
-        setError(response.error.slice(1, -1));
+        setError(response.error);
       } else {
         navigate(`/ticket/${response.ticket_id}`);
       }
@@ -144,22 +146,45 @@ export const TicketForm = () => {
 
   return (
     <div className="ticket-form-container">
-      <p className="title">Dear {account?.name}, fill in all required details</p>
-      <label>
-        <p className="ticket-form-label">Name</p>
-        <input
-          className="ticket-form-input"
-          type="text"
-          placeholder="Enter name"
-          onChange={(event) => handleChangeName(event)}
-          value={ticket.name}
-        ></input>
-      </label>
+      <p className="title">
+        {account?.name}, please fill in{" "}
+        <span className="nowrap">the information required </span>
+      </p>
 
-      <label>
-      <p className="ticket-form-label">Gender</p>
+      <label
+        className={
+          error.includes("name")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }
+      >
+        <p>Name</p>
+      </label>
+      <input
+        className={
+          error.includes("name")
+            ? "ticket-form-input highlight-box"
+            : "ticket-form-input"
+        }
+        type="text"
+        placeholder="Enter name"
+        onChange={(event) => handleChangeName(event)}
+        value={ticket.name}
+      ></input>
+
+      <label className={
+          error.includes("gender")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p>Gender</p>
+        </label>
         <select
-          className="ticket-form-input"
+        className={
+          error.includes("gender")
+            ? "ticket-form-input highlight-box"
+            : "ticket-form-input"
+        }
           onChange={(event) => handleChangeGender(event)}
           value={ticket.gender}
         >
@@ -167,67 +192,121 @@ export const TicketForm = () => {
           <option>Female</option>
           <option>Male</option>
         </select>
-      </label>
+      
 
-      <label>
-      <p className="ticket-form-label">Date of birth</p>
+      <label className={
+          error.includes("birth")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p>Date of birth</p>
+        </label>
         <input
-          className="ticket-form-input"
+         className={
+          error.includes("birth")
+            ? "ticket-form-input highlight-box"
+            : "ticket-form-input"
+        }
           type="date"
           onChange={(event) => handleChangeDob(event)}
           value={ticket.dob}
         ></input>
-      </label>
+      
 
-      <label>
-      <p className="ticket-form-label">Address</p>
+      <label className={
+          error.includes("address")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p >Address</p>
+        </label>
         <input
-          className="ticket-form-input"
+          className={
+            error.includes("address")
+              ? "ticket-form-input highlight-box"
+              : "ticket-form-input"
+          }
           type="address"
           placeholder="Enter address"
           onChange={(event) => handleChangeAddress(event)}
           value={ticket.address}
         ></input>
-      </label>
+      
 
-      <label>
-      <p className="ticket-form-label">Phone</p>
+      <label className={
+          error.includes("phone")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p >Phone</p>
+        </label>
         <input
-          className="ticket-form-input"
+          className={
+            error.includes("phone")
+              ? "ticket-form-input highlight-box"
+              : "ticket-form-input"
+          }
           type="tel"
           placeholder="+44 xxxx xxxxxx"
           onChange={(event) => handleChangePhone(event)}
           value={ticket.phone}
         ></input>
-      </label>
+      
 
-      <label>
-      <p className="ticket-form-label">Email</p>
+      <label className={
+          error.includes("email")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p >Email</p>
+        </label>
         <input
-          className="ticket-form-input"
+          className={
+            error.includes("email")
+              ? "ticket-form-input highlight-box"
+              : "ticket-form-input"
+          }
           type="email"
           placeholder="Enter email address"
           onChange={(event) => handleChangeEmail(event)}
           value={ticket.email}
         ></input>
-      </label>
+      
 
-      <label>
-      <p className="ticket-form-label">Photo</p>
+      <label className={
+          error.includes("photo")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p >Photo</p>
+        </label>
         <input
-          className="ticket-form-input"
+          className={
+            error.includes("photo")
+              ? "ticket-form-input highlight-box"
+              : "ticket-form-input"
+          }
           type="url"
           placeholder="https://example.com"
           pattern="https://.*"
           onChange={(event) => handleChangePhoto(event)}
           value={ticket.photo}
         ></input>
-      </label>
+      
 
-      <label>
-      <p className="ticket-form-label">Flight date</p>
+      <label className={
+          error.includes("flight")
+            ? "ticket-form-label highlight-label"
+            : "ticket-form-label"
+        }>
+        <p >Flight date</p>
+        </label>
         <select
-          className="ticket-form-input"
+          className={
+            error.includes("flight")
+              ? "ticket-form-input highlight-box"
+              : "ticket-form-input"
+          }
           onChange={(event) => handleChangeFlightDate(event)}
           value={ticket.flight_date}
         >
@@ -235,18 +314,22 @@ export const TicketForm = () => {
           <option>{date_1.toLocaleDateString()}</option>
           <option>{date_2.toLocaleDateString()}</option>
           <option>{date_3.toLocaleDateString()}</option>
-          </select>
-      </label>
+        </select>
+      
 
-     
       <div className="ticket-form-buttons-container">
         <button className="ticket-form-button" onClick={submit}>
           Submit
         </button>
-        <button className="ticket-form-button" onClick={reset}>
+        <button
+          className="ticket-form-button"
+          onClick={reset}
+          onKeyPress={handleKeyPress}
+        >
           Reset
         </button>
       </div>
+      {error ? <div className="ticket-form-error">{error}</div> : ""}
     </div>
   );
 };

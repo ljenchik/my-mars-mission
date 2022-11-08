@@ -20,6 +20,8 @@ export async function foundUser(email: string): Promise<any> {
   ).rows;
 }
 
+
+
 export async function getAccountById(id: number): Promise<Account[]> {
   return (await knex.raw("select * from account where id = " + id)).rows
 }

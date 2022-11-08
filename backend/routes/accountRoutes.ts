@@ -1,55 +1,18 @@
 import express, { Request, Response } from "express";
 import { createAccount, foundUser, getAccountById } from "../repos/accountRepo";
 import bcrypt from "bcrypt";
-import { requestValidation } from "../accountFormValidation";
+import { requestAccountValidation } from "../validation/accountFormValidation";
+import {
+  generateAccessToken,
+  generateRefreshToken,
+  validateToken,
+} from "../tokens/tokens";
 
-var jwt = require("jsonwebtoken");
 const router = express.Router();
-
-// accessTokens
-function generateAccessToken(account: any) {
-  return jwt.sign(account, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "15m",
-  });
-}
-
-// refreshTokens
-let refreshTokens: any = [];
-function generateRefreshToken(account: any) {
-  const refreshToken = jwt.sign(account, process.env.REFRESH_TOKEN_SECRET, {
-    expiresIn: "20m",
-  });
-  refreshTokens.push(refreshToken);
-  return refreshToken;
-}
-
-function validateToken(
-  req: { headers: { [x: string]: any }; account: any },
-  res: any,
-  next: any
-) {
-  //get token from request header
-  const authHeader = req.headers["authorization"];
-  const token = authHeader.split(" ")[1];
-  //the request header contains the token "Bearer <token>", split the string and use the second value in the split array.
-  if (token == null) res.sendStatus(400).send("Token not present");
-  jwt.verify(
-    token,
-    process.env.ACCESS_TOKEN_SECRET,
-    (err: any, account: any) => {
-      if (err) {
-        res.status(403).send("Token invalid");
-      } else {
-        req.account = account;
-        next(); //proceed to the next action in the calling function
-      }
-    }
-  ); //end of jwt.verify()
-} //end of function
 
 router.post("/account/create", async (req: Request, res: Response) => {
   let requestBody = req.body;
-  if (requestValidation(requestBody).success) {
+  if (requestAccountValidation(requestBody).success) {
     let salt = await bcrypt.genSalt(10);
     await new Promise((resolve, reject) => {
       bcrypt.hash(requestBody.password, salt, function (err, hash) {
@@ -70,14 +33,14 @@ router.post("/account/create", async (req: Request, res: Response) => {
     return res.json({
       success: false,
       id: "",
-      error: requestValidation(requestBody).error,
+      error: requestAccountValidation(requestBody).error,
     });
   }
 });
 
 router.post("/account/login", async (req, res) => {
-  const foundAccount = await foundUser(req.body.email);
-  if (foundAccount.length === 0) {
+  const foundAccounts = await foundUser(req.body.email);
+  if (foundAccounts.length === 0) {
     res.status(404);
     return res.json({
       success: false,
@@ -85,19 +48,27 @@ router.post("/account/login", async (req, res) => {
       id: "",
     });
   }
+
+  const foundAccount = foundAccounts[0];
   const hashedPassword = await bcrypt.compare(
     req.body.password,
-    foundAccount[0].hashed_password
+    foundAccount.hashed_password
   );
   if (hashedPassword) {
-    const accessToken = generateAccessToken({ foundAccount: req.body.email });
-    const refreshToken = generateRefreshToken({ foundAccount: req.body.email });
+    const accessToken = generateAccessToken({
+      email: foundAccount.email,
+      id: foundAccount.id,
+    });
+    const refreshToken = generateRefreshToken({
+      email: foundAccount.email,
+      id: foundAccount.id,
+    });
     return res.json({
       success: true,
       message: "Logged In!",
-      id: foundAccount[0].id,
+      id: foundAccount.id,
       accessToken: accessToken,
-      refreshToken: refreshToken
+      refreshToken: refreshToken,
     });
   } else {
     //res.status(401).send("Password Incorrect!");
@@ -110,15 +81,14 @@ router.post("/account/login", async (req, res) => {
 });
 
 router.get("/account/:id", validateToken, async (req: any, res: any) => {
-  const email = req.account.foundAccount;
   const id = parseInt(req.params.id);
+  console.log(req.account);
+  if (id != req.account.id) {
+    res.status(403);
+    return res.send("Forbidden!");
+  }
   try {
     const data = await getAccountById(id);
-    if (data.length !== 1 || data[0].email != email) {
-      res.status(403);
-      return res.send("Forbidden!");
-    }
-
     return res.json({ success: true, account: data, error: "" });
   } catch (error) {
     res.status(500);
