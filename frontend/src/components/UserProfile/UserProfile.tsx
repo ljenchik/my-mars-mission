@@ -33,7 +33,7 @@ export function UserProfile() {
   } else {
     return (
       <section>
-        <Link to={`/account/${id}/update`}>
+        <Link to={`/account/${id}/info`}>
           <img
             className="profile-image"
             src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"

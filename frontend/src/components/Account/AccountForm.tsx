@@ -16,6 +16,7 @@ export const AccountForm = () => {
     email: "",
     password: "",
     created_at: "",
+    updated_at: "",
   });
 
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +41,7 @@ export const AccountForm = () => {
       email: "",
       password: "",
       created_at: "",
+      updated_at: "",
     });
     setError("");
     setDisabled(false);
@@ -52,6 +54,7 @@ export const AccountForm = () => {
       email: "",
       password: "",
       created_at: "",
+      updated_at: "",
     };
 
     request.name = account.name;

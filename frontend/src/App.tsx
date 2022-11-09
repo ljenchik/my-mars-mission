@@ -11,6 +11,7 @@ import { UserProfile } from "./components/UserProfile/UserProfile";
 import { UpdateProfile } from "./components/UpdateForm/UpdateProfile";
 import { TicketForm } from "./components/TicketForm/TicketForm";
 import { TicketDisplay } from "./components/Ticket/ticket";
+import { UserInfo } from "./components/UserInfo/UserInfo";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/account/:id/ticket" element={<TicketForm />} />
           <Route path="/ticket/:id" element={<TicketDisplay />} />
           <Route path="/account/:id/update" element={<UpdateProfile />} />
+          <Route path="/account/:id/info" element={<UserInfo />} />
         </Routes>
       </Router>
     </>

@@ -4,6 +4,7 @@ export interface Account {
     email: string;
     password: string;
     created_at: string;
+    updated_at: string;
 }
 
 export interface Login {
