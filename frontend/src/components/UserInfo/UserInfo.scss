@@ -5,7 +5,17 @@
     align-items: center;
 }
 
-.user-info-image {
+.user-info-photo {
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px double white;
+}
+
+.user-info-default {
     display: block;
     margin: auto;
     width: 50%;

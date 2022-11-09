@@ -34,16 +34,22 @@ export function UserInfo() {
     return (
       <section className="user-info-container">
         <div>
+        {account.photo ?  <img
+                className="user-info-photo"
+                src={account.photo}
+              /> :
         <OverlayTrigger overlay={<Tooltip className="add-photo">Add photo</Tooltip>}>
           {({ ref, ...triggerHandler }) => (
             <Link ref={ref} to={`/account/${id}/update`} {...triggerHandler}>
               <img
-                className="user-info-image"
+                className="user-info-default"
                 src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"
               />
             </Link>
           )}
         </OverlayTrigger>
+  }
+
         </div>
         <p className="user-info-name">{account.name}</p>
         <p className="user-info-email">{account.email}</p>
