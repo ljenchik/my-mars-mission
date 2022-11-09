@@ -21,7 +21,23 @@ export async function foundUser(email: string): Promise<any> {
 }
 
 
-
 export async function getAccountById(id: number): Promise<Account[]> {
   return (await knex.raw("select * from account where id = " + id)).rows
+}
+
+export async function updateAccount(
+  id: number,
+  name: string,
+  email: string,
+  photo: string,
+  updated_at: string
+) {
+  return await knex("account")
+    .update({
+      name,
+      email,
+      photo,
+      updated_at,
+    })
+    .where({ id });
 }

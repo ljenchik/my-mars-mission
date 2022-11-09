@@ -2,6 +2,7 @@ export interface Account {
     id : number | null,
     name: string;
     email: string;
+    photo: string;
     password: string;
     created_at: string;
     updated_at: string;

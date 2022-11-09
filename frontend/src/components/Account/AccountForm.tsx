@@ -14,6 +14,7 @@ export const AccountForm = () => {
     id: null,
     name: "",
     email: "",
+    photo: "",
     password: "",
     created_at: "",
     updated_at: "",
@@ -39,6 +40,7 @@ export const AccountForm = () => {
       id: null,
       name: "",
       email: "",
+      photo: "",
       password: "",
       created_at: "",
       updated_at: "",
@@ -52,6 +54,7 @@ export const AccountForm = () => {
       id: null,
       name: "",
       email: "",
+      photo: "",
       password: "",
       created_at: "",
       updated_at: "",
@@ -60,6 +63,9 @@ export const AccountForm = () => {
     request.name = account.name;
     request.email = account.email;
     request.password = account.password;
+    if (account.photo) {
+      request.photo = account.photo
+    }
 
     createAccount(request).then((response) => {
       if (!response.success) {
@@ -122,6 +128,28 @@ export const AccountForm = () => {
             value={account.email}
           ></input>
         </label>
+
+        <label
+          className={
+            error.includes("photo")
+              ? "h4 highlight-label"
+              : "h4"
+          }
+        >
+          <p className="account-subtitle">Photo</p>
+          <input
+            className={
+              error.includes("photo")
+                ? "account-input highlight-box"
+                : "account-input"
+            }
+            type="url"
+            placeholder="Enter photo"
+            onChange={(event) => handleChangeEmail(event)}
+            value={account.photo}
+          ></input>
+        </label>
+
 
         <label
           className={

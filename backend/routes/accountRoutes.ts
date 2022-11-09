@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { createAccount, foundUser, getAccountById } from "../repos/accountRepo";
+import { createAccount, foundUser, getAccountById, updateAccount } from "../repos/accountRepo";
 import bcrypt from "bcrypt";
 import { requestAccountValidation } from "../validation/accountFormValidation";
 import {
@@ -37,6 +37,27 @@ router.post("/account/create", async (req: Request, res: Response) => {
     });
   }
 });
+
+
+router.post("/account/:id/update", validateToken, async (req: any, res: any) => {
+  var id = parseInt(req.params.id);
+  console.log(id)
+  console.log(req.account.id)
+  if (id != req.account.id) {
+    res.status(403);
+    return res.send("Forbidden!");
+  }
+  let requestBody = req.body;
+    try {
+      await updateAccount(id, requestBody.name, requestBody.email, requestBody.photo, requestBody.updated_at);
+      return res.json({ success: true, error: "" });
+    } catch (error) {
+      res.status(500);
+      return res.send(error);
+    }
+});
+
+
 
 router.post("/account/login", async (req, res) => {
   const foundAccounts = await foundUser(req.body.email);
@@ -82,7 +103,6 @@ router.post("/account/login", async (req, res) => {
 
 router.get("/account/:id", validateToken, async (req: any, res: any) => {
   const id = parseInt(req.params.id);
-  console.log(req.account);
   if (id != req.account.id) {
     res.status(403);
     return res.send("Forbidden!");

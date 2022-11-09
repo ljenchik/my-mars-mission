@@ -38,6 +38,41 @@ export async function createAccount(account: Account) {
   }
 }
 
+export async function updateAccount(id: number, account: any) {
+  try {
+    const response = await fetch(`${baseurl}/account/${id}/update`, {
+      method: "POST",
+      body: JSON.stringify(account),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "BEARER " + localStorage.getItem('accessToken')
+      },
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        return {
+          success: true,
+          error: ""
+        };
+      } else {
+        return {
+          success: false,
+          error: data.error,
+        };
+      }
+    } else {
+      const error = await response.text();
+      return {
+        success: false,
+        error: error,
+      };
+    }
+  } catch (e) {
+    return { success: false,  error: e };
+  }
+}
+
 export async function login(login: Login) {
   try {
     const response = await fetch(`${baseurl}/account/login`, {
@@ -149,7 +184,6 @@ export async function createTicket(ticket: Ticket) {
     return { success: false, ticket_id: null, error: e };
   }
 }
-
 
 export async function getTicketById(id: number) {
   try {

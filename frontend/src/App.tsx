@@ -8,7 +8,7 @@ import { Menu } from "./components/Menu/Menu";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { AccountForm } from "./components/Account/AccountForm";
 import { UserProfile } from "./components/UserProfile/UserProfile";
-import { UpdateProfile } from "./components/UpdateForm/UpdateProfile";
+import { UpdateUserProfile } from "./components/UpdateUserProfile/UpdateUserProfile";
 import { TicketForm } from "./components/TicketForm/TicketForm";
 import { TicketDisplay } from "./components/Ticket/ticket";
 import { UserInfo } from "./components/UserInfo/UserInfo";
@@ -30,7 +30,7 @@ function App() {
           <Route path="/account/:id" element={<UserProfile />} />
           <Route path="/account/:id/ticket" element={<TicketForm />} />
           <Route path="/ticket/:id" element={<TicketDisplay />} />
-          <Route path="/account/:id/update" element={<UpdateProfile />} />
+          <Route path="/account/:id/update" element={<UpdateUserProfile />} />
           <Route path="/account/:id/info" element={<UserInfo />} />
         </Routes>
       </Router>
