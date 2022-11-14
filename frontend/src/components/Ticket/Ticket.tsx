@@ -41,17 +41,19 @@ export const TicketDisplay = () => {
     const age = getAge(ticket.dob)
     const date = ticket.flight_date.split('T')[0]
     return (
-      <div className="ticket-form-container">
-        <div className="title">Congratulations!</div>
-        <div  className="title">{ticket.name} is flying to Mars!</div>
-        <div>Your ticket</div>
-        <p>Name {ticket.name}</p>
+      <div >
+        <div className="title">Congratulations! {ticket.name} is flying to Mars!</div>
+        <div className="ticket-container">
+          <div className="ticket-info">
+        <p >Name {ticket.name}</p>
         <p>Gender {ticket.gender}</p>
         <p>Age {age} years old</p>
         <p>Flight date {date}</p>
         <p>Flight time 12:00</p>
         <p>Rover Perseverance</p>
         <p>Ticket id {ticket.ticket_id}</p>
+        </div>
+        </div>
       </div>
     );
   }
