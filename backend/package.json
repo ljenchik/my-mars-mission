@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development nodemon index.ts",
-    "migrate": "knex migrate:latest --knexfile knexfile.ts"
+    "migrate": "knex migrate:latest --knexfile knexfile.ts",
+   
   },
   "keywords": [],
   "author": "",
