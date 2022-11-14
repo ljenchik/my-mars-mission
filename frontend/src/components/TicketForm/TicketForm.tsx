@@ -13,9 +13,9 @@ export const TicketForm = () => {
   const [account, setAccount] = useState<Account>();
   var date = new Date();
 
-  var date_1 = new Date(date.setMonth(date.getMonth() + 6));
-  var date_2 = new Date(date.setMonth(date.getMonth() + 12));
-  var date_3 = new Date(date.setMonth(date.getMonth() + 20));
+  var date_1 = new Date(date.setMonth(date.getMonth() + 6)).toLocaleString().split(",")[0];
+  var date_2 = new Date(date.setMonth(date.getMonth() + 12)).toLocaleString().split(",")[0];
+  var date_3 = new Date(date.setMonth(date.getMonth() + 20)).toLocaleString().split(",")[0];
 
   const [ticket, setTicket] = useState<Ticket>({
     ticket_id: null,
@@ -80,7 +80,8 @@ export const TicketForm = () => {
   const handleChangeFlightDate = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    ticket.flight_date = event.target.value;
+    ticket.flight_date = event.target.value
+    ticket.flight_date = ticket.flight_date.split("/").reverse().join("-");
     setTicket({ ...ticket });
   };
 
@@ -311,9 +312,9 @@ export const TicketForm = () => {
           value={ticket.flight_date}
         >
           <option>Choose flight date</option>
-          <option>{date_1.toLocaleDateString()}</option>
-          <option>{date_2.toLocaleDateString()}</option>
-          <option>{date_3.toLocaleDateString()}</option>
+          <option>{date_1}</option>
+          <option>{date_2}</option>
+          <option>{date_3}</option>
         </select>
       
 

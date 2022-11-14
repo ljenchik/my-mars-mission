@@ -6,6 +6,7 @@ export async function createAccount(account: Account): Promise<void> {
     .insert({
       name: account.name,
       email: account.email,
+      photo: account.photo,
       salted_password: account.salted_password,
       hashed_password: account.hashed_password,
     })

@@ -6,7 +6,7 @@ import { ImageViewer } from "./components/Images/ImageViewer";
 import { MarsHolidays } from "./components/MarsHolidays/MarsHolidays";
 import { Menu } from "./components/Menu/Menu";
 import { LoginForm } from "./components/LoginForm/LoginForm";
-import { AccountForm } from "./components/Account/AccountForm";
+import { AccountForm } from "./components/AccountForm/AccountForm";
 import { UserProfile } from "./components/UserProfile/UserProfile";
 import { UpdateUserProfile } from "./components/UpdateUserProfile/UpdateUserProfile";
 import { TicketForm } from "./components/TicketForm/TicketForm";

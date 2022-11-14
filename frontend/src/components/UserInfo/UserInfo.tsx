@@ -67,9 +67,15 @@ export function UserInfo() {
           <button className="user-info-button">Change password</button>
         </Link>
 
+        <Link to={`/account/${id}/ticket`}>
+          <button className="user-info-button" >Book ticket</button>
+        </Link>
+
         <Link to={`/account/${id}/update`}>
           <button className="user-info-button">My tickets</button>
         </Link>
+
+
 
         <div className="user-info-icon-container">
           <FontAwesomeIcon icon={faRocket} size={"2x"} />

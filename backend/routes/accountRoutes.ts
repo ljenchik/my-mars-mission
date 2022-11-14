@@ -41,8 +41,6 @@ router.post("/account/create", async (req: Request, res: Response) => {
 
 router.post("/account/:id/update", validateToken, async (req: any, res: any) => {
   var id = parseInt(req.params.id);
-  console.log(id)
-  console.log(req.account.id)
   if (id != req.account.id) {
     res.status(403);
     return res.send("Forbidden!");
@@ -56,8 +54,6 @@ router.post("/account/:id/update", validateToken, async (req: any, res: any) => 
       return res.send(error);
     }
 });
-
-
 
 router.post("/account/login", async (req, res) => {
   const foundAccounts = await foundUser(req.body.email);

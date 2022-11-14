@@ -5,6 +5,7 @@ import moment from "moment";
     id: number;
     email: string;
     name: string;
+    photo: string;
     salted_password: string;
     hashed_password: string;
     created_at: moment.Moment;

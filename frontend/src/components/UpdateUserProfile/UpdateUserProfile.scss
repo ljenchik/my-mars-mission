@@ -17,3 +17,35 @@
     border-radius: 5px;
     border: none;
 }
+
+.update-image-default {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    margin-top: 2rem;
+}
+
+.update-photo {
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px double white;
+    margin-top: 2rem;
+}
+
+.update-form-button {
+    font-size: inherit;
+    border: none;
+    border-radius: 5px;
+    margin: 2rem 0;
+    padding: 0.5rem;
+    width: 10%;
+}
+
+.update-form-button:hover {
+    opacity: 0.5;
+ }
