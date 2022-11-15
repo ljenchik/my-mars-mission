@@ -1,9 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, RefAttributes } from "react";
+import { Button, OverlayTrigger, Tooltip, TooltipProps } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getAccountById } from "../../apiClient";
 import { Account } from "../../models";
 import { TicketForm } from "../TicketForm/TicketForm";
 import "./UserProfile.scss";
+
+const renderTooltip = (props: JSX.IntrinsicAttributes & TooltipProps & RefAttributes<HTMLDivElement>) => (
+    <Tooltip className="overlay-photo-text"{...props}>
+      <p> Click to see and </p> 
+      <p>edit your profile</p>
+    </Tooltip>
+  );
+
+
 
 export function UserProfile() {
   const [account, setAccount] = useState<Account>();
@@ -12,20 +22,21 @@ export function UserProfile() {
   const id = params.id;
   const [display, setDisplay] = useState(false);
   const navigate = useNavigate();
-
+  const defaultImageProfile =
+    "https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360";
   const createTicket = () => {
     navigate(`/account/${id}/ticket`);
   };
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
-      getAccountById(Number(id)).then((response) => {
-        response.account.created_at = response.account.created_at.split("T")[0];
-        if (response.account.updated_at) {
-          response.account.updated_at = response.account.updated_at.split("T")[0];
-        }
-        setAccount(response.account);
-      });
+    getAccountById(Number(id)).then((response) => {
+      response.account.created_at = response.account.created_at.split("T")[0];
+      if (response.account.updated_at) {
+        response.account.updated_at = response.account.updated_at.split("T")[0];
+      }
+      setAccount(response.account);
+    });
   }, []);
 
   if (!account) {
@@ -33,12 +44,26 @@ export function UserProfile() {
   } else {
     return (
       <section>
-        <Link to={`/account/${id}/info`}>
-          <img
-            className="profile-image"
-            src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"
-          />
-        </Link>
+
+<OverlayTrigger
+      placement="bottom"
+      delay={{ show: 250, hide: 400 }}
+      overlay={renderTooltip}
+    >
+
+            <Link to={`/account/${id}/info`} className="profile-photo-link" >
+              {account.photo ? (
+                <img className="profile-photo" 
+                src={account.photo} />
+              ) : (
+                <img
+                  className="profile-image-default"
+                  src={defaultImageProfile}
+                />
+              )}
+            </Link>
+
+        </OverlayTrigger>
 
         {display === true ? (
           <div>
@@ -68,6 +93,6 @@ export function UserProfile() {
           </div>
         )}
       </section>
-        );
+    );
   }
 }

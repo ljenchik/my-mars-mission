@@ -1,10 +1,9 @@
 import { faRocket, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getAccountById } from "../../apiClient";
 import { Account } from "../../models";
-import { TicketForm } from "../TicketForm/TicketForm";
 import "./UserInfo.scss";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -14,7 +13,6 @@ export function UserInfo() {
   const params = useParams();
   const [error, setError] = useState("");
   const id = params.id;
-  const navigate = useNavigate();
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");

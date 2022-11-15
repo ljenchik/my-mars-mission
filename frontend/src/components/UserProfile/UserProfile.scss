@@ -5,8 +5,27 @@ section {
     margin: 1rem;
 }
 
-.profile-image {
-    width: 8vw;
+.profile-image-default {
+    width: 10vw;
+}
+
+.overlay-photo-text {
+   color: white;
+   font-size: small;
+}
+
+.profile-photo {
+    width: 10vw;
+    border-radius: 50%;
+    border: 2px double white;
+}
+
+.profile-photo-link {
+    width: max-content;
+}
+
+Link:hover {
+    cursor: pointer;
 }
 
 h2 {
