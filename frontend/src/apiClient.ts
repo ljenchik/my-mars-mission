@@ -220,3 +220,41 @@ export async function getTicketById(id: number) {
     return { ticket: {}, success: false, error: e };
   }
 }
+
+
+export async function getTicketsByOwnerId(id: number) {
+  try {
+    const response = await fetch(
+        `${baseurl}/account/${id}/tickets`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "BEARER " + localStorage.getItem('accessToken')
+          },
+        }
+      );
+      console.log(response)
+    if (response.ok) {
+      const data = await response.json();
+      console.log("data", data)
+      if (data.success) {
+        return {
+          success: true,
+          tickets: data.tickets,
+          error: data.error,
+        };
+      } else {
+        return {
+          success: false,
+          tickets: [],
+          error: "Error occured when getting ticket details"
+        };
+      }
+    } else {
+      const error = await response.text();
+      return { ticket: [], success: false, error: error };
+    }
+  } catch (e) {
+    return { ticket: [], success: false, error: e };
+  }
+}

@@ -1,20 +1,19 @@
-.ticket-container {
+.container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    background: url(https://mars.nasa.gov/images/mep/send-name-to-mars/boardingPass.jpg);
-    margin: 1rem;
-    padding: 1rem;
+    align-items: flex-start;
+    position: relative; /* this is important! */
+    width: 80%;
+  }
+  
+.ticket {
+    width: 70%;
     border-radius: 5px;
-    margin-top: 4rem;
-}
-
-.ticket-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 1rem 0;
 }
 
 .ticket-info {
-    margin: 6rem 3rem;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    font-size: small;
 }

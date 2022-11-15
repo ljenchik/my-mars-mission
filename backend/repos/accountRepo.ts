@@ -1,5 +1,5 @@
 import { knex } from "./database";
-import { Account } from "../models";
+import { Account, Ticket } from "../models";
 
 export async function createAccount(account: Account): Promise<void> {
   const id = await knex("account")
@@ -41,4 +41,9 @@ export async function updateAccount(
       updated_at,
     })
     .where({ id });
+}
+
+
+export async function getTicketsByOwnerId(id: number): Promise<Ticket[]> {
+  return (await knex.raw("select * from ticket where owner_id = " + id)).rows
 }

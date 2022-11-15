@@ -15,7 +15,9 @@ section {
 }
 
 .profile-photo {
-    width: 10vw;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 2px double white;
 }

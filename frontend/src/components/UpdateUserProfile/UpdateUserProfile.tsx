@@ -70,9 +70,6 @@ export function UpdateUserProfile() {
     }
   };
 
-  const createTicket = () => {
-    navigate(`/account/${id}/ticket`);
-  };
 
   const submit = () => {
     const request = {

@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAccountById, getTicketById } from "../../apiClient";
+import {getTicketById } from "../../apiClient";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Ticket.css";
-import { Account, Ticket } from "../../models";
+import { Ticket } from "../../models";
 
-export const TicketDisplay = () => {
+export const TicketDisplay = (props: { ticket_id: number; }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const params = useParams();
-  const id = Number(params.id);
+ // const id = Number(params.id);
   const [ticket, setTicket] = useState<Ticket>();
 
   const getAge = (dateString: string) => {
@@ -21,19 +20,16 @@ export const TicketDisplay = () => {
     }
     return age;
   };
-  
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
-    getTicketById(Number(id)).then((response) => {
+    getTicketById(props.ticket_id).then((response) => {
       if (!response.success) {
         navigate(`/account/login`);
       }
       setTicket(response.ticket);
     });
   }, []);
-
-  
 
   if (!ticket) {
     return <div>Loading data ...</div>;
@@ -42,15 +38,16 @@ export const TicketDisplay = () => {
     const date = ticket.flight_date.split('T')[0]
     return (
       <div >
-        <div className="title">Congratulations! {ticket.name} is flying to Mars!</div>
-        <div className="ticket-container">
-          <div className="ticket-info">
+        <div className="container">
+            <img className="ticket" src="https://i.pinimg.com/originals/f2/92/88/f29288889932d16f829b97a3a8311dcd.jpg" />
+            <div className="ticket-info">
         <p >Name {ticket.name}</p>
         <p>Gender {ticket.gender}</p>
         <p>Age {age} years old</p>
         <p>Flight date {date}</p>
         <p>Flight time 12:00</p>
         <p>Rover Perseverance</p>
+        <p>Departure from Earth</p>
         <p>Ticket id {ticket.ticket_id}</p>
         </div>
         </div>

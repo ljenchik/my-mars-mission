@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { createAccount, foundUser, getAccountById, updateAccount } from "../repos/accountRepo";
+import { createAccount, foundUser, getAccountById, getTicketsByOwnerId, updateAccount } from "../repos/accountRepo";
 import bcrypt from "bcrypt";
 import { requestAccountValidation } from "../validation/accountFormValidation";
 import {
@@ -106,6 +106,22 @@ router.get("/account/:id", validateToken, async (req: any, res: any) => {
   try {
     const data = await getAccountById(id);
     return res.json({ success: true, account: data, error: "" });
+  } catch (error) {
+    res.status(500);
+    return res.send(error);
+  }
+});
+
+router.get("/account/:id/tickets", validateToken, async (req: any, res: any) => {
+  const id = parseInt(req.params.id);
+  if (id != req.account.id) {
+    res.status(403);
+    return res.send("Forbidden!");
+  }
+  try {
+    const data = await getTicketsByOwnerId(id);
+    console.log(data)
+    return res.json({ success: true, tickets: data, error: "" });
   } catch (error) {
     res.status(500);
     return res.send(error);

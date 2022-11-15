@@ -18,7 +18,6 @@ html {
   align-items: center;
   padding: 1rem;
   margin: 1rem;
-  gap: 1rem;
   font-family: "Roboto", serif;
 }
 
@@ -31,12 +30,6 @@ header {
   color: white;
 }
 
-// h1 {
-//   font-weight: 200;
-//   font-size: 27px;
-//   color: white;
-// }
-
 figure {
   max-width: 75%;
   height: auto;
@@ -44,7 +37,6 @@ figure {
   flex-direction: column;
   margin: 1rem;
 }
-
 
 .landing-page-image {
   margin-top: 5rem;
@@ -119,7 +111,6 @@ h4 {
     margin-top: 1rem;
   }
 
-
   .landing-page-icon-container {
     display: none;
   }
@@ -127,7 +118,7 @@ h4 {
 
 
 /* || MEDIUM */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 758px) {
   .landing-page-container {
     display: flex;
     flex-direction: row;
@@ -143,7 +134,13 @@ h4 {
     flex-direction: row;
     margin-top: 1rem;
   }
+
+  .landing-page-icon-container {
+    display: flex;
+    margin: 1rem;
+  }
 }
+
 /* || MOBILE DEVICE LANDSCAPE  */
 @media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
   .landing-page-body {
@@ -173,6 +170,10 @@ h4 {
   .landing-page-item {
     font-size: medium;
     margin-top: 0;
+  }
+
+  .landing-page-icon-container {
+    
   }
 
   

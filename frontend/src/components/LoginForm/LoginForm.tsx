@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Login } from "../../models";
 import { useState } from "react";
 import { login } from "../../apiClient";
+import { access } from "fs";
 
 export const LoginForm = () => {
   const [user, setUser] = useState<Login>({
@@ -36,6 +37,7 @@ export const LoginForm = () => {
         setError(response.error.message);
       } else {
         localStorage.setItem("accessToken", response.accessToken)
+        console.log(response.accessToken)
         navigate(`/account/${response.id}`);
       }
     });
