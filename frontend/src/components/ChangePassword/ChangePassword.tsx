@@ -8,6 +8,7 @@ export const ChangePassword = () => {
   const [account, setAccount] = useState<Account>();
   const params = useParams();
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const id = params.id;
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -46,15 +47,30 @@ export const ChangePassword = () => {
     if (account) {
         request.email = account.email
     }
-   
+
+    if (!currentPassword) {
+        setError("Enter cutrrent password")
+    }
+    else if (!newPassword) {
+        setError("Enter new password")
+    }
+    else if (!confirmNewPassword) {
+        setError("Confirm new password")
+    }
+    else if (newPassword !== confirmNewPassword) {
+        setError("Your new password and new password confirmation do not match")
+    }
+    else {
     changePassword(Number(id), request.currentPassword, request.newPassword, request.email).then((response: { success: any; error: SetStateAction<string>; }) => {
       if (!response.success) {
         setError(response.error);
       } else {
-        navigate(`/account/${id}`);
+            setMessage("You successfully updated your password")
+            //navigate(`/account/${id}`);
       }
     });
   };
+}
 
   const reset = () => {
     setCurrentPassword("");
@@ -66,15 +82,10 @@ export const ChangePassword = () => {
   if (!account) {
     return <h3>Data is loading ...</h3>;
   }
-//   else if (!newPassword || !confirmNewPassword) {
-//     return <h3>Enter new password</h3>
-//   }
-//   else if (newPassword !== confirmNewPassword) {
-//     return <h3>Your password and confirmation password do not match</h3>
-//   }
   else {
     return (
       <div className="change-password-container">
+
         <div>
           {account.photo ? (
             <img className="change-password-photo" src={account.photo} />
@@ -85,6 +96,7 @@ export const ChangePassword = () => {
             />
           )}
         </div>
+
         <div className="change-password-input-container">
           <label>Current password</label>
           <input type="password" onChange={handleChangeCurrentPassword} value={currentPassword}></input>
@@ -97,6 +109,7 @@ export const ChangePassword = () => {
             <button onClick={reset}>Reset</button>
           </div>
         </div>
+        {error ? <div className="change-password-error">{error}</div> : <div className="change-password-error">{message}</div>}
       </div>
     );
   }

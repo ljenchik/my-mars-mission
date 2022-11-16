@@ -82,6 +82,7 @@ export async function login(login: Login) {
         "Content-Type": "application/json",
       },
     });
+    console.log("api response", response)
     if (response.ok) {
       const data = await response.json();
       if (data.success) {
@@ -94,7 +95,7 @@ export async function login(login: Login) {
       } else {
         return {
           success: data.success,
-          error: data.message,
+          error: data.error,
           id: "",
         };
       }

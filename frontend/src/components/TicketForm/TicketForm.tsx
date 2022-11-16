@@ -133,8 +133,6 @@ export const TicketForm = () => {
     request.flight_date = ticket.flight_date;
     request.photo = ticket.photo;
 
-    console.log("request", request);
-
     createTicket(request).then((response) => {
       console.log("ticket_id", response);
       if (!response.success) {

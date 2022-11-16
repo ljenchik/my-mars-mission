@@ -33,7 +33,7 @@
     "react-scripts": "5.0.1",
     "react-use-localstorage": "^3.5.3",
     "style-it": "^2.1.4",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "typescript": "^4.7.2",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"

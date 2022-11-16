@@ -77,7 +77,7 @@ router.post("/account/login", async (req, res) => {
     res.status(404);
     return res.json({
       success: false,
-      message: "Invalid username or password",
+      error: "Invalid username or password",
       id: "",
     });
   }
@@ -107,7 +107,7 @@ router.post("/account/login", async (req, res) => {
     //res.status(401).send("Password Incorrect!");
     return res.json({
       success: false,
-      message: "Invalid username or password",
+      error: "Invalid username or password",
       id: "",
     });
   }
@@ -159,7 +159,7 @@ router.post(
       res.status(404);
       return res.json({
         success: false,
-        message: "Invalid username or password",
+        error: "Invalid username or password",
         id: "",
       });
     }
