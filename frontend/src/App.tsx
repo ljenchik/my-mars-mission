@@ -13,6 +13,7 @@ import { TicketForm } from "./components/TicketForm/TicketForm";
 import { TicketDisplay } from "./components/Ticket/ticket";
 import { UserInfo } from "./components/UserInfo/UserInfo";
 import { Tickets } from "./components/Tickets/Tickets";
+import { ChangePassword } from "./components/ChangePassword/ChangePassword";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Menu />
       </nav>
       <Router>
+      {/* <Router basename={process.env.PUBLIC_URL}> */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/learning-space" element={<LearningSpace />} />
@@ -31,6 +33,7 @@ function App() {
           <Route path="/account/:id" element={<UserProfile />} />
           <Route path="/account/:id/ticket" element={<TicketForm />} />
           <Route path="/account/:id/tickets" element={<Tickets />} />
+          <Route path="/account/:id/change-password" element={<ChangePassword />} />
           <Route path="/account/:id/update" element={<UpdateUserProfile />} />
           <Route path="/account/:id/info" element={<UserInfo />} />
         </Routes>

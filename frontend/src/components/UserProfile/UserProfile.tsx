@@ -13,8 +13,6 @@ const renderTooltip = (props: JSX.IntrinsicAttributes & TooltipProps & RefAttrib
     </Tooltip>
   );
 
-
-
 export function UserProfile() {
   const [account, setAccount] = useState<Account>();
   const params = useParams();
@@ -24,8 +22,13 @@ export function UserProfile() {
   const navigate = useNavigate();
   const defaultImageProfile =
     "https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360";
+  
   const createTicket = () => {
     navigate(`/account/${id}/ticket`);
+  };
+
+  const myTickets = () => {
+    navigate(`/account/${id}/tickets`);
   };
 
   useEffect(() => {
@@ -82,10 +85,15 @@ export function UserProfile() {
               className="profile-ticket-image-cropped"
               src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
             />
+            <div>
             <button className="profile-button" onClick={createTicket}>
               Book ticket
             </button>
 
+            <button className="profile-button" onClick={myTickets}>
+              My tickets
+            </button>
+            </div>
             <img
               className="profile-ticket-image-cropped"
               src="https://media.cnn.com/api/v1/images/stellar/prod/220713151211-01-perseverance-rover-scouting-mission.jpg?c=16x9&q=h_720,w_1280,c_fill"

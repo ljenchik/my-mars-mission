@@ -61,7 +61,7 @@ export function UserInfo() {
           <button className="user-info-button">Update details</button>
         </Link>
 
-        <Link to={`/account/${id}/update`}>
+        <Link to={`/account/${id}/change-password`}>
           <button className="user-info-button">Change password</button>
         </Link>
 

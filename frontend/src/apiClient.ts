@@ -258,3 +258,40 @@ export async function getTicketsByOwnerId(id: number) {
     return { ticket: [], success: false, error: e };
   }
 }
+
+export async function changePassword(id: number, 
+  currentPassword: string, newPassword: string, email: string) {
+  var passwords = {currentPassword: currentPassword, newPassword: newPassword, email: email}
+  try {
+    const response = await fetch(`${baseurl}/account/${id}/change-password`, {
+      method: "POST",
+      body: JSON.stringify(passwords),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "BEARER " + localStorage.getItem('accessToken')
+      },
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        return {
+          success: true,
+          error: ""
+        };
+      } else {
+        return {
+          success: false,
+          error: data.error
+        };
+      }
+    } else {
+      const error = await response.text();
+      return {
+        success: false,
+        error: error
+      };
+    }
+  } catch (e) {
+    return { success: false, error: e };
+  }
+}

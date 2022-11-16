@@ -47,3 +47,16 @@ export async function updateAccount(
 export async function getTicketsByOwnerId(id: number): Promise<Ticket[]> {
   return (await knex.raw("select * from ticket where owner_id = " + id)).rows
 }
+
+export async function changePassword(
+  id: number,
+  salted_password: string,
+  hashed_password: string
+) {
+  return await knex("account")
+    .update({
+      salted_password,
+      hashed_password
+    })
+    .where({ id });
+}
