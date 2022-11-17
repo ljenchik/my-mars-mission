@@ -7,19 +7,22 @@ import {
   faBars,
   faXmark
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Menu.scss";
+import { Navbar } from "../Navbar/Navbar";
 
 export function Menu() {
   const [open, setOpen] = useState(true);
   return (
+    <nav className="nav-display">
+      <Navbar />
     <nav className="dropdown-menu">
       <button
         onClick={() => setOpen(!open)}
         hidden={!open}
         className="menu-button"
       >
-        <FontAwesomeIcon icon={faBars} size={"2x"} />
+        <FontAwesomeIcon icon={faBars} size={"3x"} />
       </button>
       <ul hidden={open} onClick={() => setOpen(!open)} className="menu-list">
         <button
@@ -31,8 +34,8 @@ export function Menu() {
         </button>
 
         <li className="menu-item">
-        <a id="landing-page" href="/" className="menu-link">
-        <FontAwesomeIcon icon={faEarthAmericas} size={"2x"} className="menu-icon"/>
+          <a id="landing-page" href="/" className="menu-link">
+            <FontAwesomeIcon icon={faEarthAmericas} size={"1x"} className="menu-icon" />
           </a>
           <a id="landing-page" href="/" className="menu-link">
             Landing Page
@@ -40,8 +43,8 @@ export function Menu() {
         </li>
 
         <li className="menu-item">
-        <a id="learning-space" href="/learning-space" className="menu-link">
-        <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} className="menu-icon"/>
+          <a id="learning-space" href="/learning-space" className="menu-link">
+            <FontAwesomeIcon icon={faUserAstronaut} size={"1x"} className="menu-icon" />
           </a>
           <a id="learning-space" href="/learning-space" className="menu-link">
             Learning Space
@@ -49,8 +52,8 @@ export function Menu() {
         </li>
 
         <li className="menu-item">
-        <a id="mars-holidays" href="/mars-holidays" className="menu-link">
-        <FontAwesomeIcon icon={faRocket} size={"2x"} className="menu-icon"/>
+          <a id="mars-holidays" href="/mars-holidays" className="menu-link">
+            <FontAwesomeIcon icon={faRocket} size={"1x"} className="menu-icon" />
           </a>
           <a id="mars-holidays" href="/mars-holidays" className="menu-link">
             Mars Holidays
@@ -58,8 +61,8 @@ export function Menu() {
         </li>
 
         <li className="menu-item">
-        <a id="images" href="/images" className="menu-link">
-        <FontAwesomeIcon icon={faStar} size={"2x"} className="menu-icon"/>
+          <a id="images" href="/images" className="menu-link">
+            <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon" />
           </a>
           <a id="images" href="/images" className="menu-link">
             Mars Rover Images
@@ -67,6 +70,6 @@ export function Menu() {
         </li>
 
       </ul>
-    </nav>
+    </nav></nav>
   );
 }

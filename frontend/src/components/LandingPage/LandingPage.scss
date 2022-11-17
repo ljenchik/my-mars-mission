@@ -17,7 +17,7 @@ html {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  margin: 1rem;
+  margin: 2rem;
   font-family: "Roboto", serif;
 }
 
@@ -26,7 +26,7 @@ header {
   text-align: center;
   top: 0;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
   color: white;
 }
 
@@ -35,7 +35,7 @@ figure {
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 2rem;
 }
 
 .landing-page-image {
@@ -170,11 +170,5 @@ h4 {
   .landing-page-item {
     font-size: medium;
     margin-top: 0;
-  }
-
-  .landing-page-icon-container {
-    
-  }
-
-  
+  }  
 }

@@ -1,5 +1,34 @@
 body {
     background-color: #1c3148;
-    margin: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+  
+@media screen and (max-width: 599px) {
+    .navbar-container-options {
+        display: none !important;
+    }
+
+    .navbar-container {
+        background-color: #1c3148 !important;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .navbar-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+    }
+}
+    
+
+  @media screen and (min-width: 600px) {
+    .dropdown-menu {
+        display: none;
+    }
+  }  
+
+  
+  
+ 
