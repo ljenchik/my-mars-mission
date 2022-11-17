@@ -10,7 +10,6 @@ import { AccountForm } from "./components/AccountForm/AccountForm";
 import { UserProfile } from "./components/UserProfile/UserProfile";
 import { UpdateUserProfile } from "./components/UpdateUserProfile/UpdateUserProfile";
 import { TicketForm } from "./components/TicketForm/TicketForm";
-import { TicketDisplay } from "./components/Ticket/ticket";
 import { UserInfo } from "./components/UserInfo/UserInfo";
 import { Tickets } from "./components/Tickets/Tickets";
 import { ChangePassword } from "./components/ChangePassword/ChangePassword";

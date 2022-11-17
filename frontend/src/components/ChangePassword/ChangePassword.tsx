@@ -1,5 +1,5 @@
 import { SetStateAction, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { changePassword, getAccountById } from "../../apiClient";
 import { Account } from "../../models";
 import "./ChangePassword.css";
@@ -24,15 +24,18 @@ export const ChangePassword = () => {
   }, []);
 
   const handleChangeCurrentPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setError("");
     setCurrentPassword(event.target.value);
   };
 
   const handleChangeNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewPassword(event.target.value);
+    setError("");
   };
 
   const handleChangeConfirmNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     setConfirmNewPassword(event.target.value);
+    setError("");
   };
 
   const submit = () => {
@@ -49,7 +52,7 @@ export const ChangePassword = () => {
     }
 
     if (!currentPassword) {
-        setError("Enter cutrrent password")
+        setError("Enter current password")
     }
     else if (!newPassword) {
         setError("Enter new password")
@@ -58,14 +61,14 @@ export const ChangePassword = () => {
         setError("Confirm new password")
     }
     else if (newPassword !== confirmNewPassword) {
-        setError("Your new password and new password confirmation do not match")
+        setError("Your new passwords do not match")
     }
     else {
     changePassword(Number(id), request.currentPassword, request.newPassword, request.email).then((response: { success: any; error: SetStateAction<string>; }) => {
       if (!response.success) {
         setError(response.error);
       } else {
-            setMessage("You successfully updated your password")
+            setMessage(`${account?.name}, you successfully updated your password`)
             //navigate(`/account/${id}`);
       }
     });
@@ -77,6 +80,7 @@ export const ChangePassword = () => {
     setNewPassword("");
     setConfirmNewPassword("");
     setError("");
+    setMessage("");
 }
 
   if (!account) {
@@ -99,17 +103,20 @@ export const ChangePassword = () => {
 
         <div className="change-password-input-container">
           <label>Current password</label>
-          <input type="password" onChange={handleChangeCurrentPassword} value={currentPassword}></input>
+          <input className="change-password-input" type="password" onChange={handleChangeCurrentPassword} value={currentPassword}></input>
           <label>New password</label>
-          <input type="password" onChange={handleChangeNewPassword} value={newPassword}></input>
+          <input className="change-password-input" type="password" onChange={handleChangeNewPassword} value={newPassword}></input>
           <label>Confirm new password</label>
-          <input type="password" onChange={handleChangeConfirmNewPassword} value={confirmNewPassword}></input>
+          <input className="change-password-input" type="password" onChange={handleChangeConfirmNewPassword} value={confirmNewPassword}></input>
           <div>
-            <button onClick={submit}>Submit</button>
-            <button onClick={reset}>Reset</button>
+            <button className="change-password-button" onClick={submit}>Submit</button>
+            <button className="change-password-button" onClick={reset}>Reset</button>
           </div>
         </div>
+
         {error ? <div className="change-password-error">{error}</div> : <div className="change-password-error">{message}</div>}
+        <Link to={`/account/${id}/info`} className="change-password-link"> Back to your profile</Link>
+      
       </div>
     );
   }

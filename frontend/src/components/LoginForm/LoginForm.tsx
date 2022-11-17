@@ -1,4 +1,4 @@
-import "./LoginForm.scss";
+import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
 import { Login } from "../../models";
 import { useState } from "react";
