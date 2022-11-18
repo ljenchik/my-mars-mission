@@ -3,6 +3,7 @@ import {
   faRocket,
   faStar,
   faUserAstronaut,
+  faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navbar.scss";
@@ -34,7 +35,7 @@ export const Navbar = () => {
           <a href="/learning-space" className="navbar-options">
             <FontAwesomeIcon
             className="navbar-icon"
-              icon={faUserAstronaut}
+              icon={faGraduationCap}
               size={"1x"}
             />
              <span>Learning Space</span>
@@ -42,11 +43,11 @@ export const Navbar = () => {
         </li>
         <li className="nowrap">
           <a href="/mars-holidays" className="navbar-options">
-            <FontAwesomeIcon
-            className="navbar-icon"
-              icon={faRocket}
+          <FontAwesomeIcon
+          className="navbar-icon"
+          icon={faRocket}
               size={"1x"}
-            />
+              />
             <span>Mars Holidays</span>
           </a>
         </li>

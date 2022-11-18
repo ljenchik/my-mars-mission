@@ -23,17 +23,23 @@ export const ChangePassword = () => {
     });
   }, []);
 
-  const handleChangeCurrentPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeCurrentPassword = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setError("");
     setCurrentPassword(event.target.value);
   };
 
-  const handleChangeNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeNewPassword = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setNewPassword(event.target.value);
     setError("");
   };
 
-  const handleChangeConfirmNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeConfirmNewPassword = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setConfirmNewPassword(event.target.value);
     setError("");
   };
@@ -42,38 +48,41 @@ export const ChangePassword = () => {
     const request = {
       currentPassword: "",
       newPassword: "",
-      email: ""
+      email: "",
     };
 
     request.currentPassword = currentPassword;
     request.newPassword = newPassword;
     if (account) {
-        request.email = account.email
+      request.email = account.email;
     }
 
     if (!currentPassword) {
-        setError("Enter current password")
+      setError("Enter current password");
+    } else if (!newPassword) {
+      setError("Enter new password");
+    } else if (!confirmNewPassword) {
+      setError("Confirm new password");
+    } else if (newPassword !== confirmNewPassword) {
+      setError("Your new passwords do not match");
+    } else {
+      changePassword(
+        Number(id),
+        request.currentPassword,
+        request.newPassword,
+        request.email
+      ).then((response: { success: any; error: SetStateAction<string> }) => {
+        if (!response.success) {
+          setError(response.error);
+        } else {
+          setMessage(
+            `${account?.name}, you successfully updated your password`
+          );
+          //navigate(`/account/${id}`);
+        }
+      });
     }
-    else if (!newPassword) {
-        setError("Enter new password")
-    }
-    else if (!confirmNewPassword) {
-        setError("Confirm new password")
-    }
-    else if (newPassword !== confirmNewPassword) {
-        setError("Your new passwords do not match")
-    }
-    else {
-    changePassword(Number(id), request.currentPassword, request.newPassword, request.email).then((response: { success: any; error: SetStateAction<string>; }) => {
-      if (!response.success) {
-        setError(response.error);
-      } else {
-            setMessage(`${account?.name}, you successfully updated your password`)
-            //navigate(`/account/${id}`);
-      }
-    });
   };
-}
 
   const reset = () => {
     setCurrentPassword("");
@@ -81,15 +90,13 @@ export const ChangePassword = () => {
     setConfirmNewPassword("");
     setError("");
     setMessage("");
-}
+  };
 
   if (!account) {
     return <h3>Data is loading ...</h3>;
-  }
-  else {
+  } else {
     return (
       <div className="change-password-container">
-
         <div>
           {account.photo ? (
             <img className="change-password-photo" src={account.photo} />
@@ -103,20 +110,45 @@ export const ChangePassword = () => {
 
         <div className="change-password-input-container">
           <label>Current password</label>
-          <input className="change-password-input" type="password" onChange={handleChangeCurrentPassword} value={currentPassword}></input>
+          <input
+            className="change-password-input"
+            type="password"
+            onChange={handleChangeCurrentPassword}
+            value={currentPassword}
+          ></input>
           <label>New password</label>
-          <input className="change-password-input" type="password" onChange={handleChangeNewPassword} value={newPassword}></input>
+          <input
+            className="change-password-input"
+            type="password"
+            onChange={handleChangeNewPassword}
+            value={newPassword}
+          ></input>
           <label>Confirm new password</label>
-          <input className="change-password-input" type="password" onChange={handleChangeConfirmNewPassword} value={confirmNewPassword}></input>
-          <div>
-            <button className="change-password-button" onClick={submit}>Submit</button>
-            <button className="change-password-button" onClick={reset}>Reset</button>
-          </div>
+          <input
+            className="change-password-input"
+            type="password"
+            onChange={handleChangeConfirmNewPassword}
+            value={confirmNewPassword}
+          ></input>
+        </div>
+        <div>
+          <button className="change-password-button" onClick={submit}>
+            Submit
+          </button>
+          <button className="change-password-button" onClick={reset}>
+            Reset
+          </button>
         </div>
 
-        {error ? <div className="change-password-error">{error}</div> : <div className="change-password-error">{message}</div>}
-        <Link to={`/account/${id}/info`} className="change-password-link"> Back to your profile</Link>
-      
+        {error ? (
+          <div className="change-password-error">{error}</div>
+        ) : (
+          <div className="change-password-error">{message}</div>
+        )}
+        <Link to={`/account/${id}/info`} className="change-password-link">
+          {" "}
+          Back to your profile
+        </Link>
       </div>
     );
   }

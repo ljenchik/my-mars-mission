@@ -1,8 +1,11 @@
 .update-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 1rem;
     color: white;
+    margin-top: 2rem;
 }
 
 .update-label {
@@ -11,9 +14,15 @@
     padding: 0.2rem;
 }
 
+.update-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
 .update-input {
     padding: 0.5rem;
-    width: 70%;
     border-radius: 5px;
     border: none;
 }
@@ -21,8 +30,8 @@
 .update-image-default {
     display: block;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin-top: 2rem;
 }
 
@@ -30,8 +39,8 @@
     display: block;
     margin: auto;
     object-fit: cover;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 5px double white;
     margin-top: 2rem;

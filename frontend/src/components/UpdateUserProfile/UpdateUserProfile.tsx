@@ -70,7 +70,6 @@ export function UpdateUserProfile() {
     }
   };
 
-
   const submit = () => {
     const request = {
       name: "",
@@ -121,30 +120,31 @@ export function UpdateUserProfile() {
             src={isValidImage && account.photo ? account.photo : defaultPhoto}
           />
         </div>
+        <div className="update-inputs">
+          <label className="update-label">Name</label>
+          <input
+            className="update-input"
+            type="text"
+            onChange={handleChangeAccountName}
+            value={account.name}
+          ></input>
 
-        <label className="update-label">Name</label>
-        <input
-          className="update-input"
-          type="text"
-          onChange={handleChangeAccountName}
-          value={account.name}
-        ></input>
+          <label className="update-label">Email</label>
+          <input
+            className="update-input"
+            type="email"
+            onChange={handleChangeAccountEmail}
+            value={account.email}
+          ></input>
 
-        <label className="update-label">Email</label>
-        <input
-          className="update-input"
-          type="email"
-          onChange={handleChangeAccountEmail}
-          value={account.email}
-        ></input>
-
-        <label className="update-label">Photo</label>
-        <input
-          className="update-input"
-          type="url"
-          value={account.photo}
-          onChange={handleChangeAccountPhoto}
-        ></input>
+          <label className="update-label">Photo</label>
+          <input
+            className="update-input"
+            type="url"
+            value={account.photo}
+            onChange={handleChangeAccountPhoto}
+          ></input>
+        </div>
 
         <button
           className="update-form-button"

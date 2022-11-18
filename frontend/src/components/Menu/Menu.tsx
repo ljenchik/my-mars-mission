@@ -5,7 +5,8 @@ import {
   faUserAstronaut,
   faRocket,
   faBars,
-  faXmark
+  faXmark,
+  faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import "./Menu.scss";
@@ -44,7 +45,7 @@ export function Menu() {
 
         <li className="menu-item">
           <a id="learning-space" href="/learning-space" className="menu-link">
-            <FontAwesomeIcon icon={faUserAstronaut} size={"1x"} className="menu-icon" />
+            <FontAwesomeIcon icon={faGraduationCap} size={"1x"} className="menu-icon" />
           </a>
           <a id="learning-space" href="/learning-space" className="menu-link">
             Learning Space

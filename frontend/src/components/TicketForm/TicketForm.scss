@@ -2,30 +2,41 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    margin: 1.2rem;
+    margin: 1rem;
+    margin-top: 4rem;
 }
 
-.title{
+.ticket-title{
     color: white;
-    font-size: 25px;
+    font-size: large;
     font-weight: 100;
-    margin: 1rem;
     color: #d04a36;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ticket-form-subcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1rem;
 }
 
 .ticket-form-label {
     color: white;
     font-size: 16px;
     font-weight: 100;
-    margin-left: 0.5rem;
 }
 
 .ticket-form-input {
     width: 60%;
-    padding: 10px;
-    margin: 10px;
+    padding: 0.5rem;
     border-radius: 5px;
     text-align: left;
+    border: none;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .ticket-form-buttons-container {

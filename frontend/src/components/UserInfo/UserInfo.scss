@@ -1,16 +1,17 @@
 .user-info-container {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 1rem;
     align-items: center;
+    margin-top: 6rem;
 }
 
 .user-info-photo {
     display: block;
     margin: auto;
     object-fit: cover;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 5px double white;
 }
@@ -19,6 +20,8 @@
     display: block;
     margin: auto;
     width: 50%;
+    width: 150px;
+    height: 150px;
 }
 
 .add-photo {

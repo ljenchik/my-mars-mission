@@ -145,10 +145,11 @@ export const TicketForm = () => {
 
   return (
     <div className="ticket-form-container">
-      <p className="title">
+      <div className="ticket-form-subcontainer">
+      <div className="ticket-title">
         {account?.name}, please fill in{" "}
         <span className="nowrap">the information required </span>
-      </p>
+      </div>
 
       <label
         className={
@@ -314,7 +315,7 @@ export const TicketForm = () => {
           <option>{date_2}</option>
           <option>{date_3}</option>
         </select>
-      
+        </div>  
 
       <div className="ticket-form-buttons-container">
         <button className="ticket-form-button" onClick={submit}>

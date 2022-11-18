@@ -1,4 +1,5 @@
 import {
+  faGraduationCap,
   faRocket,
   faStar,
   faUserAstronaut,
@@ -64,7 +65,7 @@ export function LandingPage() {
             className="landing-page-link"
           >
             <FontAwesomeIcon
-              icon={faUserAstronaut}
+              icon={faGraduationCap}
               size={"1x"}
               className="menu-icon"
             />
