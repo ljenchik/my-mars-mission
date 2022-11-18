@@ -25,11 +25,11 @@ export function UpdateUserProfile() {
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const [isValidImage, setIsValidImage] = useState<boolean>(true);
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
-
     getAccountById(Number(id)).then((response) => {
       response.account.created_at = response.account.created_at.split("T")[0];
       if (response.account.updated_at) {
@@ -42,11 +42,13 @@ export function UpdateUserProfile() {
   const handleChangeAccountName = (event: ChangeEvent<HTMLInputElement>) => {
     account.name = event.target.value;
     setAccount({ ...account });
+    setError("");
   };
 
   const handleChangeAccountEmail = (event: ChangeEvent<HTMLInputElement>) => {
     account.email = event.target.value;
     setAccount({ ...account });
+    setError("");
   };
 
   const handleChangeAccountPhoto = async (
@@ -62,6 +64,7 @@ export function UpdateUserProfile() {
       setIsValidImage(false);
       account.photo = "";
     }
+    setError("");
   };
 
   const handleKeyPress = (event: { keyCode: number }) => {
@@ -97,7 +100,8 @@ export function UpdateUserProfile() {
         if (!response.success) {
           setError(response.error);
         } else {
-          navigate(`/account/${id}/info`, { replace: true });
+          setMessage(`${account.name}, you successfully updated your details`)
+          //navigate(`/account/${id}/info`, { replace: true });
         }
       }
     );
@@ -153,6 +157,14 @@ export function UpdateUserProfile() {
         >
           Submit
         </button>
+        {error ? (
+          <div style={{color: "#d04a36"}}>{error}</div>
+        ) : (
+          <div style={{color: "#d04a36"}}>{message}</div>
+        )}
+        <Link to={`/account/${id}/info`} className="change-password-link">
+          Back to your profile
+        </Link>
       </div>
     );
   }
