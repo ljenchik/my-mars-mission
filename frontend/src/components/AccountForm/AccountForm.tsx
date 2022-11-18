@@ -64,7 +64,7 @@ export const AccountForm = () => {
     request.email = account.email;
     request.password = account.password;
     if (account.photo) {
-      request.photo = account.photo
+      request.photo = account.photo;
     }
 
     createAccount(request).then((response) => {
@@ -77,21 +77,15 @@ export const AccountForm = () => {
   };
 
   return (
-    <div >
-      <img
-        className="account-form-image"
-        src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
-      />
-      
-      <div className="account-container">
+    <div className="account-container">
+        <img
+          className="account-form-image"
+          src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
+        />
         <p className="account-title">Create account</p>
-        
+
         <label
-          className={
-            error.includes("Enter name")
-              ? "h4 highlight-label"
-              : "h4"
-          }
+          className={error.includes("Enter name") ? "h4 highlight-label" : "h4"}
         >
           <p className="account-subtitle">Name</p>
           <input
@@ -106,14 +100,9 @@ export const AccountForm = () => {
             value={account.name}
           ></input>
         </label>
-        
 
         <label
-          className={
-            error.includes("email")
-              ? "h4 highlight-label"
-              : "h4"
-          }
+          className={error.includes("email") ? "h4 highlight-label" : "h4"}
         >
           <p className="account-subtitle">Email</p>
           <input
@@ -130,11 +119,7 @@ export const AccountForm = () => {
         </label>
 
         <label
-          className={
-            error.includes("photo")
-              ? "h4 highlight-label"
-              : "h4"
-          }
+          className={error.includes("photo") ? "h4 highlight-label" : "h4"}
         >
           <p className="account-subtitle">Photo</p>
           <input
@@ -150,18 +135,15 @@ export const AccountForm = () => {
           ></input>
         </label>
 
-
         <label
-          className={
-            error.includes("password")
-              ? "h4 highlight-label"
-              : "h4"
-          }
+          className={error.includes("password") ? "h4 highlight-label" : "h4"}
         >
           <p className="account-subtitle">Password</p>
           <input
             className={
-              error.includes("password") ? "account-input highlight-box" : "account-input"
+              error.includes("password")
+                ? "account-input highlight-box"
+                : "account-input"
             }
             type="password"
             placeholder="Enter password"
@@ -169,9 +151,8 @@ export const AccountForm = () => {
             value={account.password}
           ></input>{" "}
         </label>
-      </div>
-      
-      <div className="account-form-buttons flex">
+
+        <div className="account-form-buttons flex">
           <Button className="account-form-button" onClick={submit}>
             Submit
           </Button>
@@ -179,11 +160,7 @@ export const AccountForm = () => {
             Reset
           </Button>
         </div>
-        {
-            error
-              ? <div className='account-form-error'>{error}</div>
-              : ""
-          }
-    </div>
+        {error ? <div className="account-form-error">{error}</div> : ""}
+      </div>
   );
 };

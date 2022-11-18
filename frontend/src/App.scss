@@ -22,10 +22,14 @@ body {
     }
 }
     
-
   @media screen and (min-width: 600px) {
     .dropdown-menu {
         display: none;
+    }
+
+    .navbar-logo-astronaut {
+        margin: 1rem;
+        color:  #1c3148 !important;
     }
   }  
 

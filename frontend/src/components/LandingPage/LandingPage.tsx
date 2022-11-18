@@ -11,7 +11,7 @@ export function LandingPage() {
   return (
     <div className="landing-page-body">
       <header>
-        <h1>Welcome to Mars Mission!</h1>
+        <h1>Welcome to <span className="nowrap">Mars Mission!</span> </h1>
       </header>
 
       <figure>

@@ -17,7 +17,7 @@ html {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  margin: 2rem;
+  margin: 1rem;
   font-family: "Roboto", serif;
 }
 
@@ -26,16 +26,17 @@ header {
   text-align: center;
   top: 0;
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
   color: white;
 }
 
 figure {
-  max-width: 75%;
+  width: 75%;
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .landing-page-image {
@@ -88,6 +89,24 @@ h4 {
   margin-top: 0.5rem;
 }
 
+
+/* || XXSMALL */
+@media screen and (max-width: 420px) {
+  .landing-page-item {
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  h1 {
+    font-size: 25px;
+  }
+
+  figure{
+      padding: 1rem;
+    }
+}
+
 /* || EXTRA SMALL */
 @media screen and (max-width: 576px) {
   .landing-page-item {
@@ -113,6 +132,10 @@ h4 {
 
   .landing-page-icon-container {
     display: none;
+  }
+
+  figure{
+    margin-top: 0.5rem;
   }
 }
 

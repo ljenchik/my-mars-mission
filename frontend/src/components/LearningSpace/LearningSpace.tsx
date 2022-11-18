@@ -49,7 +49,7 @@ export function LearningSpace() {
           </button>
         ))}
       </div>
-      <div className="container">
+      <div className="button-count-container">
         <div>
           <button
             className="previous-button"

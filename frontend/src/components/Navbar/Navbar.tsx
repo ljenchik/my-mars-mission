@@ -11,20 +11,20 @@ export const Navbar = () => {
   return (
     <div className="navbar-container">
         
-      <a href="/mars-holidays">
-        <img
-          className="navbar-image"
-          src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"
-        />{" "}
+      <a href="/mars-holidays" >
+        <div className="navbar-logo-astronaut"> <FontAwesomeIcon
+              icon={faUserAstronaut}
+              size={"2x"}
+            /> </div>
       </a>
 
       <ul className="navbar-container-options">
         <li className="nowrap">
           <a href="/" className="navbar-options">
-            <FontAwesomeIcon
+            <FontAwesomeIcon 
+              className="navbar-icon"
               icon={faEarthAmericas}
               size={"1x"}
-              className="navbar-logo"
             />
             <span>Landing Page</span>
           </a>
@@ -33,9 +33,9 @@ export const Navbar = () => {
         <li className="nowrap">
           <a href="/learning-space" className="navbar-options">
             <FontAwesomeIcon
+            className="navbar-icon"
               icon={faUserAstronaut}
               size={"1x"}
-              className="navbar-logo"
             />
              <span>Learning Space</span>
           </a>
@@ -43,9 +43,9 @@ export const Navbar = () => {
         <li className="nowrap">
           <a href="/mars-holidays" className="navbar-options">
             <FontAwesomeIcon
+            className="navbar-icon"
               icon={faRocket}
               size={"1x"}
-              className="navbar-logo"
             />
             <span>Mars Holidays</span>
           </a>
@@ -54,9 +54,9 @@ export const Navbar = () => {
         <li className="nowrap">
           <a href="/images" className="navbar-options">
             <FontAwesomeIcon
+            className="navbar-icon"
               icon={faStar}
               size={"1x"}
-              className="navbar-logo"
              />
             <span> Mars Rover Images</span>
           </a>

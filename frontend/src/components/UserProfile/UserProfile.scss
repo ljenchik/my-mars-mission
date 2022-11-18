@@ -1,12 +1,21 @@
-section {
-    display:  flex;
+.profile-container {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 1rem;
+    align-items:center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.profile-subcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .profile-image-default {
     width: 10vw;
+    margin: 1rem;
 }
 
 .overlay-photo-text {
@@ -31,7 +40,6 @@ Link:hover {
 }
 
 h2 {
-    text-align: center;
     margin: 1rem;
     font-weight: 300;
     font-size: 30px;
@@ -39,19 +47,12 @@ h2 {
 }
 
 h4 {
-    text-align: center;
     font-weight: 300;
     font-size: 20px;
     color: #d04a36;
 }
 
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
+
 
 .profile-button {
   font-size: inherit;

@@ -80,6 +80,13 @@ export const LoginForm = () => {
           </button>
         </div>
         {error ? <div className="login-form-error">{error}</div> : ""}
+      
+      
+        <img
+              className="login-form-image"
+              src="https://media.cnn.com/api/v1/images/stellar/prod/220713151211-01-perseverance-rover-scouting-mission.jpg?c=16x9&q=h_720,w_1280,c_fill"
+            />
+      
       </div>
     );
 };

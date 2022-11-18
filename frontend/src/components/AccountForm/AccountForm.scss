@@ -1,29 +1,39 @@
 .account-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items:center;
+    gap: 1rem;
+    margin: 1rem;
 }
 
+
+.account-form-image {
+    align-self: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+} 
+
 .account-title {
-    margin: 0.5rem;
     color:  white;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 100;
 }
 
 .account-subtitle {
-    margin: 1rem;
     color:  #d04a36;
-    font-size: 16px;
-    font-weight: 100;
+    font-size: 1rem;
+    padding-bottom: 0.3rem;
 }
 
 .account-input {
-    width: 70vw;
+    width: 50vw;
     padding: 0.5rem;
     border-radius: 5px;
     text-align: left;
-    margin-left: 1rem;
+    border: none;
 }
 
 .account-form-buttons {
@@ -57,15 +67,6 @@
     border-color:#d04a36;
 }
 
-.account-form-image {
-    margin-top: 60px;
-    margin-bottom: 20px;
-    align-self: center;
-    width: 100%;
-    height: 30vw;
-    object-fit: cover;
-    border-radius: 5px;
-}
 
 .account-form-error {
    color: #d04a36;
