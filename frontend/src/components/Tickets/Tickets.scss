@@ -1,0 +1,38 @@
+.tickets-list {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+
+@media screen and (max-width: 499px) {
+    .ticket-display-info {
+        font-size: 10px;
+    }
+}
+  
+
+@media screen and (min-width: 500px) {
+    .ticket-display-info {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .ticket-display-info {
+        font-size: 14px;
+        top: 42%;
+        left: 20%;
+    }
+    .ticket-display-ticket {
+        border-radius: 5px;
+        transform: rotate(270deg);
+        margin-bottom: 0;
+    }
+    .ticket-display-ticket {
+        display: flex;
+        flex-direction: column;
+    }
+}

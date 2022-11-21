@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import {getTicketsByOwnerId } from "../../apiClient";
 import { useNavigate, useParams } from "react-router-dom";
 import { Ticket } from "../../models";
-import { TicketDisplay } from "../Ticket/ticket";
-import "./Tickets.css"
+import "./Tickets.scss"
+import {TicketDisplay } from "../Ticket/TicketDisplay";
 
 export const Tickets = () => {
-  const [error, setError] = useState("");
   const navigate = useNavigate();
   const params = useParams();
   const id = Number(params.id);
@@ -14,8 +13,8 @@ export const Tickets = () => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
+
     getTicketsByOwnerId(id).then((response) => {
-        console.log("response", response)
       if (!response.success) {
         navigate(`/account/login`);
       }
@@ -23,17 +22,16 @@ export const Tickets = () => {
     });
   }, []);
 
-  console.log("tickets", tickets);
-
   if (!tickets) {
     return <div>Loading data ...</div>;
   } else {
     return (
       <div>
-        
-        {tickets.map((ticket: any) => {
+        {tickets.map((ticket: Ticket) => {
             return (
-                <><div className="ticket-list">{ticket.name}'s ticket</div><TicketDisplay ticket_id={ticket.ticket_id} /></>
+                <div className="tickets-list">
+                  <TicketDisplay ticket={ticket}/>
+                </div>
             );
           })}
     </div>

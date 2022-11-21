@@ -3,6 +3,12 @@ import { createTicket, getAccountById } from "../../apiClient";
 import { useNavigate, useParams } from "react-router-dom";
 import { Account, Ticket } from "../../models";
 import "./TicketForm.scss";
+import { validateImage } from "image-validator";
+
+const urlValidation = async (url: string) => {
+  const isValidImage = await validateImage(url);
+  return isValidImage;
+};
 
 export const TicketForm = () => {
   const [error, setError] = useState("");
@@ -12,6 +18,7 @@ export const TicketForm = () => {
   const id = Number(params.id);
   const [account, setAccount] = useState<Account>();
   var date = new Date();
+  const [isValidPhoto, setIsValidPhoto] = useState<boolean>(true);
 
   var date_1 = new Date(date.setMonth(date.getMonth() + 6)).toLocaleString().split(",")[0];
   var date_2 = new Date(date.setMonth(date.getMonth() + 12)).toLocaleString().split(",")[0];
@@ -72,16 +79,24 @@ export const TicketForm = () => {
     setTicket({ ...ticket });
   };
 
-  const handleChangePhoto = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangePhoto = async (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.photo = event.target.value;
-    setTicket({ ...ticket });
+    var isValid = urlValidation(ticket.photo);
+    if (await isValid && ticket.photo) {
+      setTicket({ ...ticket });
+      setIsValidPhoto(true);
+    } else {
+      setIsValidPhoto(false);
+      ticket.photo = "";
+    }
+    setError("");
   };
 
   const handleChangeFlightDate = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     ticket.flight_date = event.target.value
-    ticket.flight_date = ticket.flight_date.split("/").reverse().join("-");
+   // ticket.flight_date = ticket.flight_date.split("/").reverse().join("-");
     setTicket({ ...ticket });
   };
 
@@ -133,8 +148,8 @@ export const TicketForm = () => {
     request.flight_date = ticket.flight_date;
     request.photo = ticket.photo;
 
+
     createTicket(request).then((response) => {
-      console.log("ticket_id", response);
       if (!response.success) {
         setError(response.error);
       } else {
@@ -333,3 +348,4 @@ export const TicketForm = () => {
     </div>
   );
 };
+

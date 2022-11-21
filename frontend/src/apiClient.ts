@@ -148,6 +148,7 @@ export async function getAccountById(id: number) {
 }
 
 export async function createTicket(ticket: Ticket) {
+  ticket.flight_date = ticket.flight_date.split("/").reverse().join("-");
   try {
     const response = await fetch(`${baseurl}/account/${ticket.owner_id}/ticket`, {
       method: "POST",
@@ -186,7 +187,7 @@ export async function createTicket(ticket: Ticket) {
   }
 }
 
-export async function getTicketById(id: number) {
+export async function getTicketById(id: number | null) {
   try {
     const response = await fetch(
         `${baseurl}/ticket/${id}`,

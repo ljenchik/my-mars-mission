@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import {getTicketById } from "../../apiClient";
+import { getTicketById } from "../../apiClient";
 import { useNavigate, useParams } from "react-router-dom";
-import "./Ticket.css";
+import "./NewTicketDisplay.scss";
 import { Ticket } from "../../models";
 
-export const TicketDisplay = (props: { ticket_id: number; }) => {
+export const NewTicketDisplay = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
- // const id = Number(params.id);
+  const params = useParams();
+  const ticket_id = Number(params.id);
+
   const [ticket, setTicket] = useState<Ticket>();
 
   const getAge = (dateString: string) => {
@@ -23,7 +25,7 @@ export const TicketDisplay = (props: { ticket_id: number; }) => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
-    getTicketById(props.ticket_id).then((response) => {
+    getTicketById(ticket_id).then((response) => {
       if (!response.success) {
         navigate(`/account/login`);
       }
@@ -34,22 +36,23 @@ export const TicketDisplay = (props: { ticket_id: number; }) => {
   if (!ticket) {
     return <div>Loading data ...</div>;
   } else {
-    const age = getAge(ticket.dob)
-    const date = ticket.flight_date.split('T')[0]
+    const age = getAge(ticket.dob);
+    const date = ticket.flight_date.split("T")[0];
     return (
-      <div >
-        <div className="container">
-            <img className="ticket" src="https://i.pinimg.com/originals/f2/92/88/f29288889932d16f829b97a3a8311dcd.jpg" />
-            <div className="ticket-info">
-        <p >Name {ticket.name}</p>
-        <p>Gender {ticket.gender}</p>
-        <p>Age {age} years old</p>
-        <p>Flight date {date}</p>
-        <p>Flight time 12:00</p>
-        <p>Rover Perseverance</p>
-        <p>Departure from Earth</p>
-        <p>Ticket id {ticket.ticket_id}</p>
-        </div>
+      <div className="ticket-display-container">
+        <img
+          className="ticket-display-ticket"
+          src="https://i.pinimg.com/originals/f2/92/88/f29288889932d16f829b97a3a8311dcd.jpg"
+        />
+        <div className="ticket-display-info">
+          <p>Name {ticket.name}</p>
+          <p>Gender {ticket.gender}</p>
+          <p>Age {age} years old</p>
+          <p>Flight date {date}</p>
+          <p>Flight time 12:00</p>
+          <p>Rover Perseverance</p>
+          <p>Departure from Earth</p>
+          <p>Ticket id {ticket.ticket_id}</p>
         </div>
       </div>
     );
