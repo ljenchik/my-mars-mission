@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
-    width: 70%;
-    height:fit-content;
+    //width: 70%;
     position:relative;
+    margin-left: 2rem;
 }
   
 .ticket-display-ticket {
@@ -21,6 +21,8 @@
     font-size: inherit;
     color: black;
     z-index: -1;
+    top: 38%;
+    left: 30%;
 }
 
     
@@ -28,23 +30,45 @@
     .ticket-display-info {
         font-size: 10px;
     }
+
+    .tickets-display-icons {
+        display: none;
+    }
 }
   
 
 @media screen and (min-width: 500px) {
     .ticket-display-info {
         font-size: 12px;
+        z-index: 1;
+    }
+    .ticket-display-ticket {
+        z-index: 1;
+    }
+    .tickets-display-icons {
+        display: none;
     }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 600px) {
+    .ticket-display-container {
+        max-width: 70%;
+    }
+
     .ticket-display-info {
         font-size: 14px;
         top: 42%;
-        left: 20%;
+        left: 10%;
+        z-index: -1;
     }
 
     .ticket-display-ticket {
         transform: rotate(270deg);
+        margin: 0;
+        z-index: -1;
     }
+    .tickets-display-icons {
+        display: flex;
+    }
+    
 }
