@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTicketById } from "../../apiClient";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./NewTicketDisplay.scss";
 import { Ticket } from "../../models";
 
@@ -54,6 +54,9 @@ export const NewTicketDisplay = () => {
           <p>Departure from Earth</p>
           <p>Ticket id {ticket.ticket_id}</p>
         </div>
+        <Link to={`/account/${ticket.owner_id}/info`} className="change-password-link">
+          Back to your profile
+        </Link>
       </div>
     );
   }

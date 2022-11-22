@@ -89,8 +89,8 @@ Let's explore a book ticket option first. Once again, I validate all information
 After pressing a submit button, a user will be shown his/her ticket.
 
 <p float="left">
-    <img src="assets/images/TicketSmallerScreens.png" alt="ticket for smaller screens" width="200"/>
-   <img src="assets/images/TicketBiggerScreens.png" alt="ticket for bigger screens" width="200"/>
+    <img src="assets/images/TicketSmallScreens.png" alt="ticket for smaller screens" width="200"/>
+   <img src="assets/images/TicketBigScreens.png" alt="ticket for bigger screens" width="200"/>
 </p>
 
 

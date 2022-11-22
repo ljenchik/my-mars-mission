@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {getTicketsByOwnerId } from "../../apiClient";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Ticket } from "../../models";
 import "./Tickets.scss"
 import {TicketDisplay } from "../Ticket/TicketDisplay";
@@ -25,28 +25,20 @@ export const Tickets = () => {
   }, []);
 
   if (!tickets) {
-    return <div>Loading data ...</div>;
+    return <div>There are no tickets in your account</div>;
   } else {
     return (
-      <div>
+      <div className="tickets-container">
         {tickets.map((ticket: Ticket) => {
             return (
                 <div className="tickets-list">
                   <TicketDisplay ticket={ticket}/>
-                  <div className="tickets-display-icons">
-                      <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} color={"white"}/>
-                      <FontAwesomeIcon icon={faRocket} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faUserAstronaut} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faRocket} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faUserAstronaut} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faRocket} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faUserAstronaut} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faRocket} size={"2x"}  color={"white"}/>
-                      <FontAwesomeIcon icon={faUserAstronaut} size={"2x"}  color={"white"}/>
-                  </div>
                 </div>
             );
           })}
+          <Link to={`/account/${id}/info`} className="tickets-link">
+          Back to your profile
+        </Link>
     </div>
     );
   }
