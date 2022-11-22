@@ -104,63 +104,76 @@ export const AccountForm = () => {
           <p>Name</p>{" "}
         </label>
         <input
-          className={error.includes("name") ? "account-input highlight-box" : "account-input"}
+          className={
+            error.includes("name")
+              ? "account-input highlight-box"
+              : "account-input"
+          }
           type="text"
           placeholder="Enter name"
           onChange={(event) => handleChangeName(event)}
           value={account.name}
         ></input>
-
         <label
-          className={error.includes("email") ? "account-subtitle highlight-label" : "account-subtitle"}
+          className={
+            error.includes("email")
+              ? "account-subtitle highlight-label"
+              : "account-subtitle"
+          }
         >
-          <p >Email</p></label>
-          <input
-            className={
-              error.includes("email")
-                ? "account-input highlight-box"
-                : "account-input"
-            }
-            type="email"
-            placeholder="Enter email address"
-            onChange={(event) => handleChangeEmail(event)}
-            value={account.email}
-          ></input>
-        
-
+          <p>Email</p>
+        </label>
+        <input
+          className={
+            error.includes("email")
+              ? "account-input highlight-box"
+              : "account-input"
+          }
+          type="email"
+          placeholder="Enter email address"
+          onChange={(event) => handleChangeEmail(event)}
+          value={account.email}
+        ></input>
         <label
-          className={error.includes("photo") ? "account-subtitle highlight-label" : "account-subtitle"}
+          className={
+            error.includes("photo")
+              ? "account-subtitle highlight-label"
+              : "account-subtitle"
+          }
         >
-          <p>Photo</p></label>
-          <input
-            className={
-              error.includes("photo")
-                ? "account-input highlight-box"
-                : "account-input"
-            }
-            type="url"
-            placeholder="Enter photo"
-            onChange={(event) => handleChangePhoto(event)}
-            value={account.photo}
-          ></input>
-        
-
+          <p>Photo</p>
+        </label>
+        <input
+          className={
+            error.includes("photo")
+              ? "account-input highlight-box"
+              : "account-input"
+          }
+          type="url"
+          placeholder="Enter photo"
+          onChange={(event) => handleChangePhoto(event)}
+          value={account.photo}
+        ></input>
         <label
-          className={error.includes("password") ? "account-subtitle highlight-label" : "account-subtitle"}
+          className={
+            error.includes("password")
+              ? "account-subtitle highlight-label"
+              : "account-subtitle"
+          }
         >
-          <p>Password</p> </label>
-          <input
-            className={
-              error.includes("password")
-                ? "account-input highlight-box"
-                : "account-input"
-            }
-            type="password"
-            placeholder="Enter password"
-            onChange={(event) => handleChangePassword(event)}
-            value={account.password}
-          ></input>{" "}
-       
+          <p>Password</p>{" "}
+        </label>
+        <input
+          className={
+            error.includes("password")
+              ? "account-input highlight-box"
+              : "account-input"
+          }
+          type="password"
+          placeholder="Enter password"
+          onChange={(event) => handleChangePassword(event)}
+          value={account.password}
+        ></input>{" "}
       </div>
       <div className="account-form-buttons flex">
         <Button className="account-form-button" onClick={submit}>

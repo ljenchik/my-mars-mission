@@ -53,30 +53,36 @@ export const TicketForm = () => {
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.name = event.target.value;
     setTicket({ ...ticket });
+    setError("");
   };
 
   const handleChangeGender = (event: React.ChangeEvent<HTMLSelectElement>) => {
     ticket.gender = event.target.value;
     setTicket({ ...ticket });
+    setError("");
   };
 
   const handleChangeDob = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.dob = event.target.value;
     setTicket({ ...ticket });
+    setError("");
   };
 
   const handleChangeAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.address = event.target.value;
     setTicket({ ...ticket });
+    setError("");
   };
 
   const handleChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.phone = event.target.value;
     setTicket({ ...ticket });
+    setError("");
   };
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     ticket.email = event.target.value;
     setTicket({ ...ticket });
+    setError("");
   };
 
   const handleChangePhoto = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -98,6 +104,7 @@ export const TicketForm = () => {
     ticket.flight_date = event.target.value
    // ticket.flight_date = ticket.flight_date.split("/").reverse().join("-");
     setTicket({ ...ticket });
+    setError("");
   };
 
   const handleKeyPress = (event: { keyCode: number }) => {
