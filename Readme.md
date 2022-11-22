@@ -16,15 +16,31 @@ After completeing the course I decide to work on My Mars Mission project on my o
 
 ### Landing Page
 
-<img src="assets/images/LandingPage_1.png" alt="landing page" width="200"/>
+
 
 Home page of My Mars Mission website is called a Landing Page. It contains Mars image, three buttons-links: Mars Holidays, Mars Rover Images, Learning Space, a burger menu for smaller screens and a navbar for bigger screens as well as a link in a form of  astronaut icon.  When a user hovers over the links the cusor changes to pointer and the color of the text and the icons changes to white.
+
+<p float="left">
+  <img src="assets/images/LandingPage_1.png" alt="landing page for smaller screens" width="200"/>
+  <img src="assets/images/LandingPage_2.png" alt="landing page for bigger screens" width="200"/>
+  <img src="assets/images/LandingPage_3.png" alt="landing page with a link changing colour" width="200"/>
+</p>
 
 At the top left coner there is an astronaut icon which links to create account ang login page. To browse the website the user doesn't need to login but in order to book a ticket to Mars or see all booked tickets a user has to create account and login.
 
 At the top right corner there is a hamburger menu. When clicked, it displays a list of links to a Landing Page, a Learning Space, Mars Holidays and Mars Rover Images. Next to the links there are small icons which symbolise each page. The links and the icons change the color to white when coursor hovers over. The cross icon at the top left corner of the opened hamburger menu is used to close the menu. Alternatively, the user can click on a black background and close the menu.
 
+<p float="left">
+  <img src="assets/images/LandingPage_4.png" alt="landing page for smaller screens" width="200"/>
+  <img src="assets/images/LandingPage_5.png" alt="landing page for bigger screens" width="200"/>
+</p>
+
 For bigger screens, instead of the hamburger menu, a user can use a navbar. The navbar displays the same links and the corresponding icons as the hamburger menu. The cursor changes to the pointer and an orange line appears underneath to make the link more visible while hovering over.
+
+<p float="left">
+  <img src="assets/images/LandingPage_2.png" alt="landing page for smaller screens" width="200"/>
+  <img src="assets/images/LandingPage_6.png" alt="landing page for bigger screens" width="200"/>
+</p>
 
 ### Learning Space
 
