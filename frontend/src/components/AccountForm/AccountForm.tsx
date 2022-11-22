@@ -9,6 +9,7 @@ export const AccountForm = () => {
   const [error, setError] = useState("");
   const [isDisabled, setDisabled] = useState(false);
   const navigate = useNavigate();
+ 
 
   const [account, setAccount] = useState<Account>({
     id: null,
@@ -32,7 +33,8 @@ export const AccountForm = () => {
 
   const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     account.password = event.target.value;
-    setAccount({ ...account });
+    
+      setAccount({ ...account });
   };
 
   const reset = () => {
@@ -63,17 +65,18 @@ export const AccountForm = () => {
     request.name = account.name;
     request.email = account.email;
     request.password = account.password;
+
     if (account.photo) {
       request.photo = account.photo;
     }
 
     createAccount(request).then((response) => {
-      if (!response.success) {
-        setError(response.error);
-      } else {
-        navigate(`/account/login`);
-      }
-    });
+        if (!response.success) {
+          setError(response.error);
+        } else {
+          navigate(`/account/login`);
+        }
+      });
   };
 
   return (

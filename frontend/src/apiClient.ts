@@ -264,6 +264,7 @@ export async function getTicketsByOwnerId(id: number) {
 export async function changePassword(id: number, 
   currentPassword: string, newPassword: string, email: string) {
   var passwords = {currentPassword: currentPassword, newPassword: newPassword, email: email}
+  
   try {
     const response = await fetch(`${baseurl}/account/${id}/change-password`, {
       method: "POST",

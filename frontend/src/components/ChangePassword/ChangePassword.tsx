@@ -1,5 +1,5 @@
 import { SetStateAction, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { changePassword, getAccountById } from "../../apiClient";
 import { Account } from "../../models";
 import "./ChangePassword.css";
@@ -13,7 +13,6 @@ export const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
-  const navigate = useNavigate();
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
@@ -53,6 +52,7 @@ export const ChangePassword = () => {
 
     request.currentPassword = currentPassword;
     request.newPassword = newPassword;
+    
     if (account) {
       request.email = account.email;
     }
@@ -78,7 +78,6 @@ export const ChangePassword = () => {
           setMessage(
             `${account?.name}, you successfully updated your password`
           );
-          //navigate(`/account/${id}`);
         }
       });
     }

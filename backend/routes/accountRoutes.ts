@@ -8,7 +8,11 @@ import {
   updateAccount,
 } from "../repos/accountRepo";
 import bcrypt from "bcrypt";
-import { requestAccountValidation, requestUpdateAccountValidation } from "../validation/accountFormValidation";
+import {
+  requestAccountValidation,
+  requestChangePasswordValidation,
+  requestUpdateAccountValidation,
+} from "../validation/accountFormValidation";
 import {
   generateAccessToken,
   generateRefreshToken,
@@ -69,13 +73,14 @@ router.post(
         res.status(500);
         return res.send(error);
       }
-  } else {
-    return res.json({
-      success: false,
-      error: requestAccountValidation(requestBody).error,
-    });
+    } else {
+      return res.json({
+        success: false,
+        error: requestAccountValidation(requestBody).error,
+      });
+    }
   }
-});
+);
 
 router.post("/account/login", async (req, res) => {
   const foundAccounts = await foundUser(req.body.email);
@@ -160,29 +165,31 @@ router.post(
   async (req: any, res: any) => {
     var id = parseInt(req.params.id);
     const requestBody = req.body;
-    const foundAccounts = await foundUser(req.body.email);
-    if (foundAccounts.length === 0) {
-      res.status(404);
-      return res.json({
-        success: false,
-        error: "Invalid username or password",
-        id: "",
-      });
-    }
-    const foundAccount = foundAccounts[0];
-    const hashedPassword = await bcrypt.compare(
-      req.body.currentPassword,
-      foundAccount.hashed_password
-    );
-    let salt = await bcrypt.genSalt(10);
-    if (hashedPassword) {
-      await new Promise((resolve, reject) => {
-        bcrypt.hash(requestBody.newPassword, salt, function (err, hash) {
-          if (err) reject(err);
-          resolve(hash);
-          requestBody.salted_password = salt;
-          requestBody.hashed_password = hash;
-        })});
+    if (requestChangePasswordValidation(requestBody.newPassword).success) {
+      const foundAccounts = await foundUser(req.body.email);
+      if (foundAccounts.length === 0) {
+        res.status(404);
+        return res.json({
+          success: false,
+          error: "Invalid username or password",
+          id: "",
+        });
+      }
+      const foundAccount = foundAccounts[0];
+      const hashedPassword = await bcrypt.compare(
+        req.body.currentPassword,
+        foundAccount.hashed_password
+      );
+      let salt = await bcrypt.genSalt(10);
+      if (hashedPassword) {
+        await new Promise((resolve, reject) => {
+          bcrypt.hash(requestBody.newPassword, salt, function (err, hash) {
+            if (err) reject(err);
+            resolve(hash);
+            requestBody.salted_password = salt;
+            requestBody.hashed_password = hash;
+          });
+        });
         try {
           await changePassword(
             id,
@@ -194,14 +201,20 @@ router.post(
           res.status(500);
           return res.send(error);
         }
-      }
-      else {
+      } else {
         return res.json({
           success: false,
           error: "Current password is invalid",
         });
       }
-       
-    });
+    } else {
+      return res.json({
+        success: false,
+        id: "",
+        error: requestChangePasswordValidation(requestBody).error,
+      });
+    }
+  }
+);
 
 export default router;
