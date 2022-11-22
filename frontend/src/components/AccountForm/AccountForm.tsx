@@ -9,7 +9,6 @@ export const AccountForm = () => {
   const [error, setError] = useState("");
   const [isDisabled, setDisabled] = useState(false);
   const navigate = useNavigate();
- 
 
   const [account, setAccount] = useState<Account>({
     id: null,
@@ -24,17 +23,25 @@ export const AccountForm = () => {
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     account.name = event.target.value;
     setAccount({ ...account });
+    setError("");
   };
 
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     account.email = event.target.value;
     setAccount({ ...account });
+    setError("");
+  };
+
+  const handleChangePhoto = (event: React.ChangeEvent<HTMLInputElement>) => {
+    account.photo = event.target.value;
+    setAccount({ ...account });
+    setError("");
   };
 
   const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     account.password = event.target.value;
-    
-      setAccount({ ...account });
+    setAccount({ ...account });
+    setError("");
   };
 
   const reset = () => {
@@ -71,43 +78,43 @@ export const AccountForm = () => {
     }
 
     createAccount(request).then((response) => {
-        if (!response.success) {
-          setError(response.error);
-        } else {
-          navigate(`/account/login`);
-        }
-      });
+      if (!response.success) {
+        setError(response.error);
+      } else {
+        navigate(`/account/login`);
+      }
+    });
   };
 
   return (
     <div className="account-container">
-        <img
-          className="account-form-image"
-          src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
-        />
-        <p className="account-title">Create account</p>
-
+      <img
+        className="account-form-image"
+        src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
+      />
+      <p className="account-title">Create account</p>
+      <div className="account-container-input">
         <label
-          className={error.includes("Enter name") ? "h4 highlight-label" : "h4"}
+          className={
+            error.includes("name")
+              ? "account-subtitle highlight-label"
+              : "account-subtitle"
+          }
         >
-          <p className="account-subtitle">Name</p>
-          <input
-            className={
-              error.includes("Enter name")
-                ? "account-input highlight-box"
-                : "account-input"
-            }
-            type="text"
-            placeholder="Enter name"
-            onChange={(event) => handleChangeName(event)}
-            value={account.name}
-          ></input>
+          <p>Name</p>{" "}
         </label>
+        <input
+          className={error.includes("name") ? "account-input highlight-box" : "account-input"}
+          type="text"
+          placeholder="Enter name"
+          onChange={(event) => handleChangeName(event)}
+          value={account.name}
+        ></input>
 
         <label
-          className={error.includes("email") ? "h4 highlight-label" : "h4"}
+          className={error.includes("email") ? "account-subtitle highlight-label" : "account-subtitle"}
         >
-          <p className="account-subtitle">Email</p>
+          <p >Email</p></label>
           <input
             className={
               error.includes("email")
@@ -119,12 +126,12 @@ export const AccountForm = () => {
             onChange={(event) => handleChangeEmail(event)}
             value={account.email}
           ></input>
-        </label>
+        
 
         <label
-          className={error.includes("photo") ? "h4 highlight-label" : "h4"}
+          className={error.includes("photo") ? "account-subtitle highlight-label" : "account-subtitle"}
         >
-          <p className="account-subtitle">Photo</p>
+          <p>Photo</p></label>
           <input
             className={
               error.includes("photo")
@@ -133,15 +140,15 @@ export const AccountForm = () => {
             }
             type="url"
             placeholder="Enter photo"
-            onChange={(event) => handleChangeEmail(event)}
+            onChange={(event) => handleChangePhoto(event)}
             value={account.photo}
           ></input>
-        </label>
+        
 
         <label
-          className={error.includes("password") ? "h4 highlight-label" : "h4"}
+          className={error.includes("password") ? "account-subtitle highlight-label" : "account-subtitle"}
         >
-          <p className="account-subtitle">Password</p>
+          <p>Password</p> </label>
           <input
             className={
               error.includes("password")
@@ -153,17 +160,17 @@ export const AccountForm = () => {
             onChange={(event) => handleChangePassword(event)}
             value={account.password}
           ></input>{" "}
-        </label>
-
-        <div className="account-form-buttons flex">
-          <Button className="account-form-button" onClick={submit}>
-            Submit
-          </Button>
-          <Button className="account-form-button" onClick={reset}>
-            Reset
-          </Button>
-        </div>
-        {error ? <div className="account-form-error">{error}</div> : ""}
+       
       </div>
+      <div className="account-form-buttons flex">
+        <Button className="account-form-button" onClick={submit}>
+          Submit
+        </Button>
+        <Button className="account-form-button" onClick={reset}>
+          Reset
+        </Button>
+      </div>
+      {error ? <div className="account-form-error">{error}</div> : ""}
+    </div>
   );
 };
