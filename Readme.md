@@ -16,7 +16,7 @@ After completeing the course I decide to work on My Mars Mission project on my o
 
 ### Landing Page
 
-![Landing Page](assets/images/LandingPage_1.png | width=100)
+<img src="assets/images/LandinPage_1" alt="drawing" width="200"/>
 
 Home page of My Mars Mission website is called a Landing Page. It contains Mars image, three buttons-links: Mars Holidays, Mars Rover Images, Learning Space, a burger menu for smaller screens and a navbar for bigger screens as well as a link in a form of  astronaut icon.  When a user hovers over the links the cusor changes to pointer and the color of the text and the icons changes to white.
 
