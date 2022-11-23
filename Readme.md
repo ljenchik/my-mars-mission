@@ -8,58 +8,74 @@ In TechSwitch coding bootcamp my favourite exercise was Mars Mission. As a team 
 
 After completing the course I decide to work on My Mars Mission project on my own to practice and add new features and functionality. In the frontend, I added media queries, styling, new pages such as login, create account, tickets to Mars and so on. I used Postgres for the backend to store users' and Mars tickets' details. I learnt how to store and safely change passwords using bcrypt technology. Also, I improved my CSS skills. 
 
-## Installation
-1. Create and open a folder in VS Code where you want to clone my-mars-mission project.
+## To build aproject you need to install VS Code, Docker and PgAdmin4. Then run the following commands:
 
-2. Clone my-mars-mission repository from https://github.com/ljenchik/my-mars-mission.
+### 1. Create and open a folder in VS Code where you want to clone my-mars-mission project.
+
+### 2. Clone my-mars-mission repository from https://github.com/ljenchik/my-mars-mission into your folder by running the following command in VS Code terminal
  
-In VS Code therminal enter command:
- 
-#### git clone  git@github.com:ljenchik/my-mars-mission.git
+```
+ git clone git@github.com:ljenchik/my-mars-mission.git
+ ```
 
-3. Navigate to a backend folder and start running docker container by entering:
+### 3. Navigate to a backend folder and start running docker container
 
-#### docker-compose up -d 
+```
+docker-compose up -d 
+```
 
-4. In a backend folder run:
+### 4. In a backend folder run
 
-#### npm install
+```
+npm install
+```
 
-5. To start backend run:
+### 5. To start backend run:
 
-#### npm start
+```
+npm start
+```
 
-6. In PgAdmin4 create database MyMarsMission
+### 6. In PgAdmin4 create database. Let's name it Mars (or any other name you want)
 
-7. Before running migrations, check if knexfile.ts looks like this:
+### 7. Before running migrations, check if knexfile.ts looks like this:
 
-        const config:{[name: string]: any} = {
+    ```
+    const config:{[name: string]: any} = {
         development: {
             client: "pg",
             connection: {
-            database: "MyMarsMission",
+            database: "Mars",
             user:     "Olena",
             password: "1234"
             }
         }
     }
     export default config;
+    ```
 
+Note: name of your database in knexfile.ts should be the same as the name of your database in PgAdmin4.
 
-Important: name of your database should be MyMarsMission (the same as in PgAdmin4)
+### 8. In backend folder 4 times run: 
 
-8. In backend folder 4 times run: 
-
-#### knex migrate:up
+```
+knex migrate:up
+```
 
 You will see 2 tables created in your database: account and ticket.
 
-9. Open a terminal for the frontend. Navigate to a frontend folder.
+### 9. Open a terminal for the frontend. Navigate to a frontend folder.
 
-10. Run: 
+### 10. Run: 
 
-#### npm install
-#### npm start
+```npm install
+```
+
+and 
+
+```
+npm start
+```
 
 ## Usage
 
