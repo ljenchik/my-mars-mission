@@ -101,7 +101,7 @@ export function UpdateUserProfile() {
           setError(response.error);
         } else {
           setMessage(`${account.name}, you successfully updated your details`)
-          //navigate(`/account/${id}/info`, { replace: true });
+         
         }
       }
     );
@@ -162,7 +162,7 @@ export function UpdateUserProfile() {
         ) : (
           <div style={{color: "#d04a36"}}>{message}</div>
         )}
-        <Link to={`/account/${id}/info`} className="change-password-link">
+        <Link to={`/my-mars-mission/account/${id}/info`} className="change-password-link">
           Back to your profile
         </Link>
       </div>

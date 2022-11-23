@@ -12,7 +12,7 @@ export const Navbar = () => {
   return (
     <div className="navbar-container">
         
-      <a href="/mars-holidays" >
+      <a href="/my-mars-mission/mars-holidays" >
         <div className="navbar-logo-astronaut"> <FontAwesomeIcon
               icon={faUserAstronaut}
               size={"2x"}
@@ -21,7 +21,7 @@ export const Navbar = () => {
 
       <ul className="navbar-container-options">
         <li className="nowrap">
-          <a href="/" className="navbar-options">
+          <a href="/my-mars-mission" className="navbar-options">
             <FontAwesomeIcon 
               className="navbar-icon"
               icon={faEarthAmericas}
@@ -32,7 +32,7 @@ export const Navbar = () => {
         </li>
 
         <li className="nowrap">
-          <a href="/learning-space" className="navbar-options">
+          <a href="/my-mars-mission/learning-space" className="navbar-options">
             <FontAwesomeIcon
             className="navbar-icon"
               icon={faGraduationCap}
@@ -42,7 +42,7 @@ export const Navbar = () => {
           </a>
         </li>
         <li className="nowrap">
-          <a href="/mars-holidays" className="navbar-options">
+          <a href="/my-mars-mission/mars-holidays" className="navbar-options">
           <FontAwesomeIcon
           className="navbar-icon"
           icon={faRocket}
@@ -53,7 +53,7 @@ export const Navbar = () => {
         </li>
 
         <li className="nowrap">
-          <a href="/images" className="navbar-options">
+          <a href="/my-mars-mission/images" className="navbar-options">
             <FontAwesomeIcon
             className="navbar-icon"
               icon={faStar}

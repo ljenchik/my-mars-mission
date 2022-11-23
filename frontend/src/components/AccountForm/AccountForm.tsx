@@ -81,7 +81,7 @@ export const AccountForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
-        navigate(`/account/login`);
+        navigate(`/my-mars-mission/account/login`);
       }
     });
   };

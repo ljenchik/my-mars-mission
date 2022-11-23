@@ -26,11 +26,11 @@ export function UserProfile() {
     "https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360";
 
   const createTicket = () => {
-    navigate(`/account/${id}/ticket`);
+    navigate(`/my-mars-mission/account/${id}/ticket`);
   };
 
   const myTickets = () => {
-    navigate(`/account/${id}/tickets`);
+    navigate(`/my-mars-mission/account/${id}/tickets`);
   };
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export function UserProfile() {
               delay={{ show: 250, hide: 400 }}
               overlay={renderTooltip}
             >
-              <Link to={`/account/${id}/info`} className="profile-photo-link">
+              <Link to={`/my-mars-mission/account/${id}/info`} className="profile-photo-link">
                 {account.photo ? (
                   <img className="profile-photo" src={account.photo} />
                 ) : (

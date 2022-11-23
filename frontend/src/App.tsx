@@ -24,19 +24,19 @@ function App() {
       <Router>
       {/* <Router basename={process.env.PUBLIC_URL}> */}
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/learning-space" element={<LearningSpace />} />
-          <Route path="/images" element={<ImageViewer />} />
-          <Route path="/mars-holidays" element={<MarsHolidays />} />
-          <Route path="/account/login" element={<LoginForm />} />
-          <Route path="/account/create" element={<AccountForm />} />
-          <Route path="/account/:id" element={<UserProfile />} />
-          <Route path="/account/:id/ticket" element={<TicketForm />} />
-          <Route path="/account/:id/tickets" element={<Tickets />} />
-          <Route path="/ticket/:id" element={<NewTicketDisplay />} />
-          <Route path="/account/:id/change-password" element={<ChangePassword />} />
-          <Route path="/account/:id/update" element={<UpdateUserProfile />} />
-          <Route path="/account/:id/info" element={<UserInfo />} />
+          <Route path="/my-mars-mission" element={<LandingPage />} />
+          <Route path="/my-mars-mission/learning-space" element={<LearningSpace />} />
+          <Route path="/my-mars-mission/images" element={<ImageViewer />} />
+          <Route path="/my-mars-mission/mars-holidays" element={<MarsHolidays />} />
+          <Route path="/my-mars-mission/account/login" element={<LoginForm />} />
+          <Route path="/my-mars-mission/account/create" element={<AccountForm />} />
+          <Route path="/my-mars-mission/account/:id" element={<UserProfile />} />
+          <Route path="/my-mars-mission/account/:id/ticket" element={<TicketForm />} />
+          <Route path="/my-mars-mission/account/:id/tickets" element={<Tickets />} />
+          <Route path="/my-mars-mission/ticket/:id" element={<NewTicketDisplay />} />
+          <Route path="/my-mars-mission/account/:id/change-password" element={<ChangePassword />} />
+          <Route path="/my-mars-mission/account/:id/update" element={<UpdateUserProfile />} />
+          <Route path="/my-mars-mission/account/:id/info" element={<UserInfo />} />
         </Routes>
       </Router>
     </>

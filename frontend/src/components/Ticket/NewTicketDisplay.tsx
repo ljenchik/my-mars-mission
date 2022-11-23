@@ -27,7 +27,7 @@ export const NewTicketDisplay = () => {
     const accessToken = localStorage.getItem("accessToken");
     getTicketById(ticket_id).then((response) => {
       if (!response.success) {
-        navigate(`/account/login`);
+        navigate(`/my-mars-mission/account/login`);
       }
       setTicket(response.ticket);
     });
@@ -54,7 +54,7 @@ export const NewTicketDisplay = () => {
           <p>Departure from Earth</p>
           <p>Ticket id {ticket.ticket_id}</p>
         </div>
-        <Link to={`/account/${ticket.owner_id}/info`} className="change-password-link">
+        <Link to={`//my-mars-missionaccount/${ticket.owner_id}/info`} className="change-password-link">
           Back to your profile
         </Link>
       </div>

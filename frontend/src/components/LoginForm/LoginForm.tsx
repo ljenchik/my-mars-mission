@@ -43,7 +43,7 @@ export const LoginForm = () => {
         setError(response.error);
       } else {
         localStorage.setItem("accessToken", response.accessToken);
-        navigate(`/account/${response.id}`);
+        navigate(`/my-mars-mission/account/${response.id}`);
       }
     });
   };

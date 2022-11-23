@@ -160,7 +160,7 @@ export const TicketForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
-        navigate(`/ticket/${response.ticket_id}`);
+        navigate(`/my-mars-mission/ticket/${response.ticket_id}`);
       }
     });
   };

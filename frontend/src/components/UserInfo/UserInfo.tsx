@@ -38,7 +38,7 @@ export function UserInfo() {
               /> :
         <OverlayTrigger overlay={<Tooltip className="add-photo">Add photo</Tooltip>}>
           {({ ref, ...triggerHandler }) => (
-            <Link ref={ref} to={`/account/${id}/update`} {...triggerHandler}>
+            <Link ref={ref} to={`/my-mars-mission/account/${id}/update`} {...triggerHandler}>
               <img
                 className="user-info-default"
                 src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"
@@ -57,19 +57,19 @@ export function UserInfo() {
         ) : (
           ""
         )}
-        <Link to={`/account/${id}/update`}>
+        <Link to={`/my-mars-mission/account/${id}/update`}>
           <button className="user-info-button">Update details</button>
         </Link>
 
-        <Link to={`/account/${id}/change-password`}>
+        <Link to={`/my-mars-mission/account/${id}/change-password`}>
           <button className="user-info-button">Change password</button>
         </Link>
 
-        <Link to={`/account/${id}/ticket`}>
+        <Link to={`/my-mars-mission/account/${id}/ticket`}>
           <button className="user-info-button" >Book ticket</button>
         </Link>
 
-        <Link to={`/account/${id}/tickets`}>
+        <Link to={`/my-mars-mission/account/${id}/tickets`}>
           <button className="user-info-button">My tickets</button>
         </Link>
       </section>

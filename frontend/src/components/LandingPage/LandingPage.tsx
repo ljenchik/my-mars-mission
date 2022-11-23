@@ -31,7 +31,7 @@ export function LandingPage() {
         <div className="landing-page-item">
           <Link
             id="mars-holidays"
-            to="/mars-holidays"
+            to="/my-mars-mission/mars-holidays"
             className="landing-page-link"
           >
             <FontAwesomeIcon
@@ -43,17 +43,17 @@ export function LandingPage() {
 
           <Link
             id="mars-holidays"
-            to="/mars-holidays"
+            to="/my-mars-mission/mars-holidays"
             className="landing-page-link"
           >Mars Holidays
           </Link>
         </div>
 
         <div className="landing-page-item">
-          <Link id="images" to="/images" className="landing-page-link">
+          <Link id="images" to="/my-mars-mission/images" className="landing-page-link">
             <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon" />
           </Link>
-          <Link id="images" to="/images" className="landing-page-link">
+          <Link id="images" to="/my-mars-mission/images" className="landing-page-link">
             Mars Rover Images
           </Link>
         </div>
@@ -61,7 +61,7 @@ export function LandingPage() {
         <div className="landing-page-item">
           <Link
             id="learning-space"
-            to="/learning-space"
+            to="/my-mars-mission/learning-space"
             className="landing-page-link"
           >
             <FontAwesomeIcon
@@ -72,7 +72,7 @@ export function LandingPage() {
           </Link>
           <Link
             id="learning-space"
-            to="/learning-space"
+            to="/my-mars-mission/learning-space"
             className="landing-page-link"
           >Learning Space
           </Link>

@@ -145,7 +145,7 @@ export const ChangePassword = () => {
         ) : (
           <div className="change-password-error">{message}</div>
         )}
-        <Link to={`/account/${id}/info`} className="change-password-link">
+        <Link to={`/my-mars-mission/account/${id}/info`} className="change-password-link">
           {" "}
           Back to your profile
         </Link>

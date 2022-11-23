@@ -15,3 +15,13 @@
 .tickets-link:hover {
     color: white;
 }
+
+.tickets-no-tickets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 8rem;
+    color: #d04a36;
+}
