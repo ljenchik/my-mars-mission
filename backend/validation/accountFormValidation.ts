@@ -63,7 +63,7 @@ export function requestChangePasswordValidation(request: string) {
     return {
       success: false,
       error:
-        "Password must contain minimum 8 characters, at least one letter and one number",
+        "Password must contain minimum 8 characters, \n at least one letter and one number",
     };
   }
   return { success: true, error: "" };

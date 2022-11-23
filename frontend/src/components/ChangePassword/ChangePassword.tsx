@@ -96,6 +96,7 @@ export const ChangePassword = () => {
   } else {
     return (
       <div className="change-password-container">
+        <h3>Change your password</h3>
         <div>
           {account.photo ? (
             <img className="change-password-photo" src={account.photo} />
@@ -140,7 +141,7 @@ export const ChangePassword = () => {
         </div>
 
         {error ? (
-          <div className="change-password-error">{error}</div>
+          <div className="change-password-error display-linebreak">{error}</div>
         ) : (
           <div className="change-password-error">{message}</div>
         )}

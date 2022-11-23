@@ -121,7 +121,7 @@ Let's have a look at Update details option first.
 
 <p float="left">
     <img src="assets/images/UserInfo.png" alt="tickets for smaller screens" width="200"/>
-    <img src="assets/images/UserInfoUpdated.png" alt="tickets for smaller screens" width="200"/>
+    <img src="assets/images/UpdatedUserInfo.png" alt="tickets for smaller screens" width="200"/>
 </p>
 
 After successful filling in all the fields, a user will see a message "User's name, you successfully updated your details" and a link which navigates to user's profile.
