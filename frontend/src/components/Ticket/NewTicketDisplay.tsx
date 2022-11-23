@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getTicketById } from "../../apiClient";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import "./NewTicketDisplay.scss";
+import "./TicketDisplay.scss";
 import { Ticket } from "../../models";
 
 export const NewTicketDisplay = () => {

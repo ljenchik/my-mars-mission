@@ -78,15 +78,6 @@ export function LandingPage() {
           </Link>
         </div>
       </div>
-
-      <div className="landing-page-icon-container">
-          <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />
-          <FontAwesomeIcon icon={faRocket} size={"2x"} />
-          <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />
-          <FontAwesomeIcon icon={faRocket} size={"2x"} />
-          <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />
-      </div>
-      
     </div>
   );
 }

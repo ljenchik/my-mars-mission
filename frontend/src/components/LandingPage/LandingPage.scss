@@ -18,6 +18,7 @@ html {
   align-items: center;
   padding: 1rem;
   margin: 1rem;
+  gap: 2rem;
   font-family: "Roboto", serif;
 }
 
@@ -26,7 +27,7 @@ header {
   text-align: center;
   top: 0;
   padding: 1rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
   color: white;
 }
 
@@ -35,12 +36,12 @@ figure {
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin-top: rem;
   padding: 1rem;
 }
 
 .landing-page-image {
-  margin-top: 5rem;
+  margin-top: 7rem;
   width: 70%;
   align-self: center;
 }

@@ -25,20 +25,23 @@ export const Tickets = () => {
   }, []);
 
   if (!tickets) {
-    return <div>There are no tickets in your account</div>;
+    return <div>There are no tickets on your account</div>;
   } else {
     return (
       <div className="tickets-container">
+        
         {tickets.map((ticket: Ticket) => {
             return (
-                <div className="tickets-list">
+                <div>
                   <TicketDisplay ticket={ticket}/>
                 </div>
             );
           })}
+
           <Link to={`/account/${id}/info`} className="tickets-link">
           Back to your profile
         </Link>
+
     </div>
     );
   }

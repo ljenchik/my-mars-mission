@@ -1,8 +1,7 @@
-import "./NewTicketDisplay.scss";
+import "./TicketDisplay.scss";
 import { Ticket } from "../../models";
 
 export const TicketDisplay = (props: {ticket: Ticket}) => {
- // const [ticket, setTicket] = useState<Ticket>();
 
   const getAge = (dateString: string) => {
     var today = new Date();
@@ -14,16 +13,6 @@ export const TicketDisplay = (props: {ticket: Ticket}) => {
     }
     return age;
   };
-
-  // useEffect(() => {
-  //   const accessToken = localStorage.getItem("accessToken");
-  //     getTicketById(props.ticket.ticket_id).then((response) => {
-  //       if (!response.success) {
-  //         navigate(`/account/login`);
-  //       }
-  //     setTicket(response.ticket);
-  //   });
-  // }, []);
 
   if (!props.ticket) {
     return <div>Loading data ...</div>;

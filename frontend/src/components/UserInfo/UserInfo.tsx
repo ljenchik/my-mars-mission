@@ -72,16 +72,6 @@ export function UserInfo() {
         <Link to={`/account/${id}/tickets`}>
           <button className="user-info-button">My tickets</button>
         </Link>
-
-
-
-        <div className="user-info-icon-container">
-          <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />
-          <FontAwesomeIcon icon={faRocket} size={"2x"} />
-          <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />
-          <FontAwesomeIcon icon={faRocket} size={"2x"} />
-          <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />
-        </div>
       </section>
     );
   }
