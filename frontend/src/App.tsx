@@ -22,8 +22,8 @@ function App() {
       <nav>
         <Menu />
       </nav>
-      <Router>
-      {/* <Router basename={process.env.PUBLIC_URL}> */}
+      {/* <Router> */}
+      <Router basename={process.env.PUBLIC_URL}> 
         <Routes>
           <Route path={ROOT_FOLDER} element={<LandingPage />} />
           <Route path={ROOT_FOLDER + "learning-space"} element={<LearningSpace />} />
