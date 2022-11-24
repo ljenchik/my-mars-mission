@@ -3,6 +3,7 @@ import { Button, OverlayTrigger, Tooltip, TooltipProps } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getAccountById } from "../../apiClient";
 import { Account } from "../../models";
+import { ROOT_FOLDER } from "../../navigateRoot";
 import { TicketForm } from "../TicketForm/TicketForm";
 import "./UserProfile.scss";
 
@@ -26,11 +27,11 @@ export function UserProfile() {
     "https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360";
 
   const createTicket = () => {
-    navigate(`/my-mars-mission/account/${id}/ticket`);
+    navigate(`${ROOT_FOLDER}account/${id}/ticket`);
   };
 
   const myTickets = () => {
-    navigate(`/my-mars-mission/account/${id}/tickets`);
+    navigate(`${ROOT_FOLDER}account/${id}/tickets`);
   };
 
   useEffect(() => {
@@ -69,7 +70,7 @@ export function UserProfile() {
               delay={{ show: 250, hide: 400 }}
               overlay={renderTooltip}
             >
-              <Link to={`/my-mars-mission/account/${id}/info`} className="profile-photo-link">
+              <Link to={`${ROOT_FOLDER}account/${id}/info`} className="profile-photo-link">
                 {account.photo ? (
                   <img className="profile-photo" src={account.photo} />
                 ) : (

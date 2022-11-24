@@ -4,6 +4,7 @@ import { createAccount } from "../../apiClient";
 import { Account } from "../../models";
 import "./AccountForm.scss";
 import { Button } from "react-bootstrap";
+import { ROOT_FOLDER } from "../../navigateRoot"
 
 export const AccountForm = () => {
   const [error, setError] = useState("");
@@ -81,7 +82,7 @@ export const AccountForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
-        navigate(`/my-mars-mission/account/login`);
+        navigate(`${ROOT_FOLDER}account/login`);
       }
     });
   };

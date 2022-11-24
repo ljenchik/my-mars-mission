@@ -27,7 +27,7 @@ export function LearningSpace() {
       </div>
 
       <div className="information">{question.information}</div>
-      <div className="question">{question.question}</div>
+      <div className="question-question">{question.question}</div>
       <div className="answers-container">
         {question.answers.map((answer) => (
           <button

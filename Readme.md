@@ -4,79 +4,33 @@
 
 I wanted to create not only engaging website but also apply my new skills (TypeScript, React and Node.js) to a real project.
 
-In TechSwitch coding bootcamp my favourite exercise was Mars Mission. As a team of seven we had to create an educational website about Mars for teenagers. The task was exciting and provided a great opportunity to apply everything we had learnt before. We created a project from scratch: planned, designed and presented it in front of other software developers. We built a React frontend application and learnt how to implement components. I was impressed with the development process, team work and the results we achieved. 
+In the TechSwitch coding bootcamp my favourite exercise was Mars Mission. As a team of seven we had to create an educational website about Mars for teenagers. The task was exciting and provided a great opportunity to apply everything we had learnt before. We created a project from scratch: planned, designed and presented it in front of other software developers. We built a React frontend application and learnt how to implement components. I was impressed with the development process, team work and the results we achieved. 
 
-After completing the course I decide to work on My Mars Mission project on my own to practice and add new features and functionality. In the frontend, I added media queries, styling, new pages such as login, create account, tickets to Mars and so on. I used Postgres for the backend to store users' and Mars tickets' details. I learnt how to store and safely change passwords using bcrypt technology. Also, I improved my CSS skills. 
+After completing the course, I decide to work on My Mars Mission project on my own to practice and add new features and functionality. In the frontend, I added media queries, styling, new pages such as login, create account, tickets to Mars and so on. I used Postgres for the backend to store users' and Mars tickets' details. I learnt how to store and safely change passwords using bcrypt technology. Also, I improved my CSS skills. 
 
-## To build a project you need to install VS Code, Docker and PgAdmin4. 
+## Required software
 
-## Then run the following commands:
+- Docker
+- Node.js
 
-### 1. Create and open a folder in VS Code where you want to clone my-mars-mission project.
+## Start the application
 
-### 2. Clone my-mars-mission repository from https://github.com/ljenchik/my-mars-mission into your folder by running the command in VS Code terminal
+From command line, clone and start the backend
  
-```
+```bash
  git clone git@github.com:ljenchik/my-mars-mission.git
- ```
+ cd my-mars-mission/backend
+ docker-compose up -d 
+ npm install
+ knex migrate:latest
+ npm start
+```
 
-### 3. Navigate to a backend folder and start running a docker container
+Open second terminal to start the frontend
 
 ```
-docker-compose up -d 
-```
-
-### 4. In a backend folder run
-
-```
+cd my-mars-mission/frontend
 npm install
-```
-
-### 5. In PgAdmin4 create a database. Let's name it Mars or any other name you want
-
-### 6. Before running all migrations, check if knexfile.ts looks like this:
-
-    const config:{[name: string]: any} = {
-        development: {
-            client: "pg",
-            connection: {
-            database: "Mars",
-            user:     "Olena",
-            password: "1234"
-            }
-        }
-    }
-    export default config;
-
-
-Note: a name of your database in knexfile.ts should be the same as the name of your database in PgAdmin4.
-
-### 7. In backend folder four times run
-
-```
-knex migrate:up
-```
-
-You will see two tables created in your database: account and ticket.
-
-
-### 8. To start backend you need
-
-```
-npm start
-```
-
-### 9. Open a terminal for the frontend. Navigate to a frontend folder.
-
-### 10. Run: 
-
-```
-npm install
-```
-
-and 
-
-```
 npm start
 ```
 

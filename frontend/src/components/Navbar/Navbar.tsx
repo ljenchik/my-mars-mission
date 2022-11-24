@@ -6,13 +6,14 @@ import {
   faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ROOT_FOLDER } from "../../navigateRoot";
 import "./Navbar.scss";
 
 export const Navbar = () => {
   return (
     <div className="navbar-container">
         
-      <a href="/my-mars-mission/mars-holidays" >
+      <a href={`${ROOT_FOLDER}mars-holidays`} >
         <div className="navbar-logo-astronaut"> <FontAwesomeIcon
               icon={faUserAstronaut}
               size={"2x"}
@@ -21,7 +22,7 @@ export const Navbar = () => {
 
       <ul className="navbar-container-options">
         <li className="nowrap">
-          <a href="/my-mars-mission" className="navbar-options">
+          <a href={`${ROOT_FOLDER}`} className="navbar-options">
             <FontAwesomeIcon 
               className="navbar-icon"
               icon={faEarthAmericas}
@@ -32,7 +33,7 @@ export const Navbar = () => {
         </li>
 
         <li className="nowrap">
-          <a href="/my-mars-mission/learning-space" className="navbar-options">
+          <a href={`${ROOT_FOLDER}learning-space`} className="navbar-options">
             <FontAwesomeIcon
             className="navbar-icon"
               icon={faGraduationCap}
@@ -42,7 +43,7 @@ export const Navbar = () => {
           </a>
         </li>
         <li className="nowrap">
-          <a href="/my-mars-mission/mars-holidays" className="navbar-options">
+          <a href={`${ROOT_FOLDER}mars-holidays`} className="navbar-options">
           <FontAwesomeIcon
           className="navbar-icon"
           icon={faRocket}
@@ -53,7 +54,7 @@ export const Navbar = () => {
         </li>
 
         <li className="nowrap">
-          <a href="/my-mars-mission/images" className="navbar-options">
+          <a href={`${ROOT_FOLDER}images`} className="navbar-options">
             <FontAwesomeIcon
             className="navbar-icon"
               icon={faStar}

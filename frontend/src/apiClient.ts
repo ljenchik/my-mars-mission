@@ -1,6 +1,7 @@
 import { Account, Login, Ticket } from "./models";
 const baseurl = process.env["REACT_APP_BACKEND_DOMAIN"];
 
+
 export async function createAccount(account: Account) {
   try {
     const response = await fetch(`${baseurl}/account/create`, {
@@ -75,7 +76,7 @@ export async function updateAccount(id: number, account: any) {
 
 export async function login(login: Login) {
   try {
-    const response = await fetch(`${baseurl}/account/login`, {
+    const response = await fetch(`${baseurl}account/login`, {
       method: "POST",
       body: JSON.stringify(login),
       headers: {

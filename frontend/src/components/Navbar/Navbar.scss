@@ -15,8 +15,12 @@
 }
 
 .navbar-logo-astronaut {
-    color: white;
+    color:#d04a36;
     margin: 1rem 0.5rem 1rem 1rem;
+}
+
+.navbar-logo-astronaut:hover {
+    color:white
 }
 
 .navbar-container-options {
@@ -48,3 +52,4 @@ ul {
 .navbar-icon {
     margin-right: 0.4rem;
 }
+

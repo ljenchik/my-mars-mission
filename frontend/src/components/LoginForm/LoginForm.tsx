@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Login } from "../../models";
 import { useState } from "react";
 import { login } from "../../apiClient";
+import { ROOT_FOLDER } from "../../navigateRoot";
 
 export const LoginForm = () => {
   const [user, setUser] = useState<Login>({
@@ -43,7 +44,7 @@ export const LoginForm = () => {
         setError(response.error);
       } else {
         localStorage.setItem("accessToken", response.accessToken);
-        navigate(`/my-mars-mission/account/${response.id}`);
+        navigate(`${ROOT_FOLDER}account/${response.id}`);
       }
     });
   };

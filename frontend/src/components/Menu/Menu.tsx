@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 import "./Menu.scss";
 import { Navbar } from "../Navbar/Navbar";
+import { ROOT_FOLDER } from "../../navigateRoot";
 
 export function Menu() {
   const [open, setOpen] = useState(true);
@@ -35,37 +36,37 @@ export function Menu() {
         </button>
 
         <li className="menu-item">
-          <a id="landing-page" href="/my-mars-mission" className="menu-link">
+          <a id="landing-page" href={ROOT_FOLDER} className="menu-link">
             <FontAwesomeIcon icon={faEarthAmericas} size={"1x"} className="menu-icon" />
           </a>
-          <a id="landing-page" href="/my-mars-mission" className="menu-link">
+          <a id="landing-page" href={ROOT_FOLDER} className="menu-link">
             Landing Page
           </a>
         </li>
 
         <li className="menu-item">
-          <a id="learning-space" href="/my-mars-mission/learning-space" className="menu-link">
+          <a id="learning-space" href={`${ROOT_FOLDER}/learning-space`} className="menu-link">
             <FontAwesomeIcon icon={faGraduationCap} size={"1x"} className="menu-icon" />
           </a>
-          <a id="learning-space" href="/my-mars-mission/learning-space" className="menu-link">
+          <a id="learning-space" href={`${ROOT_FOLDER}/learning-space`} className="menu-link">
             Learning Space
           </a>
         </li>
 
         <li className="menu-item">
-          <a id="mars-holidays" href="/my-mars-mission/mars-holidays" className="menu-link">
+          <a id="mars-holidays" href={`${ROOT_FOLDER}/mars-holidays`} className="menu-link">
             <FontAwesomeIcon icon={faRocket} size={"1x"} className="menu-icon" />
           </a>
-          <a id="mars-holidays" href="/my-mars-mission/mars-holidays" className="menu-link">
+          <a id="mars-holidays" href={`${ROOT_FOLDER}/mars-holidays`} className="menu-link">
             Mars Holidays
           </a>
         </li>
 
         <li className="menu-item">
-          <a id="images" href="/my-mars-mission/images" className="menu-link">
+          <a id="images" href={`${ROOT_FOLDER}/images`} className="menu-link">
             <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon" />
           </a>
-          <a id="images" href="/my-mars-mission/images" className="menu-link">
+          <a id="images" href={`${ROOT_FOLDER}/images`} className="menu-link">
             Mars Rover Images
           </a>
         </li>

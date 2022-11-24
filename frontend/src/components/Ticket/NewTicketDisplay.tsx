@@ -3,6 +3,7 @@ import { getTicketById } from "../../apiClient";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./TicketDisplay.scss";
 import { Ticket } from "../../models";
+import { ROOT_FOLDER } from "../../navigateRoot";
 
 export const NewTicketDisplay = () => {
   const [error, setError] = useState("");
@@ -27,7 +28,7 @@ export const NewTicketDisplay = () => {
     const accessToken = localStorage.getItem("accessToken");
     getTicketById(ticket_id).then((response) => {
       if (!response.success) {
-        navigate(`/my-mars-mission/account/login`);
+        navigate(`${ROOT_FOLDER}/account/login`);
       }
       setTicket(response.ticket);
     });
@@ -54,7 +55,7 @@ export const NewTicketDisplay = () => {
           <p>Departure from Earth</p>
           <p>Ticket id {ticket.ticket_id}</p>
         </div>
-        <Link to={`//my-mars-missionaccount/${ticket.owner_id}/info`} className="change-password-link">
+        <Link to={`${ROOT_FOLDER}account/${ticket.owner_id}/info`} className="change-password-link">
           Back to your profile
         </Link>
       </div>
