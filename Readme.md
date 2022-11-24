@@ -1,19 +1,21 @@
 # My Mars Mission
 
-## My Mars Mission is a website for teenagers about Mars. 
+## My Mars Mission is a website for teenagers about Mars
+
+### Site is live at https://ljenchik.github.io/my-mars-mission/
 
 I wanted to create not only engaging website but also apply my new skills (TypeScript, React and Node.js) to a real project.
 
 In the TechSwitch coding bootcamp my favourite exercise was Mars Mission. As a team of seven we had to create an educational website about Mars for teenagers. The task was exciting and provided a great opportunity to apply everything we had learnt before. We created a project from scratch: planned, designed and presented it in front of other software developers. We built a React frontend application and learnt how to implement components. I was impressed with the development process, team work and the results we achieved. 
 
-After completing the course, I decide to work on My Mars Mission project on my own to practice and add new features and functionality. In the frontend, I added media queries, styling, new pages such as login, create account, tickets to Mars and so on. I used Postgres for the backend to store users' and Mars tickets' details. I learnt how to store and safely change passwords using bcrypt technology. Also, I improved my CSS skills. 
+After completing the course, I decide to work on My Mars Mission project on my own to practice and add new features and functionality. In the frontend, I added media queries, styling, new pages such as login, create account, tickets to Mars and so on. I used PostgreSQL database for the backend to store users' and Mars tickets' details. I learnt how to store and safely change passwords using bcrypt technology. Also, I improved my CSS skills. 
 
 ## Required software
 
 - Docker
 - Node.js
 
-## Start the application
+## To run the application
 
 From command line, clone and start the backend
  
