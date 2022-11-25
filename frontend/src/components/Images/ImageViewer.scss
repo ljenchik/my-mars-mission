@@ -1,0 +1,122 @@
+.image-viewer {
+  text-align: center;
+}
+
+.hero--header {
+  color: white;
+  font-size: 28px;
+  margin: 3.5rem 0 1rem 0;
+  padding: 1rem;
+}
+
+.hero--date-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.hero-input {
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  font-family: sans-serif;
+  font-size: inherit;
+  padding: 0.5rem;
+}
+
+.hero--text {
+  color:white;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.hero--no-images-text {
+  color:white;
+  font-size: 15px;
+  font-weight: 300;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.hero--cropped-mars-image {
+  object-fit: scale-down;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+
+.carousel .thumb {
+  border: 3px solid  #1c3148 !important;
+  border-radius: 5px;
+} 
+
+.carousel .thumb.selected {
+  border: 3px solid white !important;
+  border-radius: 5px;
+}
+
+.carousel-root {
+  padding-top: 1.5rem;
+}
+
+/* || EXTRA SMALL */
+@media screen and (max-width: 576px) {
+  .hero--text {
+    font-size: medium;
+  }
+
+  .hero-input  {
+    font-size: smaller;
+  }
+
+  .carousel .control-dots {
+    display: none;
+  }
+
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+  .hero--text {
+    font-size: medium;
+    text-align: center;
+  }
+
+  .hero-input  {
+    text-align: center;
+    font-size: smaller;
+  }
+
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  .carousel .thumbs-wrapper{
+    position: fixed;
+    bottom: 0;
+  }
+ 
+  .carousel .control-dots {
+    display: none;
+  }
+
+  .hero-input  {
+    text-align: center;
+    font-size: medium;
+    padding: 0.5rem;
+  }
+  
+  .hero--text {
+    font-size: larger;
+    text-align: center;
+  }
+
+  
+}
+
+

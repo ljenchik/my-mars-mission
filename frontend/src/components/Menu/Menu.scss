@@ -1,0 +1,69 @@
+.nav-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.dropdown-menu {
+  background-color: #1c3148;
+}
+
+.menu-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #1c3148;
+  color: #d04a36;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.menu-button:hover {
+  color: white;
+}
+
+.menu-cross-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #262728;
+  color: #d04a36;
+  padding: 0.5rem;
+  border: none;
+}
+
+.menu-list{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #262728;
+  list-style-type: none;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.menu-item {
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.menu-link {
+  color: #d04a36;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.menu-link:hover {
+  color: white;
+}
+
+.menu-icon {
+  padding: 0 1rem;
+}
+
+.menu-icon:hover {
+  color: white;
+}

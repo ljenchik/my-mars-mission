@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
+.landing-page-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: "Roboto", serif;
+}
+
+header {
+  text-align: center;
+  margin-top: 7rem;
+  color: white;
+  font-size: 1rem;
+}
+
+figure {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page-image {
+  width: 50%;
+  align-self: center;
+  margin: 1rem;
+}
+
+.landing-page-subtitle {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.landing-page-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.landing-page-item {
+  align-self: center;
+  border: 2px double white;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.landing-page-link {
+  text-decoration: none;
+  color: #d04a36;
+}
+
+.landing-page-link:hover {
+  color:white
+}
+
+.landing-page-icon-container {
+  color: whitesmoke;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+
+/* || XXSMALL */
+@media screen and (max-width: 420px) {
+  .landing-page-item {
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  h1 {
+    font-size: 25px;
+  }
+
+  figure{
+      padding: 1rem;
+    }
+
+    .landing-page-subtitle  {
+      font-size: 20px;
+    }
+}
+
+/* || EXTRA SMALL */
+@media screen and (max-width: 575px) {
+  .landing-page-item {
+    justify-content: center;
+  }
+
+  .landing-page-subtitle  {
+    font-size: 20px;
+  }
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+  .landing-page-item {
+    justify-content: center;
+    font-size: larger;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .landing-page-icon-container {
+    display: none;
+  }
+
+  figure{
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* || MEDIUM */
+@media screen and (min-width: 758px) {
+  .landing-page-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+  .navbar-logo-astronaut:hover {
+    color:#d04a36 !important;
+  }
+  
+}
+
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+  .landing-page-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+
+  
+  .landing-page-image {
+    width: 30%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .landing-page-subtitle {
+    font-size: xx-large;
+  }
+
+  .landing-page-icon-container {
+    display: flex;
+    margin: 1rem;
+  }
+  .navbar-logo-astronaut:hover {
+    color:#d04a36 !important;
+  }
+
+  .landing-page-link {
+    text-decoration: none;
+    color: #d04a36;
+    font-size: larger;
+  }
+}
+

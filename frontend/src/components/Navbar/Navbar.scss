@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    width: -webkit-fill-available;
+    position: fixed;
+    top: 0;
+}
+
+.navbar-logo-astronaut {
+    color:#d04a36;
+    margin: 1rem 0.5rem 1rem 1rem;
+}
+
+.navbar-logo-astronaut:hover {
+    color:white
+}
+
+.navbar-container-options {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+}
+
+ul {
+    list-style: none;
+    margin: 1rem;
+}
+
+.navbar-options {
+    text-decoration: none;
+    color:  #1c3148;
+    font-weight: 600;
+}
+
+.navbar-options:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #d04a36;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-icon {
+    margin-right: 0.4rem;
+}
+

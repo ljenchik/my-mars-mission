@@ -1,0 +1,68 @@
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.user-info-photo {
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px double white;
+}
+
+.user-info-default {
+    display: block;
+    margin: auto;
+    width: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.add-photo {
+    color: white;
+}
+
+.user-info-name {
+    color: #d04a36;
+    margin: 1rem;
+    font-size: 30px;
+}
+
+.user-info-email {
+    color: white;
+    font-size: 20px;
+    margin: 1rem;
+}
+
+.user-info-created {
+    color: white;
+    margin: 0.5rem;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.user-info-button {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: inherit;
+    border-radius: 5px;
+    border: none;
+}
+
+.user-info-button :hover {
+    opacity: 0.5;
+}
+
+.user-info-icon-container {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin: 1rem;
+    gap: 1rem;
+}
