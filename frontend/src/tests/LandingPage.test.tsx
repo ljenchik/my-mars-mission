@@ -1,7 +1,7 @@
 import React from "react";
 import '@testing-library/jest-dom';
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
-import { LandingPage } from "./components/LandingPage/LandingPage";
+import { LandingPage } from "../components/LandingPage/LandingPage";
 import { BrowserRouter as Router } from "react-router-dom";
 
 test("displays a welcome greeting", () => {

@@ -59,6 +59,7 @@ export const LoginForm = () => {
         <label>
           <p className="login-subtitle">Email</p>
           <input
+            name="Email"
             className="login-input"
             type="text"
             placeholder="Enter email"
@@ -68,6 +69,7 @@ export const LoginForm = () => {
         <label>
           <p className="login-subtitle">Password</p>
           <input
+            name="Password"
             className="login-input"
             type="password"
             placeholder="Enter password"
