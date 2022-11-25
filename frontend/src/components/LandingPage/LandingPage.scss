@@ -157,6 +157,7 @@ figure {
     margin-top: 1rem;
   }
 
+  
   .landing-page-image {
     width: 30%;
   }
@@ -175,6 +176,12 @@ figure {
   }
   .navbar-logo-astronaut:hover {
     color:#d04a36 !important;
+  }
+
+  .landing-page-link {
+    text-decoration: none;
+    color: #d04a36;
+    font-size: larger;
   }
 }
 

@@ -184,7 +184,7 @@ export const AccountForm = () => {
           Reset
         </Button>
       </div>
-      {error ? <div className="account-form-error">{error}</div> : ""}
+      {error ? <div className="account-form-error display-linebreak">{error}</div> : ""}
     </div>
   );
 };
