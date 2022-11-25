@@ -19,10 +19,11 @@ import { ROOT_FOLDER } from "./navigateRoot";
 function App() {
   return (
     <>
+     <Router>
       <nav>
         <Menu />
       </nav>
-      <Router>
+     
       {/* <Router basename={process.env.PUBLIC_URL}> */}
         <Routes>
           <Route path={ROOT_FOLDER} element={<LandingPage />} />
