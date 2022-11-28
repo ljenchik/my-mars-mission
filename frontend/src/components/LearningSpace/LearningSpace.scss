@@ -46,6 +46,7 @@ html {
   color: white;
   width: 90%;
 }
+
 .question-question {
   text-align: center;
   border: 2px double white;
@@ -59,18 +60,20 @@ html {
 .answers-container {
   display:flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
 }
 
 .answer {
   border: 2px double white;
-  width: 60vw;
   text-align: center;
   padding: 0.5rem;
   margin: 0.4rem 0;
   border-radius: 5px;
   color: white;
   background-color: #1c3148;
+  width: 90%;
 }
 
 .highlight-correct {
@@ -112,67 +115,12 @@ html {
   color: white;
 }
 
-/* || XXSMALL */
-@media screen and (max-width: 420px) {
-  
-
-  .landing-page-item {
-    justify-content: center;
-    padding: 1rem;
-    margin: 1rem;
-  }
-  
-  h1 {
-    font-size: 25px;
-  }
-
-  figure{
-      padding: 1rem;
-    }
-
-    .landing-page-subtitle  {
-      font-size: 20px;
-    }
-}
-
-/* || EXTRA SMALL */
-@media screen and (max-width: 575px) {
-  .landing-page-item {
-    justify-content: center;
-  }
-
-  .landing-page-subtitle  {
-    font-size: 20px;
-  }
-}
-
-/* || SMALL */
-@media screen and (min-width: 576px) {
-  
-  
-  .landing-page-item {
-    justify-content: center;
-    font-size: larger;
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .landing-page-icon-container {
-    display: none;
-  }
-
-  figure{
-    margin-top: 0.5rem;
-  }
-}
 
 /* || MEDIUM */
 @media screen and (min-width: 758px) {
-  .landing-page-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1rem;
+  .main-container {
+    width: 70%;
+    margin: auto;
   }
 
   .navbar-logo-astronaut:hover {
@@ -183,28 +131,11 @@ html {
 
 /* || LARGE */
 @media screen and (min-width: 992px) {
-  .landing-page-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1rem;
+  .main-container {
+    width: 60%;
+    margin: auto;
   }
-
-  .landing-page-image {
-    width: 30%;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  .landing-page-subtitle {
-    font-size: xx-large;
-  }
-
-  .landing-page-icon-container {
-    display: flex;
-    margin: 1rem;
-  }
+  
   .navbar-logo-astronaut:hover {
     color:#d04a36 !important;
   }

@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items:center;
+    justify-content: center;
     gap: 1rem;
     margin: 1rem;
 }
 
-
 .account-form-image {
     align-self: center;
-    margin-top: 4rem;
+    margin-top: 5rem;
     margin-bottom: 1rem;
     width: 100%;
     height: 30vw;
@@ -39,7 +39,6 @@
     width: 50vw;
     padding: 0.5rem;
     border-radius: 5px;
-    text-align: left;
     margin-bottom: 1rem;
     border: none;
 }
@@ -84,3 +83,23 @@
 .display-linebreak {
     white-space: pre-line;
   }
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+    .account-form-image {
+        height: 20vh;
+    }
+  }
+  
+  /* || LARGE */
+  @media screen and (min-width: 992px) {
+    .account-container-input {
+        margin: auto;
+    }
+
+    .account-input {
+        width: 30vw;
+    }
+  }
+  
+  

@@ -30,13 +30,13 @@
 }
 
 .hero--text {
-  color:white;
+  color: white;
   font-size: 16px;
   font-weight: 100;
 }
 
 .hero--no-images-text {
-  color:white;
+  color: white;
   font-size: 15px;
   font-weight: 300;
   padding-top: 20px;
@@ -51,9 +51,9 @@
 }
 
 .carousel .thumb {
-  border: 3px solid  #1c3148 !important;
+  border: 3px solid #1c3148 !important;
   border-radius: 5px;
-} 
+}
 
 .carousel .thumb.selected {
   border: 3px solid white !important;
@@ -65,58 +65,88 @@
 }
 
 /* || EXTRA SMALL */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
+  .carousel.carousel-slider {
+    width: 85% !important;
+    margin: auto !important;
+    border-radius: 5px;
+  }
+
   .hero--text {
     font-size: medium;
   }
 
-  .hero-input  {
+  .hero-input {
     font-size: smaller;
   }
 
   .carousel .control-dots {
     display: none;
   }
-
 }
 
 /* || SMALL */
 @media screen and (min-width: 576px) {
-  .hero--text {
-    font-size: medium;
-    text-align: center;
+  .carousel.carousel-slider {
+    height: 50vh;
+    width: 85% !important;
+    margin: auto !important;
+    border-radius: 5px;
   }
 
-  .hero-input  {
-    text-align: center;
-    font-size: smaller;
-  }
-
-}
-
-/* || MEDIUM */
-@media screen and (min-width: 768px) {
-  .carousel .thumbs-wrapper{
-    position: fixed;
-    bottom: 0;
-  }
- 
   .carousel .control-dots {
     display: none;
   }
 
-  .hero-input  {
+  .hero--text {
+    font-size: medium;
+    text-align: center;
+  }
+
+  .hero-input {
+    text-align: center;
+    font-size: smaller;
+  }
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  .carousel.carousel-slider {
+    width: 65% !important;
+    margin: auto !important;
+    border-radius: 5px;
+  }
+
+  .hero-input {
     text-align: center;
     font-size: medium;
     padding: 0.5rem;
   }
-  
+
   .hero--text {
     font-size: larger;
     text-align: center;
   }
-
-  
 }
 
+/* || LARGE */
+@media screen and (min-width: 992px) {
+  .carousel.carousel-slider {
+    width: 40% !important;
+    height: auto;
+    margin: auto !important;
+    border-radius: 5px;
+  }
+
+  .hero-input {
+    text-align: center;
+    font-size: medium;
+    padding: 0.5rem;
+  }
+
+  .hero--text {
+    font-size: larger;
+    text-align: center;
+  }
+}
 
