@@ -76,16 +76,16 @@ export async function updateAccount(id: number, account: any) {
 
 export async function login(login: Login) {
   try {
-    const response = await fetch(`${baseurl}account/login`, {
+    const response = await fetch(`${baseurl}/account/login`, {
       method: "POST",
       body: JSON.stringify(login),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    console.log("api response", response)
     if (response.ok) {
       const data = await response.json();
+      console.log(data);
       if (data.success) {
         return {
           success: data.success,
@@ -239,7 +239,6 @@ export async function getTicketsByOwnerId(id: number) {
       console.log(response)
     if (response.ok) {
       const data = await response.json();
-      console.log("data", data)
       if (data.success) {
         return {
           success: true,

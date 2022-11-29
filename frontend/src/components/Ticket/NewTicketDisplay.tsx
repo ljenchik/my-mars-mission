@@ -55,6 +55,7 @@ export const NewTicketDisplay = () => {
           <p>Departure from Earth</p>
           <p>Ticket id {ticket.ticket_id}</p>
         </div>
+        <br/>
         <Link to={`${ROOT_FOLDER}account/${ticket.owner_id}/info`} className="change-password-link">
           Back to your profile
         </Link>

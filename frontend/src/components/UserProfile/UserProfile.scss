@@ -2,19 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    gap: 1rem;
-    margin-top: 4rem;
+    justify-content: center;
+    margin-top: 5rem;
 }
 
 .profile-subcontainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    width: 90%;
 }
 
 .profile-image-default {
-    width: 10vw;
+    width: 20vw;
     margin: 1rem;
 }
 
@@ -25,8 +26,8 @@
 
 .profile-photo {
     object-fit: cover;
-    width: 80px;
-    height: 80px;
+    width: 20vw;
+    margin: 1rem;
     border-radius: 50%;
     border: 2px double white;
 }
@@ -43,16 +44,15 @@ h2 {
     margin: 1rem;
     font-weight: 300;
     font-size: 30px;
-    color: #d04a36;
+    color: white;
 }
 
 h4 {
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     color: #d04a36;
+    margin: 1rem;
 }
-
-
 
 .profile-button {
   font-size: inherit;
@@ -62,29 +62,69 @@ h4 {
   margin: 1rem;
 }
 
-.profile-ticket-image{
-    margin-top: 1rem 0;
+.profile-ticket-image {
     align-self: center;
-    width: 100%;
+    width: 90%;
     height: 30vw;
     object-fit: cover;
     border-radius: 5px;
+    margin: 2rem;
 }
 
 .profile-ticket-image-cropped {
     align-self: center;
-    width: 100%;
+    width: 90%;
     height: 30vw;
-    object-fit: cover;
     border-radius: 5px;
-    margin: 2rem 0.8rem;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 1rem;
 }
 
+/* || SMALL */
+@media screen and (min-width: 600px) {
+    .profile-ticket-image-cropped {
+        display: none;
+    }
+  }
+  /* || MEDIUM */
+  @media screen and (min-width: 758px) {
+    .profile-image-default {
+        width: 150px;
+        height: 150px;
+    }
 
-.rover {
-    width: 50%;
-    height: auto;
-    align-self: flex-start;
-    object-fit: cover;
-    border-radius: 5px;
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-ticket-image {
+        align-self: center;
+        width: 90%;
+        height: 20vh;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .profile-ticket-image-cropped {
+        display: flex;
+        align-self: center;
+        width: 90%;
+        height: 20vh;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
 }

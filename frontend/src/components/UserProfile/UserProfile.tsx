@@ -36,7 +36,9 @@ export function UserProfile() {
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
+    console.log(accessToken)
     getAccountById(Number(id)).then((response) => {
+      console.log(response);
       response.account.created_at = response.account.created_at.split("T")[0];
       if (response.account.updated_at) {
         response.account.updated_at = response.account.updated_at.split("T")[0];
@@ -84,7 +86,7 @@ export function UserProfile() {
           </div>
         )}
         <img
-          className="profile-ticket-image-cropped"
+          className="profile-ticket-image"
           src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
         />
 

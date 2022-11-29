@@ -40,9 +40,11 @@ export const LoginForm = () => {
     }
     
     login(request).then((response) => {
+      console.log(response)
       if (!response.success) {
         setError(response.error);
       } else {
+        console.log(response.accessToken)
         localStorage.setItem("accessToken", response.accessToken);
         navigate(`${ROOT_FOLDER}account/${response.id}`);
       }

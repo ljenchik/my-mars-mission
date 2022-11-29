@@ -14,57 +14,42 @@ import { UserInfo } from "./components/UserInfo/UserInfo";
 import { Tickets } from "./components/Tickets/Tickets";
 import { ChangePassword } from "./components/ChangePassword/ChangePassword";
 import { NewTicketDisplay } from "./components/Ticket/NewTicketDisplay";
-import { ROOT_FOLDER } from "./navigateRoot";
 
 function App() {
   return (
     <>
-      {/* <Router> */}
-
-      <Router basename={process.env.PUBLIC_URL}>
+    <Router>
+      {/* <Router basename={process.env.PUBLIC_URL}> */}
         <nav>
           <Menu />
         </nav>
         <Routes>
-          <Route path={ROOT_FOLDER} element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route
-            path={ROOT_FOLDER + "learning-space"}
-            element={<LearningSpace />}
+            path="/learning-space" element={<LearningSpace />}
           />
-          <Route path={ROOT_FOLDER + "images"} element={<ImageViewer />} />
+          <Route path="/images" element={<ImageViewer />} />
           <Route
-            path={ROOT_FOLDER + "mars-holidays"}
-            element={<MarsHolidays />}
+            path="/mars-holidays" element={<MarsHolidays />}
           />
-          <Route path={ROOT_FOLDER + "account/login"} element={<LoginForm />} />
+          <Route path="/account/login" element={<LoginForm />} />
           <Route
-            path={ROOT_FOLDER + "account/create"}
-            element={<AccountForm />}
+            path="/account/create" element={<AccountForm />}
           />
-          <Route path={ROOT_FOLDER + "account/:id"} element={<UserProfile />} />
+          <Route path="/account/:id" element={<UserProfile />} />
           <Route
-            path={ROOT_FOLDER + "account/:id/ticket"}
-            element={<TicketForm />}
+            path="/account/:id/ticket" element={<TicketForm />}
           />
           <Route
-            path={ROOT_FOLDER + "account/:id/tickets"}
-            element={<Tickets />}
-          />
+            path="/account/:id/tickets" element={<Tickets />} />
           <Route
-            path={ROOT_FOLDER + "ticket/:id"}
-            element={<NewTicketDisplay />}
-          />
+            path="/ticket/:id" element={<NewTicketDisplay />} />
           <Route
-            path={ROOT_FOLDER + "account/:id/change-password"}
-            element={<ChangePassword />}
-          />
+            path="/account/:id/change-password" element={<ChangePassword />} />
           <Route
-            path={ROOT_FOLDER + "account/:id/update"}
-            element={<UpdateUserProfile />}
-          />
+            path="/account/:id/update" element={<UpdateUserProfile />} />
           <Route
-            path={ROOT_FOLDER + "account/:id/info"}
-            element={<UserInfo />}
+            path="/account/:id/info" element={<UserInfo />}
           />
         </Routes>
       </Router>
