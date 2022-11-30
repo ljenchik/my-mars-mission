@@ -83,9 +83,10 @@ export async function login(login: Login) {
         "Content-Type": "application/json",
       },
     });
+    console.log(response);
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
+      
       if (data.success) {
         return {
           success: data.success,
@@ -101,15 +102,13 @@ export async function login(login: Login) {
         };
       }
     } else {
-      const error = await response.text();
+      const error = await response.json();
       return {
-        succes: false,
-        error: error,
-        id: "",
+        error: error.error
       };
     }
   } catch (e) {
-    return { succes: false, error: e, id: "" };
+    return {error: e};
   }
 }
 

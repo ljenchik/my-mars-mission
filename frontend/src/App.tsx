@@ -18,7 +18,7 @@ import { NewTicketDisplay } from "./components/Ticket/NewTicketDisplay";
 function App() {
   return (
     <>
-    <Router>
+    <Router basename={process.env.ROOT_FOLDER}>
       {/* <Router basename={process.env.PUBLIC_URL}> */}
         <nav>
           <Menu />

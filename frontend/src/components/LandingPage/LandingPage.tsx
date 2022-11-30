@@ -1,9 +1,7 @@
 import {
   faGraduationCap,
   faRocket,
-  faStar,
-  faUserAstronaut,
-} from "@fortawesome/free-solid-svg-icons";
+  faStar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { ROOT_FOLDER } from "../../navigateRoot";
@@ -32,7 +30,7 @@ export function LandingPage() {
         <div className="landing-page-item">
           <Link
             id="mars-holidays"
-            to="${ROOT_FOLDER}mars-holidays"
+            to={`${ROOT_FOLDER}mars-holidays`}
             className="landing-page-link"
           >
             <FontAwesomeIcon
