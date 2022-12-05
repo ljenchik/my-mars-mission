@@ -85,8 +85,7 @@ router.post(
 router.post("/account/login", async (req, res) => {
   const foundAccounts = await foundUser(req.body.email);
   if (foundAccounts.length === 0) {
-    res.status(404);
-    return res.json({
+    return res.status(404).json({
       success: false,
       error: "Invalid username or password",
       id: "",
@@ -107,7 +106,7 @@ router.post("/account/login", async (req, res) => {
       email: foundAccount.email,
       id: foundAccount.id,
     });
-    return res.json({
+    return res.status(200).json({
       success: true,
       message: "Logged In!",
       id: foundAccount.id,
@@ -115,8 +114,7 @@ router.post("/account/login", async (req, res) => {
       refreshToken: refreshToken,
     });
   } else {
-    //res.status(401).send("Password Incorrect!");
-    return res.json({
+    return res.status(401).json({
       success: false,
       error: "Invalid username or password",
       id: "",

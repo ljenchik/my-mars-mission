@@ -13,6 +13,7 @@ export const LoginForm = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [disabled, setDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     user.email = event.target.value;
@@ -35,32 +36,33 @@ export const LoginForm = () => {
     };
 
     if (!user.email && !user.password) {
-      setError("Enter email and password")
-    }
-    else if (!user.email) {
+      setError("Enter email and password");
+    } else if (!user.email) {
       setError("Enter email");
-    }
-    else if (!user.password) {
+    } else if (!user.password) {
       setError("Enter password");
-    }
-    else {
-        request.email = user.email;
-        request.password = user.password;
+    } else {
+      request.email = user.email;
+      request.password = user.password;
+      setLoading(true);
+
       login(request).then((response) => {
-      if (!response.success) {
-        setError(response.error);
-      } else {
-        localStorage.setItem("accessToken", response.accessToken);
-        navigate(`${ROOT_FOLDER}account/${response.id}`);
-      }
-    });
+        if (!response.success) {
+          setError(response.error);
+        } else {
+          localStorage.setItem("accessToken", response.accessToken);
+          console.log(response.accessToken)
+          navigate(`${ROOT_FOLDER}account/${response.id}`);
+        }
+      });
+    }
   };
-}
 
   return (
     <div className="login-container">
       <img
         className="login-form-image"
+        alt="mars ticket image"
         src="https://airnfts.s3.amazonaws.com/nft-images/202110/Ticket_to_the_Mars_1620604616509.jpg"
       />
       <p className="login-title">Log in</p>
@@ -92,12 +94,12 @@ export const LoginForm = () => {
           type="submit"
           onClick={submit}
         >
-          Submit
+          {loading ? "Loading" : "Submit"}
         </button>
       </div>
       <span
         data-testid="error"
-        style={{visibility: error ? "visible" : "hidden"}}
+        style={{ visibility: error ? "visible" : "hidden" }}
       >
         {error ? <div className="login-form-error">{error}</div> : ""}
       </span>
