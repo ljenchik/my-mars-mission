@@ -16,6 +16,7 @@ export function LandingPage() {
 
       <figure>
         <img
+          alt="mars image"
           src="https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png"
           className="landing-page-image"
         />

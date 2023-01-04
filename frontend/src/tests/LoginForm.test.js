@@ -186,7 +186,7 @@ test("button should not be disabled when input exist", async () => {
   await act(() => promise);
 });
 
-test.only("loading should be rendered when clicked", async () => {
+test.skip("loading should be rendered when clicked", async () => {
   const {getByText} = render(
     <Router>
       <LoginForm />

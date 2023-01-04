@@ -3,7 +3,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
   
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 575px) {
     .navbar-container-options {
         display: none !important;
     }
@@ -22,7 +22,7 @@ body {
     }
 }
     
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 576px) {
     .dropdown-menu {
         display: none;
     }
