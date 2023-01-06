@@ -18,14 +18,14 @@ export function LandingPage() {
         <img
           alt="mars image"
           src="https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png"
-          className="landing-page-image"
+          className="landing-page-image loading-spinner"
         />
       </figure>
 
-      <p className="landing-page-subtitle">
+      <h3 className="landing-page-subtitle">
         <span className="nowrap">Where would you</span>{" "}
         <span className="nowrap">like to land?</span>
-      </p>
+      </h3>
 
       <div className="landing-page-container">
         <div className="landing-page-item">
@@ -37,7 +37,7 @@ export function LandingPage() {
             <FontAwesomeIcon
               icon={faRocket}
               size={"1x"}
-              className="menu-icon"
+              className="menu-icon loading-spinner"
             />
           </Link>
 
@@ -51,7 +51,7 @@ export function LandingPage() {
 
         <div className="landing-page-item">
           <Link id="images" to={`${ROOT_FOLDER}images`} className="landing-page-link">
-            <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon" />
+            <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon loading-spinner" />
           </Link>
           <Link id="images" to={`${ROOT_FOLDER}images`} className="landing-page-link">
             Mars Rover Images
@@ -67,7 +67,7 @@ export function LandingPage() {
             <FontAwesomeIcon
               icon={faGraduationCap}
               size={"1x"}
-              className="menu-icon"
+              className="menu-icon loading-spinner"
             />
           </Link>
           <Link
