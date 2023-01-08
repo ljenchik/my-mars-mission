@@ -1,7 +1,8 @@
 import {
   faGraduationCap,
   faRocket,
-  faStar} from "@fortawesome/free-solid-svg-icons";
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { ROOT_FOLDER } from "../../navigateRoot";
@@ -11,7 +12,9 @@ export function LandingPage() {
   return (
     <div className="landing-page-body">
       <header>
-        <h1>Welcome to <span className="nowrap">Mars Mission!</span> </h1>
+        <h1>
+          Welcome to <span className="nowrap">Mars Mission!</span>{" "}
+        </h1>
       </header>
 
       <figure>
@@ -45,15 +48,28 @@ export function LandingPage() {
             id="mars-holidays"
             to={`${ROOT_FOLDER}mars-holidays`}
             className="landing-page-link"
-          >Mars Holidays
+          >
+            Mars Holidays
           </Link>
         </div>
 
         <div className="landing-page-item">
-          <Link id="images" to={`${ROOT_FOLDER}images`} className="landing-page-link">
-            <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon loading-spinner" />
+          <Link
+            id="images"
+            to={`${ROOT_FOLDER}images`}
+            className="landing-page-link"
+          >
+            <FontAwesomeIcon
+              icon={faStar}
+              size={"1x"}
+              className="menu-icon loading-spinner"
+            />
           </Link>
-          <Link id="images" to={`${ROOT_FOLDER}images`} className="landing-page-link">
+          <Link
+            id="images"
+            to={`${ROOT_FOLDER}images`}
+            className="landing-page-link"
+          >
             Mars Rover Images
           </Link>
         </div>
@@ -74,7 +90,8 @@ export function LandingPage() {
             id="learning-space"
             to={`${ROOT_FOLDER}learning-space`}
             className="landing-page-link"
-          >Learning Space
+          >
+            Learning Space
           </Link>
         </div>
       </div>

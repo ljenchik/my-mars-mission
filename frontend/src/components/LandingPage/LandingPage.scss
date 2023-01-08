@@ -21,22 +21,21 @@ html {
 
 header h1 {
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 5rem;
   color: white;
-  font-size: 2.8rem;
-  font-family: 'Syne Mono', monospace;
+  font-size: 35px;
   text-shadow: 6px 6px 6px #d04a36;
   padding: 0 2rem;
 }
 
 figure {
-  width: 75%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 }
 
 .landing-page-image {
-  width: 40%;
+  width: 60%;
   align-self: center;
 }
 
@@ -53,8 +52,7 @@ figure {
 .landing-page-subtitle {
   color: white;
   text-align: center;
-  font-size: 2rem;
-  font-family: 'Syne Mono', monospace;
+  font-size: 25px;
   text-shadow: 3px 3px 6px #d04a36;
   padding: 0 3rem;
 }
@@ -70,8 +68,7 @@ figure {
   align-items: flex-start;
   text-align: center;
   font-size: 20px;
-  font-family: 'Syne Mono', monospace;
-  margin-top: 2rem;
+  margin-top: 0rem;
 }
 
 .landing-page-item {
@@ -104,90 +101,116 @@ figure {
   .landing-page-item {
     justify-content: center;
   }
-
-  .landing-page-subtitle  {
-    font-size: 25px;
-    
-  }
-
-  .landing-page-container {
-    margin-top: 0rem;
-
-  }
-
-  header h1 {
-    margin-top: 5rem;
-    font-size: 35px;
-  }
-
-  .landing-page-image {
-    width: 60%;
-  }
-  
-
 }
 
 /* || SMALL */
 @media screen and (min-width: 576px) {
-  .landing-page-item {
-    justify-content: center;
-    font-size: larger;
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+  header h1 {
+    margin-top: 8rem;
+    font-size: 37px;
+    padding: 0 1rem;
   }
 
-  .landing-page-icon-container {
-    display: none;
+  .landing-page-container {
+    flex-direction: column;
   }
+  
 
-  figure{
-    margin-top: 0.5rem;
+  .landing-page-image {
+    width: 50%;
   }
 }
 
 
 /* || MEDIUM */
 @media screen and (min-width: 768px) {
+  header h1 {
+    font-size: 40px;
+    margin-top: 7rem;
+  }
+
+  .landing-page-image {
+    width: 45%;
+  }
+
+  .landing-page-subtitle {
+    font-size: 30px;
+  }
+
   .landing-page-container {
-    display: flex;
-    flex-direction: row;
-    //margin-top: 1rem;
-  }
-
-  header {
-    font-size: 20px;
-  }
-
-  .navbar-logo-astronaut:hover {
-    color:#d04a36 !important;
+    flex-direction: column;
+    font-size: 23px;
+    margin: 0rem 1rem;
   }
   
 }
 
-
 /* || LARGE */
 @media screen and (min-width: 992px) {
+  header h1 {
+    font-size: 45px;
+    margin-top: 9rem;
+  }
+
+  .landing-page-image {
+    width: 40%;
+    margin: 1rem;
+  }
+
+  .landing-page-subtitle {
+    font-size: 35px;
+  }
+
   .landing-page-container {
-    display: flex;
     flex-direction: row;
-    margin-top: 1rem;
+    font-size: 25px;
+    margin: 1rem 1rem;
+  }
+}
+
+/* || EXTRA LARGE */
+@media screen and (min-width: 1200px) {
+  header h1 {
+    font-size: 50px;
+    margin-top: 6rem;
+  }
+
+  .landing-page-image {
+    width: 38%;
+    margin: 0.5rem;
+  }
+
+  .landing-page-subtitle {
+    font-size: 35px;
+  }
+
+  .landing-page-container {
+    flex-direction: row;
+    font-size: 25px;
+    margin: 0 1rem;
+  }
+}
+
+
+/* || EXTRA EXTRA LARGE */
+@media screen and (min-width: 1400px) {
+  header h1 {
+    font-size: 50px;
+    margin-top: 8rem;
   }
 
   .landing-page-image {
     width: 30%;
+    margin: 0.5rem;
   }
 
-  .landing-page-icon-container {
-    display: flex;
-    margin: 1rem;
-  }
-  .navbar-logo-astronaut:hover {
-    color:#d04a36 !important;
+  .landing-page-subtitle {
+    font-size: 35px;
   }
 
-  .landing-page-link {
-    font-size: larger;
+  .landing-page-container {
+    flex-direction: row;
+    font-size: 25px;
+    margin: 1rem 1rem;
   }
 }
-
