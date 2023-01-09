@@ -1,38 +1,9 @@
 body {
     background-color: #1c3148;
-    //font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: 'Syne Mono', monospace;
 }
   
-@media screen and (max-width: 575px) {
-    .navbar-container-options {
-        display: none !important;
-    }
 
-    .navbar-container {
-        background-color: #1c3148 !important;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .navbar-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 1rem;
-    }
-}
-    
-  @media screen and (min-width: 576px) {
-    .dropdown-menu {
-        display: none;
-    }
-
-    .navbar-logo-astronaut {
-        margin: 1rem;
-        color:  #1c3148 !important;
-    }
-  }  
 
   
   

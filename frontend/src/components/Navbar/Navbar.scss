@@ -34,11 +34,11 @@
     align-items: center;
     font-size: 16px;
     margin-right: 2rem;
+    font-family: 'Share Tech Mono';
 }
 
 ul {
     list-style: none;
-    font-family: 'Syne Mono', monospace;
 }
 
 .navbar-options {
@@ -56,10 +56,39 @@ ul {
     margin-right: 0.4rem;
 }
 
+@media screen and (max-width: 575px) {
+    .navbar-container-options {
+        display: none !important;
+    }
+
+    .navbar-container {
+        background-color: #1c3148 !important;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .navbar-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+    }
+}
+    
+  @media screen and (min-width: 576px) {
+    .dropdown-menu {
+        display: none;
+    }
+
+    .navbar-logo-astronaut {
+       color:  #1c3148 !important;
+    }
+  }  
+
 @media screen and (max-width: 767px) {
     .navbar-container-options {
         gap: 0.5rem;
-        font-size: 12px;
-        margin-right: 0.7rem;
+        font-size: 14px;
+        margin-right: 0.8rem;
     }
 }

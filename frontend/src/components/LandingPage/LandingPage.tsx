@@ -40,10 +40,9 @@ export function LandingPage() {
             <FontAwesomeIcon
               icon={faRocket}
               size={"1x"}
-              className="menu-icon loading-spinner"
+              className="menu-icon"
             />
           </Link>
-
           <Link
             id="mars-holidays"
             to={`${ROOT_FOLDER}mars-holidays`}
@@ -57,12 +56,12 @@ export function LandingPage() {
           <Link
             id="images"
             to={`${ROOT_FOLDER}images`}
-            className="landing-page-link"
+            className="landing-page-link "
           >
             <FontAwesomeIcon
               icon={faStar}
               size={"1x"}
-              className="menu-icon loading-spinner"
+              className="menu-icon"
             />
           </Link>
           <Link
@@ -83,7 +82,7 @@ export function LandingPage() {
             <FontAwesomeIcon
               icon={faGraduationCap}
               size={"1x"}
-              className="menu-icon loading-spinner"
+              className="menu-icon"
             />
           </Link>
           <Link

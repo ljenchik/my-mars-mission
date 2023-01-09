@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 /* || RESET */
 * {
   margin: 0;
@@ -37,10 +35,6 @@ figure {
 .landing-page-image {
   width: 60%;
   align-self: center;
-}
-
-.loading-spinner:hover {
-  animation: rotate 4s linear infinite;
 }
 
 @keyframes rotate {
@@ -85,7 +79,12 @@ figure {
 }
 
 .landing-page-link:hover {
-  color:white
+  color:white;
+}
+
+.landing-page-item:hover .menu-icon{
+  color:white;
+  animation: rotate 4s linear infinite;
 }
 
 .landing-page-icon-container {
