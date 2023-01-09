@@ -3,9 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "./ImageViewer.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-//To improve:
-//works on all screens
-
+// Shuffles array of images to display different images every time
 function shuffleArray(array: any[]) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -54,10 +52,11 @@ export function ImageViewer() {
   if (!urls) {
     return (
       <div className="image-viewer">
-        <h1 className="hero--header">Perseverance Rover Mars Images</h1>
+        <h1 className="hero--header"><span className="nowrap">Perseverance Rover</span>{" "}<span className="nowrap">Mars Images</span></h1>
         <div className="hero--date-text-container">
           <h3 className="hero--text">
-            Choose a date to see images taken on this day
+            <span className="nowrap"> Choose a date to see images</span>{" "}
+            <span className="nowrap">taken on this day</span>
           </h3>
           <input
             className="hero-input"
@@ -67,31 +66,36 @@ export function ImageViewer() {
             value={selectedDate}
           />
         </div>
-        <h3 className="hero--no-images-text">Images are loading ...</h3>
+        <h3 className="hero--text">Images are loading ...</h3>
       </div>
     );
   } else if (message !== "") {
     return (
       <div className="image-viewer">
-        <div className="hero--header">Perseverance Rover Mars Images</div>
+          <h1 className="hero--header"><span className="nowrap">Perseverance Rover</span>{" "}<span className="nowrap">Mars Images</span></h1>
         <div className="hero--date-text-container">
           <div>
           <h3 className="hero--text">
-            Choose a date to see images taken on this day
+            <span className="nowrap"> Choose a date to see images</span>{" "}
+            <span className="nowrap">taken on this day</span>
           </h3>
           </div>
           <div>
-          <input
-          className="hero-input"
-            type="date"
-            onChange={handleChange}
-            min={minDate}
-            value={selectedDate}
-          />
+            <input
+              className="hero-input"
+              type="date"
+              onChange={handleChange}
+              min={minDate}
+              value={selectedDate}
+            />
           </div>
-          
         </div>
-        <h3 className="hero--no-images-text">{message}</h3>
+        {/* <h3 className="hero--text">{message}</h3> */}
+        <h3 className="hero--text">
+            <span className="nowrap"> There were no photographs </span>{" "}
+            <span className="nowrap">taken on this date.</span>{" "}
+            <span className="nowrap">Please choose another date</span>
+          </h3>
         <img
           className="hero--cropped-mars-image"
           src="https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png"
@@ -101,18 +105,25 @@ export function ImageViewer() {
   } else {
     return (
       <div className="image-viewer">
-        <div className="hero--header"><span className="nowrap">Perseverance Rover</span> <span className="nowrap">Mars Images</span></div>
+        <h1 className="hero--header"><span className="nowrap">Perseverance Rover</span>{" "}<span className="nowrap">Mars Images</span></h1>
         <div className="hero--date-text-container">
-          <h3 className="hero--text">
-            Choose a date to see images <span className="nowrap">taken on this day</span>
+        <h3 className="hero--text">
+            <span className="nowrap"> Choose a date to see images</span>{" "}
+            <span className="nowrap">taken on this day</span>
           </h3>
-          <input className="hero-input" type="date" min={minDate} onChange={handleChange} value={selectedDate} />
+          <input
+            className="hero-input"
+            type="date"
+            min={minDate}
+            onChange={handleChange}
+            value={selectedDate}
+          />
         </div>
-        <Carousel className="carousel"
+        <Carousel
+          className="carousel"
           infiniteLoop={true}
           selectedItem={currentSlide}
           onChange={(index) => setCurrentSlide(index)}
-          
         >
           {urls.map((url: any) => {
             return (

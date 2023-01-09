@@ -4,15 +4,15 @@
 
 .hero--header {
   color: white;
-  font-size: 28px;
-  margin: 3.5rem 0 1rem 0;
+  font-size: 30px;
+  margin: 5rem 1rem 1rem 1rem;
   padding: 1rem;
+  text-shadow: 6px 6px 6px #d04a36;
 }
 
 .hero--date-text-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: center;
 }
 
@@ -24,30 +24,33 @@
   text-align: center;
   border-radius: 5px;
   border: none;
-  font-family: sans-serif;
-  font-size: inherit;
+  font-size: 16px;
   padding: 0.5rem;
 }
 
 .hero--text {
   color: white;
-  font-size: 16px;
-  font-weight: 100;
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 3px 3px 6px #d04a36;
+  padding: 2rem;
 }
 
-.hero--no-images-text {
-  color: white;
-  font-size: 15px;
-  font-weight: 300;
-  padding-top: 20px;
-  justify-content: center;
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero--cropped-mars-image {
   object-fit: scale-down;
-  width: 100%;
+  width: 70%;
   height: auto;
-  margin-top: 50px;
+  margin-top: 1rem;
+}
+
+.hero--cropped-mars-image:hover {
+  animation: rotate 4s linear infinite;
 }
 
 .carousel .thumb {
@@ -56,12 +59,12 @@
 }
 
 .carousel .thumb.selected {
-  border: 3px solid white !important;
+  border: 3px solid #d04a36 !important;
   border-radius: 5px;
 }
 
 .carousel-root {
-  padding-top: 1.5rem;
+  padding-top: 2rem;
 }
 
 /* || EXTRA SMALL */
@@ -72,14 +75,6 @@
     border-radius: 5px;
   }
 
-  .hero--text {
-    font-size: medium;
-  }
-
-  .hero-input {
-    font-size: smaller;
-  }
-
   .carousel .control-dots {
     display: none;
   }
@@ -87,6 +82,12 @@
 
 /* || SMALL */
 @media screen and (min-width: 576px) {
+  .hero--cropped-mars-image {
+    width: 50%;
+    margin-top: 2rem;
+  }
+
+
   .carousel.carousel-slider {
     height: 50vh;
     width: 85% !important;
@@ -97,30 +98,31 @@
   .carousel .control-dots {
     display: none;
   }
-
-  .hero--text {
-    font-size: medium;
-    text-align: center;
-  }
-
-  .hero-input {
-    text-align: center;
-    font-size: smaller;
-  }
 }
 
 /* || MEDIUM */
 @media screen and (min-width: 768px) {
+  .hero--cropped-mars-image {
+    width: 40%;
+  }
+  
+  .hero--header {
+    color: white;
+    font-size: 30px;
+    margin: 5rem 1rem 0rem 1rem;
+    padding: 1rem;
+    text-shadow: 6px 6px 6px #d04a36;
+  }
+
+  .hero--text {
+    text-align: center;
+    font-size: 25px;
+  }
+
   .carousel.carousel-slider {
     width: 65% !important;
     margin: auto !important;
     border-radius: 5px;
-  }
-
-  .hero-input {
-    text-align: center;
-    font-size: medium;
-    padding: 0.5rem;
   }
 
   .hero--text {
@@ -131,17 +133,15 @@
 
 /* || LARGE */
 @media screen and (min-width: 992px) {
+  .hero--cropped-mars-image {
+    width: 30%;
+  }
+
   .carousel.carousel-slider {
     width: 40% !important;
     height: auto;
     margin: auto !important;
     border-radius: 5px;
-  }
-
-  .hero-input {
-    text-align: center;
-    font-size: medium;
-    padding: 0.5rem;
   }
 
   .hero--text {
@@ -150,3 +150,21 @@
   }
 }
 
+/* || EXTRA LARGE */
+@media screen and (min-width: 992px) {
+  .hero--cropped-mars-image {
+    width: 20%;
+  }
+
+  .carousel.carousel-slider {
+    width: 40% !important;
+    height: auto;
+    margin: auto !important;
+    border-radius: 5px;
+  }
+
+  .hero--text {
+    font-size: larger;
+    text-align: center;
+  }
+}
