@@ -10,7 +10,7 @@ import "./LandingPage.scss";
 
 export function LandingPage() {
   return (
-    <div className="landing-page-body">
+    <div className="landing-page-body clouds twinkling">
       <header>
         <h1>
           Welcome to <span className="nowrap">Mars Mission!</span>{" "}
@@ -58,11 +58,7 @@ export function LandingPage() {
             to={`${ROOT_FOLDER}images`}
             className="landing-page-link "
           >
-            <FontAwesomeIcon
-              icon={faStar}
-              size={"1x"}
-              className="menu-icon"
-            />
+            <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon" />
           </Link>
           <Link
             id="images"

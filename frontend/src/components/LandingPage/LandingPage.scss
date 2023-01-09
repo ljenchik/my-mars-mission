@@ -43,6 +43,10 @@ figure {
   }
 }
 
+.loading-spinner:hover {
+  animation: rotate 20s linear infinite;
+}
+
 .landing-page-subtitle {
   color: white;
   text-align: center;
@@ -93,7 +97,6 @@ figure {
   gap: 0.8rem;
   margin-top: 0.5rem;
 }
-
 
 /* || EXTRA SMALL */
 @media screen and (max-width: 575px) {
