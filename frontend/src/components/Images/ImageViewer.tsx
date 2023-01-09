@@ -51,7 +51,7 @@ export function ImageViewer() {
 
   if (!urls) {
     return (
-      <div className="image-viewer">
+      <div className="image-viewer stars twinkling">
         <h1 className="hero--header">
           <span className="nowrap">Perseverance Rover</span>{" "}
           <span className="nowrap">Mars Images</span>
@@ -74,7 +74,7 @@ export function ImageViewer() {
     );
   } else if (message !== "") {
     return (
-      <div className="image-viewer">
+      <div className="image-viewer stars twinkling">
         <h1 className="hero--header">
           <span className="nowrap">Perseverance Rover</span>{" "}
           <span className="nowrap">Mars Images</span>
@@ -106,7 +106,7 @@ export function ImageViewer() {
     );
   } else {
     return (
-      <div className="image-viewer">
+      <div className="image-viewer stars twinkling">
         <h1 className="hero--header">
           <span className="nowrap">Perseverance Rover</span>{" "}
           <span className="nowrap">Mars Images</span>

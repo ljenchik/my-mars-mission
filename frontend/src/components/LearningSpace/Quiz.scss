@@ -1,0 +1,142 @@
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
+.main-container {
+  display: flex;     
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.question {
+  text-align: center;
+  border: 2px double white;
+  border-radius: 5px;
+  color: white;
+  width: 90%;
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+.question-title {
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+
+.question-image {
+  width: 70%;
+  border-radius: 5px;
+}
+
+.information {
+  border: 2px double white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 5px;
+  color: white;
+  width: 90%;
+}
+
+.question-question {
+  text-align: center;
+  border: 2px double white;
+  border-radius: 5px;
+  color: white;
+  width: 90%;
+  padding: 1rem;
+  font-size: 16px;
+}
+
+.answers-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.answer {
+  border: 2px double white;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.4rem 0;
+  border-radius: 5px;
+  color: white;
+  background-color: #1c3148;
+  width: 90%;
+}
+
+.highlight-correct {
+  color: green;
+  border: 2px solid  green;
+}
+
+.highlight-incorrect {
+  color: rgba(216, 15, 15, 0.814);
+  border: 2px solid  rgba(216, 15, 15, 0.814);
+}
+
+.button-count-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.previous-button {
+  font-size: inherit;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.next-button {
+  font-size: inherit;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.5rem;
+}
+
+.count {
+  font-size: inherit;
+  color: white;
+}
+
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  .main-container {
+    width: 70%;
+    margin: auto;
+  }
+
+  .navbar-logo-astronaut:hover {
+    color:#d04a36 !important;
+  }
+  
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+  .main-container {
+    width: 60%;
+    margin: auto;
+  }
+  
+  .navbar-logo-astronaut:hover {
+    color:#d04a36 !important;
+  }
+}

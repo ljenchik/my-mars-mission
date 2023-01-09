@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import { LandingPage } from "./components/LandingPage/LandingPage";
-import { LearningSpace } from "./components/LearningSpace/LearningSpace";
+import { Quiz } from "./components/LearningSpace/Quiz";
 import { ImageViewer } from "./components/Images/ImageViewer";
 import { MarsHolidays } from "./components/MarsHolidays/MarsHolidays";
 import { Menu } from "./components/Menu/Menu";
@@ -14,6 +14,9 @@ import { UserInfo } from "./components/UserInfo/UserInfo";
 import { Tickets } from "./components/Tickets/Tickets";
 import { ChangePassword } from "./components/ChangePassword/ChangePassword";
 import { NewTicketDisplay } from "./components/Ticket/NewTicketDisplay";
+import { RoverInfo } from "./components/LearningSpace/RoverInfo";
+import { MarsInfo } from "./components/LearningSpace/MarsInfo";
+import { LearningSpace } from "./components/LearningSpace/LearningSpace";
 
 function App() {
   return (
@@ -27,6 +30,15 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route
             path="/learning-space" element={<LearningSpace />}
+          />
+          <Route
+            path="/learning-space/mars-info" element={<MarsInfo />}
+          />
+          <Route
+            path="/learning-space/rover-info" element={<RoverInfo />}
+          />
+          <Route
+            path="/learning-space/quiz" element={<Quiz />}
           />
           <Route path="/images" element={<ImageViewer />} />
           <Route
