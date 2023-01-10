@@ -11,19 +11,19 @@ export function LearningSpace() {
       <main className="link-container">
 
         {/* Card 1 */}
-        <div className="card">
-        <div className="card-header">Interesting facts about Mars</div>
+        <div className="card-container">
           <Link
             id="rover-info-link"
             to={`${ROOT_FOLDER}learning-space/mars-info`}
           >
+            <div className="card-header"><h3><span>Interesting facts</span>{" "}<span className="nowrap">about Mars</span></h3></div>
             <img src={require("./images/mars-info.jpg")} className="card-image"/>
           </Link>
         </div>
 
         {/* Card 2 */}
-        <div className="card">
-        <div className="card-header">Interesting facts about Rovers</div>
+        <div className="card-container">
+        <div className="card-header"><h3><span>Interesting facts</span>{" "}<span className="nowrap">about Rovers</span></h3></div>
           <Link
             id="quiz-info-link"
             to={`${ROOT_FOLDER}learning-space/rover-info`}
@@ -33,8 +33,8 @@ export function LearningSpace() {
         </div>
 
         {/* Card 3 */}
-        <div className="card">
-          <div className="card-header">It's time to twst your knowledge</div>
+        <div className="card-container">
+          <div className="card-header"><h3><span>Time to test</span>{" "}<span className="nowrap">your knowledge!</span></h3></div>
           <Link
             id="mars-info-link"
             to={`${ROOT_FOLDER}learning-space/quiz`}

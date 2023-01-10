@@ -7,13 +7,137 @@
     margin-top: 2rem;
 }
 
+.card-container {
+    position: relative;
+    justify-content: center;
+}
 
 .card-image {
-    width: 400px;
+    width: 350px;
     border: 3px double white;
     border-radius: 10px;
+}
+
+.card-header {
+    font-family: "Syne Mono", monospace;
+    font-size: 20px;
+    color: white;
+    text-shadow: 3px 3px 6px #d04a36;
+    position: absolute;
+    top: 75%;
+    transform: translate(4%, -25%);
 }
 
 .stars {
     z-index: 0;
 }
+
+//Extra extra small
+@media screen and (max-width: 359px) {
+    .card-image {
+        width: 250px;
+    }
+
+    .card-header {
+        font-family: "Syne Mono", monospace;
+        font-size: 15px;
+        color: white;
+        position: absolute;
+        top: 80%;
+        left: 15%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
+  //Extra small
+  @media screen and (min-width: 360px) {
+    .card-image {
+        width: 300px;
+    }
+
+    .card-header {
+        font-family: "Syne Mono", monospace;
+        font-size: 16px;
+        top: 15%;
+        left: 5%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
+  //Small
+  @media screen and (min-width: 576px) {
+    .card-image {
+        width: 400px;
+    }
+
+    .card-header {
+        font-size: 18px;
+        top: 8%;
+        left: 2%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
+  //Medium
+  @media screen and (min-width: 768px) {
+    .card-image {
+        width: 450px;
+        
+    }
+
+    .card-header {
+        font-size: 20px;
+        top: 8%;
+        left: 3%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
+  //Large
+  @media screen and (min-width: 992px) {
+    .link-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card-image {
+        width: 450px;
+        height: 280px;
+    }
+
+    .card-header {
+        font-size: 20px;
+        top: 8%;
+        left: 3%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
+  //Extra large
+  @media screen and (min-width: 1200px) {
+    .card-image {
+        width: 450px;
+    }
+
+    .card-header {
+        font-size: 20px;
+        top: 8%;
+        left: 3%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
+  //Extra extra large
+  @media screen and (min-width: 1400px) {
+    .card-image {
+        width: 450px;
+    }
+
+    .card-header {
+        font-size: 20px;
+        top: 8%;
+        left: 3%;
+        transform: translate(0%, -50%);
+    }
+  }
+  
