@@ -2,14 +2,6 @@
   text-align: center;
 }
 
-.hero--header {
-  color: white;
-  font-size: 30px;
-  margin: 5rem 1rem 0rem 1rem;
-  padding: 1rem;
-  text-shadow: 6px 6px 6px #d04a36;
-}
-
 .hero--date-text-container {
   display: flex;
   flex-direction: column;
@@ -116,9 +108,9 @@
   .carousel .control-dots {
     display: none;
   }
-    .carousel-root {
+  .carousel-root {
       padding: 0px !important;
-    }
+  }
 }
 
 /* || MEDIUM */
@@ -127,10 +119,6 @@
     width: 40%;
   }
   
-  .hero--header {
-    font-size: 35px;
-  }
-
   .hero--text {
     text-align: center;
     font-size: 20px;

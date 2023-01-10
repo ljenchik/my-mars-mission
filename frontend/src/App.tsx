@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import { LandingPage } from "./components/LandingPage/LandingPage";
 import { Quiz } from "./components/LearningSpace/Quiz";
-import { ImageViewer } from "./components/Images/ImageViewer";
+import { ImageViewer } from "./components/MarsImages/ImageViewer";
 import { MarsHolidays } from "./components/MarsHolidays/MarsHolidays";
 import { Menu } from "./components/Menu/Menu";
 import { LoginForm } from "./components/LoginForm/LoginForm";

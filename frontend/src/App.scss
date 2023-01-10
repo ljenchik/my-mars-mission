@@ -3,6 +3,38 @@ body {
   font-family: "Syne Mono", monospace;
 }
 
+header h1, header h1 span {
+  text-align: center;
+  margin-top: 5rem;
+  color: white;
+  font-size: 35px;
+  text-shadow: 6px 6px 6px #d04a36;
+  padding: 2rem 1rem;
+}
+
+.subtitle {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 3px 3px 6px #d04a36;
+  padding: 2rem 1rem;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner:hover {
+  animation: rotate 20s linear infinite;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+// Blinking stars and moving clouds
 @keyframes move-twink-back {
   from {
     background-position: 0 0;
@@ -35,7 +67,6 @@ body {
     background-position: -10000px 5000px;
   }
 }
-
 @keyframes move-clouds-back {
   from {
     background-position: 0 0;
@@ -60,7 +91,6 @@ body {
     background-position: 10000px 0;
   }
 }
-
 @-ms-keyframes move-clouds-back {
   from {
     background-position: 0;
@@ -69,7 +99,6 @@ body {
     background-position: 10000px 0;
   }
 }
-
 .stars,
 .clouds,
 .twinkling {
@@ -82,7 +111,6 @@ body {
   height: 100%;
   display: block;
 }
-
 .stars {
   background: #1c3148
     url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
@@ -99,7 +127,6 @@ body {
   -webkit-animation: move-twink-back 3000s linear infinite;
   animation: move-twink-back 3000s linear infinite;
 }
-
 .clouds {
   background: transparent
     url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top
@@ -110,4 +137,96 @@ body {
   -o-animation: move-clouds-back 200s linear infinite;
   -webkit-animation: move-clouds-back 200s linear infinite;
   animation: move-clouds-back 200s linear infinite;
+}
+
+//Extra extra small
+@media screen and (max-width: 359px) {
+  header h1, header h1 span {
+    font-size: 20px;
+    padding: 0.3rem;
+  }
+
+  .subtitle, .subtitle span{
+    font-size: 14px;
+  }
+}
+
+//Extra small
+@media screen and (min-width: 360px) {
+  header h1, header h1 span {
+    font-size: 30px;
+    padding: 0 1.5rem;
+  }
+
+  header h1 span {
+    padding: 0;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+//Small
+@media screen and (min-width: 576px) {
+  header h1, header h1 span  {
+    margin-top: 8rem;
+    font-size: 35px;
+    padding: 0 1rem;
+  }
+
+  header h1 span {
+    padding: 0;
+  }
+
+  .subtitle, .subtitle span {
+    font-size: 26px;
+  }
+}
+
+//Medium
+@media screen and (min-width: 768px) {
+  header h1 {
+    font-size: 40px;
+    margin-top: 7rem;
+  }
+  .subtitle {
+    font-size: 30px;
+  }
+}
+
+//Large
+@media screen and (min-width: 992px) {
+  header h1 {
+    font-size: 45px;
+    margin-top: 9rem;
+  }
+
+  .subtitle {
+    font-size: 35px;
+  }
+}
+
+//Extra large
+@media screen and (min-width: 1200px) {
+  header h1 {
+    font-size: 50px;
+    margin-top: 6rem;
+  }
+
+  .subtitle {
+    font-size: 35px;
+  }
+}
+
+//Extra extra large
+@media screen and (min-width: 1400px) {
+  header h1 {
+    font-size: 50px;
+    margin-top: 8rem;
+  }
+
+  .subtitle {
+    font-size: 35px;
+  }
 }

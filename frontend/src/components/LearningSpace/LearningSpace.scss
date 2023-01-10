@@ -1,0 +1,19 @@
+.link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+
+.card-image {
+    width: 400px;
+    border: 3px double white;
+    border-radius: 10px;
+}
+
+.stars {
+    z-index: 0;
+}

@@ -52,10 +52,12 @@ export function ImageViewer() {
   if (!urls) {
     return (
       <div className="image-viewer stars twinkling">
-        <h1 className="hero--header">
-          <span className="nowrap">Perseverance Rover</span>{" "}
-          <span className="nowrap">Mars Images</span>
-        </h1>
+        <header>
+          <h1>
+            <span className="nowrap">Perseverance Rover </span>{" "}
+            <span className="nowrap">Mars Images</span>
+          </h1>
+        </header>
         <div className="hero--date-text-container">
           <h3 className="hero--text">
             <span className="nowrap"> Choose a date to see images</span>{" "}
@@ -75,12 +77,14 @@ export function ImageViewer() {
   } else if (message !== "") {
     return (
       <div className="image-viewer stars twinkling">
-        <h1 className="hero--header">
-          <span className="nowrap">Perseverance Rover</span>{" "}
-          <span className="nowrap">Mars Images</span>
-        </h1>
+        <header>
+          <h1>
+            <span className="nowrap">Perseverance Rover </span>{" "}
+            <span className="nowrap">Mars Images</span>
+          </h1>
+        </header>
         <div className="hero--date-text-container">
-          <h3 className="hero--text">
+          <h3 className="subtitle">
             <span className="nowrap"> Choose a date to see images</span>{" "}
             <span className="nowrap">taken on this day</span>
           </h3>
@@ -93,7 +97,7 @@ export function ImageViewer() {
           />
         </div>
         {/* <h3 className="hero--text">{message}</h3> */}
-        <h3 className="hero--text">
+        <h3 className="subtitle">
           <span className="nowrap"> There were no photographs </span>{" "}
           <span className="nowrap">taken on this date.</span>{" "}
           <span className="nowrap">Please choose another date</span>
@@ -107,12 +111,14 @@ export function ImageViewer() {
   } else {
     return (
       <div className="image-viewer stars twinkling">
-        <h1 className="hero--header">
-          <span className="nowrap">Perseverance Rover</span>{" "}
-          <span className="nowrap">Mars Images</span>
-        </h1>
+        <header>
+          <h1>
+            <span className="nowrap">Perseverance Rover</span>{" "}
+            <span className="nowrap">Mars Images</span>
+          </h1>
+        </header>
         <div className="hero--date-text-container">
-          <h3 className="hero--text">
+          <h3 className="subtitle">
             <span className="nowrap"> Choose a date to see images</span>{" "}
             <span className="nowrap">taken on this day</span>
           </h3>
@@ -124,6 +130,7 @@ export function ImageViewer() {
             value={selectedDate}
           />
         </div>
+
         <Carousel
           className="carousel"
           infiniteLoop={true}
@@ -138,6 +145,7 @@ export function ImageViewer() {
             );
           })}
         </Carousel>
+
       </div>
     );
   }
