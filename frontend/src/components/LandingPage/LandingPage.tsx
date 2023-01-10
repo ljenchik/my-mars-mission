@@ -31,6 +31,7 @@ export function LandingPage() {
         </h3>
 
         <div className="landing-page-container">
+          
           {/* Link 1 */}
           <div className="landing-page-item">
             <Link
@@ -68,7 +69,7 @@ export function LandingPage() {
             </Link>
 
             <Link
-              id="images"
+              id="mars-images"
               to={`${ROOT_FOLDER}images`}
               className="landing-page-link"
             >

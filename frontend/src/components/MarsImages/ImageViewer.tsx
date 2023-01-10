@@ -71,7 +71,7 @@ export function ImageViewer() {
             value={selectedDate}
           />
         </div>
-        <h3 className="hero--text">Images are loading ...</h3>
+        <h3 className="hero-subtitle">Images are loading ...</h3>
       </div>
     );
   } else if (message !== "") {
@@ -97,7 +97,7 @@ export function ImageViewer() {
           />
         </div>
         {/* <h3 className="hero--text">{message}</h3> */}
-        <h3 className="subtitle">
+        <h3 className="hero-subtitle">
           <span className="nowrap"> There were no photographs </span>{" "}
           <span className="nowrap">taken on this date.</span>{" "}
           <span className="nowrap">Please choose another date</span>
@@ -118,7 +118,7 @@ export function ImageViewer() {
           </h1>
         </header>
         <div className="hero--date-text-container">
-          <h3 className="subtitle">
+          <h3 className="hero-subtitle">
             <span className="nowrap"> Choose a date to see images</span>{" "}
             <span className="nowrap">taken on this day</span>
           </h3>

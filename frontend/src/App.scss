@@ -186,7 +186,7 @@ header h1, header h1 span {
 
 //Medium
 @media screen and (min-width: 768px) {
-  header h1 {
+  header h1, header h1 span {
     font-size: 40px;
     margin-top: 7rem;
   }
@@ -197,9 +197,8 @@ header h1, header h1 span {
 
 //Large
 @media screen and (min-width: 992px) {
-  header h1 {
+  header h1, header h1 span {
     font-size: 45px;
-    margin-top: 9rem;
   }
 
   .subtitle {
@@ -209,7 +208,7 @@ header h1, header h1 span {
 
 //Extra large
 @media screen and (min-width: 1200px) {
-  header h1 {
+  header h1, header h1 span {
     font-size: 50px;
     margin-top: 6rem;
   }
@@ -221,7 +220,7 @@ header h1, header h1 span {
 
 //Extra extra large
 @media screen and (min-width: 1400px) {
-  header h1 {
+  header h1, header h1 span {
     font-size: 50px;
     margin-top: 8rem;
   }

@@ -2,11 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faEarthAmericas,
-  faUserAstronaut,
   faRocket,
   faBars,
   faXmark,
-  faGraduationCap
+  faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import "./Menu.scss";
@@ -19,60 +18,77 @@ export function Menu() {
   return (
     <nav className="nav-display">
       <Navbar />
-    <nav className="dropdown-menu">
-      <button
-        onClick={() => setOpen(!open)}
-        hidden={!open}
-        className="menu-button"
-      >
-        <FontAwesomeIcon icon={faBars} size={"3x"} />
-      </button>
-      <ul hidden={open} onClick={() => setOpen(!open)} className="menu-list">
+      <nav className="dropdown-menu">
         <button
-          onClick={() => setOpen(open)}
-          hidden={open}
-          className="menu-cross-button"
+          onClick={() => setOpen(!open)}
+          hidden={!open}
+          className="menu-button"
         >
-          <FontAwesomeIcon icon={faXmark} size={"2x"} />
+          <FontAwesomeIcon icon={faBars} size={"3x"} />
         </button>
 
-        <li className="menu-item">
-          <Link id="landing-page" to={`${ROOT_FOLDER}`} className="menu-link">
-            <FontAwesomeIcon icon={faEarthAmericas} size={"1x"} className="menu-icon" />
-          </Link>
-          <Link id="landing-page" to={`${ROOT_FOLDER}`} className="menu-link">
-            Landing Page
-          </Link>
-        </li>
+        <ul hidden={open} onClick={() => setOpen(!open)} className="menu-list">
+          <button
+            onClick={() => setOpen(open)}
+            hidden={open}
+            className="menu-cross-button"
+          >
+            <FontAwesomeIcon icon={faXmark} size={"2x"} />
+          </button>
 
-        <li className="menu-item">
-          <Link id="learning-space" to={`${ROOT_FOLDER}/learning-space`} className="menu-link">
-            <FontAwesomeIcon icon={faGraduationCap} size={"1x"} className="menu-icon" />
-          </Link>
-          <Link id="learning-space" to={`${ROOT_FOLDER}/learning-space`} className="menu-link">
-            Learning Space
-          </Link>
-        </li>
+          <li className="menu-item">
+            <Link to={`${ROOT_FOLDER}`} className="menu-link">
+              <FontAwesomeIcon
+                icon={faEarthAmericas}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+            <Link to={`${ROOT_FOLDER}`} className="menu-link">
+              Landing Page
+            </Link>
+          </li>
 
-        <li className="menu-item">
-          <Link id="mars-holidays" to={`${ROOT_FOLDER}/mars-holidays`} className="menu-link">
-            <FontAwesomeIcon icon={faRocket} size={"1x"} className="menu-icon" />
-          </Link>
-          <a id="mars-holidays" href={`${ROOT_FOLDER}/mars-holidays`} className="menu-link">
-            Mars Holidays
-          </a>
-        </li>
+          <li className="menu-item">
+            <Link to={`${ROOT_FOLDER}learning-space`} className="menu-link">
+              <FontAwesomeIcon
+                icon={faGraduationCap}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+            <Link to={`${ROOT_FOLDER}learning-space`} className="menu-link">
+              Learning Space
+            </Link>
+          </li>
 
-        <li className="menu-item">
-          <Link id="images" to={`${ROOT_FOLDER}/images`} className="menu-link">
-            <FontAwesomeIcon icon={faStar} size={"1x"} className="menu-icon" />
-          </Link>
-          <Link id="images" to={`${ROOT_FOLDER}/images`} className="menu-link">
-            Mars Rover Images
-          </Link>
-        </li>
+          <li className="menu-item">
+            <Link to={`${ROOT_FOLDER}mars-holidays`} className="menu-link">
+              <FontAwesomeIcon
+                icon={faRocket}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+            <Link to={`${ROOT_FOLDER}mars-holidays`} className="menu-link">
+              Mars Holidays
+            </Link>
+          </li>
 
-      </ul>
-    </nav></nav>
+          <li className="menu-item">
+            <Link to={`${ROOT_FOLDER}images`} className="menu-link">
+              <FontAwesomeIcon
+                icon={faStar}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+            <Link to={`${ROOT_FOLDER}images`} className="menu-link">
+              Mars Rover Images
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </nav>
   );
 }

@@ -31,10 +31,11 @@ html {
 
 .landing-page-container {
   display: flex;
-  flex-wrap: wrap;
-  width: 80%;
+  //flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .landing-page-item {
@@ -66,62 +67,54 @@ html {
   margin-top: 0.5rem;
 }
 
-/* || EXTRA SMALL */
-@media screen and (min-width: 320px) {
+// Extra extra small
+@media screen and (max-width: 359px) {
   .landing-page-item {
-    justify-content: center;
+    font-size: 14px;
+    padding: 0.6rem;
   }
 }
 
-/* || SMALL */
-@media screen and (min-width: 576px) {
-  header h1 {
-    margin-top: 8rem;
-    font-size: 37px;
-    padding: 0 1rem;
-  }
+// Extra small
+@media screen and (min-width: 360px) {
+ 
+}
 
-  .landing-page-container {
-    flex-direction: column;
-  }
-  
+// Small
+@media screen and (min-width: 576px) {
   .landing-page-image {
     width: 50%;
   }
 }
 
-
-/* || MEDIUM */
+// Medium
 @media screen and (min-width: 768px) {
-  .landing-page-image {
+  #landing-page .landing-page-image {
     width: 45%;
   }
 
   .landing-page-container {
-    flex-direction: column;
     font-size: 23px;
     margin: 0rem 1rem;
   }
-  
 }
 
-/* || LARGE */
+//Large
 @media screen and (min-width: 992px) {
-  .landing-page-image {
+  #landing-page .landing-page-image {
     width: 40%;
-    margin: 1rem;
   }
 
   .landing-page-container {
     flex-direction: row;
+    flex-wrap: wrap;
     font-size: 25px;
-    margin: 1rem 1rem;
   }
 }
 
-/* || EXTRA LARGE */
+//Extra large
 @media screen and (min-width: 1200px) {
-  .landing-page-image {
+  #landing-page .landing-page-image {
     width: 38%;
     margin: 0.5rem;
   }
@@ -134,7 +127,7 @@ html {
 }
 
 
-/* || EXTRA EXTRA LARGE */
+// Extar extra large
 @media screen and (min-width: 1400px) {
   .landing-page-image {
     width: 30%;
