@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/%7Bmy-mars-mision%7D/static/css/main.72ac926b.css",
-    "main.js": "/%7Bmy-mars-mision%7D/static/js/main.32727cc1.js",
-    "static/media/rover-info.jpg": "/%7Bmy-mars-mision%7D/static/media/rover-info.0abfb99d96bfee80b112.jpg",
-    "static/media/mars-info.jpg": "/%7Bmy-mars-mision%7D/static/media/mars-info.f2d45b49808c7c358ec5.jpg",
-    "static/media/quiz.jpg": "/%7Bmy-mars-mision%7D/static/media/quiz.0cec9cd839eb0992271b.jpg",
-    "index.html": "/%7Bmy-mars-mision%7D/index.html",
-    "main.72ac926b.css.map": "/%7Bmy-mars-mision%7D/static/css/main.72ac926b.css.map",
-    "main.32727cc1.js.map": "/%7Bmy-mars-mision%7D/static/js/main.32727cc1.js.map"
+    "main.css": "/static/css/main.72ac926b.css",
+    "main.js": "/static/js/main.99e9be26.js",
+    "static/media/rover-info.jpg": "/static/media/rover-info.0abfb99d96bfee80b112.jpg",
+    "static/media/mars-info.jpg": "/static/media/mars-info.f2d45b49808c7c358ec5.jpg",
+    "static/media/quiz.jpg": "/static/media/quiz.0cec9cd839eb0992271b.jpg",
+    "index.html": "/index.html",
+    "main.72ac926b.css.map": "/static/css/main.72ac926b.css.map",
+    "main.99e9be26.js.map": "/static/js/main.99e9be26.js.map"
   },
   "entrypoints": [
     "static/css/main.72ac926b.css",
-    "static/js/main.32727cc1.js"
+    "static/js/main.99e9be26.js"
   ]
 }
