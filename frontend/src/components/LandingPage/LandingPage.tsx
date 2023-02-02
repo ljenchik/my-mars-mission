@@ -5,7 +5,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { ROOT_FOLDER } from "../../navigateRoot";
 import "./LandingPage.scss";
 
 export function LandingPage() {
@@ -36,7 +35,7 @@ export function LandingPage() {
           <div className="landing-page-item">
             <Link
               id="mars-holidays"
-              to={`${ROOT_FOLDER}mars-holidays`}
+              to={`/mars-holidays`}
               className="landing-page-link"
             >
               <FontAwesomeIcon
@@ -47,7 +46,7 @@ export function LandingPage() {
             </Link>
             <Link
               id="mars-holidays"
-              to={`${ROOT_FOLDER}mars-holidays`}
+              to={`/mars-holidays`}
               className="landing-page-link"
             >
               Mars Holidays
@@ -58,7 +57,7 @@ export function LandingPage() {
           <div className="landing-page-item">
             <Link
               id="images"
-              to={`${ROOT_FOLDER}images`}
+              to={`/images`}
               className="landing-page-link "
             >
               <FontAwesomeIcon
@@ -70,7 +69,7 @@ export function LandingPage() {
 
             <Link
               id="mars-images"
-              to={`${ROOT_FOLDER}images`}
+              to={`/images`}
               className="landing-page-link"
             >
               Mars Rover Images
@@ -81,7 +80,7 @@ export function LandingPage() {
           <div className="landing-page-item">
             <Link
               id="learning-space"
-              to={`${ROOT_FOLDER}learning-space`}
+              to={`/learning-space`}
               className="landing-page-link"
             >
               <FontAwesomeIcon
@@ -93,7 +92,7 @@ export function LandingPage() {
 
             <Link
               id="learning-space"
-              to={`${ROOT_FOLDER}learning-space`}
+              to={`/learning-space`}
               className="landing-page-link"
             >
               Learning Space

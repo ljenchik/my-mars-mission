@@ -2,7 +2,6 @@ import { SetStateAction, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { changePassword, getAccountById } from "../../apiClient";
 import { Account } from "../../models";
-import { ROOT_FOLDER } from "../../navigateRoot";
 import "./ChangePassword.css";
 
 export const ChangePassword = () => {
@@ -146,7 +145,7 @@ export const ChangePassword = () => {
         ) : (
           <div className="change-password-error">{message}</div>
         )}
-        <Link to={`${ROOT_FOLDER}account/${id}/info`} className="change-password-link">
+        <Link to={`/account/${id}/info`} className="change-password-link">
           {" "}
           Back to your profile
         </Link>

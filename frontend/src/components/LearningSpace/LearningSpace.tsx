@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ROOT_FOLDER } from "../../navigateRoot";
 import "./LearningSpace.scss";
 
 export function LearningSpace() {
@@ -14,7 +13,7 @@ export function LearningSpace() {
         <div className="card-container">
           <Link
             id="rover-info-link"
-            to={`${ROOT_FOLDER}learning-space/mars-info`}
+            to={`/learning-space/mars-info`}
           >
             <div className="card-header"><h3><span>Interesting facts</span>{" "}<span className="nowrap">about Mars</span></h3></div>
             <img src={require("./images/mars-info.jpg")} className="card-image"/>
@@ -26,7 +25,7 @@ export function LearningSpace() {
         <div className="card-header"><h3><span>Interesting facts</span>{" "}<span className="nowrap">about Rovers</span></h3></div>
           <Link
             id="quiz-info-link"
-            to={`${ROOT_FOLDER}learning-space/rover-info`}
+            to={`/learning-space/rover-info`}
           >
             <img src={require("./images/rover-info.jpg")} className="card-image"/>
           </Link>
@@ -37,7 +36,7 @@ export function LearningSpace() {
           <div className="card-header"><h3><span>Time to test</span>{" "}<span className="nowrap">your knowledge!</span></h3></div>
           <Link
             id="mars-info-link"
-            to={`${ROOT_FOLDER}learning-space/quiz`}
+            to={`/learning-space/quiz`}
           >
             <img src={require("./images/quiz.jpg")} className="card-image"/>
           </Link>

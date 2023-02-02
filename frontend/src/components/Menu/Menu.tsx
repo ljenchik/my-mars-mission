@@ -10,7 +10,6 @@ import {
 import { useState } from "react";
 import "./Menu.scss";
 import { Navbar } from "../Navbar/Navbar";
-import { ROOT_FOLDER } from "../../navigateRoot";
 import { Link } from "react-router-dom";
 
 export function Menu() {
@@ -37,53 +36,53 @@ export function Menu() {
           </button>
 
           <li className="menu-item">
-            <Link to={`${ROOT_FOLDER}`} className="menu-link">
+            <Link to={`/`} className="menu-link">
               <FontAwesomeIcon
                 icon={faEarthAmericas}
                 size={"1x"}
                 className="menu-icon"
               />
             </Link>
-            <Link to={`${ROOT_FOLDER}`} className="menu-link">
+            <Link to={`/`} className="menu-link">
               Landing Page
             </Link>
           </li>
 
           <li className="menu-item">
-            <Link to={`${ROOT_FOLDER}learning-space`} className="menu-link">
+            <Link to={`/learning-space`} className="menu-link">
               <FontAwesomeIcon
                 icon={faGraduationCap}
                 size={"1x"}
                 className="menu-icon"
               />
             </Link>
-            <Link to={`${ROOT_FOLDER}learning-space`} className="menu-link">
+            <Link to={`/learning-space`} className="menu-link">
               Learning Space
             </Link>
           </li>
 
           <li className="menu-item">
-            <Link to={`${ROOT_FOLDER}mars-holidays`} className="menu-link">
+            <Link to={`/mars-holidays`} className="menu-link">
               <FontAwesomeIcon
                 icon={faRocket}
                 size={"1x"}
                 className="menu-icon"
               />
             </Link>
-            <Link to={`${ROOT_FOLDER}mars-holidays`} className="menu-link">
+            <Link to={`/mars-holidays`} className="menu-link">
               Mars Holidays
             </Link>
           </li>
 
           <li className="menu-item">
-            <Link to={`${ROOT_FOLDER}images`} className="menu-link">
+            <Link to={`/images`} className="menu-link">
               <FontAwesomeIcon
                 icon={faStar}
                 size={"1x"}
                 className="menu-icon"
               />
             </Link>
-            <Link to={`${ROOT_FOLDER}images`} className="menu-link">
+            <Link to={`/images`} className="menu-link">
               Mars Rover Images
             </Link>
           </li>

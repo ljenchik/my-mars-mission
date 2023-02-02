@@ -7,7 +7,6 @@ import { Account } from "../../models";
 import "./UserInfo.scss";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { ROOT_FOLDER } from "../../navigateRoot";
 
 export function UserInfo() {
   const [account, setAccount] = useState<Account>();
@@ -39,7 +38,7 @@ export function UserInfo() {
               /> :
         <OverlayTrigger overlay={<Tooltip className="add-photo">Add photo</Tooltip>}>
           {({ ref, ...triggerHandler }) => (
-            <Link ref={ref} to={`${ROOT_FOLDER}account/${id}/update`} {...triggerHandler}>
+            <Link ref={ref} to={`/account/${id}/update`} {...triggerHandler}>
               <img
                 className="user-info-default"
                 src="https://cdn-icons-png.flaticon.com/512/1000/1000613.png?w=360"
@@ -58,19 +57,19 @@ export function UserInfo() {
         ) : (
           ""
         )}
-        <Link to={`${ROOT_FOLDER}account/${id}/update`}>
+        <Link to={`/account/${id}/update`}>
           <button className="user-info-button">Update details</button>
         </Link>
 
-        <Link to={`${ROOT_FOLDER}account/${id}/change-password`}>
+        <Link to={`/account/${id}/change-password`}>
           <button className="user-info-button">Change password</button>
         </Link>
 
-        <Link to={`${ROOT_FOLDER}account/${id}/ticket`}>
+        <Link to={`/account/${id}/ticket`}>
           <button className="user-info-button" >Book ticket</button>
         </Link>
 
-        <Link to={`${ROOT_FOLDER}account/${id}/tickets`}>
+        <Link to={`/account/${id}/tickets`}>
           <button className="user-info-button">My tickets</button>
         </Link>
       </section>

@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { getAccountById, updateAccount } from "../../apiClient";
 import "./UpdateUserProfile.scss";
 import { validateImage } from "image-validator";
-import { ROOT_FOLDER } from "../../navigateRoot";
 
 const urlValidation = async (url: string) => {
   const isValidImage = await validateImage(url);
@@ -163,7 +162,7 @@ export function UpdateUserProfile() {
         ) : (
           <div style={{color: "#d04a36"}}>{message}</div>
         )}
-        <Link to={`${ROOT_FOLDER}account/${id}/info`} className="change-password-link">
+        <Link to={`/account/${id}/info`} className="change-password-link">
           Back to your profile
         </Link>
       </div>

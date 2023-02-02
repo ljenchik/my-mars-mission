@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Login } from "../../models";
 import { useState } from "react";
 import { login } from "../../apiClient";
-import { ROOT_FOLDER } from "../../navigateRoot";
 
 export const LoginForm = () => {
   const [user, setUser] = useState<Login>({
@@ -52,7 +51,7 @@ export const LoginForm = () => {
         } else {
           localStorage.setItem("accessToken", response.accessToken);
           console.log(response.accessToken)
-          navigate(`${ROOT_FOLDER}account/${response.id}`);
+          navigate(`/account/${response.id}`);
         }
       });
     }

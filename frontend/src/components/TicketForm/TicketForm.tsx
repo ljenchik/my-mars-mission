@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Account, Ticket } from "../../models";
 import "./TicketForm.scss";
 import { validateImage } from "image-validator";
-import { ROOT_FOLDER } from "../../navigateRoot";
 
 const urlValidation = async (url: string) => {
   const isValidImage = await validateImage(url);
@@ -161,7 +160,7 @@ export const TicketForm = () => {
       if (!response.success) {
         setError(response.error);
       } else {
-        navigate(`${ROOT_FOLDER}ticket/${response.ticket_id}`);
+        navigate(`/ticket/${response.ticket_id}`);
       }
     });
   };

@@ -3,7 +3,6 @@ import { getTicketById } from "../../apiClient";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./TicketDisplay.scss";
 import { Ticket } from "../../models";
-import { ROOT_FOLDER } from "../../navigateRoot";
 
 export const NewTicketDisplay = () => {
   const [error, setError] = useState("");
@@ -28,7 +27,7 @@ export const NewTicketDisplay = () => {
     const accessToken = localStorage.getItem("accessToken");
     getTicketById(ticket_id).then((response) => {
       if (!response.success) {
-        navigate(`${ROOT_FOLDER}/account/login`);
+        navigate(`//account/login`);
       }
       setTicket(response.ticket);
     });
@@ -56,7 +55,7 @@ export const NewTicketDisplay = () => {
           <p>Ticket id {ticket.ticket_id}</p>
         </div>
         <br/>
-        <Link to={`${ROOT_FOLDER}account/${ticket.owner_id}/info`} className="change-password-link">
+        <Link to={`/account/${ticket.owner_id}/info`} className="change-password-link">
           Back to your profile
         </Link>
       </div>
