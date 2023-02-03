@@ -14,7 +14,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  gap: 3rem;
 }
 
 #landing-page figure {
@@ -75,14 +76,9 @@ html {
   }
 }
 
-// Extra small
-@media screen and (min-width: 360px) {
- 
-}
-
 // Small
 @media screen and (min-width: 576px) {
-  .landing-page-image {
+  #landing-page .landing-page-image {
     width: 50%;
   }
 }
