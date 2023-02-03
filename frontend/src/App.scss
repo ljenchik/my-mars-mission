@@ -1,11 +1,11 @@
 body {
   background-color: #1c3148;
   font-family: "Syne Mono", monospace;
+  color: var(--)
 }
 
 header h1, header h1 span {
   text-align: center;
-  //margin-top: 5rem;
   color: white;
   font-size: 35px;
   text-shadow: 6px 6px 6px #d04a36;
@@ -111,32 +111,31 @@ header h1, header h1 span {
   height: 100%;
   display: block;
 }
+
 .stars {
-  background: #1c3148
-    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
-    center;
+    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
   z-index: 100;
 }
 
 .twinkling {
   z-index: 0;
-
+  //background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
   -moz-animation: move-twink-back 3000s linear infinite;
   -ms-animation: move-twink-back 3000s linear infinite;
   -o-animation: move-twink-back 3000s linear infinite;
   -webkit-animation: move-twink-back 3000s linear infinite;
   animation: move-twink-back 3000s linear infinite;
 }
+
 .clouds {
-  background: transparent
-    url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top
-    center;
-  z-index: -2;
+  background: #db335777 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat top
+     center;
+  z-index: 0;
   -moz-animation: move-clouds-back 200s linear infinite;
   -ms-animation: move-clouds-back 200s linear infinite;
   -o-animation: move-clouds-back 200s linear infinite;
   -webkit-animation: move-clouds-back 200s linear infinite;
-  animation: move-clouds-back 200s linear infinite;
+  animation: move-clouds-back 500s linear infinite;
 }
 
 //Extra extra small
