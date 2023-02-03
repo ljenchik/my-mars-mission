@@ -1,8 +1,24 @@
 body {
   background-color: #1c3148;
   font-family: "Syne Mono", monospace;
-  color: var(--)
+	background: linear-gradient(-45deg, #e463632a, #d4dd9b56, #a9eec76d, #53165354, #972e3e54,) top center;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 header h1, header h1 span {
   text-align: center;
@@ -113,29 +129,29 @@ header h1, header h1 span {
 }
 
 .stars {
-    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    background: black url("./images/stars.png") repeat;
   z-index: 100;
 }
 
 .twinkling {
   z-index: 0;
-  //background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
   -moz-animation: move-twink-back 3000s linear infinite;
   -ms-animation: move-twink-back 3000s linear infinite;
   -o-animation: move-twink-back 3000s linear infinite;
   -webkit-animation: move-twink-back 3000s linear infinite;
-  animation: move-twink-back 3000s linear infinite;
+  animation: move-twink-back 1000s linear infinite;
 }
 
 .clouds {
-  background: #db335777 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat top
-     center;
+  background-color: linear-gradient(#e66465, #9198e5);
+  background-image: url("./images/clouds.png");
+  background-repeat: round;
   z-index: 0;
   -moz-animation: move-clouds-back 200s linear infinite;
   -ms-animation: move-clouds-back 200s linear infinite;
   -o-animation: move-clouds-back 200s linear infinite;
   -webkit-animation: move-clouds-back 200s linear infinite;
-  animation: move-clouds-back 500s linear infinite;
+  animation: move-clouds-back 1000s linear infinite;
 }
 
 //Extra extra small
