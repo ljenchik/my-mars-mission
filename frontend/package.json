@@ -19,6 +19,8 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.2",
     "caniuse-lite": "^1.0.30001434",
+    "compass": "^0.1.1",
+    "compass-mixins": "^0.12.12",
     "image-validator": "^1.2.1",
     "jsonwebtoken": "^8.5.1",
     "password-salt-and-hash": "^1.0.5",
@@ -35,6 +37,7 @@
     "react-use-localstorage": "^3.5.3",
     "style-it": "^2.1.4",
     "styled-components": "^5.3.6",
+    "susy": "^3.0.8",
     "typescript": "^4.7.2",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"

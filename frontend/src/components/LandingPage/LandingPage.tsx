@@ -9,7 +9,7 @@ import "./LandingPage.scss";
 
 export function LandingPage() {
   return (
-    <div className="landing-page-body clouds twinkling">
+    <body className="landing-page-body clouds">
       <header>
         <h1>
           Welcome to <span className="nowrap">Mars Mission!</span>{" "}
@@ -102,6 +102,6 @@ export function LandingPage() {
           </div>
         </div>
       </main>
-    </div>
+    </body>
   );
 }
