@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
 /* || RESET */
 * {
   margin: 0;
@@ -16,6 +17,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  font-family: 'Quantico', sans-serif;
 }
 
 #landing-page figure {
@@ -26,13 +28,12 @@ html {
 }
 
 #landing-page .landing-page-image {
-  width: 60%;
+  width: 70%;
   align-self: center;
 }
 
 .landing-page-container {
   display: flex;
-  //flex-wrap: wrap;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -45,6 +46,10 @@ html {
   border-radius: 5px;
   padding: 1rem;
   margin: 1rem;
+  width: 70%;
+  font-size: 18px;
+  
+
 }
 
 .landing-page-link {
@@ -68,30 +73,29 @@ html {
   margin-top: 0.5rem;
 }
 
-// Extra extra small
-@media screen and (max-width: 359px) {
-  .landing-page-item {
-    font-size: 14px;
-    padding: 0.6rem;
-  }
-}
-
 // Small
 @media screen and (min-width: 576px) {
   #landing-page .landing-page-image {
-    width: 50%;
+    width: 60%;
+  }
+
+  .landing-page-item {
+    font-size: 20px;
   }
 }
 
 // Medium
 @media screen and (min-width: 768px) {
   #landing-page .landing-page-image {
-    width: 45%;
+    width: 60%;
   }
 
   .landing-page-container {
-    font-size: 23px;
-    margin: 0rem 1rem;
+    font-size: 24px;
+  }
+
+  .landing-page-item {
+    width: 80%;
   }
 }
 
@@ -105,6 +109,9 @@ html {
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 25px;
+  }
+  .landing-page-item {
+    width: 40%;
   }
 }
 
@@ -127,12 +134,9 @@ html {
 @media screen and (min-width: 1400px) {
   .landing-page-image {
     width: 30%;
-    margin: 0.5rem;
   }
 
   .landing-page-container {
-    flex-direction: row;
-    font-size: 25px;
     margin: 1rem 1rem;
   }
 }

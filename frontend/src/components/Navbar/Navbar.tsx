@@ -36,7 +36,7 @@ export const Navbar = () => {
           <Nav.Link as={Link} to="/learning-space" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
-              icon={faEarthAmericas}
+              icon={faGraduationCap}
               size={"1x"}
             />
             <span>Learning Space</span>
@@ -47,7 +47,7 @@ export const Navbar = () => {
           <Nav.Link as={Link} to="/mars-holidays" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
-              icon={faEarthAmericas}
+              icon={faRocket}
               size={"1x"}
             />
             <span>Mars Holidays</span>
@@ -58,7 +58,7 @@ export const Navbar = () => {
           <Nav.Link as={Link} to="/images" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
-              icon={faEarthAmericas}
+              icon={faStar}
               size={"1x"}
             />
             <span>Mars Rover Images</span>

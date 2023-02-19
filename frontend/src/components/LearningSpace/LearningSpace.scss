@@ -17,7 +17,8 @@
 
 .card-container {
     position: relative;
-    justify-content: center;
+     text-align: center;
+        display: block;
 }
 
 .card-image {
@@ -28,12 +29,13 @@
 
 .card-header {
     font-family: "Syne Mono", monospace;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     text-shadow: 3px 3px 6px #d04a36;
     position: absolute;
-    top: 75%;
-    transform: translate(4%, -25%);
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 
 .stars {
@@ -55,10 +57,7 @@
   }
 
   .card-header {
-    font-size: 15px;
-    top: 80%;
-    left: 15%;
-    transform: translate(0%, -50%);
+    font-size: 12px;
   }
 }
 
@@ -78,9 +77,6 @@
 
   .card-header {
     font-size: 16px;
-    top: 15%;
-    left: 5%;
-    transform: translate(0%, -50%);
   }
 }
 
@@ -100,9 +96,6 @@
 
   .card-header {
     font-size: 18px;
-    top: 8%;
-    left: 2%;
-    transform: translate(0%, -50%);
   }
 }
 
@@ -118,9 +111,6 @@
 
   .card-header {
     font-size: 20px;
-    top: 8%;
-    left: 3%;
-    transform: translate(0%, -50%);
   }
 }
 
@@ -141,10 +131,7 @@
   }
 
   .card-header {
-    font-size: 20px;
-    top: 8%;
-    left: 3%;
-    transform: translate(0%, -50%);
+    font-size: 16px;
   }
 }
 
@@ -155,10 +142,7 @@
   }
 
   .card-header {
-    font-size: 20px;
-    top: 8%;
-    left: 3%;
-    transform: translate(0%, -50%);
+    font-size: 16px;
   }
 }
 
@@ -174,8 +158,5 @@
 
   .card-header {
     font-size: 20px;
-    top: 8%;
-    left: 3%;
-    transform: translate(0%, -50%);
   }
 }

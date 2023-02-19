@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +16,7 @@
     z-index: 1;
     height: 70px;
     top: 0;
+    
 }
 
 .navbar-logo-astronaut {
@@ -35,7 +38,9 @@
     align-items: center;
     font-size: 16px;
     margin-right: 2rem;
-    font-family: 'Share Tech Mono';
+    //font-family: 'Share Tech Mono';
+    font-family: 'Quantico', sans-serif;
+
 }
 
 ul {
@@ -45,6 +50,7 @@ ul {
 .navbar-options {
     text-decoration: none;
     color:  #09192a;
+
 }
 
 .navbar-options:hover {

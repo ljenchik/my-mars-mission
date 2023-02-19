@@ -61,10 +61,10 @@ header h1, header h1 span {
 }
 
 .clouds {
-  z-index: 2;
+  z-index: 0;
   background: transparent url("https://www.seekpng.com/png/full/71-712329_source-pink-clouds-png.png") repeat top
     center;
-  animation: move-clouds-back 1000s linear infinite;
+  animation: move-clouds-back 800s linear infinite;
 }
 
 @keyframes move-twink-back {
