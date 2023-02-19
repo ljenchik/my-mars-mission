@@ -3,7 +3,7 @@ import "./MarsHolidays.scss";
 
 export function MarsHolidays() {
 return (
-    <div className="mars-holidays-container">
+    <div className="mars-holidays-container stars twinkling">
       <h2 className="mars-holidays-title"><span className="nowrap">Would you dare</span> <span className="nowrap">go to Mars?</span></h2>
       <h3 className="mars-holidays-subtitle">
         <Link to={`/account/create`}>

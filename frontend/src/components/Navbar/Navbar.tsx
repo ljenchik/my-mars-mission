@@ -6,63 +6,65 @@ import {
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Nav, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
 export const Navbar = () => {
   return (
     <div className="navbar-container">
-      <Link to={`/mars-holidays`}>
+      <Nav.Link as={Link} to="/mars-holidays">
         <div className="navbar-logo-astronaut">
           {" "}
           <FontAwesomeIcon icon={faUserAstronaut} size={"2x"} />{" "}
         </div>
-      </Link>
+      </Nav.Link>
 
-      <ul className="navbar-container-options">
-        <li className="nowrap">
-          <Link to={`/`} className="navbar-options">
+      <Nav className="navbar-container-options">
+        <Nav.Item className="nowrap">
+          <Nav.Link as={Link} to="/" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
               icon={faEarthAmericas}
               size={"1x"}
             />
             <span>Landing Page</span>
-          </Link>
-        </li>
+          </Nav.Link>
+        </Nav.Item>
 
-        <li className="nowrap">
-          <Link to={`/learning-space`} className="navbar-options">
+        <Nav.Item className="nowrap">
+          <Nav.Link as={Link} to="/learning-space" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
-              icon={faGraduationCap}
+              icon={faEarthAmericas}
               size={"1x"}
             />
             <span>Learning Space</span>
-          </Link>
-        </li>
-        <li className="nowrap">
-          <Link to={`/mars-holidays`} className="navbar-options">
+          </Nav.Link>
+        </Nav.Item>
+
+        <NavItem className="nowrap">
+          <Nav.Link as={Link} to="/mars-holidays" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
-              icon={faRocket}
+              icon={faEarthAmericas}
               size={"1x"}
             />
             <span>Mars Holidays</span>
-          </Link>
-        </li>
+          </Nav.Link>
+        </NavItem>
 
-        <li className="nowrap">
-          <Link to={`/images`} className="navbar-options">
+        <Nav.Item className="nowrap">
+          <Nav.Link as={Link} to="/images" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
-              icon={faStar}
+              icon={faEarthAmericas}
               size={"1x"}
             />
-            <span> Mars Rover Images</span>
-          </Link>
-        </li>
-      </ul>
+            <span>Mars Rover Images</span>
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
     </div>
   );
 };
