@@ -1,0 +1,54 @@
+.stars {
+    z-index: 0;
+}
+
+#facts-title {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    text-shadow: 6px 6px 6px #d04a36;
+    padding: 1rem;
+    margin-top: 6rem;
+}
+
+.planets-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.planets-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    color: white;
+    margin: 1rem;
+    border: 3px double white;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.card-img-top {
+    width: 100%;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card .btn {
+    color: white;
+    text-decoration: none;
+}
+
+.card .btn:hover {
+    color: #d04a36;
+}
+
+.planet-link {
+    text-align: end;
+}

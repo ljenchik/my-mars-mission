@@ -15,7 +15,7 @@ import { Tickets } from "./components/Tickets/Tickets";
 import { ChangePassword } from "./components/ChangePassword/ChangePassword";
 import { NewTicketDisplay } from "./components/Ticket/NewTicketDisplay";
 import { RoverInfo } from "./components/LearningSpace/RoverInfo";
-import { MarsInfo } from "./components/LearningSpace/MarsInfo";
+import { SpaceInfo } from "./components/LearningSpace/SpaceInfo";
 import { LearningSpace } from "./components/LearningSpace/LearningSpace";
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
             path="/learning-space" element={<LearningSpace />}
           />
           <Route
-            path="/learning-space/mars-info" element={<MarsInfo />}
+            path="/learning-space/space-info" element={<SpaceInfo />}
           />
           <Route
             path="/learning-space/rover-info" element={<RoverInfo />}

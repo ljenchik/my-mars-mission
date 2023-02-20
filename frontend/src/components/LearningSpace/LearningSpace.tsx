@@ -13,10 +13,10 @@ export function LearningSpace() {
         <div className="card-container">
           <Link
             id="rover-info-link"
-            to={`/learning-space/mars-info`}
+            to={`/learning-space/spaceInfo.html`}
           >
-            <div className="card-header"><h3><span>Explore Mars</span></h3></div>
-            <img src={require("./images/mars-info.jpg")} className="card-image"/>
+            <div className="card-header"><h3><span>Explore Space</span></h3></div>
+            <img src={require("./LearningSpaceImages/mars-info.jpg")} className="card-image"/>
           </Link>
         </div>
 
@@ -27,7 +27,7 @@ export function LearningSpace() {
             id="quiz-info-link"
             to={`/learning-space/rover-info`}
           >
-            <img src={require("./images/rover-info.jpg")} className="card-image"/>
+            <img src={require("./LearningSpaceImages/rover-info.jpg")} className="card-image"/>
           </Link>
         </div>
 
@@ -38,7 +38,7 @@ export function LearningSpace() {
             id="mars-info-link"
             to={`/learning-space/quiz`}
           >
-            <img src={require("./images/quiz.jpg")} className="card-image"/>
+            <img src={require("./LearningSpaceImages/quiz.jpg")} className="card-image"/>
           </Link>
         </div>
 
