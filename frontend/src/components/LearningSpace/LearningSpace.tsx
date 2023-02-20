@@ -22,7 +22,7 @@ export function LearningSpace() {
 
         {/* Card 2 */}
         <div className="card-container">
-        <div className="card-header"><h3><span>Learn about</span>{" "}<span className="nowrap">Mars Rovers</span></h3></div>
+        <div className="card-header"><h3>Mars Rovers</h3></div>
           <Link
             id="quiz-info-link"
             to={`/learning-space/rover-info`}
@@ -33,7 +33,7 @@ export function LearningSpace() {
 
         {/* Card 3 */}
         <div className="card-container">
-          <div className="card-header"><h3><span>Test your knowledge!</span></h3></div>
+          <div className="card-header"><h3><span>Let's quiz!</span></h3></div>
           <Link
             id="mars-info-link"
             to={`/learning-space/quiz`}

@@ -1,9 +1,9 @@
 .learning-space-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 3rem;
+    margin-top: 6rem;
 }
 
 .link-container {
@@ -11,106 +11,83 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 2rem;
 }
 
 .card-container {
     position: relative;
-     text-align: center;
-        display: block;
+    text-align: center;
+    display: block;
 }
 
 .card-image {
-    width: 350px;
+    width: 75%;
     border: 3px double white;
     border-radius: 10px;
 }
 
 .card-header {
-    font-family: "Syne Mono", monospace;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     text-shadow: 3px 3px 6px #d04a36;
     position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
+    left: 5%;
+    bottom: 0%;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+    padding: 0 10px 0 0;
 
+}
 .stars {
   z-index: 0;
 }
 
 //Extra extra small
 @media screen and (max-width: 359px) {
-  .learning-space-container header {
-    margin-top: 1rem;
-  }
-
-  .link-container {
-    margin-top: 0rem;
-  }
-
   .card-image {
-    width: 250px;
-  }
-
-  .card-header {
-    font-size: 12px;
-  }
-}
-
-//Extra small
-@media screen and (min-width: 360px) {
-  .learning-space-container header {
-    margin-top: 5rem;
-  }
-
-  .link-container {
-    margin-top: 0rem;
-  }
-
-  .card-image {
-    width: 300px;
+    width: 80%;
   }
 
   .card-header {
     font-size: 16px;
+    left: 15%;
+  }
+}
+
+
+//Extra small
+@media screen and (min-width: 360px) {
+  .card-image {
+    width: 70%;
+  }
+  .card-header {
+    font-size: 16px;
+    left: 20%;
   }
 }
 
 //Small
 @media screen and (min-width: 576px) {
-  .learning-space-container header {
-    margin-top: 12rem;
-  }
-
-  .link-container {
+  .learning-space-container h1 {
     margin-top: 0rem;
-  }
-
-  .card-image {
-    width: 400px;
-  }
-
-  .card-header {
-    font-size: 18px;
-  }
 }
-
-//Medium
-@media screen and (min-width: 768px) {
-  .learning-space-container header {
-    margin-top: 15rem;
-  }
 
   .card-image {
     width: 450px;
   }
 
   .card-header {
-    font-size: 20px;
+    font-size: 28px;
+    position: absolute;
+    left: 0%;
+}
+}
+
+//Medium
+@media screen and (min-width: 768px) {
+  .learning-space-container h1 {
+    margin-top: 2rem;
   }
 }
 
@@ -119,44 +96,21 @@
   .learning-space-container header {
     margin-top: 0rem;
   }
-
-  .link-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
   .card-image {
     width: 450px;
     height: 280px;
   }
 
-  .card-header {
-    font-size: 16px;
-  }
-}
-
-//Extra large
-@media screen and (min-width: 1200px) {
-  .card-image {
-    width: 450px;
-  }
-
-  .card-header {
-    font-size: 16px;
+  .link-container {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
 //Extra extra large
 @media screen and (min-width: 1400px) {
-  .link-container {
-    margin-top: 3rem;
-  }
-
-  .card-image {
-    width: 450px;
-  }
-
-  .card-header {
-    font-size: 20px;
+  .learning-space-container h1 {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
   }
 }
