@@ -4,13 +4,14 @@ import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
-
-
 export function SpaceInfo() {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const planetsCount= 8;
+  const [isFlipped, setIsFlipped] = useState(Array(planetsCount).fill(false));
 
-  const handleClick = () => {
-    setIsFlipped(!isFlipped);
+  const handleClick = (index:number) => {
+    const newState = [...isFlipped]
+    newState[index] = !newState[index]
+    setIsFlipped(newState);
   };
 
   const planets = [
@@ -30,11 +31,12 @@ export function SpaceInfo() {
       <div className="planets-container" id="planets">
         <div className="planets-row">
 
-        {planets.map((planet) => (
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
+        
+        {planets.map((planet, index) => (
+            <ReactCardFlip isFlipped={isFlipped[index]} flipDirection="vertical" >
               <div>
                 <Card style={{ width: "18rem" }}>
-                  <Button onClick={handleClick} id="planetButton">
+                  <Button onClick={() => handleClick(index)} id="planetButton">
                     <Card.Img
                       variant="top"
                       src={require(`./LearningSpaceImages/${planet[0]}.jpeg`)}
@@ -49,7 +51,7 @@ export function SpaceInfo() {
 
               <div>
                 <Card style={{ width: "18rem" }}>
-                  <Button onClick={handleClick} id="planetButton">
+                  <Button onClick={() => handleClick(index)} id="planetButton">
                     <Card.Img
                       variant="top"
                       src={require(`./LearningSpaceImages/${planet[0]}.jpeg`)}
