@@ -13,7 +13,7 @@ export function LearningSpace() {
         <div className="card-container">
           <Link
             id="rover-info-link"
-            to={`/learning-space/spaceInfo.html`}
+            to={`/learning-space/space-info`}
           >
             <div className="card-header"><h3><span>Explore Space</span></h3></div>
             <img src={require("./LearningSpaceImages/mars-info.jpg")} className="card-image"/>
