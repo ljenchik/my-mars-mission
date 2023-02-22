@@ -28,3 +28,13 @@ export interface Ticket {
     created_at: string;
 }
     
+
+export interface Planet {
+    planetIndex: number,
+    planetName: string,
+    planetFact: string;
+    planetLink: string;
+    planetImage: string;
+    planetGravity: number;
+}
+    

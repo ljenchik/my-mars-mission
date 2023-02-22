@@ -25,12 +25,12 @@
     margin: 1rem;
     border: 3px double white;
     border-radius: 10px;
-    height: 400px;
+    height: 350px;
 }
 
 .card-img-top {
     width: 100%;
-    height: 50%;
+    height: 40%;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -40,8 +40,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 20vh;
     color: white !important;
+    height: 15vh;
 }
 
 .card .btn {
@@ -60,6 +60,11 @@
 #planetButton {
     background-color: #09192a;
     border: none;
+}
+
+#planetButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #ccc;
 }
 
 
