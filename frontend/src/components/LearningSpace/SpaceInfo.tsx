@@ -1,181 +1,166 @@
 import "./SpaceInfo.scss";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
-import { Planet } from "../../models";
 
-const planets = [
-  [
-    "mercury",
-    "Mercury is the smallest planet in our solar system",
-    "https://solarsystem.nasa.gov/planets/mercury/overview/",
-  ],
-  [
-    "venus",
-    "Venus is the hottest planet in our solar system",
-    "https://solarsystem.nasa.gov/planets/venus/overview/",
-  ],
-  [
-    "earth",
-    "Earth is still the only planet known to host life",
-    "https://solarsystem.nasa.gov/planets/earth/overview/",
-  ],
-  [
-    "mars",
-    "Mars is also known as the Red Planet",
-    "https://solarsystem.nasa.gov/planets/mars/overview/",
-  ],
-  [
-    "jupiter",
-    "Jupiter is the biggest planet in our Solar System",
-    "https://solarsystem.nasa.gov/planets/jupiter/overview/",
-  ],
-  [
-    "saturn",
-    "Saturn is adorned with a dazzling, complex system of icy rings",
-    "https://solarsystem.nasa.gov/planets/saturn/overview/",
-  ],
-  [
-    "uranus",
-    "Uranus was the first planet found with the aid of a telescope in 1781",
-    "https://solarsystem.nasa.gov/planets/uranus/overview/",
-  ],
-  [
-    "neptune",
-    "Neptune was the first planet located through mathematical calculations",
-    "https://solarsystem.nasa.gov/planets/neptune/overview/",
-  ],
-];
-
-const PlanetCard = (props: { index: number }) => {
+const PlanetCard = (props: {
+  planetName: string;
+  planetFact: string;
+  planetLink: string;
+  planetImage: string;
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [planet, setPlanet] = useState<Planet>({
-    planetIndex: props.index,
-    planetName: "",
-    planetFact: "",
-    planetLink: "",
-    planetImage: "",
-    planetGravity: null,
-    planetDensity: null,
-    planetMass: null,
-    planetRadius: null,
-    planetTemp: null,
-    planetMoons: null,
-  });
-
+  const [planetGravity, setPlanetGravity] = useState(null);
+  const [planetDensity, setPlanetDensity] = useState(null);
+  const [planetMass, setPlanetMass] = useState(null);
+  const [planetRadius, setPlanetRadius] = useState(null);
+  const [planetTemp, setPlanetTemp] = useState(null);
+  const [planetMoons, setPlanetMoons] = useState(0);
   const [error, setError] = useState("");
 
-  const queryURL = (planetName: string) => {
-    let query = `https://api.le-systeme-solaire.net/rest/bodies/${planetName}`;
-    return query;
-  };
+  const queryUrl = `https://api.le-systeme-solaire.net/rest/bodies/${props.planetName}`;
 
-  const getPlanetData = (index: number) => {
-    let planetName = planets[index][0];
-    fetch(queryURL(planetName))
+  const getPlanetData = () => {
+    fetch(queryUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log("Planet name:", planetName);
-        planet.planetName = planetName;
-        planet.planetFact = planets[index][1];
-        planet.planetLink = planets[index][2];
-
-        planet.planetImage = `./LearningSpaceImages/${planet.planetName}.jpeg`;
-        console.log("Planet image: ", planet.planetImage);
-
-        planet.planetGravity = data.gravity;
-        planet.planetDensity = data.density;
-        planet.planetMass = data.mass.massValue.toFixed(2);
-        planet.planetRadius = data.meanRadius.toFixed(2);
-        planet.planetTemp = data.avgTemp;
-        if (data.moons !== null) {
-          planet.planetMoons = data.moons.length;
+        if (data) {
+          setPlanetGravity(data.gravity);
+          setPlanetDensity(data.density);
+          let mass = data.mass.massValue.toFixed(2);
+          setPlanetMass(mass);
+          setPlanetRadius(data.meanRadius.toFixed(2));
+          setPlanetTemp(data.avgTemp);
+          if (data.moons !== null) {
+            setPlanetMoons(data.moons.length);
+          } else {
+            setPlanetMoons(0);
+          }
         } else {
-          planet.planetMoons = 0;
+          setError("Invalid response");
+          console.log(error);
         }
-        setPlanet(planet);
-        console.log("Planet info", planet);
       });
   };
 
-  useEffect(() => {
-    getPlanetData(planet.planetIndex);
-  }, [planet]);
-
-  const handleClick = (index: number) => {
+  const handleClick = () => {
     setIsFlipped(!isFlipped);
-    getPlanetData(index);
+    getPlanetData();
   };
 
-  if (!planet) {
-    return <div>Loading ...</div>;
-  } else {
-    return (
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <div>
-          <Card style={{ width: "18rem" }}>
-            <Button
-              onClick={() => {
-                handleClick(planet.planetIndex);
-              }}
-              id="planetButton"
-            >
-              <img
-                src={require(`${planet.planetImage}`)}
-                id="front-image"
-              />
-            </Button>
-            <Card.Body>
-              <Card.Title>{planet.planetName.toUpperCase()}</Card.Title>
-              <Card.Text>{planet.planetFact}</Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
+  return (
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+      <Card style={{ width: "18rem" }}>
+        <Button onClick={handleClick} id="planetButton">
+          <img
+            src={require("./LearningSpaceImages/" + props.planetName + ".jpeg")}
+            id="front-image"
+          />
+        </Button>
+        <Card.Body>
+          <Card.Title>{props.planetName.toUpperCase()}</Card.Title>
+          <Card.Text>{props.planetFact}</Card.Text>
+        </Card.Body>
+      </Card>
 
-        <div>
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title id="back-title">
-                {planet.planetName.toUpperCase()}
-              </Card.Title>
-              <Button
-                onClick={() => handleClick(planet.planetIndex)}
-                id="thumb-planetButton"
-              >
-                <img src={require(`${planet.planetImage}`)} id="thumb-planet" />
-              </Button>
-              <Card.Text className="back-card-text">
-                <p>Gravity: {planet.planetGravity}</p>
-                <p>Density: {planet.planetDensity}</p>
-                <p>Mass: {planet.planetMass}</p>
-                <p>Radius: {planet.planetRadius}</p>
-                <p>Tempreture: {planet.planetTemp}</p>
-                <p>Moons: {planet.planetMoons}</p>
-                <Button
-                  variant="primary"
-                  href={planet.planetLink}
-                  id="planet-link"
-                >
-                  Learn more about {planet.planetName.toUpperCase()}
-                </Button>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
-      </ReactCardFlip>
-    );
-  }
+      <Card style={{ width: "18rem" }}>
+        <Card.Body>
+          <Card.Title id="back-title">
+            {props.planetName.toUpperCase()}
+          </Card.Title>
+          <Button onClick={() => handleClick()} id="thumb-planetButton">
+            <img
+              src={require("./LearningSpaceImages/" +
+                props.planetName +
+                ".jpeg")}
+              id="thumb-planet"
+            />
+          </Button>
+          <Card.Text className="back-card-text">
+            <p>Gravity: {planetGravity}</p>
+            <p>Density: {planetDensity}</p>
+            <p>Mass: {planetMass}</p>
+            <p>Radius: {planetRadius}</p>
+            <p>Tempreture: {planetTemp}</p>
+            <p>Moons: {planetMoons}</p>
+            <Button variant="primary" href={props.planetLink} id="planet-link">
+              Learn more about {props.planetName.toUpperCase()}
+            </Button>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </ReactCardFlip>
+  );
 };
 
 export function SpaceInfo() {
+  const planets = [
+    {
+      name: "mercury",
+      description: "Mercury is the smallest planet in our solar system",
+      link: "https://solarsystem.nasa.gov/planets/mercury/overview/",
+      planetImage: "./LearningSpaceImages/mercury.jpeg",
+    },
+    {
+      name: "venus",
+      description: "Venus is the hottest planet in our solar system",
+      link: "https://solarsystem.nasa.gov/planets/venus/overview/",
+      planetImage: "./LearningSpaceImages/venus.jpeg",
+    },
+    {
+      name: "earth",
+      description: "Earth is still the only planet known to host life",
+      link: "https://solarsystem.nasa.gov/planets/earth/overview/",
+      planetImage: "./LearningSpaceImages/earth.jpeg",
+    },
+    {
+      name: "mars",
+      description: "Mars is also known as the Red Planet",
+      link: "https://solarsystem.nasa.gov/planets/mars/overview/",
+      planetImage: "./LearningSpaceImages/mars.jpeg",
+    },
+    {
+      name: "jupiter",
+      description: "Jupiter is the biggest planet in our Solar System",
+      link: "https://solarsystem.nasa.gov/planets/jupiter/overview/",
+      planetImage: "./LearningSpaceImages/jupiter.jpeg",
+    },
+    {
+      name: "saturn",
+      description:
+        "Saturn is adorned with a dazzling, complex system of icy rings",
+      link: "https://solarsystem.nasa.gov/planets/saturn/overview/",
+      planetImage: "./LearningSpaceImages/saturn.jpeg",
+    },
+    {
+      name: "uranus",
+      description:
+        "Uranus was the first planet found with the aid of a telescope in 1781",
+      link: "https://solarsystem.nasa.gov/planets/uranus/overview/",
+      planetImage: "./LearningSpaceImages/uranus.jpeg",
+    },
+    {
+      name: "neptune",
+      description: "Neptune was the first planet located through mathematical calculations",
+      link: "https://solarsystem.nasa.gov/planets/neptune/overview/",
+      planetImage: "./LearningSpaceImages/neptune.jpeg",
+    },
+  ];
+
   return (
     <div className="space-info-body stars twinkling">
       <h1 id="facts-title">Interesting facts about Space</h1>
       <div className="planets-container" id="planets">
         <div className="planets-row">
           {planets.map((planet, i) => (
-            <PlanetCard index={i} />
+            <PlanetCard
+              key={planet.name}
+              planetImage={planet.planetImage}
+              planetLink={planet.link}
+              planetFact={planet.description}
+              planetName={planet.name}
+            />
           ))}
         </div>
       </div>
