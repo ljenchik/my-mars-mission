@@ -7,6 +7,10 @@
     margin-top: 6rem;
 }
 
+#loading {
+    color: white;
+}
+
 .planets-container {
     display: flex;
     justify-content: center;
@@ -35,6 +39,24 @@
     border-bottom-left-radius: 10px;
 }
 
+#thumb-planet {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+#thumb-planet:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #ccc;
+}
+
+#back-title {
+    margin: 10px 0 20px 0;
+    font-size: 20px;
+}
+
 .card-body {
     padding: 10px;
     display: flex;
@@ -47,6 +69,13 @@
 .card .btn {
     color: white;
     text-decoration: none;
+}
+
+.back-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .card .btn:hover {

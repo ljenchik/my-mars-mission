@@ -35,6 +35,11 @@ export interface Planet {
     planetFact: string;
     planetLink: string;
     planetImage: string;
-    planetGravity: number;
+    planetGravity: number | null;
+    planetDensity: number | null;
+    planetMass: number | null;
+    planetRadius: number | null;
+    planetTemp: number | null;
+    planetMoons: number | null;
 }
     

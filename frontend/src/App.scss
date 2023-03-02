@@ -68,6 +68,8 @@ header h1, header h1 span {
   z-index: 0;
   background: transparent url("https://www.seekpng.com/png/full/71-712329_source-pink-clouds-png.png") repeat top
     center;
+    background-size: cover;
+  background-repeat: repeat;
   animation: move-clouds-back 800s linear infinite;
 }
 
@@ -88,8 +90,6 @@ header h1, header h1 span {
     background-position: 10000px 0;
   }
 }
-
-
 
 
 //Extra extra small
