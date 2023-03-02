@@ -109,63 +109,63 @@ const PlanetCard = (props: { index: number }) => {
   };
 
   if (!planet) {
-    return <div>Loading ...</div>
-  }
-  else {return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-      <div>
-        <Card style={{ width: "18rem" }}>
-          <Button
-            onClick={() => {
-              handleClick(planet.planetIndex);
-            }}
-            id="planetButton"
-          >
-            <Card.Img variant="top" src={require(`${planet.planetImage}`)} />
-          </Button>
-          <Card.Body>
-            <Card.Title>{planet.planetName.toUpperCase()}</Card.Title>
-            <Card.Text>{planet.planetFact}</Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
-
-      <div>
-        <Card style={{ width: "18rem" }}>
-          <Card.Body>
-            <Card.Title id="back-title">
-              {planet.planetName.toUpperCase()}
-            </Card.Title>
+    return <div>Loading ...</div>;
+  } else {
+    return (
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+        <div>
+          <Card style={{ width: "18rem" }}>
             <Button
-              onClick={() => handleClick(planet.planetIndex)}
+              onClick={() => {
+                handleClick(planet.planetIndex);
+              }}
               id="planetButton"
             >
-              {/* <Card.Img
-                id="thumb-planet"
-                src={require(`./LearningSpaceImages/${planet.planetName}.jpeg`)}
-              /> */}
+              <img
+                src={require(`${planet.planetImage}`)}
+                id="front-image"
+              />
             </Button>
-            <Card.Text className="back-card-text">
-              <p>Gravity: {planet.planetGravity}</p>
-              <p>Density: {planet.planetDensity}</p>
-              <p>Mass: {planet.planetMass}</p>
-              <p>Radius: {planet.planetRadius}</p>
-              <p>Tempreture: {planet.planetTemp}</p>
-              <p>Moons: {planet.planetMoons}</p>
+            <Card.Body>
+              <Card.Title>{planet.planetName.toUpperCase()}</Card.Title>
+              <Card.Text>{planet.planetFact}</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+
+        <div>
+          <Card style={{ width: "18rem" }}>
+            <Card.Body>
+              <Card.Title id="back-title">
+                {planet.planetName.toUpperCase()}
+              </Card.Title>
               <Button
-                variant="primary"
-                href={planet.planetLink}
-                id="planet-link"
+                onClick={() => handleClick(planet.planetIndex)}
+                id="thumb-planetButton"
               >
-                Learn more about {planet.planetName.toUpperCase()}
+                <img src={require(`${planet.planetImage}`)} id="thumb-planet" />
               </Button>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
-    </ReactCardFlip>
-  );}
-    
+              <Card.Text className="back-card-text">
+                <p>Gravity: {planet.planetGravity}</p>
+                <p>Density: {planet.planetDensity}</p>
+                <p>Mass: {planet.planetMass}</p>
+                <p>Radius: {planet.planetRadius}</p>
+                <p>Tempreture: {planet.planetTemp}</p>
+                <p>Moons: {planet.planetMoons}</p>
+                <Button
+                  variant="primary"
+                  href={planet.planetLink}
+                  id="planet-link"
+                >
+                  Learn more about {planet.planetName.toUpperCase()}
+                </Button>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </ReactCardFlip>
+    );
+  }
 };
 
 export function SpaceInfo() {

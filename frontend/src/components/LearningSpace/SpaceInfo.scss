@@ -1,99 +1,109 @@
 #facts-title {
-    text-align: center;
-    color: white;
-    font-size: 35px;
-    text-shadow: 6px 6px 6px #d04a36;
-    padding: 1rem;
-    margin-top: 6rem;
+  text-align: center;
+  color: white;
+  font-size: 35px;
+  text-shadow: 6px 6px 6px #d04a36;
+  padding: 1rem;
+  margin-top: 6rem;
 }
 
 #loading {
-    color: white;
+  color: white;
 }
 
 .planets-container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .planets-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-    color: white;
-    margin: 1rem;
-    border: 3px double white;
-    border-radius: 10px;
-    height: 350px;
+  color: white;
+  margin: 1rem;
+  border: 3px double white;
+  border-radius: 10px;
+  height: 350px;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 40%;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-#thumb-planet {
-    width: 30%;
-    height: auto;
-    position: absolute;
-    right: 20px;
-    top: 5px;
-}
-
-#thumb-planet:hover {
-    cursor: pointer;
-    box-shadow: 0 0 20px #ccc;
-}
-
-#back-title {
-    margin: 10px 0 20px 0;
-    font-size: 20px;
-}
-
-.card-body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white !important;
-    height: 15vh;
-}
-
-.card .btn {
-    color: white;
-    text-decoration: none;
-}
-
-.back-card-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.card .btn:hover {
-    color: #d04a36;
-}
-
-.planet-link {
-    text-align: end;
+#front-image {
+  width: 100%;
+  height: 40%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #planetButton {
     background-color: #09192a;
     border: none;
-}
+  }
 
 #planetButton:hover {
     cursor: pointer;
-    box-shadow: 0 0 20px #ccc;
+    box-shadow: 1px 1px 10px 5px #ccc;
+  }
+
+#thumb-planet {
+  width: 30%;
+  height: auto;
+  position: absolute;
+  right: 20px;
+  top: 5px;
 }
 
+#thumb-planetButton {
+    background-color: #09192a;
+    border: none;
+  }
 
+#thumb-planet:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 5px #ccc;
+  }
+
+#back-title {
+  margin: 10px 0 20px 0;
+  font-size: 20px;
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white !important;
+  height: 15vh;
+}
+
+.card .btn {
+  color: white;
+  text-decoration: none;
+}
+
+.back-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#planet-link {
+  text-align: start;
+}
+
+#planet-link:hover {
+    color:#d04a36 !important;
+  }
+  
+
+
+
+// #planetButton:hover, #thumb-planetButton:hover {
+//   cursor: pointer;
+//   box-shadow: 0 0 20px #ccc;
+// }
