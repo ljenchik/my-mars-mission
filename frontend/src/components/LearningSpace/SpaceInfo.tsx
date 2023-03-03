@@ -11,11 +11,12 @@ const PlanetCard = (props: {
   planetImage: string;
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [planetGravity, setPlanetGravity] = useState(null);
-  const [planetDensity, setPlanetDensity] = useState(null);
-  const [planetMass, setPlanetMass] = useState(null);
-  const [planetRadius, setPlanetRadius] = useState(null);
-  const [planetTemp, setPlanetTemp] = useState(null);
+  const [planetGravity, setPlanetGravity] = useState('');
+  const [planetDensity, setPlanetDensity] = useState('');
+  const [planetMass, setPlanetMass] = useState('');
+  const [planetMassExponent, setPlanetMassExponent] = useState('');
+  const [planetRadius, setPlanetRadius] = useState('');
+  const [planetTemp, setPlanetTemp] = useState('');
   const [planetMoons, setPlanetMoons] = useState(0);
   const [error, setError] = useState("");
 
@@ -26,12 +27,16 @@ const PlanetCard = (props: {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          setPlanetGravity(data.gravity);
+          setPlanetGravity(data.gravity)
           setPlanetDensity(data.density);
           let mass = data.mass.massValue.toFixed(2);
           setPlanetMass(mass);
+          let massExp = data.mass.massExponent;
+          setPlanetMassExponent(massExp);
           setPlanetRadius(data.meanRadius.toFixed(2));
-          setPlanetTemp(data.avgTemp);
+          console.log(typeof data.avgTemp);
+          let avg = (data.avgTemp - 273.15).toFixed(0);
+          setPlanetTemp(avg);
           if (data.moons !== null) {
             setPlanetMoons(data.moons.length);
           } else {
@@ -51,6 +56,7 @@ const PlanetCard = (props: {
 
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+      <div>
       <Card style={{ width: "18rem" }}>
         <Button onClick={handleClick} id="planetButton">
           <img
@@ -63,7 +69,8 @@ const PlanetCard = (props: {
           <Card.Text>{props.planetFact}</Card.Text>
         </Card.Body>
       </Card>
-
+      </div>
+<div>
       <Card style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Title id="back-title">
@@ -78,18 +85,19 @@ const PlanetCard = (props: {
             />
           </Button>
           <Card.Text className="back-card-text">
-            <p>Gravity: {planetGravity}</p>
-            <p>Density: {planetDensity}</p>
-            <p>Mass: {planetMass}</p>
-            <p>Radius: {planetRadius}</p>
-            <p>Tempreture: {planetTemp}</p>
-            <p>Moons: {planetMoons}</p>
+            <div>Gravity: {planetGravity} m/s&sup2;</div>
+            <div>Density: {planetDensity} g/cm&sup3;</div>
+            <div>Mass: {planetMass} x 10 <sup>{planetMassExponent}</sup> kg</div>
+            <div>Radius: {planetRadius} km</div>
+            <div>Tempreture: {planetTemp}<sup className="degree">o</sup>C</div>
+            <div>Moons: {planetMoons}</div>
             <Button variant="primary" href={props.planetLink} id="planet-link">
               Learn more about {props.planetName.toUpperCase()}
             </Button>
           </Card.Text>
         </Card.Body>
       </Card>
+      </div>
     </ReactCardFlip>
   );
 };
