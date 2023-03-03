@@ -109,4 +109,27 @@
   font-size: x-small;
 }
 
+.text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.text p {
+  margin-bottom: 20px;
+}
+
+.text a {
+  color: #d04a36;
+  text-decoration: none;
+}
+
+.text a:hover{
+  color: white;
+  cursor: pointer;
+}
 

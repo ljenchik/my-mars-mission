@@ -34,7 +34,6 @@ const PlanetCard = (props: {
           let massExp = data.mass.massExponent;
           setPlanetMassExponent(massExp);
           setPlanetRadius(data.meanRadius.toFixed(2));
-          console.log(typeof data.avgTemp);
           let avg = (data.avgTemp - 273.15).toFixed(0);
           setPlanetTemp(avg);
           if (data.moons !== null) {
@@ -159,6 +158,29 @@ export function SpaceInfo() {
   return (
     <div className="space-info-body stars twinkling">
       <h1 id="facts-title">Interesting facts about Space</h1>
+
+      <section className="text">
+      <p>The planetary system we call home is located in an outer spiral arm of the Milky Way galaxy.</p>
+      
+      <p>Our solar system consists of our star, the Sun, and everything bound to it by gravity – the planets 
+        Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune; dwarf planets such as Pluto; dozens of moons; 
+        and millions of asteroids, comets, and meteoroids.</p>
+
+        <p><a href="https://solarsystem.nasa.gov/solar-system/our-solar-system/in-depth/">Read more about our Solar System</a></p>
+
+      {/* <p>Beyond our own solar system, there are more planets than stars in the night sky. So far, we have discovered thousands of 
+        planetary systems orbiting other stars in the Milky Way, with more planets being found. Most of the hundreds of billions 
+        of stars in our galaxy are thought to have planets of their own, and the Milky Way is but one of perhaps 100 billion galaxies 
+        in the universe.</p>
+
+        <p>While our planet is in some ways a mere speck in the vast cosmos, we have a lot of company out there. 
+          It seems that we live in a universe packed with planets – a web of countless stars accompanied by families 
+          of objects, perhaps some with life of their own.</p> */}
+
+
+
+
+      </section>
       <div className="planets-container" id="planets">
         <div className="planets-row">
           {planets.map((planet, i) => (
