@@ -166,20 +166,19 @@ export function SpaceInfo() {
         Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune; dwarf planets such as Pluto; dozens of moons; 
         and millions of asteroids, comets, and meteoroids.</p>
 
-        <p><a href="https://solarsystem.nasa.gov/solar-system/our-solar-system/in-depth/">Read more about our Solar System</a></p>
-
-      {/* <p>Beyond our own solar system, there are more planets than stars in the night sky. So far, we have discovered thousands of 
+        <p className="hide">Beyond our own solar system, there are more planets than stars in the night sky. So far, we have discovered thousands of 
         planetary systems orbiting other stars in the Milky Way, with more planets being found. Most of the hundreds of billions 
         of stars in our galaxy are thought to have planets of their own, and the Milky Way is but one of perhaps 100 billion galaxies 
         in the universe.</p>
 
-        <p>While our planet is in some ways a mere speck in the vast cosmos, we have a lot of company out there. 
+        <p className="hide-second">While our planet is in some ways a mere speck in the vast cosmos, we have a lot of company out there. 
           It seems that we live in a universe packed with planets – a web of countless stars accompanied by families 
-          of objects, perhaps some with life of their own.</p> */}
+          of objects, perhaps some with life of their own.</p>
 
 
+        <p><a href="https://solarsystem.nasa.gov/solar-system/our-solar-system/in-depth/">Read more about our Solar System</a></p>
 
-
+      
       </section>
       <div className="planets-container" id="planets">
         <div className="planets-row">
@@ -199,6 +198,4 @@ export function SpaceInfo() {
 }
 
 //logo
-// button planet at the corner of back card
-// add text about space and a link to a good resourse
 // asteroids, universe, milky way, black hole

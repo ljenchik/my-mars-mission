@@ -133,3 +133,37 @@
   cursor: pointer;
 }
 
+.hide, .hide-second {
+  display: none;
+}
+
+//Extra extra small
+@media screen and (max-width: 359px) {
+  header h1, header h1 span {
+    font-size: 20px;
+    padding: 0.3rem;
+  }
+
+  .subtitle, .subtitle span{
+    font-size: 14px;
+  }
+}
+
+
+//Medium
+@media screen and (min-width: 768px) {
+  .hide {
+    display: block;
+  }
+  .text {
+    width: 60%;
+  }
+}
+
+
+//Large
+@media screen and (min-width: 992px) {
+  .hide-second {
+    display: block;
+  }
+}
