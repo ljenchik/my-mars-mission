@@ -21,8 +21,11 @@ export const RoverInfo = () => {
       </header>
 
       <div id="click">Click on rover to see images taken on Mars</div>
-      
+
       <main className="link-container">
+
+
+        {/* Spirit and Opportunity */}
         <Card style={{ width: "20rem" }}>
           <Card.Img
             variant="top"
@@ -48,6 +51,66 @@ export const RoverInfo = () => {
             </Button>
           </Card.Body>
         </Card>
+
+      {/* Curiosity */}
+        <Card style={{ width: "20rem" }}>
+          <Card.Img
+            variant="top"
+            src={require(`./LearningSpaceImages/curiosity.png`)}
+            id="rover-image"
+          />
+          <Card.Body>
+            <Card.Title>Curiosity</Card.Title>
+            <Card.Text>
+              <div>
+              Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars
+              </div>
+              <div>Landed: August, 2012 </div>
+              <div>Mission: To find out if Mars once had what all life needs, lasting water and the right chemicals</div>
+            </Card.Text>
+            <Button
+              variant="primary"
+              href="https://spaceplace.nasa.gov/mars-curiosity/en/"
+              id="planet-link"
+            >
+              Learn more about Curiosity
+            </Button>
+          </Card.Body>
+        </Card>
+
+
+      {/*  Perseverance*/}
+        <Card style={{ width: "20rem" }}>
+          <Card.Img
+            variant="top"
+            src={require(`./LearningSpaceImages/perseverance.png`)}
+            id="rover-image"
+          />
+          <Card.Body>
+            <Card.Title>Perseverance</Card.Title>
+            <Card.Text>
+              <div>
+              Perseverance is similar to Curiosity, carries a small robotic helicopter 
+              </div>
+              <div>Landed: February, 2021</div>
+              <div>Mission: To seek out evidence of former life, 
+                        collect rock and soil samples, and 
+                        test oxygen production from the Martian atmosphere</div>
+            </Card.Text>
+            <Button
+              variant="primary"
+              href="https://spaceplace.nasa.gov/mars-2020/en/"
+              id="planet-link"
+            >
+              Learn more about Perseverance
+            </Button>
+          </Card.Body>
+        </Card>
+
+
+
+
+
       </main>
     </div>
   );
