@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/my-mars-mission/static/css/main.aef16b10.css",
-    "main.js": "/my-mars-mission/static/js/main.97d5f8f3.js",
+    "main.css": "/my-mars-mission/static/css/main.78d0b484.css",
+    "main.js": "/my-mars-mission/static/js/main.20c738b3.js",
     "static/media/rover-info.jpg": "/my-mars-mission/static/media/rover-info.0abfb99d96bfee80b112.jpg",
     "static/media/mars-info.jpg": "/my-mars-mission/static/media/mars-info.f2d45b49808c7c358ec5.jpg",
+    "static/media/spirit&opportunity.png": "/my-mars-mission/static/media/spirit&opportunity.14fd618e31ecce387db5.png",
     "static/media/quiz.jpg": "/my-mars-mission/static/media/quiz.0cec9cd839eb0992271b.jpg",
+    "static/media/curiosity.png": "/my-mars-mission/static/media/curiosity.48546902591c2a5bab95.png",
+    "static/media/perseverance.png": "/my-mars-mission/static/media/perseverance.44f7b707092de90a78ce.png",
     "static/media/earth.jpeg": "/my-mars-mission/static/media/earth.cfac44f3985da428c971.jpeg",
     "static/media/venus.jpeg": "/my-mars-mission/static/media/venus.8188423bab0ccbe550c7.jpeg",
     "static/media/mars.jpeg": "/my-mars-mission/static/media/mars.7aa1ef91a052f8cfd538.jpeg",
@@ -12,11 +15,11 @@
     "static/media/mercury.jpeg": "/my-mars-mission/static/media/mercury.b5912b0b88a4663008cc.jpeg",
     "static/media/saturn.jpeg": "/my-mars-mission/static/media/saturn.65de086e48bab569dcac.jpeg",
     "index.html": "/my-mars-mission/index.html",
-    "main.aef16b10.css.map": "/my-mars-mission/static/css/main.aef16b10.css.map",
-    "main.97d5f8f3.js.map": "/my-mars-mission/static/js/main.97d5f8f3.js.map"
+    "main.78d0b484.css.map": "/my-mars-mission/static/css/main.78d0b484.css.map",
+    "main.20c738b3.js.map": "/my-mars-mission/static/js/main.20c738b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.aef16b10.css",
-    "static/js/main.97d5f8f3.js"
+    "static/css/main.78d0b484.css",
+    "static/js/main.20c738b3.js"
   ]
 }
