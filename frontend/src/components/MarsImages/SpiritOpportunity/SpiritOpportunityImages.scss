@@ -1,0 +1,23 @@
+.container {
+    margin-top: 5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.col {
+    width: 80%;
+}
+
+//Large
+@media screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .col {
+        width: 50%;
+    }
+  }

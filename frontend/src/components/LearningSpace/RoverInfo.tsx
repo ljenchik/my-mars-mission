@@ -20,7 +20,7 @@ export const RoverInfo = () => {
         <div className="link-container">
           {/* Spirit and Opportunity */}
           <Card style={{ width: "22rem" }}>
-            <Link to='/images/opportunity'> <Card.Img
+            <Link to='/images/spirit-opportunity'> <Card.Img
               variant="top"
               src={require(`./LearningSpaceImages/spirit&opportunity.png`)}
               id="rover-image"

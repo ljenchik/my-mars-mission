@@ -17,7 +17,7 @@ import { NewTicketDisplay } from "./components/Ticket/NewTicketDisplay";
 import { RoverInfo } from "./components/LearningSpace/RoverInfo";
 import { SpaceInfo } from "./components/LearningSpace/SpaceInfo";
 import { LearningSpace } from "./components/LearningSpace/LearningSpace";
-import { OpportunityImages } from "./components/MarsImages/Opportunity/OpportunityImages";
+import { SpiritOpportunityImages } from "./components/MarsImages/SpiritOpportunity/SpiritOpportunityImages";
 import { CuriosityImages } from "./components/MarsImages/Curiosity/CuriosityImages";
 import { PerseveranceImages } from "./components/MarsImages/Perseverance/PerseveranceImages";
 
@@ -40,7 +40,7 @@ function App() {
             path="/learning-space/rover-info" element={<RoverInfo />}
           />
           <Route
-            path="/images/opportunity" element={<OpportunityImages />}
+            path="/images/spirit-opportunity" element={<SpiritOpportunityImages />}
           />
            <Route
             path="/images/curiosity" element={<CuriosityImages />}
@@ -51,7 +51,7 @@ function App() {
           <Route
             path="/learning-space/quiz" element={<Quiz />}
           />
-          <Route path="/images" element={<ImageViewer minDate="2021-02-18" roverName="Perseverance" />} />
+          <Route path="/images" element={<ImageViewer minDate="2021-02-18" maxDate={new Date().toISOString()} roverName="Perseverance" />} />
           
           <Route
             path="/mars-holidays" element={<MarsHolidays />}

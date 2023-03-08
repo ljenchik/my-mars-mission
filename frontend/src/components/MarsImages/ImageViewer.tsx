@@ -13,10 +13,11 @@ function shuffleArray(array: any[]) {
   }
 }
 
-export function ImageViewer(props: {minDate: string, roverName: string}) {
-  //const minDate = "2021-02-18";
+export function ImageViewer(props: {minDate: string, maxDate: string, roverName: string}) {
   const minDate = props.minDate;
   const roverName = props.roverName;
+  const maxDate = props.maxDate;
+
   const [urls, setUrls] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>(minDate);
   const [message, setMessage] = useState<string>("");
@@ -44,6 +45,8 @@ export function ImageViewer(props: {minDate: string, roverName: string}) {
       .catch((error) => console.log(error));
   }, [selectedDate]);
 
+
+
   const handleChange = (event: {
     target: { value: string | number | Date };
   }) => {
@@ -69,6 +72,7 @@ export function ImageViewer(props: {minDate: string, roverName: string}) {
             className="hero-input"
             type="date"
             min={minDate}
+            max={maxDate}
             onChange={handleChange}
             value={selectedDate}
           />
@@ -94,6 +98,7 @@ export function ImageViewer(props: {minDate: string, roverName: string}) {
             className="hero-input"
             type="date"
             min={minDate}
+            max={maxDate}
             onChange={handleChange}
             value={selectedDate}
           />
@@ -128,6 +133,7 @@ export function ImageViewer(props: {minDate: string, roverName: string}) {
             className="hero-input"
             type="date"
             min={minDate}
+            max={maxDate}
             onChange={handleChange}
             value={selectedDate}
           />
