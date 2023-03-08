@@ -9,6 +9,9 @@
 
   #click {
     color: white;
+    margin: 40px 10px;
+    text-align: center;
+    font-size: large;
   }
   
   header p {
@@ -16,10 +19,11 @@
     display: flex;
     flex-direction: column;
     color: white;
-    width: 70%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     text-align: justify;
+    font-size: large;
   }
 
   #rover-image {
@@ -38,7 +42,14 @@
   }
 
   .card {
-    height: 35rem !important;
+    height: 36rem !important;
   }
 
-  
+  .planet-link:hover {
+    color:#d04a36;
+  }
+
+  #rover-image:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 5px #ccc;
+  }

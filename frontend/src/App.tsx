@@ -17,6 +17,9 @@ import { NewTicketDisplay } from "./components/Ticket/NewTicketDisplay";
 import { RoverInfo } from "./components/LearningSpace/RoverInfo";
 import { SpaceInfo } from "./components/LearningSpace/SpaceInfo";
 import { LearningSpace } from "./components/LearningSpace/LearningSpace";
+import { OpportunityImages } from "./components/MarsImages/Opportunity/OpportunityImages";
+import { CuriosityImages } from "./components/MarsImages/Curiosity/CuriosityImages";
+import { PerseveranceImages } from "./components/MarsImages/Perseverance/PerseveranceImages";
 
 function App() {
   return (
@@ -37,9 +40,19 @@ function App() {
             path="/learning-space/rover-info" element={<RoverInfo />}
           />
           <Route
+            path="/images/opportunity" element={<OpportunityImages />}
+          />
+           <Route
+            path="/images/curiosity" element={<CuriosityImages />}
+          />
+           <Route
+            path="/images/perseverance" element={<PerseveranceImages />}
+          />
+          <Route
             path="/learning-space/quiz" element={<Quiz />}
           />
-          <Route path="/images" element={<ImageViewer />} />
+          <Route path="/images" element={<ImageViewer minDate="2021-02-18" roverName="Perseverance" />} />
+          
           <Route
             path="/mars-holidays" element={<MarsHolidays />}
           />

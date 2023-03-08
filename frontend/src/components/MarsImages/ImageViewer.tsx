@@ -13,8 +13,10 @@ function shuffleArray(array: any[]) {
   }
 }
 
-export function ImageViewer() {
-  const minDate = "2021-02-18";
+export function ImageViewer(props: {minDate: string, roverName: string}) {
+  //const minDate = "2021-02-18";
+  const minDate = props.minDate;
+  const roverName = props.roverName;
   const [urls, setUrls] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>(minDate);
   const [message, setMessage] = useState<string>("");
@@ -22,7 +24,7 @@ export function ImageViewer() {
 
   useEffect(() => {
     fetch(
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?earth_date=${selectedDate}&api_key=IgINDcTiL7hEVwnUDaK28gqY58yA3XIfQZfNhH8l`
+      `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?earth_date=${selectedDate}&api_key=IgINDcTiL7hEVwnUDaK28gqY58yA3XIfQZfNhH8l`
     )
       .then((response) => response.json())
       .then((result) => {
@@ -54,7 +56,7 @@ export function ImageViewer() {
       <div className="image-viewer stars twinkling">
         <header>
           <h1>
-            <span className="nowrap">Perseverance Rover </span>{" "}
+            <span className="nowrap">{roverName} Rover </span>{" "}
             <span className="nowrap">Mars Images</span>
           </h1>
         </header>
@@ -79,7 +81,7 @@ export function ImageViewer() {
       <div className="image-viewer stars twinkling">
         <header>
           <h1>
-            <span className="nowrap">Perseverance Rover </span>{" "}
+            <span className="nowrap">{roverName} Rover </span>{" "}
             <span className="nowrap">Mars Images</span>
           </h1>
         </header>
@@ -113,7 +115,7 @@ export function ImageViewer() {
       <div className="image-viewer stars twinkling">
         <header>
           <h1>
-            <span className="nowrap">Perseverance Rover</span>{" "}
+            <span className="nowrap">{roverName} Rover</span>{" "}
             <span className="nowrap">Mars Images</span>
           </h1>
         </header>
