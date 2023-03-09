@@ -23,12 +23,12 @@
   justify-content: center;
 }
 
-.card {
+.planet-card {
   color: white;
   margin: 1rem;
   border: 3px double white;
   border-radius: 10px;
-  height: 350px;
+  height: 370px;
 }
 
 #front-image {
@@ -89,7 +89,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 15px;
 }
 
 #planet-link {

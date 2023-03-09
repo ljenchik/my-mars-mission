@@ -19,7 +19,7 @@ export const RoverInfo = () => {
         <div id="click">Click on rover to see images taken on Mars</div>
         <div className="link-container">
           {/* Spirit and Opportunity */}
-          <Card style={{ width: "22rem" }}>
+          <Card style={{ width: "22rem" }} className="rover-card">
             <Link to='/images/spirit-opportunity'> <Card.Img
               variant="top"
               src={require(`./LearningSpaceImages/spirit&opportunity.png`)}
@@ -48,7 +48,7 @@ export const RoverInfo = () => {
           </Card>
 
           {/* Curiosity */}
-          <Card style={{ width: "22rem" }}>
+          <Card style={{ width: "22rem" }}  className="rover-card">
             <Link to='/images/curiosity'><Card.Img
               variant="top"
               src={require(`./LearningSpaceImages/curiosity.png`)}
@@ -79,7 +79,7 @@ export const RoverInfo = () => {
           </Card>
 
           {/*  Perseverance*/}
-          <Card style={{ width: "22rem" }}>
+          <Card style={{ width: "22rem" }}  className="rover-card">
             <Link to="/images/perseverance"><Card.Img
               variant="top"
               src={require(`./LearningSpaceImages/perseverance.png`)}

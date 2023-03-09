@@ -45,9 +45,9 @@ function App() {
            <Route
             path="/images/curiosity" element={<CuriosityImages />}
           />
-           <Route
+           {/* <Route
             path="/images/perseverance" element={<PerseveranceImages />}
-          />
+          /> */}
           <Route
             path="/learning-space/quiz" element={<Quiz />}
           />

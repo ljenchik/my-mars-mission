@@ -56,7 +56,7 @@ const PlanetCard = (props: {
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
       <div>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" }} className="planet-card">
         <Button onClick={handleClick} id="planetButton">
           <img
             src={require("./LearningSpaceImages/" + props.planetName + ".jpeg")}
@@ -70,7 +70,7 @@ const PlanetCard = (props: {
       </Card>
       </div>
 <div>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" }} className="planet-card">
         <Card.Body>
           <Card.Title id="back-title">
             {props.planetName.toUpperCase()}

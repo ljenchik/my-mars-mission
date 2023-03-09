@@ -54,7 +54,7 @@ export const Navbar = () => {
           </Nav.Link>
         </NavItem>
 
-        <Nav.Item className="nowrap">
+        {/* <Nav.Item className="nowrap">
           <Nav.Link as={Link} to="/images" className="navbar-options">
             <FontAwesomeIcon
               className="navbar-icon"
@@ -63,7 +63,7 @@ export const Navbar = () => {
             />
             <span>Mars Rover Images</span>
           </Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
       </Nav>
     </div>
   );

@@ -28,8 +28,7 @@
 
   #rover-image {
     width: 100%;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
   }
 
   .card-text div {
@@ -41,7 +40,7 @@
     font-size: x-large;
   }
 
-  .card {
+  .rover-card {
     height: 36rem !important;
   }
 

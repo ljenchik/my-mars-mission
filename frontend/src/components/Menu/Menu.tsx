@@ -74,7 +74,7 @@ export function Menu() {
             </Link>
           </li>
 
-          <li className="menu-item">
+          {/* <li className="menu-item">
             <Link to={`/images`} className="menu-link">
               <FontAwesomeIcon
                 icon={faStar}
@@ -85,7 +85,7 @@ export function Menu() {
             <Link to={`/images`} className="menu-link">
               Mars Rover Images
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </nav>

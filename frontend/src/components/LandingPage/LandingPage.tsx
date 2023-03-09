@@ -2,6 +2,9 @@ import {
   faGraduationCap,
   faRocket,
   faStar,
+  faMeteor,
+  faTicket,
+  faCircleQuestion
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -30,8 +33,77 @@ export function LandingPage() {
         </h3>
 
         <div className="landing-page-container">
-          
           {/* Link 1 */}
+          <div className="landing-page-item">
+            <Link
+              id="space"
+              to={`/learning-space/space-info`}
+              className="landing-page-link "
+            >
+              <FontAwesomeIcon
+                icon={faMeteor}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+            <Link
+              id="space"
+              to={`/learning-space/space-info`}
+              className="landing-page-link"
+            >
+              Explore Space
+            </Link>
+          </div>
+
+          {/* Link 2 */}
+          <div className="landing-page-item">
+            <Link
+              id="rovers"
+              to={`/learning-space/rover-info`}
+              className="landing-page-link "
+            >
+              <FontAwesomeIcon
+                icon={faRocket}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+
+            <Link
+              id="rovers"
+              to={`/learning-space/rover-info`}
+              className="landing-page-link"
+            >
+              Mars Rovers
+            </Link>
+          </div>
+
+
+          {/* Link 3 */}
+          <div className="landing-page-item">
+            <Link
+              id="learning-space"
+              to={`/learning-space/quiz`}
+              className="landing-page-link"
+            >
+              <FontAwesomeIcon
+                icon={faCircleQuestion}
+                size={"1x"}
+                className="menu-icon"
+              />
+            </Link>
+
+            <Link
+              id="learning-space"
+              to={`/learning-space/quiz`}
+              className="landing-page-link"
+            >
+              Let's quiz!
+            </Link>
+
+          </div>
+
+          {/* Link 4 */}
           <div className="landing-page-item">
             <Link
               id="mars-holidays"
@@ -39,7 +111,7 @@ export function LandingPage() {
               className="landing-page-link"
             >
               <FontAwesomeIcon
-                icon={faRocket}
+                icon={faTicket}
                 size={"1x"}
                 className="menu-icon"
               />
@@ -53,53 +125,8 @@ export function LandingPage() {
             </Link>
           </div>
 
-          {/* Link 2 */}
-          <div className="landing-page-item">
-            <Link
-              id="images"
-              to={`/images`}
-              className="landing-page-link "
-            >
-              <FontAwesomeIcon
-                icon={faStar}
-                size={"1x"}
-                className="menu-icon"
-              />
-            </Link>
-
-            <Link
-              id="mars-images"
-              to={`/images`}
-              className="landing-page-link"
-            >
-              Mars Rover Images
-            </Link>
-          </div>
-
-          {/* Link 3 */}
-          <div className="landing-page-item">
-            <Link
-              id="learning-space"
-              to={`/learning-space`}
-              className="landing-page-link"
-            >
-              <FontAwesomeIcon
-                icon={faGraduationCap}
-                size={"1x"}
-                className="menu-icon"
-              />
-            </Link>
-
-            <Link
-              id="learning-space"
-              to={`/learning-space`}
-              className="landing-page-link"
-            >
-              Learning Space
-            </Link>
-
             {/* End of links */}
-          </div>
+          
         </div>
       </main>
     </div>
