@@ -1,17 +1,16 @@
 #rovers-title {
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 50px;
     text-shadow: 6px 6px 6px #d04a36;
-    padding: 1rem;
-    margin-top: 2rem;
+    margin-bottom: 20px;
   }
 
   #click {
     color: white;
     margin: 40px 10px;
     text-align: center;
-    font-size: large;
+    font-size: larger;
   }
   
   header p {
@@ -23,7 +22,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: justify;
-    font-size: large;
+    font-size: larger;
   }
 
   #rover-image {
@@ -40,9 +39,9 @@
     font-size: x-large;
   }
 
-  .rover-card {
-    height: 36rem !important;
-  }
+  // .rover-card {
+  //   height: 36rem !important;
+  // }
 
   .planet-link:hover {
     color:#d04a36;

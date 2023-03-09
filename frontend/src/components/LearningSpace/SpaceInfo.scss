@@ -1,10 +1,16 @@
-#facts-title {
+.space-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#space-title {
   text-align: center;
   color: white;
-  font-size: 35px;
+  font-size: 50px;
   text-shadow: 6px 6px 6px #d04a36;
   padding: 1rem;
-  margin-top: 6rem;
 }
 
 #loading {
@@ -108,21 +114,20 @@
   font-size: x-small;
 }
 
-.text {
+.space-text {
   display: flex;
   flex-direction: column;
   color: white;
-  width: 70%;
   margin-left: auto;
   margin-right: auto;
   text-align: justify;
 }
 
-.text p {
+.space-text p {
   margin-bottom: 20px;
 }
 
-.text a {
+.space-text a {
   color: #d04a36;
   text-decoration: none;
 }
@@ -137,14 +142,17 @@
 }
 
 //Extra extra small
-@media screen and (max-width: 359px) {
-  header h1, header h1 span {
-    font-size: 20px;
-    padding: 0.3rem;
+@media screen and (max-width: 575px) {
+  #space-title {
+    font-size: 40px;
+    margin-top: 4rem;
   }
-
   .subtitle, .subtitle span{
     font-size: 14px;
+  }
+
+  .space-text p {
+    font-size: 16px;
   }
 }
 

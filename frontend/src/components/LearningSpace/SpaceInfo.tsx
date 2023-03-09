@@ -11,12 +11,12 @@ const PlanetCard = (props: {
   planetImage: string;
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [planetGravity, setPlanetGravity] = useState('');
-  const [planetDensity, setPlanetDensity] = useState('');
-  const [planetMass, setPlanetMass] = useState('');
-  const [planetMassExponent, setPlanetMassExponent] = useState('');
-  const [planetRadius, setPlanetRadius] = useState('');
-  const [planetTemp, setPlanetTemp] = useState('');
+  const [planetGravity, setPlanetGravity] = useState("");
+  const [planetDensity, setPlanetDensity] = useState("");
+  const [planetMass, setPlanetMass] = useState("");
+  const [planetMassExponent, setPlanetMassExponent] = useState("");
+  const [planetRadius, setPlanetRadius] = useState("");
+  const [planetTemp, setPlanetTemp] = useState("");
   const [planetMoons, setPlanetMoons] = useState(0);
   const [error, setError] = useState("");
 
@@ -27,7 +27,7 @@ const PlanetCard = (props: {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          setPlanetGravity(data.gravity)
+          setPlanetGravity(data.gravity);
           setPlanetDensity(data.density);
           let mass = data.mass.massValue.toFixed(2);
           setPlanetMass(mass);
@@ -56,46 +56,57 @@ const PlanetCard = (props: {
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
       <div>
-      <Card style={{ width: "18rem" }} className="planet-card">
-        <Button onClick={handleClick} id="planetButton">
-          <img
-            src={require("./LearningSpaceImages/" + props.planetName + ".jpeg")}
-            id="front-image"
-          />
-        </Button>
-        <Card.Body>
-          <Card.Title>{props.planetName.toUpperCase()}</Card.Title>
-          <Card.Text>{props.planetFact}</Card.Text>
-        </Card.Body>
-      </Card>
-      </div>
-<div>
-      <Card style={{ width: "18rem" }} className="planet-card">
-        <Card.Body>
-          <Card.Title id="back-title">
-            {props.planetName.toUpperCase()}
-          </Card.Title>
-          <Button onClick={() => handleClick()} id="thumb-planetButton">
+        <Card style={{ width: "18rem" }} className="planet-card">
+          <Button onClick={handleClick} id="planetButton">
             <img
               src={require("./LearningSpaceImages/" +
                 props.planetName +
                 ".jpeg")}
-              id="thumb-planet"
+              id="front-image"
             />
           </Button>
-          <Card.Text className="back-card-text">
-            <div>Gravity: {planetGravity} m/s&sup2;</div>
-            <div>Density: {planetDensity} g/cm&sup3;</div>
-            <div>Mass: {planetMass} x 10 <sup>{planetMassExponent}</sup> kg</div>
-            <div>Radius: {planetRadius} km</div>
-            <div>Tempreture: {planetTemp}<sup className="degree">o</sup>C</div>
-            <div>Moons: {planetMoons}</div>
-            <Button variant="primary" href={props.planetLink} id="planet-link">
-              Learn more about {props.planetName.toUpperCase()}
+          <Card.Body>
+            <Card.Title>{props.planetName.toUpperCase()}</Card.Title>
+            <Card.Text>{props.planetFact}</Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+      <div>
+        <Card style={{ width: "18rem" }} className="planet-card">
+          <Card.Body>
+            <Card.Title id="back-title">
+              {props.planetName.toUpperCase()}
+            </Card.Title>
+            <Button onClick={() => handleClick()} id="thumb-planetButton">
+              <img
+                src={require("./LearningSpaceImages/" +
+                  props.planetName +
+                  ".jpeg")}
+                id="thumb-planet"
+              />
             </Button>
-          </Card.Text>
-        </Card.Body>
-      </Card>
+            <Card.Text className="back-card-text">
+              <div>Gravity: {planetGravity} m/s&sup2;</div>
+              <div>Density: {planetDensity} g/cm&sup3;</div>
+              <div>
+                Mass: {planetMass} x 10 <sup>{planetMassExponent}</sup> kg
+              </div>
+              <div>Radius: {planetRadius} km</div>
+              <div>
+                Tempreture: {planetTemp}
+                <sup className="degree">o</sup>C
+              </div>
+              <div>Moons: {planetMoons}</div>
+              <Button
+                variant="primary"
+                href={props.planetLink}
+                id="planet-link"
+              >
+                Learn more about {props.planetName.toUpperCase()}
+              </Button>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     </ReactCardFlip>
   );
@@ -149,37 +160,55 @@ export function SpaceInfo() {
     },
     {
       name: "neptune",
-      description: "Neptune was the first planet located through mathematical calculations",
+      description:
+        "Neptune was the first planet located through mathematical calculations",
       link: "https://solarsystem.nasa.gov/planets/neptune/overview/",
       planetImage: "./LearningSpaceImages/neptune.jpeg",
     },
   ];
 
   return (
-    <div className="space-info-body stars twinkling">
-      <h1 id="facts-title">Interesting facts about Space</h1>
+    <div className="space-container stars twinkling">
+      <header>
+        <h1 id="space-title">Explore Space</h1>
 
-      <section className="text">
-      <p>The planetary system we call home is located in an outer spiral arm of the Milky Way galaxy.</p>
-      
-      <p>Our solar system consists of our star, the Sun, and everything bound to it by gravity – the planets 
-        Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune; dwarf planets such as Pluto; dozens of moons; 
-        and millions of asteroids, comets, and meteoroids.</p>
+        <section className="space-text">
+          <p>
+            The planetary system we call home is located in an outer spiral arm
+            of the Milky Way galaxy.
+          </p>
 
-        <p className="hide">Beyond our own solar system, there are more planets than stars in the night sky. So far, we have discovered thousands of 
-        planetary systems orbiting other stars in the Milky Way, with more planets being found. Most of the hundreds of billions 
-        of stars in our galaxy are thought to have planets of their own, and the Milky Way is but one of perhaps 100 billion galaxies 
-        in the universe.</p>
+          <p>
+            Our solar system consists of our star, the Sun, and everything bound
+            to it by gravity – the planets Mercury, Venus, Earth, Mars, Jupiter,
+            Saturn, Uranus, and Neptune; dwarf planets such as Pluto; dozens of
+            moons; and millions of asteroids, comets, and meteoroids.
+          </p>
 
-        <p className="hide-second">While our planet is in some ways a mere speck in the vast cosmos, we have a lot of company out there. 
-          It seems that we live in a universe packed with planets – a web of countless stars accompanied by families 
-          of objects, perhaps some with life of their own.</p>
+          <p className="hide">
+            Beyond our own solar system, there are more planets than stars in
+            the night sky. So far, we have discovered thousands of planetary
+            systems orbiting other stars in the Milky Way, with more planets
+            being found. Most of the hundreds of billions of stars in our galaxy
+            are thought to have planets of their own, and the Milky Way is but
+            one of perhaps 100 billion galaxies in the universe.
+          </p>
 
+          <p className="hide-second">
+            While our planet is in some ways a mere speck in the vast cosmos, we
+            have a lot of company out there. It seems that we live in a universe
+            packed with planets – a web of countless stars accompanied by
+            families of objects, perhaps some with life of their own.
+          </p>
 
-        <p><a href="https://solarsystem.nasa.gov/solar-system/our-solar-system/in-depth/">Read more about our Solar System</a></p>
+          <p>
+            <a href="https://solarsystem.nasa.gov/solar-system/our-solar-system/in-depth/">
+              Read more about our Solar System
+            </a>
+          </p>
+        </section>
+      </header>
 
-      
-      </section>
       <div className="planets-container" id="planets">
         <div className="planets-row">
           {planets.map((planet, i) => (
