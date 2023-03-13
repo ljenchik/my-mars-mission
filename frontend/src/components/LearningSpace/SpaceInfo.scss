@@ -3,14 +3,17 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
 }
 
 #space-title {
   text-align: center;
   color: white;
-  font-size: 50px;
+  font-size: 35px;
   text-shadow: 6px 6px 6px #d04a36;
   padding: 1rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
 }
 
 #loading {
@@ -106,8 +109,8 @@
   }
   
 
-  sup {
-    font-size: 12px;
+sup {
+  font-size: 12px;
 }
 
 .degree {
@@ -125,11 +128,13 @@
 
 .space-text p {
   margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .space-text a {
   color: #d04a36;
   text-decoration: none;
+  text-align: start;
 }
 
 .text a:hover{
@@ -141,17 +146,13 @@
   display: none;
 }
 
-//Extra extra small
-@media screen and (max-width: 575px) {
+//Small
+@media screen and (min-width: 576px) {
   #space-title {
-    font-size: 40px;
-    margin-top: 4rem;
-  }
-  .subtitle, .subtitle span{
-    font-size: 14px;
+    font-size: 38px;
   }
 
-  .space-text p {
+  .space-text p{
     font-size: 16px;
   }
 }
@@ -159,6 +160,14 @@
 
 //Medium
 @media screen and (min-width: 768px) {
+  #space-title {
+    font-size: 40px;
+  }
+
+  .space-text p{
+    font-size: 18px;
+  }
+
   .hide {
     display: block;
   }
@@ -170,7 +179,22 @@
 
 //Large
 @media screen and (min-width: 992px) {
-  .hide-second {
-    display: block;
+  #space-title {
+    font-size: 45px;
   }
 }
+
+
+//Extra large
+@media screen and (min-width: 1200px) {
+  #space-title {
+    font-size: 50px;
+  }
+}
+
+
+
+
+
+
+

@@ -4,8 +4,7 @@ import "./SpiritOpportunityImages.scss";
 
 export function SpiritOpportunityImages() {
   return (
-    <Container>
-       
+    <Container className="twins-container">
         <Col>
         <ImageViewer
             minDate="2004-01-06"

@@ -203,7 +203,7 @@ export function SpaceInfo() {
 
           <p>
             <a href="https://solarsystem.nasa.gov/solar-system/our-solar-system/in-depth/">
-              Read more about our Solar System
+              <span className="nowrap">Read more about</span> <span className="nowrap">our Solar System</span>
             </a>
           </p>
         </section>

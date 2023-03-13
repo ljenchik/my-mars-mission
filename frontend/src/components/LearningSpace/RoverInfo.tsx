@@ -16,8 +16,12 @@ export const RoverInfo = () => {
         </p>
       </header>
       <main>
-        <div id="click">Click on rover to see images taken on Mars</div>
-        <div className="link-container">
+        <div id="click">
+          <span className="nowrap">Click on rover to see images </span> 
+          <span className="nowrap"> taken on Mars</span>
+        </div>
+        <div className="rovers-card-container">
+
           {/* Spirit and Opportunity */}
           <Card style={{ width: "22rem" }} className="rover-card">
             <Link to='/images/spirit-opportunity'> <Card.Img

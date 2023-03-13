@@ -1,7 +1,5 @@
 import {
-  faGraduationCap,
   faRocket,
-  faStar,
   faMeteor,
   faTicket,
   faCircleQuestion
@@ -14,7 +12,7 @@ export function LandingPage() {
   return (
     <div className="landing-page-body clouds">
       <header>
-        <h1>
+        <h1 id="landing-page-title">
           Welcome to <span className="nowrap">Mars Mission!</span>{" "}
         </h1>
       </header>
@@ -27,7 +25,7 @@ export function LandingPage() {
           />
         </figure>
 
-        <h3 className="subtitle">
+        <h3 id="landing-page-subtitle">
           <span className="nowrap">Where would you</span>{" "}
           <span className="nowrap">like to land?</span>
         </h3>
