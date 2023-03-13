@@ -10,12 +10,19 @@ html {
     scroll-behavior: smooth;
 }
 
-.main-container {
+.quiz-container {
   display: flex;     
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+}
+
+#quiz-title {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  text-shadow: 6px 6px 6px #d04a36;
+  padding: 1rem;
 }
 
 .question {
@@ -23,7 +30,7 @@ html {
   border: 2px double white;
   border-radius: 5px;
   color: white;
-  width: 90%;
+  width: 70%;
   margin-top: 5rem;
   padding: 1rem;
 }
@@ -34,7 +41,7 @@ html {
 }
 
 .question-image {
-  width: 70%;
+  width: 50%;
   border-radius: 5px;
 }
 

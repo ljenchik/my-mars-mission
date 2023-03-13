@@ -1,3 +1,10 @@
+.rovers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 #rovers-title {
     text-align: center;
     color: white;

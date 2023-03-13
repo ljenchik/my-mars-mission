@@ -5,7 +5,7 @@ import "./RoverInfo.scss";
 import { Link } from "react-router-dom";
 export const RoverInfo = () => {
   return (
-    <div className="learning-space-container stars twinkling">
+    <div className="rovers-container stars twinkling">
       <header>
         <h1 id="rovers-title">Mars Rovers</h1>
         <p>

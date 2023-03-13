@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Data } from "./Data";
 import "./Quiz.scss";
 
+
 function CountOut(props: { Data: any; index: string | number }) {
   return (
     <div>
@@ -10,45 +11,47 @@ function CountOut(props: { Data: any; index: string | number }) {
   );
 }
 
+
+
+
+
+
+
 export function Quiz() {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState({
-    text: "",
-    correct: false,
-  });
-
+  const [selectedAnswer, setSelectedAnswer] = useState<string>();
   const question = Data[questionIndex];
+  const [score, setScore] = useState(0);
+
+  const handleSelectedAnswer = () => {
+    if (selectedAnswer === question.correctAnswer) {
+      setScore(score + 1);
+    }
+  }
   return (
-    <div className="main-container">
+    <div className="quiz-container stars twinkling">
+      <header>
+        <h1 id="quiz-title">Let's Quiz!</h1>
+        <p>Do you want to test your knowledfe about our Solar System?</p>
+        {/* <Button>Start</Button> */}
+      </header>
       
+      <div>Score: {score}</div>
       <div className="question">
-        <h3 className="question-title">{question.title}</h3>
-        <img src={question.image} className="question-image" />
+        <h3 className="question-title">{questionIndex + 1}. {question.question}</h3>
       </div>
 
-      <div className="information">{question.information}</div>
-      <div className="question-question">{question.question}</div>
       <div className="answers-container">
         {question.answers.map((answer) => (
           <button
             type="submit"
-            onClick={() => {
-              if (selectedAnswer !== answer) {
-                setSelectedAnswer(answer);
-              }
-            }}
-            className={
-              selectedAnswer === answer
-                ? answer.correct
-                  ? "highlight-correct answer "
-                  : "highlight-incorrect answer"
-                : "answer"
-            }
+            onClick={handleSelectedAnswer}
           >
-            {answer.text}
+            {answer}
           </button>
         ))}
       </div>
+
       <div className="button-count-container">
         <div>
           <button
@@ -80,6 +83,8 @@ export function Quiz() {
           </button>
         </div>
       </div>
+
+
     </div>
   );
 }

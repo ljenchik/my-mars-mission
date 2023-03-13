@@ -1,8 +1,7 @@
 import '@testing-library/jest-dom';
-import { render, fireEvent, screen, Simulate} from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { LandingPage } from "../components/LandingPage/LandingPage";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { navigate } from '@reach/router';
 import '@testing-library/cypress/add-commands';
 
 test("renders elements on a landing page page", async () => {
