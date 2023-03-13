@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-mars-mission/static/css/main.992f7542.css",
-    "main.js": "/my-mars-mission/static/js/main.90ad7158.js",
+    "main.css": "/my-mars-mission/static/css/main.88d422d1.css",
+    "main.js": "/my-mars-mission/static/js/main.60857555.js",
     "static/media/rover-info.jpg": "/my-mars-mission/static/media/rover-info.0abfb99d96bfee80b112.jpg",
     "static/media/mars-info.jpg": "/my-mars-mission/static/media/mars-info.f2d45b49808c7c358ec5.jpg",
     "static/media/spirit&opportunity.png": "/my-mars-mission/static/media/spirit&opportunity.14fd618e31ecce387db5.png",
@@ -15,11 +15,11 @@
     "static/media/mercury.jpeg": "/my-mars-mission/static/media/mercury.b5912b0b88a4663008cc.jpeg",
     "static/media/saturn.jpeg": "/my-mars-mission/static/media/saturn.65de086e48bab569dcac.jpeg",
     "index.html": "/my-mars-mission/index.html",
-    "main.992f7542.css.map": "/my-mars-mission/static/css/main.992f7542.css.map",
-    "main.90ad7158.js.map": "/my-mars-mission/static/js/main.90ad7158.js.map"
+    "main.88d422d1.css.map": "/my-mars-mission/static/css/main.88d422d1.css.map",
+    "main.60857555.js.map": "/my-mars-mission/static/js/main.60857555.js.map"
   },
   "entrypoints": [
-    "static/css/main.992f7542.css",
-    "static/js/main.90ad7158.js"
+    "static/css/main.88d422d1.css",
+    "static/js/main.60857555.js"
   ]
 }
